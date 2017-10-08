@@ -8,6 +8,10 @@ AccelStepper back (1, 8, 7);
 AccelStepper left (1, 10, 9);
 AccelStepper up (1, 12, 11);
 
+
+#define MOTOR_MAX_SPEED 100000
+#define MOTOR_MAX_ACC 200000
+
 const int enable_d = 16;
 const int enable_f = 17;
 const int enable_r = 18;
@@ -33,23 +37,23 @@ void setup()
   digitalWrite (enable_u, HIGH);
 
   // Setting speed, acceleration of motors
-  down.setMaxSpeed(100000);
-  down.setAcceleration(200000);
+  down.setMaxSpeed(MOTOR_MAX_SPEED);
+  down.setAcceleration(MOTOR_MAX_ACC);
 
-  front.setMaxSpeed(100000);
-  front.setAcceleration(200000);
+  front.setMaxSpeed(MOTOR_MAX_SPEED);
+  front.setAcceleration(MOTOR_MAX_ACC);
 
-  right.setMaxSpeed(100000);
-  right.setAcceleration(200000);
+  right.setMaxSpeed(MOTOR_MAX_SPEED);
+  right.setAcceleration(MOTOR_MAX_ACC);
 
-  back.setMaxSpeed(100000);
-  back.setAcceleration(200000);
+  back.setMaxSpeed(MOTOR_MAX_SPEED);
+  back.setAcceleration(MOTOR_MAX_ACC);
 
-  left.setMaxSpeed(100000);
-  left.setAcceleration(200000);
+  left.setMaxSpeed(MOTOR_MAX_SPEED);
+  left.setAcceleration(MOTOR_MAX_ACC);
 
-  up.setMaxSpeed(100000);
-  up.setAcceleration(200000);
+  up.setMaxSpeed(MOTOR_MAX_SPEED);
+  up.setAcceleration(MOTOR_MAX_ACC);
 
     //Initialise serial and wait for port to open:
   Serial.begin(9600);
@@ -57,7 +61,6 @@ void setup()
   while (!Serial) {
     ; // wait for serial port to connect.
   }
-
 }
 
 void loop()
