@@ -379,8 +379,8 @@ def insertContourUBLCamera(colour, cX, cY):
 ## COLOUR EXTRACTION
 ########################################
 
-def extract_color_BRD():
-    BRDImage = firstImage
+def extract_color_BRD(BRDImage):
+    #BRDImage = firstImage
 #YELLOW cube detection
     yellowHSVMask = getColourMask(BRDImage ,lower_yellow, upper_yellow) 
     
@@ -473,8 +473,8 @@ def extract_color_BRD():
 
         insertContourBRDCamera(2, cX, cY)
     
-def extract_color_RUF():
-    RUFImage = secondImage
+def extract_color_RUF(RUFImage):
+    #RUFImage = secondImage
 #YELLOW cube detection
     yellowHSVMask = getColourMask(RUFImage ,lower_yellow, upper_yellow) 
     
@@ -567,8 +567,8 @@ def extract_color_RUF():
     
         insertContourRUFCamera(2, cX, cY)
 
-def extract_color_UBL():
-    UBLImage = thirdImage
+def extract_color_UBL(UBLImage):
+    #UBLImage = thirdImage
 
 #YELLOW cube detection
     yellowHSVMask = getColourMask(UBLImage ,lower_yellow, upper_yellow) 
@@ -698,58 +698,65 @@ def drawTargetZonesOnImage(image):
 
 ########################################
 
-firstRaw = getImage(1)
-secondRaw = getImage(0)
-thirdRaw = getImage(2)
+def createPortholeMask(height, width, channels):
+    ## TODO This should be the same time for all of the images BUT might not be
+    ## Cropped images should be 385x400
+    cubiesMaskInitial = np.zeros((height, width, channels), np.uint8)
 
-firstImage = cropRawImage(firstRaw,1)
-secondImage = cropRawImage(secondRaw,0)
-thirdImage = cropRawImage(thirdRaw,2)
+    ## Draw circle "view ports" on mask
+    cv2.circle(cubiesMaskInitial, (35 , 125), offset, (255,255,255), -1)
+    cv2.circle(cubiesMaskInitial, (40 , 195), offset, (255,255,255), -1)
+    ## BOTTOM LEFT: Through rod
+    ##cv2.circle(cubiesMaskInitial, (45 , 265), offset, (255,255,255), -1)
+    cv2.circle(cubiesMaskInitial, (95 , 160), offset, (255,255,255), -1)
+    cv2.circle(cubiesMaskInitial, (100, 300), offset, (255,255,255), -1)
+    cv2.circle(cubiesMaskInitial, (155, 200), offset, (255,255,255), -1)
+    cv2.circle(cubiesMaskInitial, (160, 290), offset, (255,255,255), -1)
+    cv2.circle(cubiesMaskInitial, (165, 350), offset, (255,255,255), -1)
+    cv2.circle(cubiesMaskInitial, (225, 200), offset, (255,255,255), -1)
+    cv2.circle(cubiesMaskInitial, (225, 290), offset, (255,255,255), -1)
+    cv2.circle(cubiesMaskInitial, (225, 350), offset, (255,255,255), -1)
+    cv2.circle(cubiesMaskInitial, (295, 170), offset, (255,255,255), -1)
+    cv2.circle(cubiesMaskInitial, (280, 310), offset, (255,255,255), -1)
+    cv2.circle(cubiesMaskInitial, (355, 125), offset, (255,255,255), -1)
+    cv2.circle(cubiesMaskInitial, (345, 195), offset, (255,255,255), -1)
+    ## BOTTOM RIGHT: Through rod
+    ##cv2.circle(cubiesMaskInitial, (345, 265), offset, (255,255,255), -1)
+    cv2.circle(cubiesMaskInitial, (55 , 75 ), offset, (255,255,255), -1)
+    cv2.circle(cubiesMaskInitial, (120, 100), offset, (255,255,255), -1)
+    cv2.circle(cubiesMaskInitial, (190, 135), offset, (255,255,255), -1)
+    cv2.circle(cubiesMaskInitial, (125, 40 ), offset, (255,255,255), -1)
+    cv2.circle(cubiesMaskInitial, (260, 100), offset, (255,255,255), -1)
+    ## This is the top far cubie, looking through the rod.
+    cv2.circle(cubiesMaskInitial, (195, 15 ), altOffset, (255,255,255), -1)
+    cv2.circle(cubiesMaskInitial, (260, 40 ), offset, (255,255,255), -1)
+    cv2.circle(cubiesMaskInitial, (330, 70 ), offset, (255,255,255), -1)
 
-## TODO This should be the same time for all of the images BUT might not be
-## Cropped images should be 385x400
-heightImage1, widthImage1, channelsImage1 = firstImage.shape
-cubiesMaskInitial = np.zeros((heightImage1, widthImage1, channelsImage1), np.uint8)
-
-## Draw circle "view ports" on mask
-cv2.circle(cubiesMaskInitial, (35 , 125), offset, (255,255,255), -1)
-cv2.circle(cubiesMaskInitial, (40 , 195), offset, (255,255,255), -1)
-## BOTTOM LEFT: Through rod
-##cv2.circle(cubiesMaskInitial, (45 , 265), offset, (255,255,255), -1)
-cv2.circle(cubiesMaskInitial, (95 , 160), offset, (255,255,255), -1)
-cv2.circle(cubiesMaskInitial, (100, 300), offset, (255,255,255), -1)
-cv2.circle(cubiesMaskInitial, (155, 200), offset, (255,255,255), -1)
-cv2.circle(cubiesMaskInitial, (160, 290), offset, (255,255,255), -1)
-cv2.circle(cubiesMaskInitial, (165, 350), offset, (255,255,255), -1)
-cv2.circle(cubiesMaskInitial, (225, 200), offset, (255,255,255), -1)
-cv2.circle(cubiesMaskInitial, (225, 290), offset, (255,255,255), -1)
-cv2.circle(cubiesMaskInitial, (225, 350), offset, (255,255,255), -1)
-cv2.circle(cubiesMaskInitial, (295, 170), offset, (255,255,255), -1)
-cv2.circle(cubiesMaskInitial, (280, 310), offset, (255,255,255), -1)
-cv2.circle(cubiesMaskInitial, (355, 125), offset, (255,255,255), -1)
-cv2.circle(cubiesMaskInitial, (345, 195), offset, (255,255,255), -1)
-## BOTTOM RIGHT: Through rod
-##cv2.circle(cubiesMaskInitial, (345, 265), offset, (255,255,255), -1)
-cv2.circle(cubiesMaskInitial, (55 , 75 ), offset, (255,255,255), -1)
-cv2.circle(cubiesMaskInitial, (120, 100), offset, (255,255,255), -1)
-cv2.circle(cubiesMaskInitial, (190, 135), offset, (255,255,255), -1)
-cv2.circle(cubiesMaskInitial, (125, 40 ), offset, (255,255,255), -1)
-cv2.circle(cubiesMaskInitial, (260, 100), offset, (255,255,255), -1)
-## This is the top far cubie, looking through the rod.
-cv2.circle(cubiesMaskInitial, (195, 15 ), altOffset, (255,255,255), -1)
-cv2.circle(cubiesMaskInitial, (260, 40 ), offset, (255,255,255), -1)
-cv2.circle(cubiesMaskInitial, (330, 70 ), offset, (255,255,255), -1)
-
-## Create proper mask
-cubiesMaskFinal = cv2.inRange(cubiesMaskInitial, (1,1,1), (255,255,255))
-
-##maskedImage = np.bitwise_and(firstImage, cubiesMask)
-## TODO Assumes images are all the same size (Only uses 1 mask)
-firstImage = cv2.bitwise_and(firstImage, firstImage, mask = cubiesMaskFinal)
-secondImage = cv2.bitwise_and(secondImage, secondImage, mask = cubiesMaskFinal)
-thirdImage = cv2.bitwise_and(thirdImage, thirdImage, mask = cubiesMaskFinal)
+    ## Create proper mask
+    cubiesMaskFinal = cv2.inRange(cubiesMaskInitial, (1,1,1), (255,255,255))
+    
+    return cubiesMaskFinal
 
 def main():
+    print("STARTING")
+
+    firstRaw = getImage(1)
+    secondRaw = getImage(0)
+    thirdRaw = getImage(2)
+
+    firstImage = cropRawImage(firstRaw,1)
+    secondImage = cropRawImage(secondRaw,0)
+    thirdImage = cropRawImage(thirdRaw,2)
+
+    heightimage1, widthimage1, channelsimage1 = firstImage.shape
+    portholeMask = createPortholeMask(heightimage1, widthimage1, channelsimage1)  
+
+    ##maskedImage = np.bitwise_and(firstImage, cubiesMask)
+    ## TODO Assumes images are all the same size (Only uses 1 mask)
+    firstImage = cv2.bitwise_and(firstImage, firstImage, mask = portholeMask)
+    secondImage = cv2.bitwise_and(secondImage, secondImage, mask = portholeMask)
+    thirdImage = cv2.bitwise_and(thirdImage, thirdImage, mask = portholeMask)
+
     cubes.pop(4)
     cubes.insert(4, "U")
     cubes.pop(13)
@@ -763,9 +770,9 @@ def main():
     cubes.pop(49)
     cubes.insert(49, "B")
                       
-    extract_color_BRD.__call__()
-    extract_color_RUF.__call__()
-    extract_color_UBL.__call__()
+    extract_color_BRD.__call__(firstImage)
+    extract_color_RUF.__call__(secondImage)
+    extract_color_UBL.__call__(thirdImage)
 
     #print(cubes)
     #cycles through list checking if value is equal to None and replaces with U
