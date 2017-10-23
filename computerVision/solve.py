@@ -31,22 +31,15 @@ colours = {0:'U',1:'R',2:'F',3:'D',4:'L',5:'B'}
 ########################################
 ## HSV COLOURS
 ########################################
-##lower_yellow = np.array([23,60,100], dtype=np.uint8)
-##lower_yellow = np.array([23,80,100], dtype=np.uint8)
 lower_yellow = np.array([26,70,100], dtype=np.uint8)
 upper_yellow = np.array([36,255,255], dtype=np.uint8)
 
-#DBALL Slightly adjusted Blue values
-#lower_blue = np.array([101,120,100], dtype=np.uint8)
 lower_blue = np.array([101,110,100], dtype=np.uint8)
 upper_blue = np.array([150,255,255], dtype=np.uint8)
 
-##lower_orange = np.array([8,120,100], dtype=np.uint8)
 lower_orange = np.array([10,140,100], dtype=np.uint8)
-##upper_orange = np.array([22,255,255], dtype=np.uint8)
 upper_orange = np.array([24,255,255], dtype=np.uint8)
 
-#lower_green = np.array([37,120,100], dtype=np.uint8)
 lower_green = np.array([37,80,100], dtype=np.uint8)
 upper_green = np.array([100,255,255], dtype=np.uint8)
 
