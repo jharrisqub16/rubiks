@@ -70,7 +70,6 @@ def cropRawImage(rawImage, cameraNumber):
         croppedImage = rawImage[45:445, 135:520]
 
     return croppedImage
-    
 
 def getImage(cameraNumber):
     camera = cv2.VideoCapture(cameraNumber)
@@ -80,12 +79,11 @@ def getImage(cameraNumber):
     null, cameraCapture = camera.read()
 
     del(camera)
-    
     return cameraCapture
 
 
 def getColourMask(colouredImage, lowerThreshold, upperThreshold):
-    hsvImage = cv2.cvtColor(colouredImage, cv2.COLOR_BGR2HSV) 
+    hsvImage = cv2.cvtColor(colouredImage, cv2.COLOR_BGR2HSV)
     thresholdContour = cv2.inRange(hsvImage, lowerThreshold, upperThreshold)
     null, thresholdImage = cv2.threshold(thresholdContour, 127,255,3)
 
@@ -99,7 +97,7 @@ def getColourMask(colouredImage, lowerThreshold, upperThreshold):
 ## TODO this should be tidied up into a dictionary or something
 ## dirty hacks incoming
 
-## 1) Figure out which position the contour centre is in, with respect to that camera 
+## 1) Figure out which position the contour centre is in, with respect to that camera
 ## 2) Figure out which position in the list this is based on which camera it is... (ie which face)
 ## 3) Insert the required colour marker into that position in the list
 
@@ -375,8 +373,8 @@ def insertContourUBLCamera(colour, cX, cY):
 def extract_color_BRD(BRDImage):
     #BRDImage = firstImage
 #YELLOW cube detection
-    yellowHSVMask = getColourMask(BRDImage ,lower_yellow, upper_yellow) 
-    
+    yellowHSVMask = getColourMask(BRDImage ,lower_yellow, upper_yellow)
+
     yellowContours, hierarchy_y = cv2.findContours(yellowHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     cnts = sorted(yellowContours, key = cv2.contourArea, reverse = True)[:25]
 
@@ -393,7 +391,7 @@ def extract_color_BRD(BRDImage):
         insertContourBRDCamera(3, cX, cY)
 
 #BLUE cube detection
-    blueHSVMask = getColourMask(BRDImage ,lower_blue, upper_blue) 
+    blueHSVMask = getColourMask(BRDImage ,lower_blue, upper_blue)
 
     blueContours, hierarchy_b = cv2.findContours(blueHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     cnts = sorted(blueContours, key = cv2.contourArea, reverse = True)[:25]
@@ -427,7 +425,7 @@ def extract_color_BRD(BRDImage):
             cX, cY = 0, 0
 
         insertContourBRDCamera(5, cX, cY)
-    
+
 #GREEN cube detection
     greenHSVMask = getColourMask(BRDImage, lower_green, upper_green)
     greenContours, hierarchy_g = cv2.findContours(greenHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
@@ -445,7 +443,7 @@ def extract_color_BRD(BRDImage):
             cX, cY = 0, 0
 
         insertContourBRDCamera(4, cX, cY)
-            
+
 #RED cube detection
     redHSVMask1 = getColourMask(BRDImage, lower_red1, upper_red1)
     redHSVMask2 = getColourMask(BRDImage, lower_red2, upper_red2)
@@ -465,15 +463,15 @@ def extract_color_BRD(BRDImage):
             cX, cY = 0, 0
 
         insertContourBRDCamera(2, cX, cY)
-    
+
 def extract_color_RUF(RUFImage):
     #RUFImage = secondImage
 #YELLOW cube detection
-    yellowHSVMask = getColourMask(RUFImage ,lower_yellow, upper_yellow) 
-    
+    yellowHSVMask = getColourMask(RUFImage ,lower_yellow, upper_yellow)
+
     yellowContours, hierarchy_y = cv2.findContours(yellowHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)
     cnts = sorted(yellowContours, key = cv2.contourArea, reverse = True)[:25]
-    
+
     for c in cnts:
         M = cv2.moments(c)
         area = cv2.contourArea(c)
@@ -483,15 +481,15 @@ def extract_color_RUF(RUFImage):
             cY = int(M["m01"] / M["m00"])
         else:
             cX, cY = 0, 0
-    
+
         insertContourRUFCamera(3, cX, cY)
-    
+
 #BLUE cube detection
-    blueHSVMask = getColourMask(RUFImage ,lower_blue, upper_blue) 
+    blueHSVMask = getColourMask(RUFImage ,lower_blue, upper_blue)
 
     blueContours, hierarchy_b = cv2.findContours(blueHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     cnts = sorted(blueContours, key = cv2.contourArea, reverse = True)[:25]
-    
+
     for c in cnts:
         M = cv2.moments(c)
         area = cv2.contourArea(c)
@@ -501,15 +499,15 @@ def extract_color_RUF(RUFImage):
             cY = int(M["m01"] / M["m00"])
         else:
             cX, cY = 0, 0
-    
+
         insertContourRUFCamera(1, cX, cY)
-    
+
 #ORANGE cube detection
     orangeHSVMask = getColourMask(RUFImage, lower_orange, upper_orange)
 
     orangeContours, hierarchy_o = cv2.findContours(orangeHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     cnts = sorted(orangeContours, key = cv2.contourArea, reverse = True)[:25]
-    
+
     for c in cnts:
         M = cv2.moments(c)
         area = cv2.contourArea(c)
@@ -519,15 +517,15 @@ def extract_color_RUF(RUFImage):
             cY = int(M["m01"] / M["m00"])
         else:
             cX, cY = 0, 0
-    
+
         insertContourRUFCamera(5, cX, cY)
-    
+
 #GREEN cube detection
     greenHSVMask = getColourMask(RUFImage, lower_green, upper_green)
 
     greenContours, hierarchy_g = cv2.findContours(greenHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     cnts = sorted(greenContours, key = cv2.contourArea, reverse = True)[:25]
-    
+
     for c in cnts:
         M = cv2.moments(c)
         area = cv2.contourArea(c)
@@ -537,17 +535,17 @@ def extract_color_RUF(RUFImage):
             cY = int(M["m01"] / M["m00"])
         else:
             cX, cY = 0, 0
-    
+
         insertContourRUFCamera(4, cX, cY)
-            
+
 #RED cube detection
     redHSVMask1 = getColourMask(RUFImage, lower_red1, upper_red1)
     redHSVMask2 = getColourMask(RUFImage, lower_red2, upper_red2)
     redHSVMask = cv2.bitwise_or(redHSVMask1, redHSVMask2)
-    
+
     redContours , hierarchy_r = cv2.findContours(redHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     cnts = sorted(redContours, key = cv2.contourArea, reverse = True)[:25]
-    
+
     for c in cnts:
         M = cv2.moments(c)
         area = cv2.contourArea(c)
@@ -557,15 +555,15 @@ def extract_color_RUF(RUFImage):
             cY = int(M["m01"] / M["m00"])
         else:
             cX, cY = 0, 0
-    
+
         insertContourRUFCamera(2, cX, cY)
 
 def extract_color_UBL(UBLImage):
     #UBLImage = thirdImage
 
 #YELLOW cube detection
-    yellowHSVMask = getColourMask(UBLImage ,lower_yellow, upper_yellow) 
-    
+    yellowHSVMask = getColourMask(UBLImage ,lower_yellow, upper_yellow)
+
     yellowContours, hierarchy_y = cv2.findContours(yellowHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     cnts = sorted(yellowContours, key = cv2.contourArea, reverse = True)[:25]
 
@@ -582,8 +580,8 @@ def extract_color_UBL(UBLImage):
         insertContourUBLCamera(3, cX, cY)
 
 #BLUE cube detection
- 
-    blueHSVMask = getColourMask(UBLImage ,lower_blue, upper_blue) 
+
+    blueHSVMask = getColourMask(UBLImage ,lower_blue, upper_blue)
 
     blueContours, hierarchy_b = cv2.findContours(blueHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
@@ -618,7 +616,7 @@ def extract_color_UBL(UBLImage):
             cX, cY = 0, 0
 
         insertContourUBLCamera(5, cX, cY)
-    
+
 #GREEN cube detection
 
     greenHSVMask = getColourMask(UBLImage, lower_green, upper_green)
@@ -642,7 +640,7 @@ def extract_color_UBL(UBLImage):
     redHSVMask1 = getColourMask(UBLImage, lower_red1, upper_red1)
     redHSVMask2 = getColourMask(UBLImage, lower_red2, upper_red2)
     redHSVMask = cv2.bitwise_or(redHSVMask1, redHSVMask2)
-    
+
     redContours , hierarchy_r = cv2.findContours(redHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     cnts = sorted(redContours, key = cv2.contourArea, reverse = True)[:25]
 
@@ -727,7 +725,7 @@ def createPortholeMask(height, width, channels):
 
     ## Create proper mask
     cubiesMaskFinal = cv2.inRange(cubiesMaskInitial, (1,1,1), (255,255,255))
-    
+
     return cubiesMaskFinal
 
 def main():
@@ -742,7 +740,7 @@ def main():
     thirdImage = cropRawImage(thirdRaw,2)
 
     heightimage1, widthimage1, channelsimage1 = firstImage.shape
-    portholeMask = createPortholeMask(heightimage1, widthimage1, channelsimage1)  
+    portholeMask = createPortholeMask(heightimage1, widthimage1, channelsimage1)
 
     ##maskedImage = np.bitwise_and(firstImage, cubiesMask)
     ## TODO Assumes images are all the same size (Only uses 1 mask)
@@ -762,7 +760,7 @@ def main():
     cubes.insert(40, "L")
     cubes.pop(49)
     cubes.insert(49, "B")
-                      
+
     extract_color_BRD.__call__(firstImage)
     extract_color_RUF.__call__(secondImage)
     extract_color_UBL.__call__(thirdImage)
@@ -771,7 +769,7 @@ def main():
     #cycles through list checking if value is equal to None and replaces with U
     # TODO Check that no more than 8 U (white) values are assumed:
     #   this should fail.
-    cubes_k = [ x if x is not None else 'U' for x in cubes]        
+    cubes_k = [ x if x is not None else 'U' for x in cubes]
     #print(cubes_k)
     cubes_str = ''.join(cubes_k)
     print(cubes_str)
