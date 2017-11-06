@@ -838,14 +838,6 @@ def main():
     print("Finished solving")
 
     print(passToArduino)
-############################################
-## TODO HACK D face turns the wrong direction for some reason.
-    passToArduino = passToArduino.replace("D ", "temp ")
-    passToArduino = passToArduino.replace("D' ", "D ")
-    passToArduino = passToArduino.replace("temp ", "D' ")
-
-############################################
-    print(passToArduino)
     arduino.write(passToArduino)
     #DEBUG
     print("Finished serial write")
