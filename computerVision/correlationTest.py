@@ -68,6 +68,7 @@ def cropRawImage(rawImage, cameraNumber):
     # 1. Co-ordinates for the 24 cubes should be more consistent
     # 2. Make a smaller array as soon as possible: Will make later
     #   processing a teeny bit faster
+    #TODO This needs to be reworked
     if cameraNumber == 0:
         croppedImage = rawImage[55:455, 120:505]
     elif cameraNumber == 1:
@@ -352,11 +353,6 @@ def main():
     extractColours(imageRUF, cameras['RUF'])
     extractColours(imageUBL, cameras['UBL'])
 
-    #extract_color_BRD.__call__(firstImage)
-    #extract_color_RUF.__call__(secondImage)
-    #extract_color_UBL.__call__(thirdImage)
-
-    #print(cubes)
     #cycles through list checking if value is equal to None and replaces with U
     # TODO Check that no more than 8 U (white) values are assumed:
     #   this should fail.
