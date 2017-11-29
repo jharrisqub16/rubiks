@@ -147,6 +147,7 @@ def listifyCubePosition(listPos, colour):
 ########################################
 
 def extractColours(image, cameraNum):
+# TODO this needs reworked a lot
 #YELLOW cube detection
     yellowHSVMask = getColourMask(image ,lower_yellow, upper_yellow)
 
@@ -186,7 +187,8 @@ def extractColours(image, cameraNum):
         else:
             cX, cY = 0, 0
 
-        insertContourBRDCamera(1, cX, cY)
+        listPosition = correlateCubePosition(cameraNum, cX, cY)
+        listifyCubePosition(listPosition, 1)
 
 #ORANGE cube detection
     orangeHSVMask = getColourMask(image, lower_orange, upper_orange)
@@ -204,7 +206,8 @@ def extractColours(image, cameraNum):
         else:
             cX, cY = 0, 0
 
-        insertContourBRDCamera(5, cX, cY)
+        listPosition = correlateCubePosition(cameraNum, cX, cY)
+        listifyCubePosition(listPosition, 5)
 
 #GREEN cube detection
     greenHSVMask = getColourMask(image, lower_green, upper_green)
@@ -222,7 +225,8 @@ def extractColours(image, cameraNum):
         else:
             cX, cY = 0, 0
 
-        insertContourBRDCamera(4, cX, cY)
+        listPosition = correlateCubePosition(cameraNum, cX, cY)
+        listifyCubePosition(listPosition, 4)
 
 #RED cube detection
     redHSVMask1 = getColourMask(image, lower_red1, upper_red1)
@@ -242,7 +246,8 @@ def extractColours(image, cameraNum):
         else:
             cX, cY = 0, 0
 
-        insertContourBRDCamera(2, cX, cY)
+        listPosition = correlateCubePosition(cameraNum, cX, cY)
+        listifyCubePosition(listPosition, 2)
 
 def drawTargetZonesOnImage(image):
     ## Left face
