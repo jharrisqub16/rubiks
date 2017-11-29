@@ -123,6 +123,8 @@ def listifyCubePosition(listPos, colour):
     #   - Contour is not attempted to be inserted twice? At the very least, it
     #       should not disagree with existing.
 
+    # TODO For now this just returns silently but this should probably be fatal
+    #   by returning an Input/CV exception
     error = False
 
     if ( (not listPos) or (listPos < 0) or (listPos > len(cubes)) ):
@@ -167,7 +169,6 @@ def extractColours(image, cameraNum):
         else:
             cX, cY = 0, 0
 
-# TODO I believe this is correct?
         listPosition = correlateCubePosition(cameraNum, cX, cY)
         listifyCubePosition(listPosition, 3)
 
@@ -249,6 +250,7 @@ def extractColours(image, cameraNum):
         listPosition = correlateCubePosition(cameraNum, cX, cY)
         listifyCubePosition(listPosition, 2)
 
+# TODO These 2 functions need to be reworked to use the correlations
 def drawTargetZonesOnImage(image):
     ## Left face
     cv2.rectangle(image,(35 -offset , 125-offset), (35 +offset, 125+offset), (0,255,0),2)
