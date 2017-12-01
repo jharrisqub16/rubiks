@@ -5,10 +5,11 @@ import cv2
 #import sys
 #import time
 #import json
-import serial
+#import serial
 import kociemba
 
 from correlation import *
+from motorController import *
 
 
 ########################################
@@ -364,15 +365,15 @@ def main():
     # TODO Check that no more than 8 U (white) values are assumed:
     #   this should fail.
     cubes_k = [ x if x is not None else 'U' for x in cubes]
-    #print(cubes_k)
     cubes_str = ''.join(cubes_k)
     print(cubes_str)
 
-    arduino = serial.Serial('/dev/ttyACM0', 9600)
+    arduino = motorController()
+    # TODO What is the purpose of this?
+    # The string is not space delimited so it this just the last char that indicates the end of solution?
+    solutionString = kociemba.solve(cubes_str) + ' '
 
-    passToArduino = kociemba.solve(cubes_str) + ' '
-
-    print(passToArduino)
-    arduino.write(passToArduino)
+    print(solutionString)
+    arduino.sendString(passToArduino)
 
 main()
