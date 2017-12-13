@@ -1,6 +1,6 @@
 import serial
 
-def motorController():
+class motorController:
 # TODO For now this is just a replacement of existing functionality,
 #   consolidated into one class.
 
