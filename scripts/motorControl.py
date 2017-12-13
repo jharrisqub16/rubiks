@@ -21,7 +21,7 @@ def main():
 
         userInput = str(raw_input())
         if userInput in validMoves: 
-            arduino.write(userInput)
+            arduino.write(userInput+" ")
         else:
             print("Not a valid move")
 
