@@ -9,8 +9,8 @@ AccelStepper left (1, 10, 9);
 AccelStepper up (1, 12, 11);
 
 
-#define MOTOR_MAX_SPEED 100000
-#define MOTOR_MAX_ACC 200000
+#define MOTOR_MAX_SPEED 10000
+#define MOTOR_MAX_ACC 20000
 
 const int enable_d = 16;
 const int enable_f = 17;
