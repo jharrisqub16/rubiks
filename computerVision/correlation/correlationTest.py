@@ -1,5 +1,6 @@
 import numpy as np
 #import os
+import math
 import cv2
 #from cv2 import *
 #import sys
@@ -106,12 +107,14 @@ def getColourMask(colouredImage, lowerThreshold, upperThreshold):
 
 def correlateCubePosition(cameraNum, contourX, contourY):
     positionCount = 0
-    for coordinates in correlation[1,]:
-    # TODO This is a square, not a circle!
-        if (fabs(coordinates[0] - contourX) < offset and
-                fabs(coordinates[1] - contourY) < offset):
-            return positionCount
 
+    for coordinates in correlation[cameraNum,]:
+    # TODO This is a square, not a circle!
+        if (coordinates != 0):
+        # TODO avoid NULL coordinate entries: Also, check list type?
+            if (math.fabs(coordinates[0] - contourX) < offset and
+                    math.fabs(coordinates[1] - contourY) < offset):
+                return positionCount
         positionCount += 1
 
 
@@ -126,18 +129,20 @@ def listifyCubePosition(listPos, colour):
 
     # TODO For now this just returns silently but this should probably be fatal
     #   by returning an Input/CV exception
+
     error = False
 
-    if ( (not listPos) or (listPos < 0) or (listPos > len(cubes)) ):
+    if ( (listPos is None) or (listPos < 0) or (listPos > len(cubes)) ):
         print("Index in cubes list is not valid")
         error = True
 
     #if (cubes[listPos]):
     #    print("Cubelist is already populated in position")
 
-    if (cubes[listPos] != colours[colour] ):
-        print("Colour insertion disagrees with existing")
-        error = True
+    # TODO this check is not valid when the list is unpopulated (to start)
+    #if (cubes[listPos] != colours[colour] ):
+    #    print("Colour insertion disagrees with existing")
+    #    error = True
 
     if (error == True):
         return
@@ -171,7 +176,8 @@ def extractColours(image, cameraNum):
             cX, cY = 0, 0
 
         listPosition = correlateCubePosition(cameraNum, cX, cY)
-        listifyCubePosition(listPosition, 3)
+        if (listPosition is not None):
+            listifyCubePosition(listPosition, 3)
 
 #BLUE cube detection
     blueHSVMask = getColourMask(image ,lower_blue, upper_blue)
@@ -190,7 +196,8 @@ def extractColours(image, cameraNum):
             cX, cY = 0, 0
 
         listPosition = correlateCubePosition(cameraNum, cX, cY)
-        listifyCubePosition(listPosition, 1)
+        if (listPosition is not None):
+            listifyCubePosition(listPosition, 1)
 
 #ORANGE cube detection
     orangeHSVMask = getColourMask(image, lower_orange, upper_orange)
@@ -209,7 +216,8 @@ def extractColours(image, cameraNum):
             cX, cY = 0, 0
 
         listPosition = correlateCubePosition(cameraNum, cX, cY)
-        listifyCubePosition(listPosition, 5)
+        if (listPosition is not None):
+            listifyCubePosition(listPosition, 5)
 
 #GREEN cube detection
     greenHSVMask = getColourMask(image, lower_green, upper_green)
@@ -228,7 +236,8 @@ def extractColours(image, cameraNum):
             cX, cY = 0, 0
 
         listPosition = correlateCubePosition(cameraNum, cX, cY)
-        listifyCubePosition(listPosition, 4)
+        if (listPosition is not None):
+            listifyCubePosition(listPosition, 4)
 
 #RED cube detection
     redHSVMask1 = getColourMask(image, lower_red1, upper_red1)
@@ -249,7 +258,8 @@ def extractColours(image, cameraNum):
             cX, cY = 0, 0
 
         listPosition = correlateCubePosition(cameraNum, cX, cY)
-        listifyCubePosition(listPosition, 2)
+        if (listPosition is not None):
+            listifyCubePosition(listPosition, 2)
 
 # TODO These 2 functions need to be reworked to use the correlations
 def drawTargetZonesOnImage(image):
@@ -374,6 +384,6 @@ def main():
     solutionString = kociemba.solve(cubes_str) + ' '
 
     print(solutionString)
-    arduino.sendString(passToArduino)
+    arduino.sendString(solutionString)
 
 main()
