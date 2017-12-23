@@ -376,7 +376,9 @@ def main():
     #   this should fail.
     cubes_k = [ x if x is not None else 'U' for x in cubes]
 
-    solutionString = ''.join(cubes_k)+' '
+    cubes_k = ''.join(cubes_k)
+
+    solutionString = kociemba.solve(cube_k) + ' '
     print(solutionString)
 
     arduino = motorController()
