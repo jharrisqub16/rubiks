@@ -17,5 +17,11 @@ class motorController:
         self.serialDevice = serial.Serial(self.serialPort, self.serialBaudRate)
 
     def sendString(self, solutionString):
+
+        # Workaround for motorController falling over if string does not end
+        # with space
+        if (not solutionString.endswith(' '):
+            solutionString += ' '
+
         self.serialDevice.write(solutionString)
 
