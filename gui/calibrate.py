@@ -16,7 +16,7 @@ class Calibration(tk.Tk):
         tk.Toplevel.__init__(self)
 
         # Handler for closing event
-        self.protocol("WM_DELETE_WINDOW", self.eventWindowClose)
+        self.protocol("WM_DELETE_WINDOW", self.teardownWindow)
 
         self.parentWindow = parent
 
@@ -37,12 +37,7 @@ class Calibration(tk.Tk):
         self.canvas.pack()
         self.canvas.create_image(self.windowSize[0]/2, self.windowSize[1]/2, image=self.image)
 
-        # Create buttons
-        self.cancelButton = tk.Button(self.canvas, text="Cancel")#, command=temp)
-        self.cancelButtonWindow = self.canvas.create_window(self.windowSize[0], self.windowSize[1], anchor='se', window=self.cancelButton)
-
-        self.applyButton = tk.Button(self.canvas, text="OK")#, command=temp)
-        self.applyButtonWindow = self.canvas.create_window(0, 0, anchor='nw', window=self.applyButton)
+        self.spawnButtons()
 
     def onClick(self, event):
         # TODO This assumes that:
@@ -50,8 +45,36 @@ class Calibration(tk.Tk):
         #   - The image is not scaled
         print(event.x, event.y)
 
-    def eventWindowClose(self):
+
+    def spawnButtons(self):
+        # Pack solve and scramble buttons into a frame (for placement)
+        self.buttonFrame = tk.Frame(self)
+
+        self.cancelButton = tk.Button(self.buttonFrame, text="Cancel", command=self.cancelCloseWindow)
+        self.applyButton = tk.Button(self.buttonFrame, text="Apply", command=self.applyCloseWindow)
+        self.cancelButton.pack(side=tk.LEFT)
+        self.applyButton.pack(side=tk.LEFT)
+        # Place packed frame into a window on the main canvas
+        self.buttonWindow = self.canvas.create_window(self.windowSize[0], self.windowSize[1], anchor='se', window=self.buttonFrame)
+
+
+    def cancelCloseWindow(self):
+        # Prompt user, disgregard all changes and destroy window
+        if (msg.askokcancel("Confirm", "Changes will be discarded. \n Continue?")):
+            self.teardownWindow()
+
+
+    def applyCloseWindow(self):
+        # Store all configuration changes, then destroy configuration window
+        # TODO Handle configuration changes
+        print("Configuration overwritten")
+
+        self.teardownWindow()
+
+
+    def teardownWindow(self):
         self.destroy()
-        #TODO Would make more sense if this is not handled here
+        # Tidy up state of parent object which restricts this window being spawned
+        # TODO Does not really make sense to reset this here
         self.parentWindow.calibrationWindowSpawned = False
         self.parentWindow.calibrateButton['state'] = 'normal'

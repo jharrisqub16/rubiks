@@ -40,15 +40,28 @@ class guiMain(tk.Tk):
         self.canvas.pack()
         self.canvas.create_image(self.windowSize[0]/2, self.windowSize[1]/2, image=self.image)
 
-        # Place buttons on master canvas: Each is placed inside its own window.
-        self.solveButton = tk.Button(self.canvas, text="Solve Button example", command=temp)
-        self.solveButtonWindow = self.canvas.create_window(self.windowSize[0], self.windowSize[1], anchor='se', window=self.solveButton)
+        self.spawnButtons()
 
-        self.calibrateButton = tk.Button(self.canvas, text="Calibrate", command=self.spawnCalibrationWindow)
-        self.calibrateButtonWindow = self.canvas.create_window(0, 0, anchor='nw', window=self.calibrateButton)
 
     def onClick(self, event):
         pass
+
+
+    def spawnButtons(self):
+        # Pack solve and scramble buttons into a frame (for placement)
+        self.buttonFrame = tk.Frame(self)
+
+        self.scrambleButton = tk.Button(self.buttonFrame, text="Scramble", command=temp)
+        self.solveButton = tk.Button(self.buttonFrame, text="Solve", command=temp)
+        self.scrambleButton.pack(side=tk.LEFT)
+        self.solveButton.pack(side=tk.LEFT)
+        # Place packed frame into a window on the main canvas
+        self.buttonWindow = self.canvas.create_window(self.windowSize[0], self.windowSize[1], anchor='se', window=self.buttonFrame)
+
+        # Place calibration button directly onto main canvas
+        self.calibrateButton = tk.Button(self.canvas, text="Settings menu", command=self.spawnCalibrationWindow)
+        self.calibrateButtonWindow = self.canvas.create_window(0, 0, anchor='nw', window=self.calibrateButton)
+
 
     def spawnCalibrationWindow(self):
         # TODO This validation would need to be validated correctly
