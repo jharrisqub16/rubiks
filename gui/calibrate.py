@@ -37,7 +37,7 @@ class Calibration(tk.Tk):
         self.canvas.pack()
         self.canvas.create_image(self.windowSize[0]/2, self.windowSize[1]/2, image=self.image)
 
-        self.spawnButtons()
+        self.spawnWidgets()
 
     def onClick(self, event):
         # TODO This assumes that:
@@ -46,7 +46,7 @@ class Calibration(tk.Tk):
         print(event.x, event.y)
 
 
-    def spawnButtons(self):
+    def spawnWidgets(self):
         # Pack solve and scramble buttons into a frame (for placement)
         self.buttonFrame = tk.Frame(self)
 
@@ -55,7 +55,12 @@ class Calibration(tk.Tk):
         self.cancelButton.pack(side=tk.LEFT)
         self.applyButton.pack(side=tk.LEFT)
         # Place packed frame into a window on the main canvas
-        self.buttonWindow = self.canvas.create_window(self.windowSize[0], self.windowSize[1], anchor='se', window=self.buttonFrame)
+        self.canvas.create_window(self.windowSize[0], self.windowSize[1], anchor='se', window=self.buttonFrame)
+
+        # TODO this should be used later for the calibration video stream
+        self.applyRoiHighlighting = tk.BooleanVar()
+        self.showRoiCheckbox = tk.Checkbutton(self.canvas, text="Highlight regions", variable=self.applyRoiHighlighting)
+        self.canvas.create_window(0, self.windowSize[1], anchor='sw', window=self.showRoiCheckbox)
 
 
     def cancelCloseWindow(self):
