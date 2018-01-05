@@ -45,7 +45,7 @@ class computerVision():
         self.imageUBL = self.cropRawImage(rawUBL, cameras['UBL'])
 
         self.heightimage, self.widthimage, self.channelsimage = self.imageBRD.shape
-        self.portholeMask = createPortholeMask(self.heightimage, self.widthimage,
+        self.portholeMask = self.createPortholeMask(self.heightimage, self.widthimage,
         self.channelsimage)
 
         # Initialise known/assumed centre cubies
@@ -64,7 +64,7 @@ class computerVision():
         return self.cubes
 
 
-    def getImage(cameraNumber):
+    def getImage(self, cameraNumber):
         camera = cv2.VideoCapture(cameraNumber)
 
         for i in xrange(30):
@@ -75,7 +75,7 @@ class computerVision():
         return cameraCapture
 
 
-    def cropRawImage(rawImage, cameraNumber):
+    def cropRawImage(self, rawImage, cameraNumber):
         #TODO This needs to be reworked: independently configurable from the
         # calibration window
         if cameraNumber == 0:
@@ -88,52 +88,67 @@ class computerVision():
         return croppedImage
 
 
-def correlateCubePosition(cameraNum, contourX, contourY):
-    positionCount = 0
+    def createPortholeMask(self, height, width, channels):
+        # TODO should this produce a different mask per camera
+        cubiesMaskTemp = np.zeros((height, width, channels), np.uint8)
 
-    for coordinates in self.correlation[cameraNum,]:
-    # TODO This is a square, not a circle!
-        if (coordinates != 0):
-        # TODO avoid NULL coordinate entries: Also, check list type?
-            if (math.fabs(coordinates[0] - contourX) < self.offset and
-                    math.fabs(coordinates[1] - contourY) < self.offset):
-                return positionCount
-        positionCount += 1
+        for coordinates in correlation[cameraNum,]:
+            if (coordinates != 0):
+                # TODO avoid NULL coordinate entries: Also, check list type?
+                print(coordinates)
+                cv.circle(cubiesMaskTemp, coordinates, self.offset, (255,255,255), -1)
 
+        ## Create proper mask
+        cubiesMaskFinal = cv2.inRange(cubiesMaskTemp, (1,1,1), (255,255,255))
 
-def listifyCubePosition(listPos, colour):
-    # Insert cube colour into the cube state list with the appropriate
-    # validation.
+        return cubiesMaskFinal
 
-    # This should validate that:
-    #   - listPos is a number, and within limits.
-    #   - Contour is not attempted to be inserted twice? At the very least, it
-    #       should not disagree with existing.
+    def correlateCubePosition(self, cameraNum, contourX, contourY):
+        positionCount = 0
 
-    # TODO For now this just returns silently but this should probably be fatal
-    #   by returning an Input/CV exception
-
-    error = False
-
-    if ( (listPos is None) or (listPos < 0) or (listPos > len(self.cubes)) ):
-        print("Index in cubes list is not valid")
-        error = True
-
-    #if (cubes[listPos]):
-    #    print("Cubelist is already populated in position")
-
-    # TODO this check is not valid when the list is unpopulated (to start)
-    #if (cubes[listPos] != colours[colour] ):
-    #    print("Colour insertion disagrees with existing")
-    #    error = True
-
-    if (error == True):
-        return
-
-    self.cubes[listPos] = self.colours[colour]
+        for coordinates in self.correlation[cameraNum,]:
+        # TODO This is a square, not a circle!
+            if (coordinates != 0):
+            # TODO avoid NULL coordinate entries: Also, check list type?
+                if (math.fabs(coordinates[0] - contourX) < self.offset and
+                        math.fabs(coordinates[1] - contourY) < self.offset):
+                    return positionCount
+            positionCount += 1
 
 
-    def extractColours(image, cameraNum):
+    def listifyCubePosition(self, listPos, colour):
+        # Insert cube colour into the cube state list with the appropriate
+        # validation.
+
+        # This should validate that:
+        #   - listPos is a number, and within limits.
+        #   - Contour is not attempted to be inserted twice? At the very least, it
+        #       should not disagree with existing.
+
+        # TODO For now this just returns silently but this should probably be fatal
+        #   by returning an Input/CV exception
+
+        error = False
+
+        if ( (listPos is None) or (listPos < 0) or (listPos > len(self.cubes)) ):
+            print("Index in cubes list is not valid")
+            error = True
+
+        #if (cubes[listPos]):
+        #    print("Cubelist is already populated in position")
+
+        # TODO this check is not valid when the list is unpopulated (to start)
+        #if (cubes[listPos] != colours[colour] ):
+        #    print("Colour insertion disagrees with existing")
+        #    error = True
+
+        if (error == True):
+            return
+
+        self.cubes[listPos] = self.colours[colour]
+
+
+    def extractColours(self, image, cameraNum):
     # TODO this needs reworked a lot
     #YELLOW cube detection
         yellowHSVMask = getColourMask(image ,self.lower_yellow, self.upper_yellow)

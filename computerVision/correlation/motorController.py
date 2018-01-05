@@ -20,7 +20,7 @@ class motorController:
 
         # Workaround for motorController falling over if string does not end
         # with space
-        if (not solutionString.endswith(' '):
+        if (not solutionString.endswith(' ')):
             solutionString += ' '
 
         self.serialDevice.write(solutionString)

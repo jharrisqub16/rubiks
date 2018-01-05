@@ -15,7 +15,7 @@
 
 from computerVision import computerVision
 from motorController import motorController
-from solver import solver
+from solver import cubeSolver
 
 from random import randint
 
