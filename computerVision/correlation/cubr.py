@@ -23,7 +23,7 @@ class cubr():
     def __init__(self):
 
         self.cv = computerVision()
-        self.solver = solver()
+        self.solver = cubeSolver()
         self.mc = motorController()
 
         #TODO not sure where this should originate: for second iteration,
