@@ -79,5 +79,5 @@ class guiMain(tk.Tk):
             print("Already has an active child window")
 
 if __name__ == "__main__":
-    gui = guiMain("images/rubiks.png")
+    gui = guiMain("images/rubiksCube.jpg")
     gui.mainloop()

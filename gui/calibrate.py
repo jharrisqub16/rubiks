@@ -20,7 +20,7 @@ class Calibration(tk.Tk):
 
         self.parentWindow = parent
 
-        self.title("TODO calibration window")
+        self.title("Configuration menu")
 
         # TODO This should probably be initialised to the size of the rpi screen
         # Also, should the window be adjustable by the user?
