@@ -13,6 +13,8 @@ class computerVision():
 
         self.correlation = correlation
 
+        self.cubes = [None]*54
+
         # Some CV reference values
         self.minimumContourArea = 20
         self.offset = 11
@@ -36,17 +38,22 @@ class computerVision():
         self.upper_red2 = np.array([179,255,255], dtype=np.uint8)
 
     def getCubeState(self):
-        self.rawBRD = self.getImage(cameras['BRD'])
-        self.rawRUF = self.getImage(cameras['RUF'])
-        self.rawUBL = self.getImage(cameras['UBL'])
+        self.rawBRD = self.getImage(self.cameras['BRD'])
+        self.rawRUF = self.getImage(self.cameras['RUF'])
+        self.rawUBL = self.getImage(self.cameras['UBL'])
 
-        self.imageBRD = self.cropRawImage(rawBRD, cameras['BRD'])
-        self.imageRUF = self.cropRawImage(rawRUF, cameras['RUF'])
-        self.imageUBL = self.cropRawImage(rawUBL, cameras['UBL'])
+        self.imageBRD = self.cropRawImage(self.rawBRD, self.cameras['BRD'])
+        self.imageRUF = self.cropRawImage(self.rawRUF, self.cameras['RUF'])
+        self.imageUBL = self.cropRawImage(self.rawUBL, self.cameras['UBL'])
 
         self.heightimage, self.widthimage, self.channelsimage = self.imageBRD.shape
         self.portholeMask = self.createPortholeMask(self.heightimage, self.widthimage,
         self.channelsimage)
+
+        self.imageBRD= cv2.bitwise_and(self.imageBRD, self.imageBRD, mask = self.portholeMask)
+        self.imageRUF = cv2.bitwise_and(self.imageRUF, self.imageRUF, mask = self.portholeMask)
+        self.imageUBL= cv2.bitwise_and(self.imageUBL, self.imageUBL, mask = self.portholeMask)
+
 
         # Initialise known/assumed centre cubies
         # TODO This needs to be reworked for the next iterations
@@ -57,9 +64,12 @@ class computerVision():
         self.cubes[40] = "L"
         self.cubes[49] = "B"
 
-        self.extractColours(imageBRD, self.cameras['BRD'])
-        self.extractColours(imageRUF, self.cameras['RUF'])
-        self.extractColours(imageUBL, self.cameras['UBL'])
+        self.extractColours(self.imageBRD, self.cameras['BRD'])
+        self.extractColours(self.imageRUF, self.cameras['RUF'])
+        self.extractColours(self.imageUBL, self.cameras['UBL'])
+
+        self.cubes = [ x if x is not None else 'U' for x in self.cubes]
+
 
         return self.cubes
 
@@ -91,12 +101,14 @@ class computerVision():
     def createPortholeMask(self, height, width, channels):
         # TODO should this produce a different mask per camera
         cubiesMaskTemp = np.zeros((height, width, channels), np.uint8)
+        #TODO 
+        cameraNum = 0
 
         for coordinates in correlation[cameraNum,]:
             if (coordinates != 0):
                 # TODO avoid NULL coordinate entries: Also, check list type?
                 print(coordinates)
-                cv.circle(cubiesMaskTemp, coordinates, self.offset, (255,255,255), -1)
+                cv2.circle(cubiesMaskTemp, coordinates, self.offset, (255,255,255), -1)
 
         ## Create proper mask
         cubiesMaskFinal = cv2.inRange(cubiesMaskTemp, (1,1,1), (255,255,255))
@@ -151,7 +163,7 @@ class computerVision():
     def extractColours(self, image, cameraNum):
     # TODO this needs reworked a lot
     #YELLOW cube detection
-        yellowHSVMask = getColourMask(image ,self.lower_yellow, self.upper_yellow)
+        yellowHSVMask = self.getColourMask(image ,self.lower_yellow, self.upper_yellow)
 
         yellowContours, hierarchy_y = cv2.findContours(yellowHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         # TODO Is this correct?
@@ -169,12 +181,12 @@ class computerVision():
             else:
                 cX, cY = 0, 0
 
-            listPosition = correlateCubePosition(cameraNum, cX, cY)
+            listPosition = self.correlateCubePosition(cameraNum, cX, cY)
             if (listPosition is not None):
                 self.listifyCubePosition(listPosition, 3)
 
     #BLUE cube detection
-        blueHSVMask = getColourMask(image ,self.lower_blue, self.upper_blue)
+        blueHSVMask = self.getColourMask(image ,self.lower_blue, self.upper_blue)
 
         blueContours, hierarchy_b = cv2.findContours(blueHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         cnts = sorted(blueContours, key = cv2.contourArea, reverse = True)[:25]
@@ -189,12 +201,12 @@ class computerVision():
             else:
                 cX, cY = 0, 0
 
-            listPosition = correlateCubePosition(cameraNum, cX, cY)
+            listPosition = self.correlateCubePosition(cameraNum, cX, cY)
             if (listPosition is not None):
                 self.listifyCubePosition(listPosition, 1)
 
     #ORANGE cube detection
-        orangeHSVMask = getColourMask(image, self.lower_orange, self.upper_orange)
+        orangeHSVMask = self.getColourMask(image, self.lower_orange, self.upper_orange)
         orangeContours, hierarchy_o = cv2.findContours(orangeHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
         cnts = sorted(orangeContours, key = cv2.contourArea, reverse = True)[:25]
@@ -209,12 +221,12 @@ class computerVision():
             else:
                 cX, cY = 0, 0
 
-            listPosition = correlateCubePosition(cameraNum, cX, cY)
+            listPosition = self.correlateCubePosition(cameraNum, cX, cY)
             if (listPosition is not None):
                 self.listifyCubePosition(listPosition, 5)
 
     #GREEN cube detection
-        greenHSVMask = getColourMask(image, self.lower_green, self.upper_green)
+        greenHSVMask = self.getColourMask(image, self.lower_green, self.upper_green)
         greenContours, hierarchy_g = cv2.findContours(greenHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
         cnts = sorted(greenContours, key = cv2.contourArea, reverse = True)[:25]
@@ -229,13 +241,13 @@ class computerVision():
             else:
                 cX, cY = 0, 0
 
-            listPosition = correlateCubePosition(cameraNum, cX, cY)
+            listPosition = self.correlateCubePosition(cameraNum, cX, cY)
             if (listPosition is not None):
                 self.listifyCubePosition(listPosition, 4)
 
     #RED cube detection
-        redHSVMask1 = getColourMask(image, self.lower_red1, self.upper_red1)
-        redHSVMask2 = getColourMask(image, self.lower_red2, self.upper_red2)
+        redHSVMask1 = self.getColourMask(image, self.lower_red1, self.upper_red1)
+        redHSVMask2 = self.getColourMask(image, self.lower_red2, self.upper_red2)
         redHSVMask = cv2.bitwise_or(redHSVMask1, redHSVMask2)
 
         redContours , hierarchy_r = cv2.findContours(redHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
@@ -251,6 +263,14 @@ class computerVision():
             else:
                 cX, cY = 0, 0
 
-            listPosition = correlateCubePosition(cameraNum, cX, cY)
+            listPosition = self.correlateCubePosition(cameraNum, cX, cY)
             if (listPosition is not None):
                 self.listifyCubePosition(listPosition, 2)
+
+    def getColourMask(self, colouredImage, lowerThreshold, upperThreshold):
+        hsvImage = cv2.cvtColor(colouredImage, cv2.COLOR_BGR2HSV)
+        thresholdContour = cv2.inRange(hsvImage, lowerThreshold, upperThreshold)
+        null, thresholdImage = cv2.threshold(thresholdContour, 127,255,3)
+   
+        return thresholdImage
+

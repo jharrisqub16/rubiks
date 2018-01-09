@@ -131,6 +131,7 @@ def listifyCubePosition(listPos, colour):
     #   by returning an Input/CV exception
 
     error = False
+    global cubes
 
     if ( (listPos is None) or (listPos < 0) or (listPos > len(cubes)) ):
         print("Index in cubes list is not valid")
@@ -336,6 +337,7 @@ def createPortholeMask(height, width, channels):
 
 def main():
     print("STARTING")
+    global cubes
 
     rawBRD = getImage(cameras['BRD'])
     rawRUF = getImage(cameras['RUF'])
@@ -374,11 +376,12 @@ def main():
     #cycles through list checking if value is equal to None and replaces with U
     # TODO Check that no more than 8 U (white) values are assumed:
     #   this should fail.
-    cubes_k = [ x if x is not None else 'U' for x in cubes]
+    cubes = [ x if x is not None else 'U' for x in cubes]
 
-    cubes_k = ''.join(cubes_k)
+    cubes = ''.join(cubes)
+    print(cubes)
 
-    solutionString = kociemba.solve(cube_k) + ' '
+    solutionString = kociemba.solve(cubes) + ' '
     print(solutionString)
 
     arduino = motorController()

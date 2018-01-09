@@ -39,10 +39,11 @@ class cubr():
     def solveCube(self):
         # TODO Also add exception handling
         cubeState = self.cv.getCubeState()
+        #TODO check if cubeState is already solved:
         solution = self.solver.solve(cubeState)
+        #TODO must be valid string solution
         self.mc.sendString(solution)
 
-        raise NotImplementedError
 
     def scramble(self):
         scramble = []
