@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 import sys
 import tkinter as tk
 from tkinter import messagebox as msg
@@ -10,17 +8,16 @@ def temp():
     print("Testing callback")
 
 
-class Calibration(tk.Tk):
-    def __init__(self, parent, parentSize):
-        #super().__init__()
-        tk.Toplevel.__init__(self)
-
-        # Handler for closing event
-        self.protocol("WM_DELETE_WINDOW", self.teardownWindow)
-
+class Calibration:
+    def __init__(self, master, parent, parentSize):
+        self.master = master
         self.parentWindow = parent
 
-        self.title("Configuration menu")
+        self.mainFrame = tk.Frame(self.master)
+
+        # Handler for closing event
+        self.master.protocol("WM_DELETE_WINDOW", self.teardownWindow)
+        self.master.title("Configuration menu")
 
         # TODO This should probably be initialised to the size of the rpi screen
         # Also, should the window be adjustable by the user?
@@ -32,11 +29,12 @@ class Calibration(tk.Tk):
         self.image = self.image.resize(self.windowSize, Image.ANTIALIAS)
         self.image = ImageTk.PhotoImage(self.image)
 
-        self.canvas = tk.Canvas(self, width=self.windowSize[0], height=self.windowSize[1])
+        self.canvas = tk.Canvas(self.mainFrame, width=self.windowSize[0], height=self.windowSize[1])
         self.canvas.bind("<Button 1>", self.onClick)
         self.canvas.pack()
         self.canvas.create_image(self.windowSize[0]/2, self.windowSize[1]/2, image=self.image)
 
+        self.mainFrame.pack()
         self.spawnWidgets()
 
     def onClick(self, event):
@@ -48,7 +46,7 @@ class Calibration(tk.Tk):
 
     def spawnWidgets(self):
         # Pack solve and scramble buttons into a frame (for placement)
-        self.buttonFrame = tk.Frame(self)
+        self.buttonFrame = tk.Frame(self.mainFrame)
 
         self.cancelButton = tk.Button(self.buttonFrame, text="Cancel", command=self.cancelCloseWindow)
         self.applyButton = tk.Button(self.buttonFrame, text="Apply", command=self.applyCloseWindow)
@@ -78,8 +76,11 @@ class Calibration(tk.Tk):
 
 
     def teardownWindow(self):
-        self.destroy()
         # Tidy up state of parent object which restricts this window being spawned
         # TODO Does not really make sense to reset this here
         self.parentWindow.calibrationWindowSpawned = False
         self.parentWindow.calibrateButton['state'] = 'normal'
+
+        # Destroy calibration window
+        self.master.destroy()
+
