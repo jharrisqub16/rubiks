@@ -57,13 +57,13 @@ class cubr():
             double = randint(0,1)
 
             if double == 0 :
-                scramble.append(selfcolours[operation])
+                scramble.append(self.colours[operation])
             else:
                 scramble.append("2"+self.colours[operation])
 
         scrambleString = ' '.join(scramble)
 
-        self.motorController.sendString(scrambleString)
+        self.mc.sendString(scrambleString)
 
     def calibrateColour(self):
         raise NotImplementedError
