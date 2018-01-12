@@ -7,7 +7,7 @@ from correlation import *
 
 class computerVision():
     def __init__(self):
-        self.cameras = {'BRD':1, 'RUF':0, 'UBL':2}
+        self.cameras = [0, 1, 2]
 
         self.colours = {0:'U',1:'R',2:'F',3:'D',4:'L',5:'B'}
 
@@ -41,25 +41,8 @@ class computerVision():
         # Ensure cube list is reset
         self.cubes = [None]*54
 
-        self.rawBRD = self.getImage(self.cameras['BRD'])
-        self.rawRUF = self.getImage(self.cameras['RUF'])
-        self.rawUBL = self.getImage(self.cameras['UBL'])
-
-        self.imageBRD = self.cropRawImage(self.rawBRD, self.cameras['BRD'])
-        self.imageRUF = self.cropRawImage(self.rawRUF, self.cameras['RUF'])
-        self.imageUBL = self.cropRawImage(self.rawUBL, self.cameras['UBL'])
-
-        self.heightimage, self.widthimage, self.channelsimage = self.imageBRD.shape
-        self.portholeMask = self.createPortholeMask(self.heightimage, self.widthimage,
-        self.channelsimage)
-
-        self.imageBRD= cv2.bitwise_and(self.imageBRD, self.imageBRD, mask = self.portholeMask)
-        self.imageRUF = cv2.bitwise_and(self.imageRUF, self.imageRUF, mask = self.portholeMask)
-        self.imageUBL= cv2.bitwise_and(self.imageUBL, self.imageUBL, mask = self.portholeMask)
-
-
         # Initialise known/assumed centre cubies
-        # TODO This needs to be reworked for the next iterations
+        # TODO This needs to be reworked
         self.cubes[4 ] = "U"
         self.cubes[13] = "R"
         self.cubes[22] = "F"
@@ -67,17 +50,40 @@ class computerVision():
         self.cubes[40] = "L"
         self.cubes[49] = "B"
 
-        self.extractColours(self.imageBRD, self.cameras['BRD'])
-        self.extractColours(self.imageRUF, self.cameras['RUF'])
-        self.extractColours(self.imageUBL, self.cameras['UBL'])
+        # TODO get all the required images from the cameras: This will need reworked soon again anyway
+        # Also, this is the loop that takes all the pictures required to get the state of the cube:
+        #   In later iterations, this loop will rotate the cube to be seen by the camera etc.
+        self.maskedImages = []
+        for cameraNum in self.cameras:
+            # TODO part of this can be moved to a seperate function:
+            # This can be used by the API to provide images for the GUI
+            croppedImage = self.getCroppedImage(cameraNum)
 
+            imageHeight, imageWidth, imageChannels = cropped.shape
+
+            portholeMask = self.createPortholeMask(imageHeight, imageWidth, imageChannels)
+            # TODO Does this make sense?
+            self.maskedImages[cameraNum] = cv2.bitwise_and(self.croppedImages[cameraNum],  mself.croppedImages[cameraNum], mask = portholeMask)
+
+        # This section/loop acts on the gathered images to read the colours from the images
+        for cameraNum in self.cameras:
+            self.extractColours(self.maskedImages[cameraNum], cameraNum)
+
+        # TODO Assume all 'unmatched' cubies are white: White is not explicitly detected
         self.cubes = [ x if x is not None else 'U' for x in self.cubes]
-
 
         return self.cubes
 
 
+    def getCroppedImage(cameraNum):
+        rawImage = self.getImage(cameraNum)
+        croppedImage = self.cropRawImage(rawImage, cameraNum)
+
+        return croppedImage
+
+
     def getImage(self, cameraNumber):
+        # TODO Probably would be better if the camera objects were made at init.
         camera = cv2.VideoCapture(cameraNumber)
 
         for i in xrange(30):
@@ -274,6 +280,6 @@ class computerVision():
         hsvImage = cv2.cvtColor(colouredImage, cv2.COLOR_BGR2HSV)
         thresholdContour = cv2.inRange(hsvImage, lowerThreshold, upperThreshold)
         null, thresholdImage = cv2.threshold(thresholdContour, 127,255,3)
-   
+
         return thresholdImage
 
