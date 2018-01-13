@@ -14,6 +14,8 @@ class Calibration:
         self.master = master
         self.parentWindow = parent
 
+        self.cubr = self.parentWindow.cubr
+
         self.mainFrame = tk.Frame(self.master)
 
         # Handler for closing event
@@ -27,20 +29,44 @@ class Calibration:
         self.windowSize = parentSize
 
         #TODO temporary hack until videostream implementation
-        cwd = os.path.dirname(__file__)
-        imagepath = os.path.join(cwd, 'images', 'todo.png')
+        #cwd = os.path.dirname(__file__)
+        #imagepath = os.path.join(cwd, 'images', 'todo.png')
 
-        self.image = Image.open(imagepath)
-        self.image = self.image.resize(self.windowSize, Image.ANTIALIAS)
-        self.image = ImageTk.PhotoImage(self.image)
+        #self.image = Image.open(imagepath)
+        #self.image = self.image.resize(self.windowSize, Image.ANTIALIAS)
+        #self.image = ImageTk.PhotoImage(self.image)
+        #TODO testing
+        cvImage = self.cv.getImage()
+        img = Image.fromarray(cvImage)
+        self.image = ImageTk.PhotoImage(image=img)
 
         self.canvas = tk.Canvas(self.mainFrame, width=self.windowSize[0], height=self.windowSize[1])
         self.canvas.bind("<Button 1>", self.onClick)
         self.canvas.pack()
-        self.canvas.create_image(self.windowSize[0]/2, self.windowSize[1]/2, image=self.image)
+        self.canvasImage = self.canvas.create_image(self.windowSize[0]/2, self.windowSize[1]/2, image=self.image)
 
         self.mainFrame.pack()
         self.spawnWidgets()
+
+        # TODO Add threading
+        self.updateFrame()
+
+    def updateFrame(self):
+        cvImage = self.cv.getImage()
+
+        if cvImage is not None:
+            img = Image.fromarray(cvImage)
+            cvImage = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
+            img = Image.fromarray(cvImage)
+            self.image = ImageTk.PhotoImage(image=img)
+
+            #lmain.imgtk = imgtk
+            #lmain.configure(image=imgtk)
+            # TODO Testing
+            self.canvas.itemconfig(self.canvasImage, image = self.image)
+
+        self.canvas.after(30, self.updateFrame)
+        print("loop")
 
     def onClick(self, event):
         # TODO This assumes that:
@@ -65,6 +91,9 @@ class Calibration:
         self.showRoiCheckbox = tk.Checkbutton(self.canvas, text="Highlight regions", variable=self.applyRoiHighlighting)
         self.canvas.create_window(0, self.windowSize[1], anchor='sw', window=self.showRoiCheckbox)
 
+        self.nextViewButton = tk.Button(self.canvas, text="Next Camera View", command=self.nextCameraView)
+        self.canvas.create_window(self.windowSize[0], self.windowSize[1]/2, window=self.nextViewButton)
+
 
     def cancelCloseWindow(self):
         # Prompt user, disgregard all changes and destroy window
@@ -88,4 +117,8 @@ class Calibration:
 
         # Destroy calibration window
         self.master.destroy()
+
+
+    def nextCameraView():
+        self.cubr.goToNextViewingPosition()
 

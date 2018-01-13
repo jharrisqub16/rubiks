@@ -65,5 +65,20 @@ class cubr():
 
         self.mc.sendString(scrambleString)
 
+
+    def getImage(self):
+        raise NotImplementedError
+
+        #self.cv.getCroppedImage
+
+    def goToNextViewingPosition(self):
+        # This function causes the next 'viewing position' to be returned by getImage()
+        # TODO
+        # This function is expected to be used in 2 different ways:
+        # - Original solver: Return images from 'next' video capture.
+        # - Further iterations: Rotate cube to next position in the 'reading sequence'
+        raise NotImplementedError
+
+
     def calibrateColour(self):
         raise NotImplementedError

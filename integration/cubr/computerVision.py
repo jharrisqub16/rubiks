@@ -9,6 +9,13 @@ class computerVision():
     def __init__(self):
         self.cameras = [0, 1, 2]
 
+        self.captureObjects = []
+        for cameraNum in self.cameras:
+            temp = cv2.VideoCapture(cameraNum)
+            if not temp.isOpened():
+                raise Exception("Camera Index {0} could not be opened".format(cameraNum))
+            self.captureObjects.append(temp)
+
         self.colours = {0:'U',1:'R',2:'F',3:'D',4:'L',5:'B'}
 
         self.correlation = correlation
@@ -37,6 +44,11 @@ class computerVision():
         self.lower_red2 = np.array([160,80,100], dtype=np.uint8)
         self.upper_red2 = np.array([179,255,255], dtype=np.uint8)
 
+        # Defines which camera's image will be output to the GUI:
+        # This is done to confine of the number of cameras, capture objects etc
+        # inside this computerVision class
+        self.guiDisplayCameraIndex = 0
+
     def getCubeState(self):
         # Ensure cube list is reset
         self.cubeState = [None]*54
@@ -57,13 +69,13 @@ class computerVision():
         for cameraNum in self.cameras:
             # TODO part of this can be moved to a seperate function:
             # This can be used by the API to provide images for the GUI
-            croppedImage = self.getCroppedImage(cameraNum)
+            croppedImage = self.getCvImage(cameraNum)
 
-            imageHeight, imageWidth, imageChannels = cropped.shape
+            imageHeight, imageWidth, imageChannels = croppedImage.shape
 
-            portholeMask = self.createPortholeMask(imageHeight, imageWidth, imageChannels)
+            portholeMask = self.createPortholeMask(imageHeight, imageWidth, imageChannels, cameraNum)
             # TODO Does this make sense?
-            self.maskedImages[cameraNum] = cv2.bitwise_and(self.croppedImages[cameraNum],  mself.croppedImages[cameraNum], mask = portholeMask)
+            self.maskedImages[cameraNum] = cv2.bitwise_and(self.croppedImages[cameraNum], self.croppedImages[cameraNum], mask = portholeMask)
 
         # This section/loop acts on the gathered images to read the colours from the images
         for cameraNum in self.cameras:
@@ -75,22 +87,39 @@ class computerVision():
         return self.cubeState
 
 
-    def getCroppedImage(cameraNum):
-        rawImage = self.getImage(cameraNum)
+    def getCvImage(self, cameraNum):
+        rawImage = self.captureImage(cameraNum)
         croppedImage = self.cropRawImage(rawImage, cameraNum)
 
         return croppedImage
 
 
-    def getImage(self, cameraNumber):
+    def getGuiImage(self):
+        # - Get image from relevant camera
+        # - Convert from BGR to RGB
+        # - Apply filters and debug info as required
+
+        frame = self.getCvImage(self.cameras[self.guiDisplayCameraIndex])
+
+        # Convert from BGR (opencv) to RGB representation
+        displayImage = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
+        # TODO apply debug info to images
+
+        return displayImage
+
+
+    def captureImage(self, cameraNumber):
         # TODO Probably would be better if the camera objects were made at init.
-        camera = cv2.VideoCapture(cameraNumber)
+        #camera = cv2.VideoCapture(cameraNumber)
 
+        tempCamera = self.captureObjects(cameraNumber)
+
+        #TODO This is waiting for cameras to 'normalise': Is this required?
         for i in xrange(30):
-            temp = camera.read()
-        null, cameraCapture = camera.read()
+            temp = tempCamera.read()
 
-        del(camera)
+        null, cameraCapture = tempCamera.read()
+
         return cameraCapture
 
 
@@ -107,11 +136,18 @@ class computerVision():
         return croppedImage
 
 
-    def createPortholeMask(self, height, width, channels):
+    def nextGuiImageSource(self):
+        if self.guiDisplayCameraIndex == (len(self.captureObjects) -1):
+            # Wrap to start of camera list
+            self.guiDisplayCameraIndex = 0
+
+        else:
+            self.guiDisplayCameraIndex += 1
+
+
+    def createPortholeMask(self, height, width, channels, cameraNum):
         # TODO should this produce a different mask per camera
         cubiesMaskTemp = np.zeros((height, width, channels), np.uint8)
-        #TODO 
-        cameraNum = 0
 
         for coordinates in correlation[cameraNum,]:
             if (coordinates != 0):
