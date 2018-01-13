@@ -56,12 +56,8 @@ class Calibration:
 
         if cvImage is not None:
             img = Image.fromarray(cvImage)
-            cvImage = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
-            img = Image.fromarray(cvImage)
             self.image = ImageTk.PhotoImage(image=img)
 
-            #lmain.imgtk = imgtk
-            #lmain.configure(image=imgtk)
             # TODO Testing
             self.canvas.itemconfig(self.canvasImage, image = self.image)
 
