@@ -1,12 +1,10 @@
 import sys
 import os
+import threading
 import tkinter as tk
 from tkinter import messagebox as msg
 from PIL import Image
 from PIL import ImageTk
-
-def temp():
-    print("Testing callback")
 
 
 class Calibration:
@@ -22,21 +20,13 @@ class Calibration:
         self.master.protocol("WM_DELETE_WINDOW", self.teardownWindow)
         self.master.title("Configuration menu")
 
-        # TODO This should probably be initialised to the size of the rpi screen
-        # Also, should the window be adjustable by the user?
-        #self.size_x = 500
-        #self.size_y = 500
-        self.windowSize = parentSize
+        #self.windowSize = parentSize
+        # TODO Size according to the image and account for scaling
+        # TODO How can it be assured that image is the full size of the canvas
+        #self.windowSize = (480, 360)
+        self.windowSize = (320, 240)
 
-        #TODO temporary hack until videostream implementation
-        #cwd = os.path.dirname(__file__)
-        #imagepath = os.path.join(cwd, 'images', 'todo.png')
-
-        #self.image = Image.open(imagepath)
-        #self.image = self.image.resize(self.windowSize, Image.ANTIALIAS)
-        #self.image = ImageTk.PhotoImage(self.image)
-        #TODO testing
-        cvImage = self.cv.getImage()
+        cvImage = self.cubr.getImage()
         img = Image.fromarray(cvImage)
         self.image = ImageTk.PhotoImage(image=img)
 
@@ -48,21 +38,27 @@ class Calibration:
         self.mainFrame.pack()
         self.spawnWidgets()
 
-        # TODO Add threading
+        # TODO threading
         self.updateFrame()
+        #stopEvent = threading.Event()
+        #thread = threading.Thread(target=self.updateFrame, args=())
+        #thread.start()
+
 
     def updateFrame(self):
-        cvImage = self.cv.getImage()
+        cvImage = self.cubr.getImage()
 
         if cvImage is not None:
+            # Convert image to TkInter format
             img = Image.fromarray(cvImage)
             self.image = ImageTk.PhotoImage(image=img)
 
-            # TODO Testing
+            # Update image on canvas
             self.canvas.itemconfig(self.canvasImage, image = self.image)
 
+        # Configure next update call
         self.canvas.after(30, self.updateFrame)
-        print("loop")
+
 
     def onClick(self, event):
         # TODO This assumes that:
@@ -84,11 +80,11 @@ class Calibration:
 
         # TODO this should be used later for the calibration video stream
         self.applyRoiHighlighting = tk.BooleanVar()
-        self.showRoiCheckbox = tk.Checkbutton(self.canvas, text="Highlight regions", variable=self.applyRoiHighlighting)
+        self.showRoiCheckbox = tk.Checkbutton(self.mainFrame, text="Highlight regions", variable=self.applyRoiHighlighting)
         self.canvas.create_window(0, self.windowSize[1], anchor='sw', window=self.showRoiCheckbox)
 
-        self.nextViewButton = tk.Button(self.canvas, text="Next Camera View", command=self.nextCameraView)
-        self.canvas.create_window(self.windowSize[0], self.windowSize[1]/2, window=self.nextViewButton)
+        self.nextViewButton = tk.Button(self.mainFrame, text="Next Camera View", command=self.nextCameraView)
+        self.canvas.create_window(self.windowSize[0]/2, self.windowSize[1], anchor='s', window=self.nextViewButton)
 
 
     def cancelCloseWindow(self):
@@ -115,6 +111,6 @@ class Calibration:
         self.master.destroy()
 
 
-    def nextCameraView():
+    def nextCameraView(self):
         self.cubr.goToNextViewingPosition()
 

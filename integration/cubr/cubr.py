@@ -67,9 +67,9 @@ class cubr():
 
 
     def getImage(self):
-        raise NotImplementedError
+        guiImage = self.cv.getGuiImage()
 
-        #self.cv.getCroppedImage
+        return guiImage
 
     def goToNextViewingPosition(self):
         # This function causes the next 'viewing position' to be returned by getImage()
@@ -77,7 +77,9 @@ class cubr():
         # This function is expected to be used in 2 different ways:
         # - Original solver: Return images from 'next' video capture.
         # - Further iterations: Rotate cube to next position in the 'reading sequence'
-        raise NotImplementedError
+        self.cv.nextGuiImageSource()
+
+        return
 
 
     def calibrateColour(self):

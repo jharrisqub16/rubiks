@@ -11,10 +11,16 @@ class computerVision():
 
         self.captureObjects = []
         for cameraNum in self.cameras:
-            temp = cv2.VideoCapture(cameraNum)
-            if not temp.isOpened():
+            tempCamera = cv2.VideoCapture(cameraNum)
+
+            # Set camera resolution to 320x240
+            tempCamera.set(3, 320)
+            tempCamera.set(4, 240)
+
+            if not tempCamera.isOpened():
                 raise Exception("Camera Index {0} could not be opened".format(cameraNum))
-            self.captureObjects.append(temp)
+
+            self.captureObjects.append(tempCamera)
 
         self.colours = {0:'U',1:'R',2:'F',3:'D',4:'L',5:'B'}
 
@@ -75,7 +81,8 @@ class computerVision():
 
             portholeMask = self.createPortholeMask(imageHeight, imageWidth, imageChannels, cameraNum)
             # TODO Does this make sense?
-            self.maskedImages[cameraNum] = cv2.bitwise_and(self.croppedImages[cameraNum], self.croppedImages[cameraNum], mask = portholeMask)
+            #self.maskedImages[cameraNum] = cv2.bitwise_and(self.croppedImages[cameraNum], self.croppedImages[cameraNum], mask = portholeMask)
+            self.maskedImages.append(cv2.bitwise_and(croppedImage, croppedImage, mask = portholeMask))
 
         # This section/loop acts on the gathered images to read the colours from the images
         for cameraNum in self.cameras:
@@ -89,7 +96,8 @@ class computerVision():
 
     def getCvImage(self, cameraNum):
         rawImage = self.captureImage(cameraNum)
-        croppedImage = self.cropRawImage(rawImage, cameraNum)
+        # TODO HACK
+        croppedImage = rawImage#self.cropRawImage(rawImage, cameraNum)
 
         return croppedImage
 
@@ -99,25 +107,40 @@ class computerVision():
         # - Convert from BGR to RGB
         # - Apply filters and debug info as required
 
-        frame = self.getCvImage(self.cameras[self.guiDisplayCameraIndex])
+        frame = self.getCvImage(self.guiDisplayCameraIndex)
 
+        frame = self.drawGuiDebug(frame)
         # Convert from BGR (opencv) to RGB representation
         displayImage = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
-        # TODO apply debug info to images
+        # TODO AppAly colour constancy algorithm to the image if that checkout is ticked.
+        # TODO apply debug info to images OPTIONALLY: If the checkbox is ticked.
+        #displayImage = self.drawGuiDebug(displayImage)
+        #displayImage = cv2.resize(displayImage, (640,480))
+        #displayImage = cv2.resize(displayImage, (480,360))
 
         return displayImage
+
+    def drawGuiDebug(self, image):
+
+        for coordinates in self.correlation[self.cameras[self.guiDisplayCameraIndex]]:
+            if (coordinates != 0):
+                # TODO avoid NULL coordinate entries: Also, check list type?
+                # Draw Region of Interest Circle on the GUI image
+                # TODO Circle colour should be determined by what colour the CV thinks it is.
+                cv2.circle(image, coordinates, self.offset, (0, 0, 255) , 2)
+
+        return image
 
 
     def captureImage(self, cameraNumber):
         # TODO Probably would be better if the camera objects were made at init.
         #camera = cv2.VideoCapture(cameraNumber)
 
-        tempCamera = self.captureObjects(cameraNumber)
+        tempCamera = self.captureObjects[cameraNumber]
 
         #TODO This is waiting for cameras to 'normalise': Is this required?
-        for i in xrange(30):
-            temp = tempCamera.read()
-
+        #for i in xrange(30):
+        #    temp = tempCamera.read()
         null, cameraCapture = tempCamera.read()
 
         return cameraCapture
@@ -152,7 +175,6 @@ class computerVision():
         for coordinates in correlation[cameraNum,]:
             if (coordinates != 0):
                 # TODO avoid NULL coordinate entries: Also, check list type?
-                print(coordinates)
                 cv2.circle(cubiesMaskTemp, coordinates, self.offset, (255,255,255), -1)
 
         ## Create proper mask
