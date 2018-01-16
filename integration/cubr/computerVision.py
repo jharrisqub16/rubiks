@@ -138,9 +138,9 @@ class computerVision():
 
         tempCamera = self.captureObjects[cameraNumber]
 
-        #TODO This is waiting for cameras to 'normalise': Is this required?
-        #for i in xrange(30):
-        #    temp = tempCamera.read()
+        # Taking at least 1 'dummy' capture is often required to 'normalise' the camera
+        for i in xrange(1):
+            temp, dumpCapture = tempCamera.read()
         null, cameraCapture = tempCamera.read()
 
         return cameraCapture
