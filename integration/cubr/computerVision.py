@@ -229,13 +229,10 @@ class computerVision():
             print("Index in cubes list is not valid")
             error = True
 
-        #if (cubes[listPos]):
-        #    print("Cubelist is already populated in position")
-
-        # TODO this check is not valid when the list is unpopulated (to start)
-        #if (cubes[listPos] != colours[colour] ):
-        #    print("Colour insertion disagrees with existing")
-        #    error = True
+        # TODO is this check correct?
+        if (self.cubeState[listPos] and self.cubeState[listPos] != self.colours[colour] ):
+            print("Colour insertion disagrees with existing")
+            error = True
 
         if (error == True):
             return
