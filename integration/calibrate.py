@@ -39,10 +39,10 @@ class Calibration:
         self.spawnWidgets()
 
         # TODO threading
-        self.updateFrame()
-        #stopEvent = threading.Event()
-        #thread = threading.Thread(target=self.updateFrame, args=())
-        #thread.start()
+        #self.updateFrame()
+        stopEvent = threading.Event()
+        thread = threading.Thread(target=self.updateFrame, args=())
+        thread.start()
 
 
     def updateFrame(self):
@@ -79,12 +79,29 @@ class Calibration:
         self.canvas.create_window(self.windowSize[0], self.windowSize[1], anchor='se', window=self.buttonFrame)
 
         # TODO this should be used later for the calibration video stream
-        self.applyRoiHighlighting = tk.BooleanVar()
-        self.showRoiCheckbox = tk.Checkbutton(self.mainFrame, text="Highlight regions", variable=self.applyRoiHighlighting)
-        self.canvas.create_window(0, self.windowSize[1], anchor='sw', window=self.showRoiCheckbox)
+        self.checkboxFrame = tk.Frame(self.mainFrame)
+
+        self.highlightRoiBool = tk.BooleanVar()
+        self.highlightRoiCheckbox = tk.Checkbutton(self.checkboxFrame, text="Highlight regions", command=self.highlightRoiHandler, variable=self.highlightRoiBool)
+        self.highlightRoiCheckbox.grid(row=0, column=0, sticky=tk.W)
+
+        self.highlightContoursBool = tk.BooleanVar()
+        self.highlightContoursCheckbox = tk.Checkbutton(self.checkboxFrame, text="Highlight contours", command=self.highlightContoursHandler, variable=self.highlightContoursBool)
+        self.highlightContoursCheckbox.grid(row=1, column=0, sticky=tk.W)
+
+        self.applyColourConstancyBool = tk.BooleanVar()
+        self.applyColourConstancyCheckbox = tk.Checkbutton(self.checkboxFrame, text="Apply Colour Constancy", command=self.applyColourConstancyHandler, variable=self.applyColourConstancyBool)
+        self.applyColourConstancyCheckbox.grid(row=2, column=0, sticky=tk.W)
+
+        self.canvas.create_window(0, self.windowSize[1], anchor='sw', window=self.checkboxFrame)
+
+        # TODO Add buttons to apply largest contour highlighting (instead of showing ROIs)
+        # TODO Add button to apply Colour constancy algorithm to images
 
         self.nextViewButton = tk.Button(self.mainFrame, text="Next Camera View", command=self.nextCameraView)
-        self.canvas.create_window(self.windowSize[0]/2, self.windowSize[1], anchor='s', window=self.nextViewButton)
+        #self.canvas.create_window(self.windowSize[0]/2, self.windowSize[1], anchor='s', window=self.nextViewButton)
+        self.canvas.create_window(0, 0, anchor='nw', window=self.nextViewButton)
+
 
 
     def cancelCloseWindow(self):
@@ -114,3 +131,21 @@ class Calibration:
     def nextCameraView(self):
         self.cubr.goToNextViewingPosition()
 
+
+    def highlightRoiHandler(self):
+        # get tkinter bool state into temporary 'normal' bool:
+        tempBool = self.highlightRoiBool.get()
+        print("Roi Highlighting state toggled to {0}.".format(tempBool))
+
+        # call API function to update
+        self.cubr.setRoiHighlighting(tempBool)
+
+
+    def highlightContoursHandler(self):
+        tempBool = self.highlightContoursBool.get()
+        print("Contour Highlighting state toggled to {0}.".format(tempBool))
+
+
+    def applyColourConstancyHandler(self):
+        tempBool = self.applyColourConstancyBool.get()
+        print("Colour Constancy state toggled to {0}.".format(tempBool))

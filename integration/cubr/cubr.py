@@ -82,5 +82,17 @@ class cubr():
         return
 
 
+    def setRoiHighlighting(self, stateBool):
+        self.cv.setRoiHighlighting(stateBool)
+
+
+    def setContourHighlighting(self, stateBool):
+        self.cv.setContourHighlighting(stateBool)
+
+
+    def setColourConstancy(self, stateBool):
+        self.cv.setColourConstancy(stateBool)
+
+
     def calibrateColour(self):
         raise NotImplementedError

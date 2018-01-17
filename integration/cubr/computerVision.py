@@ -54,6 +54,9 @@ class computerVision():
         # This is done to confine of the number of cameras, capture objects etc
         # inside this computerVision class
         self.guiDisplayCameraIndex = 0
+        self.highlightRoiBool = False
+        self.highlightContoursBool = False
+        self.applyColourConstancyBool = False
 
     def getCubeState(self):
         # Ensure cube list is reset
@@ -123,7 +126,7 @@ class computerVision():
     def drawGuiDebug(self, image):
 
         for coordinates in self.correlation[self.cameras[self.guiDisplayCameraIndex]]:
-            if (coordinates != 0):
+            if (coordinates != 0 and self.highlightRoiBool):
                 # TODO avoid NULL coordinate entries: Also, check list type?
                 # Draw Region of Interest Circle on the GUI image
                 # TODO Circle colour should be determined by what colour the CV thinks it is.
@@ -141,6 +144,7 @@ class computerVision():
         # Taking at least 1 'dummy' capture is often required to 'normalise' the camera
         for i in xrange(1):
             temp, dumpCapture = tempCamera.read()
+            #cv2.imwrite("outputImages/rawcamera{0}{1}.jpg".format(cameraNumber, i), dumpCapture)
         null, cameraCapture = tempCamera.read()
 
         return cameraCapture
@@ -166,6 +170,18 @@ class computerVision():
 
         else:
             self.guiDisplayCameraIndex += 1
+
+
+    def setRoiHighlighting(self, stateBool):
+        self.highlightRoiBool = stateBool
+
+
+    def setContourHighlighting(self, stateBool):
+        self.highlightContoursBool = stateBool
+
+
+    def setColourConstancy(self, stateBool):
+        self.applyColourConstancyBool = stateBool
 
 
     def createPortholeMask(self, height, width, channels, cameraNum):
