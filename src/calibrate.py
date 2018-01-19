@@ -145,7 +145,12 @@ class Calibration:
         tempBool = self.highlightContoursBool.get()
         print("Contour Highlighting state toggled to {0}.".format(tempBool))
 
+        # Call API update function
+        self.cubr.setContourHighlighting(tempBool)
 
     def applyColourConstancyHandler(self):
         tempBool = self.applyColourConstancyBool.get()
         print("Colour Constancy state toggled to {0}.".format(tempBool))
+
+        # Call API update function
+        self.cubr.setColourConstancy(tempBool)
