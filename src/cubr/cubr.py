@@ -19,6 +19,8 @@ from solver import cubeSolver
 
 from random import randint
 
+import time
+
 class cubr():
     def __init__(self):
 
@@ -37,12 +39,15 @@ class cubr():
         # update required.
 
     def solveCube(self):
+        start = time.time()
         # TODO Also add exception handling
         cubeState = self.cv.getCubeState()
         #TODO check if cubeState is already solved:
         solution = self.solver.solve(cubeState)
         #TODO must be valid string solution
         self.mc.sendString(solution)
+        end = time.time()
+        print("Elapsed time: {0}".format(end-start))
 
 
     def scramble(self):
