@@ -44,6 +44,11 @@ class Calibration:
         thread = threading.Thread(target=self.updateFrame, args=())
         thread.start()
 
+        # Always start calibration window with visual debug disabled:
+        # This also prevents the GUI and cv getting out of sync
+        self.cubr.setRoiHighlighting(False)
+        self.cubr.setContourHighlighting(False)
+        self.cubr.setColourConstancy(False)
 
     def updateFrame(self):
         cvImage = self.cubr.getImage()
