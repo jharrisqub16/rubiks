@@ -72,6 +72,7 @@ class Calibration:
         print(event.x, event.y)
         # TODO no colour calibration is active
         # if we are currently handling roi shifts:
+        # self.cubr.calibrateColourHandler(activeColourSelection, (event.x, event.y))
         self.cubr.roiShiftHandler((event.x, event.y))
 
 

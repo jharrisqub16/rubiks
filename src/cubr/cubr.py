@@ -105,5 +105,5 @@ class cubr():
         self.cv.roiShiftHandler(coords)
 
 
-    def calibrateColour(self):
-        raise NotImplementedError
+    def calibrateColourHandler(self, colour, coords):
+        self.cv.calibrateColourHandler(colour, coords)

@@ -111,9 +111,11 @@ class computerVision():
     def getMaskedImages(self):
         # Get masked images from all cameras, and populate these into list (for later use)
         self.maskedImages = []
+        self.rawImages = []
         for cameraNum in range(self.noOfCameras):
             # Get image from camera
             rawImage = self.getCvImage(cameraNum)
+            self.rawImages.append(rawImage)
 
             # Get required sizes and create 'porthole' RoI mask
             imageHeight, imageWidth, imageChannels = rawImage.shape
@@ -231,6 +233,14 @@ class computerVision():
 
         # Update correlation of clicked region to new coordinate values
         correlation[self.cameras[self.guiDisplayCameraIndex], positionCount] = coords
+
+
+    def calibrateColourHandler(self, colour, coords):
+        # TODO needs more work after the colour recognition and values are reworked.
+        # Handler function to change expected colour values based on where the user has clicked on the 
+        # currently displayed image.
+        print("Recalibrated to coords {0} on camera{1}".format(self.cameras[self.guiDisplayCameraIndex], coords)
+
 
 ################################################################################
 ## Computer vision processing and helper functions
