@@ -43,11 +43,13 @@ class cubr():
         # TODO Also add exception handling
         cubeState = self.cv.getCubeState()
         #TODO check if cubeState is already solved:
+        read = time.time()
         solution = self.solver.solve(cubeState)
         #TODO must be valid string solution
         self.mc.sendString(solution)
         end = time.time()
         print("Elapsed time: {0}".format(end-start))
+        print("Cube read in: {0}".format(read-start))
 
 
     def scramble(self):
