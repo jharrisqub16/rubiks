@@ -57,7 +57,7 @@ class Calibration:
             self.canvas.itemconfig(self.canvasImage, image = self.image)
 
         # Configure next update call
-        self.canvas.after(30, self.updateFrame)
+        self.canvas.after(50, self.updateFrame)
 
 
     def onClick(self, event):
