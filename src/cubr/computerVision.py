@@ -7,8 +7,15 @@ from correlation import *
 
 class computerVision():
     def __init__(self):
+        # Note this list is used to handle all variations in camera order.
+        # In most instances, the index of this array is used, not the sequence
+        # in the list itself.
+        # ie. no matter the order of cameras in this list, the cameras are
+        # iterated through in element order.
         self.cameras = [0, 1, 2]
+        self.noOfCameras = len(self.cameras)
 
+        # NB The capture objects are in the same index as self.cameras
         self.captureObjects = []
         for cameraNum in self.cameras:
             tempCamera = cv2.VideoCapture(cameraNum)
@@ -60,22 +67,31 @@ class computerVision():
         self.highlightContoursBool = False
         self.applyColourConstancyBool = False
 
+
+################################################################################
+## Main 'top level' functions
+################################################################################
+
     def getCubeState(self):
         # Ensure cube lists are reset
         self.cubeState = [None]*54
         self.contourList = [None]*54
 
-#   1) Get contour list: List of largest contour in each ROI
-#       Plus other information: - Area (used for insertion)
-#                                 Colour
-#
-#   2) Work out (or assume) relationship between colours and faces
-#
-#   3) Translate contour/colours list into colour notation
-#       produces cubeState list
+        #   1) Get contour list: List of largest contour in each ROI
+        #       Plus other information: - Area (used for insertion)
+        #                                 Colour
+        #
+        #   2) Work out (or assume) relationship between colours and faces
+        #
+        #   3) Translate contour/colours list into colour notation
+        #       produces cubeState list
+        self.getMaskedImages()
 
-        # Initialise known/assumed centre cubies
-        # TODO This needs to be reworked
+        # This section/loop acts on the gathered images to read the colours from the images
+        for cameraNum in range(self.noOfCameras):
+            self.extractColours(self.maskedImages[cameraNum], cameraNum)
+
+        # TODO correlate cube centres
         self.cubeState[4 ] = "U"
         self.cubeState[13] = "R"
         self.cubeState[22] = "F"
@@ -83,11 +99,19 @@ class computerVision():
         self.cubeState[40] = "L"
         self.cubeState[49] = "B"
 
-        # TODO get all the required images from the cameras: This will need reworked soon again anyway
-        # Also, this is the loop that takes all the pictures required to get the state of the cube:
-        #   In later iterations, this loop will rotate the cube to be seen by the camera etc.
+        # TODO Assume all 'unmatched' cubies are white: White is not explicitly detected
+        self.cubeState = [ x if x is not None else 'U' for x in self.cubeState]
+
+        return self.cubeState
+
+################################################################################
+## Camera interface functions
+################################################################################
+
+    def getMaskedImages(self):
+        # Get masked images from all cameras, and populate these into list (for later use)
         self.maskedImages = []
-        for cameraNum in self.cameras:
+        for cameraNum in range(self.noOfCameras):
             # Get image from camera
             rawImage = self.getCvImage(cameraNum)
 
@@ -99,17 +123,8 @@ class computerVision():
             self.maskedImages.append(cv2.bitwise_and(rawImage, rawImage, mask = portholeMask))
 
         # Output debug images
-        for cameraNum in self.cameras:
+        for cameraNum in range(self.noOfCameras):
             cv2.imwrite("outputImages/mask{0}.jpg".format(cameraNum), self.maskedImages[cameraNum])
-
-        # This section/loop acts on the gathered images to read the colours from the images
-        for cameraNum in self.cameras:
-            self.extractColours(self.maskedImages[cameraNum], cameraNum)
-
-        # TODO Assume all 'unmatched' cubies are white: White is not explicitly detected
-        self.cubeState = [ x if x is not None else 'U' for x in self.cubeState]
-
-        return self.cubeState
 
 
     def getCvImage(self, cameraNum):
@@ -137,8 +152,12 @@ class computerVision():
         return displayImage
 
     def drawGuiDebug(self, image):
+        # Helper function for returning the GUI image:
+        # Optionally draws the various visual debug onto the returned image
 
         if self.highlightRoiBool:
+            # self.cameras is used to obtain ACTUAL camera number, not the index
+            # Hence, the index in correlation also refers to the actual camera number
             for coordinates in self.correlation[self.cameras[self.guiDisplayCameraIndex]]:
                 if (coordinates != 0):
                     # TODO avoid NULL coordinate entries: Also, check list type?
@@ -160,9 +179,7 @@ class computerVision():
 
 
     def captureImage(self, cameraNumber):
-        # TODO Probably would be better if the camera objects were made at init.
-        #camera = cv2.VideoCapture(cameraNumber)
-
+        # Helper function for retrieving all images from cameras
         tempCamera = self.captureObjects[cameraNumber]
 
         # Taking at least 1 'dummy' capture is often required to 'normalise' the camera
@@ -173,19 +190,9 @@ class computerVision():
 
         return cameraCapture
 
-
-    def cropRawImage(self, rawImage, cameraNumber):
-        #TODO This needs to be reworked: independently configurable from the
-        # calibration window
-        if cameraNumber == 0:
-            croppedImage = rawImage[55:455, 120:505]
-        elif cameraNumber == 1:
-            croppedImage = rawImage[50:450, 135:520]
-        else:
-            croppedImage = rawImage[45:445, 135:520]
-
-        return croppedImage
-
+################################################################################
+## Misc API handler functions
+################################################################################
 
     def nextGuiImageSource(self):
         if self.guiDisplayCameraIndex == (len(self.captureObjects) -1):
@@ -207,6 +214,10 @@ class computerVision():
     def setColourConstancy(self, stateBool):
         self.applyColourConstancyBool = stateBool
 
+
+################################################################################
+## Computer vision processing and helper functions
+################################################################################
 
     def createPortholeMask(self, height, width, channels, cameraNum):
         # Create blank 'white' mask
