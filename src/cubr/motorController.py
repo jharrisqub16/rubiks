@@ -1,13 +1,10 @@
 import serial
 
 class motorController:
-# TODO For now this is just a replacement of existing functionality,
-#   consolidated into one class.
-
-# However, in the future, this could be made smarter eg:
+# TODO: in the future, this could be made smarter eg:
 #   - configurable speed/acceleration of the arduino motor controller.
-#   - Ack from the arduino to confirm move completion. This can be used for
-#       timing the solution (as well as smarted operation and feedback to the GUI)
+#   - Ack from the arduino to confirm move completion. This would be used to
+#       allow the GUI to be smarter (update the current state automatically, etc)
 
     def __init__(self):
         # TODO This should probably be configurable from the GUI/settings menu
