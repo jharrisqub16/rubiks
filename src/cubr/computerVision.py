@@ -215,6 +215,23 @@ class computerVision():
         self.applyColourConstancyBool = stateBool
 
 
+    def roiShiftHandler(self, coords):
+        print("Clicked on camera {0}, coords{1}".format(self.cameras[self.guiDisplayCameraIndex], coords))
+
+        for coordinates in correlation[self.cameras[self.guiDisplayCameraIndex], ]:
+            # TODO is this test correct?
+            if (coordinates != 0 and coordinates is not None):
+                if (math.fabs(coordinates[0] - contourX) < self.offset and
+                        math.fabs(coordinates[1] - contourY) < self.offset):
+                    # We have found the region that was clicked in: Break from loop
+                    break
+            positionCount += 1
+
+            print("Clicked in region index {0}".format(positionCount))
+
+        # Update correlation of clicked region to new coordinate values
+        correlation[self.cameras[self.guiDisplayCameraIndex], positionCount] = coords
+
 ################################################################################
 ## Computer vision processing and helper functions
 ################################################################################

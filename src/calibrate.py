@@ -31,7 +31,7 @@ class Calibration:
         self.image = ImageTk.PhotoImage(image=img)
 
         self.canvas = tk.Canvas(self.mainFrame, width=self.windowSize[0], height=self.windowSize[1])
-        self.canvas.bind("<Button 1>", self.onClick)
+        self.canvas.bind("<Button 1>", self.canvasClickEventHandler)
         self.canvas.pack()
         self.canvasImage = self.canvas.create_image(self.windowSize[0]/2, self.windowSize[1]/2, image=self.image)
 
@@ -65,11 +65,14 @@ class Calibration:
         self.canvas.after(50, self.updateFrame)
 
 
-    def onClick(self, event):
+    def canvasClickEventHandler(self, event):
         # TODO This assumes that:
         #   - The image is presented as the full size of the canvas/window
         #   - The image is not scaled
         print(event.x, event.y)
+        # TODO no colour calibration is active
+        # if we are currently handling roi shifts:
+        self.cubr.roiShiftHandler((event.x, event.y))
 
 
     def spawnWidgets(self):

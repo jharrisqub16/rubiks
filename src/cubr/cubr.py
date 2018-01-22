@@ -101,5 +101,9 @@ class cubr():
         self.cv.setColourConstancy(stateBool)
 
 
+    def roiShiftHandler(self, coords):
+        self.cv.roiShiftHandler(coords)
+
+
     def calibrateColour(self):
         raise NotImplementedError
