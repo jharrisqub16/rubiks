@@ -28,6 +28,8 @@ class computerVision():
 
         self.cubeState = [None]*54
 
+        self.contourList = [None]*54
+
         # Some CV reference values
         self.minimumContourArea = 20
         self.offset = 11
@@ -59,8 +61,9 @@ class computerVision():
         self.applyColourConstancyBool = False
 
     def getCubeState(self):
-        # Ensure cube list is reset
+        # Ensure cube lists are reset
         self.cubeState = [None]*54
+        self.contourList = [None]*54
 
         # Initialise known/assumed centre cubies
         # TODO This needs to be reworked
@@ -86,6 +89,11 @@ class computerVision():
             # TODO Does this make sense?
             #self.maskedImages[cameraNum] = cv2.bitwise_and(self.croppedImages[cameraNum], self.croppedImages[cameraNum], mask = portholeMask)
             self.maskedImages.append(cv2.bitwise_and(croppedImage, croppedImage, mask = portholeMask))
+
+
+        # Output debug images
+        for cameraNum in self.cameras:
+            cv2.imwrite("outputImages/mask{0}.jpg".format(cameraNum), self.maskedImages[cameraNum])
 
         # This section/loop acts on the gathered images to read the colours from the images
         for cameraNum in self.cameras:
@@ -125,12 +133,23 @@ class computerVision():
 
     def drawGuiDebug(self, image):
 
-        for coordinates in self.correlation[self.cameras[self.guiDisplayCameraIndex]]:
-            if (coordinates != 0 and self.highlightRoiBool):
-                # TODO avoid NULL coordinate entries: Also, check list type?
-                # Draw Region of Interest Circle on the GUI image
-                # TODO Circle colour should be determined by what colour the CV thinks it is.
-                cv2.circle(image, coordinates, self.offset, (0, 0, 255) , 2)
+        if self.highlightRoiBool:
+            for coordinates in self.correlation[self.cameras[self.guiDisplayCameraIndex]]:
+                if (coordinates != 0):
+                    # TODO avoid NULL coordinate entries: Also, check list type?
+                    # Draw Region of Interest Circle on the GUI image
+                    # TODO Circle colour should be determined by what colour the CV thinks it is.
+                    cv2.circle(image, coordinates, self.offset, (0, 0, 0) , 2)
+
+        if self.highlightContoursBool:
+            if self.cubeState == [None]*len(self.cubeState):
+                # cubestate has not yet been retrieved
+                print("Forced to initialise cubeState")
+                null = self.getCubeState()
+
+            for contour in self.contourList:
+                if (contour is not None and contour[1] == self.guiDisplayCameraIndex):
+                    cv2.drawContours(image, contour[0], -1, contour[2], 2)
 
         return image
 
@@ -247,7 +266,8 @@ class computerVision():
 
         yellowContours, hierarchy_y = cv2.findContours(yellowHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
         # TODO Is this correct?
-        cnts = sorted(yellowContours, key = cv2.contourArea, reverse = True)[:25]
+        #cnts = sorted(yellowContours, key = cv2.contourArea, reverse = True)[:25]
+        cnts = sorted(yellowContours, key = cv2.contourArea)[:25]
 
         # TODO Is this correct?
         for c in cnts:
@@ -263,13 +283,15 @@ class computerVision():
 
             listPosition = self.correlateCubePosition(cameraNum, cX, cY)
             if (listPosition is not None):
+                self.contourList[listPosition] = [c, cameraNum, (0,255,255)]
                 self.listifyCubePosition(listPosition, 3)
 
     #BLUE cube detection
         blueHSVMask = self.getColourMask(image ,self.lower_blue, self.upper_blue)
 
         blueContours, hierarchy_b = cv2.findContours(blueHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-        cnts = sorted(blueContours, key = cv2.contourArea, reverse = True)[:25]
+        #cnts = sorted(blueContours, key = cv2.contourArea, reverse = True)[:25]
+        cnts = sorted(blueContours, key = cv2.contourArea)[:25]
 
         for c in cnts:
             M = cv2.moments(c)
@@ -283,13 +305,15 @@ class computerVision():
 
             listPosition = self.correlateCubePosition(cameraNum, cX, cY)
             if (listPosition is not None):
+                self.contourList[listPosition] = [c, cameraNum, (255,0,0)]
                 self.listifyCubePosition(listPosition, 1)
 
     #ORANGE cube detection
         orangeHSVMask = self.getColourMask(image, self.lower_orange, self.upper_orange)
         orangeContours, hierarchy_o = cv2.findContours(orangeHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
-        cnts = sorted(orangeContours, key = cv2.contourArea, reverse = True)[:25]
+        #cnts = sorted(orangeContours, key = cv2.contourArea, reverse = True)[:25]
+        cnts = sorted(orangeContours, key = cv2.contourArea)[:25]
 
         for c in cnts:
             M = cv2.moments(c)
@@ -303,13 +327,15 @@ class computerVision():
 
             listPosition = self.correlateCubePosition(cameraNum, cX, cY)
             if (listPosition is not None):
+                self.contourList[listPosition] = [c, cameraNum, (0,160,255)]
                 self.listifyCubePosition(listPosition, 5)
 
     #GREEN cube detection
         greenHSVMask = self.getColourMask(image, self.lower_green, self.upper_green)
         greenContours, hierarchy_g = cv2.findContours(greenHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
-        cnts = sorted(greenContours, key = cv2.contourArea, reverse = True)[:25]
+        #cnts = sorted(greenContours, key = cv2.contourArea, reverse = True)[:25]
+        cnts = sorted(greenContours, key = cv2.contourArea)[:25]
 
         for c in cnts:
             M = cv2.moments(c)
@@ -323,6 +349,7 @@ class computerVision():
 
             listPosition = self.correlateCubePosition(cameraNum, cX, cY)
             if (listPosition is not None):
+                self.contourList[listPosition] = [c, cameraNum, (0,255,0)]
                 self.listifyCubePosition(listPosition, 4)
 
     #RED cube detection
@@ -331,7 +358,8 @@ class computerVision():
         redHSVMask = cv2.bitwise_or(redHSVMask1, redHSVMask2)
 
         redContours , hierarchy_r = cv2.findContours(redHSVMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
-        cnts = sorted(redContours, key = cv2.contourArea, reverse = True)[:25]
+        #cnts = sorted(redContours, key = cv2.contourArea, reverse = True)[:25]
+        cnts = sorted(redContours, key = cv2.contourArea)[:25]
 
         for c in cnts:
             M = cv2.moments(c)
@@ -345,6 +373,7 @@ class computerVision():
 
             listPosition = self.correlateCubePosition(cameraNum, cX, cY)
             if (listPosition is not None):
+                self.contourList[listPosition] = [c, cameraNum, (0,0,255)]
                 self.listifyCubePosition(listPosition, 2)
 
     def getColourMask(self, colouredImage, lowerThreshold, upperThreshold):
