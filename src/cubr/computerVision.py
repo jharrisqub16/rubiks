@@ -65,6 +65,15 @@ class computerVision():
         self.cubeState = [None]*54
         self.contourList = [None]*54
 
+#   1) Get contour list: List of largest contour in each ROI
+#       Plus other information: - Area (used for insertion)
+#                                 Colour
+#
+#   2) Work out (or assume) relationship between colours and faces
+#
+#   3) Translate contour/colours list into colour notation
+#       produces cubeState list
+
         # Initialise known/assumed centre cubies
         # TODO This needs to be reworked
         self.cubeState[4 ] = "U"
@@ -79,17 +88,15 @@ class computerVision():
         #   In later iterations, this loop will rotate the cube to be seen by the camera etc.
         self.maskedImages = []
         for cameraNum in self.cameras:
-            # TODO part of this can be moved to a seperate function:
-            # This can be used by the API to provide images for the GUI
-            croppedImage = self.getCvImage(cameraNum)
+            # Get image from camera
+            rawImage = self.getCvImage(cameraNum)
 
-            imageHeight, imageWidth, imageChannels = croppedImage.shape
-
+            # Get required sizes and create 'porthole' RoI mask
+            imageHeight, imageWidth, imageChannels = rawImage.shape
             portholeMask = self.createPortholeMask(imageHeight, imageWidth, imageChannels, cameraNum)
-            # TODO Does this make sense?
-            #self.maskedImages[cameraNum] = cv2.bitwise_and(self.croppedImages[cameraNum], self.croppedImages[cameraNum], mask = portholeMask)
-            self.maskedImages.append(cv2.bitwise_and(croppedImage, croppedImage, mask = portholeMask))
 
+            # Apply mask to image, and add into list of images
+            self.maskedImages.append(cv2.bitwise_and(rawImage, rawImage, mask = portholeMask))
 
         # Output debug images
         for cameraNum in self.cameras:
@@ -107,10 +114,8 @@ class computerVision():
 
     def getCvImage(self, cameraNum):
         rawImage = self.captureImage(cameraNum)
-        # TODO HACK
-        croppedImage = rawImage#self.cropRawImage(rawImage, cameraNum)
 
-        return croppedImage
+        return rawImage
 
 
     def getGuiImage(self):
@@ -204,7 +209,7 @@ class computerVision():
 
 
     def createPortholeMask(self, height, width, channels, cameraNum):
-        # TODO should this produce a different mask per camera
+        # Create blank 'white' mask
         cubiesMaskTemp = np.zeros((height, width, channels), np.uint8)
 
         for coordinates in correlation[cameraNum,]:
@@ -216,6 +221,7 @@ class computerVision():
         cubiesMaskFinal = cv2.inRange(cubiesMaskTemp, (1,1,1), (255,255,255))
 
         return cubiesMaskFinal
+
 
     def correlateCubePosition(self, cameraNum, contourX, contourY):
         positionCount = 0
