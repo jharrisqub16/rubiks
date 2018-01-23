@@ -36,7 +36,6 @@ class computerVision():
         self.correlation = correlation
 
         self.cubeState = [None]*54
-
         self.contourList = [None]*54
 
         # Some CV reference values
@@ -44,19 +43,24 @@ class computerVision():
         self.offset = 11
         self.altOffset = 20
 
-        # HSV colour reference values
-        # TODO this must be modified: HSV values will be derived from
-        # calibration, plus more complex algorithm (max liklihood) used to
-        # determine best matches.
-        self.colourCorrelation= {    'Y': (np.array([31,70,100], dtype = np.uint8)),
-                                'B': (np.array([125,110,100], dtype = np.uint8)),
-                                'O': (np.array([18,140,100], dtype = np.uint8)),
-                                'G': (np.array([70,80,100], dtype = np.uint8)),
-                                'R': (np.array([0,80,100], dtype = np.uint8))}
-                                #'R': (np.array([0,80,100], dtype = np.uint8)),
-                                #'W': (np.array([8,8,8], dtype = np.uint8))}
+        # Draw values for visual debugging contours
+        self.colourValues = {   'Y': ( 0,255,255),
+                                'B': (255,0,0),
+                                'O': (  0,160,255),
+                                'G': ( 0, 255,0),
+                                'R': (  0, 0,255)}
 
-        self.colourOffset = np.array([10,10,10], dtype = np.uint8)
+        #self.colourCorrelation = {  'Y': (( 28, 70,180), ( 41,255,255)),
+        #                            'B': ((100, 90,100), (120,255,255)),
+        #                            'O': (( 10,190,200), ( 28,255,255)),
+        #                            'G': (( 50,100,100), ( 90,255,255)),
+        #                            'R': ((  0, 80,100), ( 10,255,255))}
+
+        self.colourCorrelation = {  'Y': (( 26, 70,180), ( 36,255,255)),
+                                    'B': ((100, 60,100), (150,255,255)),
+                                    'O': (( 10,140,200), ( 24,255,255)),
+                                    'G': (( 37, 80,100), (100,255,255)),
+                                    'R': ((  0, 80,100), ( 7,255,255))}
 
         # Defines which camera's image will be output to the GUI:
         # This is done to confine of the number of cameras, capture objects etc
@@ -72,10 +76,6 @@ class computerVision():
 ################################################################################
 
     def getCubeState(self):
-        # Ensure cube lists are reset
-        self.cubeState = [None]*54
-        self.contourList = [None]*54
-
         #   1) Get contour list: List of largest contour in each ROI
         #       Plus other information: - Area (used for insertion)
         #                                 Colour
@@ -86,9 +86,25 @@ class computerVision():
         #       produces cubeState list
         self.getMaskedImages()
 
+        # Ensure cube lists are reset
+        self.cubeState = [None]*54
+        self.contourList = [None]*54
+
         # This section/loop acts on the gathered images to read the colours from the images
+        print(self.contourList.count(None))
         for cameraNum in range(self.noOfCameras):
             self.extractColours(self.maskedImages[cameraNum], cameraNum)
+            print(self.contourList.count(None))
+
+        self.colourFaceCorrelation = self.getColourFaceCorrelation()
+
+        position = 0
+        for contour in self.contourList:
+            if contour is not None:
+                self.listifyCubePosition(position, self.colourFaceCorrelation[contour[2]])
+
+            position += 1
+
 
         # TODO correlate cube centres
         self.cubeState[4 ] = "U"
@@ -174,7 +190,7 @@ class computerVision():
 
             for contour in self.contourList:
                 if (contour is not None and contour[1] == self.guiDisplayCameraIndex):
-                    cv2.drawContours(image, contour[0], -1, contour[2], 2)
+                    cv2.drawContours(image, contour[0], -1, (contour[3]), 2)
 
         return image
 
@@ -298,25 +314,28 @@ class computerVision():
             error = True
 
         # TODO is this check correct?
-        if (self.cubeState[listPos] and self.cubeState[listPos] != self.colours[colour] ):
+        if (self.cubeState[listPos] and self.cubeState[listPos] != colour ):
             print("Colour insertion disagrees with existing")
             error = True
 
         if (error == True):
             return
 
-        self.cubeState[listPos] = self.colours[colour]
+        self.cubeState[listPos] = colour
 
 
     def extractColours(self, image, cameraNum):
-        for colourValueCorrelation in colourCorrelation:
-            print(colour)
+        for colourValueCorrelation in self.colourCorrelation:
 
-            tempLowerLimit = map(sub, self.colourValueCorrelation[element], self.colourOffset)
-            tempUpperLimit = map(add, self.colourValueCorrelation[element], self.colourOffset)
-            # Set S and V upper to max values (255)
-            tempUpperLimit[1] = 255
-            tempUpperLimit[2] = 255
+            ## Create upper and lower bounds +- using offset array
+            #tempUpperLimit = np.add(self.colourCorrelation[colourValueCorrelation], self.colourOffset)
+            #tempLowerLimit = np.subtract(self.colourCorrelation[colourValueCorrelation], self.colourOffset)
+
+            ## Set S and V upper to max values (255)
+            #tempUpperLimit[1] = 255
+            #tempUpperLimit[2] = 255
+            tempLowerLimit = self.colourCorrelation[colourValueCorrelation][0]
+            tempUpperLimit = self.colourCorrelation[colourValueCorrelation][1]
 
             tempMask = self.getColourMask(image, tempLowerLimit, tempUpperLimit)
 
@@ -338,14 +357,14 @@ class computerVision():
 
                 listPosition = self.correlateCubePosition(cameraNum, cX, cY)
                 if (listPosition is not None):
+                    if (self.contourList[listPosition] is None or cv2.contourArea(self.contourList[listPosition][0]) < area):
                     # Insert this contour into the contour list
                     # TODO add area check, disallow camera to overwrite larger contours from a previous camera
                     # TODO add method to determine the colour that should be associated with this contour
-                    self.contourList[listPosition] = [c, cameraNum, (0,255,255)]
 
-                    # Insert into the final cube list
-                    # TODO The colour cannot be assumed yet: Need to work out the relationship between faces and colour first.
-                    self.listifyCubePosition(listPosition, 3)
+                    # Contour inserted as 'contour, cameraNum, colourName, drawColourList'
+                    # TODO colourlist is HSV AND IS NOT CORRECT
+                        self.contourList[listPosition] = [c, cameraNum, colourValueCorrelation, self.colourValues[colourValueCorrelation]]
 
 
     def getColourMask(self, colouredImage, lowerThreshold, upperThreshold):
@@ -355,3 +374,16 @@ class computerVision():
 
         return thresholdImage
 
+
+    def getColourFaceCorrelation(self):
+        # For the list of contours (namely including colours in positional list)
+        # work out (or assume in this case) the relationship between the colour
+        # of the faces, and what face notation that corresponds to.
+        temp = {    'Y':'D',
+                    'B':'R',
+                    'O':'B',
+                    'G':'L',
+                    'R':'F',
+                    'W':'U'}
+
+        return temp
