@@ -216,29 +216,35 @@ class computerVision():
         self.applyColourConstancyBool = stateBool
 
 
-    def roiShiftHandler(self, coords):
-        print("Clicked on camera {0}, coords{1}".format(self.cameras[self.guiDisplayCameraIndex], coords))
+    def roiShiftHandler(self, eventCoordinates):
+        print("Clicked on camera {0}, coords{1}".format(self.cameras[self.guiDisplayCameraIndex], eventCoordinates))
 
+        positionCount = 0
         for coordinates in correlation[self.cameras[self.guiDisplayCameraIndex], ]:
             # TODO is this test correct?
             if (coordinates != 0 and coordinates is not None):
-                if (math.fabs(coordinates[0] - contourX) < self.offset and
-                        math.fabs(coordinates[1] - contourY) < self.offset):
+                if (math.fabs(coordinates[0] - eventCoordinates[0]) < self.offset and
+                        math.fabs(coordinates[1] - eventCoordinates[1]) < self.offset):
                     # We have found the region that was clicked in: Break from loop
                     break
             positionCount += 1
 
+        if positionCount < len(correlation[self.cameras[self.guiDisplayCameraIndex], ]):
+            # If valid (ie in range) region is found, update the correlation of this clicked
+            # region to the new coordinate values
             print("Clicked in region index {0}".format(positionCount))
-
-        # Update correlation of clicked region to new coordinate values
-        correlation[self.cameras[self.guiDisplayCameraIndex], positionCount] = coords
+            correlation[self.cameras[self.guiDisplayCameraIndex], positionCount] = eventCoordinates
+        else:
+            # Valid RoI could not be found.
+            # TODO throw exception?
+            print("Valid region could not be found")
 
 
     def calibrateColourHandler(self, colour, coords):
         # TODO needs more work after the colour recognition and values are reworked.
         # Handler function to change expected colour values based on where the user has clicked on the 
         # currently displayed image.
-        print("Recalibrated to coords {0} on camera{1}".format(self.cameras[self.guiDisplayCameraIndex], coords)
+        print("Recalibrated to coords {0} on camera{1}".format(self.cameras[self.guiDisplayCameraIndex], coords))
 
 
 ################################################################################
