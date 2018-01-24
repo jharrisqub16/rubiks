@@ -8,8 +8,6 @@ class cubeSolver():
         pass
 
     def solve(self, cubeState):
-        # TODO need to add validation for cubeState variable first: must be
-        # list.
         self.cubeState = cubeState
 
         # Rough validation of cube state
@@ -31,9 +29,8 @@ class cubeSolver():
 
         for colour in colours:
             if (self.cubieCounts[colours[colour]] != 9):
-                # TODO more specific error handling here, when that can be
-                # implemented.
                 print("Incorrect number of colours detected")
+                # TODO Exception handling
                 raise Exception
 
         self.cubeString = ''.join(self.cubeState)
@@ -43,4 +40,4 @@ class cubeSolver():
             return self.solution
         except ValueError:
             pass
-            # TODO cubestate was not valid: pass on the exception
+            # TODO Exception handling

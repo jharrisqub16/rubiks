@@ -1,13 +1,5 @@
 # Contains array which correlates the camera/face and the coordinates to the cube position.
 
-# TODO NB currently it is designed to iterate through the positions and check the coordinates:
-# This is done to require a smaller array, rather using pixel coords.
-
-# TODO For the first robot iteration, 8,9 and 20 require larger areas as they are viewed through the motor posts
-# Perhaps this can use the "spare" member, which would also be used for the orientation in the second robot
-
-# TODO at some point, this will probably be used for adjusting/displaying the "Regions of interest" in a preview menu
-
 import numpy as np
 
 correlation = np.zeros((3,54), dtype=np.ndarray)

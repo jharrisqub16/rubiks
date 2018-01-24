@@ -8,6 +8,8 @@ class motorController:
 
     def __init__(self):
         # TODO This should probably be configurable from the GUI/settings menu
+        # Creation should fail but not fatally: changing the serial device
+
         self.serialPort = "/dev/ttyACM0"
         self.serialBaudRate = 9600
 

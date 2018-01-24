@@ -21,9 +21,7 @@ class Calibration:
         self.master.title("Configuration menu")
 
         #self.windowSize = parentSize
-        # TODO Size according to the image and account for scaling
-        # TODO How can it be assured that image is the full size of the canvas
-        #self.windowSize = (480, 360)
+        # TODO accomodate scaling and ensure image is full size of canvas (for coordinates)
         self.windowSize = (320, 240)
 
         cvImage = self.cubr.getImage()
@@ -38,8 +36,6 @@ class Calibration:
         self.mainFrame.pack()
         self.spawnWidgets()
 
-        # TODO threading
-        #self.updateFrame()
         stopEvent = threading.Event()
         thread = threading.Thread(target=self.updateFrame, args=())
         thread.start()
@@ -87,7 +83,6 @@ class Calibration:
         # Place packed frame into a window on the main canvas
         self.canvas.create_window(self.windowSize[0], self.windowSize[1], anchor='se', window=self.buttonFrame)
 
-        # TODO this should be used later for the calibration video stream
         self.checkboxFrame = tk.Frame(self.mainFrame)
 
         self.highlightRoiBool = tk.BooleanVar()
@@ -103,9 +98,6 @@ class Calibration:
         self.applyColourConstancyCheckbox.grid(row=2, column=0, sticky=tk.W)
 
         self.canvas.create_window(0, self.windowSize[1], anchor='sw', window=self.checkboxFrame)
-
-        # TODO Add buttons to apply largest contour highlighting (instead of showing ROIs)
-        # TODO Add button to apply Colour constancy algorithm to images
 
         self.nextViewButton = tk.Button(self.mainFrame, text="Next Camera View", command=self.nextCameraView)
         #self.canvas.create_window(self.windowSize[0]/2, self.windowSize[1], anchor='s', window=self.nextViewButton)
@@ -129,7 +121,6 @@ class Calibration:
 
     def teardownWindow(self):
         # Tidy up state of parent object which restricts this window being spawned
-        # TODO Does not really make sense to reset this here
         self.parentWindow.calibrationWindowSpawned = False
         self.parentWindow.calibrateButton['state'] = 'normal'
 

@@ -96,6 +96,14 @@ class computerVision():
             self.extractColours(self.maskedImages[cameraNum], cameraNum)
             print(self.contourList.count(None))
 
+        # TODO Assume the centre cubes (ie the orientation of the cube) in this iteration
+        self.cubeState[4 ] = "U"
+        self.cubeState[13] = "R"
+        self.cubeState[22] = "F"
+        self.cubeState[31] = "D"
+        self.cubeState[40] = "L"
+        self.cubeState[49] = "B"
+
         self.colourFaceCorrelation = self.getColourFaceCorrelation()
 
         position = 0
@@ -104,15 +112,6 @@ class computerVision():
                 self.listifyCubePosition(position, self.colourFaceCorrelation[contour[2]])
 
             position += 1
-
-
-        # TODO correlate cube centres
-        self.cubeState[4 ] = "U"
-        self.cubeState[13] = "R"
-        self.cubeState[22] = "F"
-        self.cubeState[31] = "D"
-        self.cubeState[40] = "L"
-        self.cubeState[49] = "B"
 
         # TODO Assume all 'unmatched' cubies are white: White is not explicitly detected
         self.cubeState = [ x if x is not None else 'U' for x in self.cubeState]
@@ -157,14 +156,11 @@ class computerVision():
 
         frame = self.getCvImage(self.guiDisplayCameraIndex)
 
+        # Draw the visual debug information onto the frame
         frame = self.drawGuiDebug(frame)
+
         # Convert from BGR (opencv) to RGB representation
         displayImage = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
-        # TODO AppAly colour constancy algorithm to the image if that checkout is ticked.
-        # TODO apply debug info to images OPTIONALLY: If the checkbox is ticked.
-        #displayImage = self.drawGuiDebug(displayImage)
-        #displayImage = cv2.resize(displayImage, (640,480))
-        #displayImage = cv2.resize(displayImage, (480,360))
 
         return displayImage
 
@@ -176,10 +172,8 @@ class computerVision():
             # self.cameras is used to obtain ACTUAL camera number, not the index
             # Hence, the index in correlation also refers to the actual camera number
             for coordinates in self.correlation[self.cameras[self.guiDisplayCameraIndex]]:
-                if (coordinates != 0):
-                    # TODO avoid NULL coordinate entries: Also, check list type?
-                    # Draw Region of Interest Circle on the GUI image
-                    # TODO Circle colour should be determined by what colour the CV thinks it is.
+                if (coordinates != 0 and coordinates is not None):
+                    # Draw Region of Interest Circle on the GUI image (in black)
                     cv2.circle(image, coordinates, self.offset, (0, 0, 0) , 2)
 
         if self.highlightContoursBool:
@@ -237,7 +231,6 @@ class computerVision():
 
         positionCount = 0
         for coordinates in correlation[self.cameras[self.guiDisplayCameraIndex], ]:
-            # TODO is this test correct?
             if (coordinates != 0 and coordinates is not None):
                 if (math.fabs(coordinates[0] - eventCoordinates[0]) < self.offset and
                         math.fabs(coordinates[1] - eventCoordinates[1]) < self.offset):
@@ -252,13 +245,12 @@ class computerVision():
             correlation[self.cameras[self.guiDisplayCameraIndex], positionCount] = eventCoordinates
         else:
             # Valid RoI could not be found.
-            # TODO throw exception?
+            # TODO throw exception
             print("Valid region could not be found")
 
 
     def calibrateColourHandler(self, colour, coords):
-        # TODO needs more work after the colour recognition and values are reworked.
-        # Handler function to change expected colour values based on where the user has clicked on the 
+        # Handler function to change expected colour values based on where the user has clicked on the
         # currently displayed image.
         print("Recalibrated to coords {0} on camera{1}".format(self.cameras[self.guiDisplayCameraIndex], coords))
 
@@ -272,8 +264,7 @@ class computerVision():
         cubiesMaskTemp = np.zeros((height, width, channels), np.uint8)
 
         for coordinates in correlation[cameraNum,]:
-            if (coordinates != 0):
-                # TODO avoid NULL coordinate entries: Also, check list type?
+            if (coordinates != 0 and coordinates is not None):
                 cv2.circle(cubiesMaskTemp, coordinates, self.offset, (255,255,255), -1)
 
         ## Create proper mask
@@ -287,7 +278,7 @@ class computerVision():
 
         for coordinates in self.correlation[cameraNum,]:
         # TODO This is a square, not a circle!
-            if (coordinates != 0):
+            if (coordinates != 0 and coordinates is not None):
             # TODO avoid NULL coordinate entries: Also, check list type?
                 if (math.fabs(coordinates[0] - contourX) < self.offset and
                         math.fabs(coordinates[1] - contourY) < self.offset):
@@ -309,11 +300,16 @@ class computerVision():
 
         error = False
 
+        # The index for insertion must be valid
         if ( (listPos is None) or (listPos < 0) or (listPos > len(self.cubeState)) ):
             print("Index in cubes list is not valid")
             error = True
 
-        # TODO is this check correct?
+        # If the desired element of the array is already populated, it should
+        # not disagree with any further insertions.
+        # This should not even apply to most solvers: However, it might help to
+        # indicate issues where the coordinates/cube position correlation are
+        # totally incorrect
         if (self.cubeState[listPos] and self.cubeState[listPos] != colour ):
             print("Colour insertion disagrees with existing")
             error = True
@@ -321,6 +317,7 @@ class computerVision():
         if (error == True):
             return
 
+        # Validation passed: Insert colour in the cubeState list
         self.cubeState[listPos] = colour
 
 
@@ -358,12 +355,9 @@ class computerVision():
                 listPosition = self.correlateCubePosition(cameraNum, cX, cY)
                 if (listPosition is not None):
                     if (self.contourList[listPosition] is None or cv2.contourArea(self.contourList[listPosition][0]) < area):
-                    # Insert this contour into the contour list
-                    # TODO add area check, disallow camera to overwrite larger contours from a previous camera
-                    # TODO add method to determine the colour that should be associated with this contour
+                        # Insert this contour into the contour list
 
-                    # Contour inserted as 'contour, cameraNum, colourName, drawColourList'
-                    # TODO colourlist is HSV AND IS NOT CORRECT
+                        # Contour inserted as 'contour, cameraNum, colourName, drawColourList'
                         self.contourList[listPosition] = [c, cameraNum, colourValueCorrelation, self.colourValues[colourValueCorrelation]]
 
 

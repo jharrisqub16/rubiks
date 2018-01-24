@@ -24,6 +24,7 @@ import time
 class cubr():
     def __init__(self):
 
+        # TODO handle exceptions of trying to create these objects
         self.cv = computerVision()
         self.solver = cubeSolver()
         self.mc = motorController()
@@ -32,11 +33,6 @@ class cubr():
         # probably needs to be derived by CV, and passed on as required.
         self.colours = {0: 'U', 1: 'R', 2: 'F', 3: 'D', 4: 'L', 5: 'B'}
 
-        #TODO Set up other objects.
-        # Set up CV, checking cameras are as expected?
-        # Set up solver: probably no validation required.
-        # Set up motor controller: Validate serial connection, probable arduino
-        # update required.
 
     def solveCube(self):
         start = time.time()
@@ -80,10 +76,9 @@ class cubr():
 
     def goToNextViewingPosition(self):
         # This function causes the next 'viewing position' to be returned by getImage()
-        # TODO
-        # This function is expected to be used in 2 different ways:
-        # - Original solver: Return images from 'next' video capture.
-        # - Further iterations: Rotate cube to next position in the 'reading sequence'
+        # This could be:
+        # - Progressing to the next camera (multi camera robots)
+        # - Rotating the cube to the next position (single camera robots)
         self.cv.nextGuiImageSource()
 
         return
