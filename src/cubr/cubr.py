@@ -42,7 +42,7 @@ class cubr():
         read = time.time()
         solution = self.solver.solve(cubeState)
         #TODO must be valid string solution
-        self.mc.sendString(solution)
+        self.mc.sendString(solution, waitForAck=True)
         end = time.time()
         print("Elapsed time: {0}".format(end-start))
         print("Cube read in: {0}".format(read-start))
@@ -66,7 +66,7 @@ class cubr():
 
         scrambleString = ' '.join(scramble)
 
-        self.mc.sendString(scrambleString)
+        self.mc.sendString(scrambleString, waitForAck=True)
 
 
     def getImage(self):

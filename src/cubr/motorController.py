@@ -15,7 +15,7 @@ class motorController:
 
         self.serialDevice = serial.Serial(self.serialPort, self.serialBaudRate)
 
-    def sendString(self, solutionString):
+    def sendString(self, solutionString, waitForAck=False, timeoutLen=10):
 
         # Workaround for motorController falling over if string does not end
         # with space
@@ -24,3 +24,19 @@ class motorController:
 
         self.serialDevice.write(solutionString)
 
+        if (waitForAck == True):
+            self.waitForAck(timeoutLen)
+
+
+    def waitForAck(self, timeoutLen):
+        self.serialDevice.timeout = timeoutLen
+        print("Serial timeout set to {0}".format(self.serialDevice.timeout))
+
+        readin = self.serialDevice.readline()
+
+        if len(readin) > 0:
+            # Valid response/ACK returned
+            return
+        else:
+            # TODO No valid ack: Timeout occured
+            print("NO ACK!")

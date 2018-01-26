@@ -68,10 +68,15 @@ void loop()
   char readin;
   char side;
   char dir;
+  bool sendAck = false;
 
-  readin = Serial.read();
 
   while (Serial.available() > 0) {
+    side = 0;
+    dir = 0;
+    sendAck = true;
+    readin = Serial.read();
+
 
     if (readin == 'D' || readin == 'F' || readin == 'R' || readin == 'B' || readin == 'L' || readin == 'U') {
       side = readin;
@@ -219,10 +224,11 @@ void loop()
       digitalWrite (enable_u, HIGH);
     }
 
-    side = 0;
-    dir = 0;
-    readin = Serial.read();
-
+  }
+  if (sendAck == true)
+  {
+    Serial.write("ack\n");
+    sendAck = false;
   }
 
 }
