@@ -52,11 +52,11 @@ class computerVision():
         self.altOffset = 20
 
         # Draw values for visual debugging contours
-        self.colourValues = {   'Y': ( 0,255,255),
-                                'B': (255,0,0),
-                                'O': (  0,160,255),
-                                'G': ( 0, 255,0),
-                                'R': (  0, 0,255)}
+        self.drawColourValues = {   'Y': (  0,255,255),
+                                    'B': (255,  0,  0),
+                                    'O': (  0,160,255),
+                                    'G': (  0,255,  0),
+                                    'R': (  0,  0,255)}
 
         #self.colourCorrelation = {  'Y': (( 28, 70,180), ( 41,255,255)),
         #                            'B': ((100, 90,100), (120,255,255)),
@@ -176,6 +176,10 @@ class computerVision():
         # Helper function for returning the GUI image:
         # Optionally draws the various visual debug onto the returned image
 
+        if self.applyColourConstancyBool:
+            # TODO
+            print("Constancy")
+
         if self.highlightRoiBool:
             # self.cameras is used to obtain ACTUAL camera number, not the index
             # Hence, the index in correlation also refers to the actual camera number
@@ -253,13 +257,13 @@ class computerVision():
             self.correlation[self.cameras[self.guiDisplayCameraIndex], positionCount] = eventCoordinates
         else:
             # Valid RoI could not be found.
-            # TODO throw exception
             print("Valid region could not be found")
 
 
     def calibrateColourHandler(self, colour, coords):
         # Handler function to change expected colour values based on where the user has clicked on the
         # currently displayed image.
+        # TODO none of this is implemented currently
         print("Recalibrated to coords {0} on camera{1}".format(self.cameras[self.guiDisplayCameraIndex], coords))
 
 
@@ -332,13 +336,6 @@ class computerVision():
     def extractColours(self, image, cameraNum):
         for colourValueCorrelation in self.colourCorrelation:
 
-            ## Create upper and lower bounds +- using offset array
-            #tempUpperLimit = np.add(self.colourCorrelation[colourValueCorrelation], self.colourOffset)
-            #tempLowerLimit = np.subtract(self.colourCorrelation[colourValueCorrelation], self.colourOffset)
-
-            ## Set S and V upper to max values (255)
-            #tempUpperLimit[1] = 255
-            #tempUpperLimit[2] = 255
             tempLowerLimit = self.colourCorrelation[colourValueCorrelation][0]
             tempUpperLimit = self.colourCorrelation[colourValueCorrelation][1]
 
@@ -366,7 +363,7 @@ class computerVision():
                         # Insert this contour into the contour list
 
                         # Contour inserted as 'contour, cameraNum, colourName, drawColourList'
-                        self.contourList[listPosition] = [c, cameraNum, colourValueCorrelation, self.colourValues[colourValueCorrelation]]
+                        self.contourList[listPosition] = [c, cameraNum, colourValueCorrelation, self.drawColourValues[colourValueCorrelation]]
 
 
     def getColourMask(self, colouredImage, lowerThreshold, upperThreshold):
@@ -389,6 +386,11 @@ class computerVision():
                     'W':'U'}
 
         return temp
+
+
+################################################################################
+## Handle persistent changes to config
+################################################################################
 
 
     def discardCorrelationChanges(self):
