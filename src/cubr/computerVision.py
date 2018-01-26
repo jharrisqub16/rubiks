@@ -4,8 +4,6 @@ import numpy as np
 
 from correlation import *
 
-from operator import add,sub
-
 
 class computerVision():
     def __init__(self):
@@ -33,7 +31,17 @@ class computerVision():
 
         self.colours = {0:'U',1:'R',2:'F',3:'D',4:'L',5:'B'}
 
-        self.correlation = correlation
+        try:
+            # Open correlation config file if it exists
+            self.correlation = np.load('cfg/correlation.npy')
+        except:
+            self.correlation = correlation
+
+        # TODO Hack: Backup versions of all configurable objects will be held:
+        # This allows the 'current' variable to be reverted when changes are being discarded.
+        # For not at least, it is easier that these objects are told to simply save or discard changes,
+        # rather than creating backups (only as required) when config changes have been made to them.
+        self.correlationBackup = np.copy(self.correlation)
 
         self.cubeState = [None]*54
         self.contourList = [None]*54
@@ -230,7 +238,7 @@ class computerVision():
         print("Clicked on camera {0}, coords{1}".format(self.cameras[self.guiDisplayCameraIndex], eventCoordinates))
 
         positionCount = 0
-        for coordinates in correlation[self.cameras[self.guiDisplayCameraIndex], ]:
+        for coordinates in self.correlation[self.cameras[self.guiDisplayCameraIndex], ]:
             if (coordinates != 0 and coordinates is not None):
                 if (math.fabs(coordinates[0] - eventCoordinates[0]) < self.offset and
                         math.fabs(coordinates[1] - eventCoordinates[1]) < self.offset):
@@ -238,11 +246,11 @@ class computerVision():
                     break
             positionCount += 1
 
-        if positionCount < len(correlation[self.cameras[self.guiDisplayCameraIndex], ]):
+        if positionCount < len(self.correlation[self.cameras[self.guiDisplayCameraIndex], ]):
             # If valid (ie in range) region is found, update the correlation of this clicked
             # region to the new coordinate values
             print("Clicked in region index {0}".format(positionCount))
-            correlation[self.cameras[self.guiDisplayCameraIndex], positionCount] = eventCoordinates
+            self.correlation[self.cameras[self.guiDisplayCameraIndex], positionCount] = eventCoordinates
         else:
             # Valid RoI could not be found.
             # TODO throw exception
@@ -381,3 +389,18 @@ class computerVision():
                     'W':'U'}
 
         return temp
+
+
+    def discardCorrelationChanges(self):
+        # Reset correlation to the 'pre-changes' version
+        self.correlation = np.copy(self.correlationBackup)
+        print("discarding")
+
+
+    def saveCorrelation(self):
+        # TODO
+        # Update both the current and the backup to the 'updated' state:
+        # This is to expect/handle further changes being made
+        print("saving")
+        self.correlationBackup = np.copy(self.correlation)
+        np.save('cfg/correlation.npy', self.correlation)

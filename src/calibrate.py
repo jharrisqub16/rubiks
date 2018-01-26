@@ -17,7 +17,7 @@ class Calibration:
         self.mainFrame = tk.Frame(self.master)
 
         # Handler for closing event
-        self.master.protocol("WM_DELETE_WINDOW", self.teardownWindow)
+        self.master.protocol("WM_DELETE_WINDOW", self.cancelCloseWindow)
         self.master.title("Configuration menu")
 
         #self.windowSize = parentSize
@@ -67,9 +67,13 @@ class Calibration:
         #   - The image is not scaled
         print(event.x, event.y)
         # TODO no colour calibration is active
-        # if we are currently handling roi shifts:
-        # self.cubr.calibrateColourHandler(activeColourSelection, (event.x, event.y))
-        self.cubr.roiShiftHandler((event.x, event.y))
+
+        if (self.highlightRoiBool.get() is True):
+            # Only allow shifting of ROIs when their highlighting is active
+            self.cubr.roiShiftHandler((event.x, event.y))
+        elif (False):
+            pass
+            # self.cubr.calibrateColourHandler(activeColourSelection, (event.x, event.y))
 
 
     def spawnWidgets(self):
@@ -108,6 +112,9 @@ class Calibration:
     def cancelCloseWindow(self):
         # Prompt user, disgregard all changes and destroy window
         if (msg.askokcancel("Confirm", "Changes will be discarded. \n Continue?")):
+            # Call to reset discard all changes that were made in the solver:
+            self.cubr.discardStateChanges()
+            # Destroy the window
             self.teardownWindow()
 
 
@@ -115,6 +122,7 @@ class Calibration:
         # Store all configuration changes, then destroy configuration window
         # TODO Handle configuration changes
         print("Configuration overwritten")
+        self.cubr.saveState()
 
         self.teardownWindow()
 
