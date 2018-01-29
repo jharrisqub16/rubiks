@@ -29,7 +29,9 @@ class Calibration:
         self.image = ImageTk.PhotoImage(image=img)
 
         self.canvas = tk.Canvas(self.mainFrame, width=self.windowSize[0], height=self.windowSize[1])
-        self.canvas.bind("<Button 1>", self.canvasClickEventHandler)
+        self.canvas.bind("<ButtonPress-1>", self.canvasClickEventHandler)
+        self.canvas.bind("<ButtonRelease-1>", self.canvasReleaseEventHandler)
+        self.canvas.bind("<B1-Motion>", self.canvasMotionEventHandler)
         self.canvas.pack()
         self.canvasImage = self.canvas.create_image(self.windowSize[0]/2, self.windowSize[1]/2, image=self.image)
 
@@ -63,15 +65,28 @@ class Calibration:
         # TODO This assumes that:
         #   - The image is presented as the full size of the canvas/window
         #   - The image is not scaled
-        print(event.x, event.y)
+
+        tempCoords = (event.x, event.y)
+        print(tempCoords)
         # TODO no colour calibration is active
 
         if (self.highlightRoiBool.get() is True):
             # Only allow shifting of ROIs when their highlighting is active
-            self.cubr.roiShiftHandler((event.x, event.y))
+            self.cubr.roiDragSet(tempCoords)
         elif (False):
             pass
             # self.cubr.calibrateColourHandler(activeColourSelection, (event.x, event.y))
+
+
+    def canvasMotionEventHandler(self, event):
+        if (self.highlightRoiBool.get() is True):
+            tempCoords = (event.x, event.y)
+            self.cubr.roiDrag(tempCoords)
+
+
+    def canvasReleaseEventHandler(self):
+        if (self.highlightRoiBool.get() is True):
+            self.cubr.roiDragEnd()
 
 
     def spawnWidgets(self):

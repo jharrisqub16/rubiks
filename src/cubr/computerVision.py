@@ -81,6 +81,9 @@ class computerVision():
         self.highlightContoursBool = False
         self.applyColourConstancyBool = False
 
+        self.dragActiveBool = False
+        self.dragItemIndex = 0,0
+
 
 ################################################################################
 ## Main 'top level' functions
@@ -259,9 +262,13 @@ class computerVision():
         self.applyColourConstancyBool = stateBool
 
 
-    def roiShiftHandler(self, eventCoordinates):
-        print("Clicked on camera {0}, coords{1}".format(self.cameras[self.guiDisplayCameraIndex], eventCoordinates))
+    def roiSetDrag(self, eventCoordinates):
+        # Initialise the drag operation in computer vision:
+        # Find the region that the initial click was inside (if any), and keep
+        # track of it for continued motion operations
 
+        # Find the element in correlation (if any) that matches the clicked
+        # coordinates, within the distance of the RoI radius
         positionCount = 0
         for coordinates in self.correlation[self.cameras[self.guiDisplayCameraIndex], ]:
             if (coordinates != 0 and coordinates is not None):
@@ -274,11 +281,27 @@ class computerVision():
         if positionCount < len(self.correlation[self.cameras[self.guiDisplayCameraIndex], ]):
             # If valid (ie in range) region is found, update the correlation of this clicked
             # region to the new coordinate values
-            print("Clicked in region index {0}".format(positionCount))
-            self.correlation[self.cameras[self.guiDisplayCameraIndex], positionCount] = eventCoordinates
+            self.dragActiveBool = True
+            self.dragItemIndex = self.guiDisplayCameraIndex, positionCount
+            self.correlation[self.dragItemIndex] = eventCoordinates
         else:
             # Valid RoI could not be found.
             print("Valid region could not be found")
+
+    def roiDrag(self, eventCoordinates):
+        # Continuously update the coorelation coordinates according to the
+        # stream of motion events
+
+        # TODO Should this use an offset (from the original click point), rather
+        # than the absolute coordinate values?
+        if self.dragActiveBool:
+            self.correlation[self.dragItemIndex] = eventCoordinates
+
+
+    def roiDragEnd(self):
+        # Disable the drag operation
+        self.dragActiveBool = False
+        self.dragItemIndex = 0,0
 
 
     def calibrateColourHandler(self, colour, coords):
