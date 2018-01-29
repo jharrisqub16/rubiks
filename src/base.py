@@ -3,6 +3,7 @@
 import sys
 import os
 import inspect
+import threading
 import tkinter as tk
 from tkinter import messagebox as msg
 from PIL import Image
@@ -68,8 +69,8 @@ class guiMain:
         # Pack solve and scramble buttons into their own frame (for placement)
         self.buttonFrame = tk.Frame(container)
 
-        self.scrambleButton = tk.Button(self.buttonFrame, text="Scramble", command=self.cubr.scramble)
-        self.solveButton = tk.Button(self.buttonFrame, text="Solve", command=self.cubr.solveCube)
+        self.scrambleButton = tk.Button(self.buttonFrame, text="Scramble", command=self.scrambleHandler)
+        self.solveButton = tk.Button(self.buttonFrame, text="Solve", command=self.solveHandler)
         self.scrambleButton.pack(side=tk.LEFT)
         self.solveButton.pack(side=tk.LEFT)
         # Place packed frame into a window on the main canvas
@@ -95,6 +96,19 @@ class guiMain:
         else:
             # This should not be possible as the button should be inactive
             print("Already has an active child window")
+
+
+    def scrambleHandler(self):
+        scrambleThread = threading.Thread(target=self.cubr.scramble, args=())
+        scrambleThread.start()
+        #self.cubr.scramble()
+
+
+    def solveHandler(self):
+        solveThread = threading.Thread(target=self.cubr.solveCube, args=())
+        solveThread.start()
+        #self.cubr.solveCube()
+
 
 if __name__ == "__main__":
     root = tk.Tk()

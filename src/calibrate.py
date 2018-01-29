@@ -36,9 +36,7 @@ class Calibration:
         self.mainFrame.pack()
         self.spawnWidgets()
 
-        stopEvent = threading.Event()
-        thread = threading.Thread(target=self.updateFrame, args=())
-        thread.start()
+        self.updateFrame()
 
         # Always start calibration window with visual debug disabled:
         # This also prevents the GUI and cv getting out of sync
