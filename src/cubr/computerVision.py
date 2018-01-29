@@ -46,6 +46,9 @@ class computerVision():
         self.cubeState = [None]*54
         self.contourList = [None]*54
 
+        self.maskedImages = []
+        self.rawImages = []
+
         # Some CV reference values
         self.minimumContourArea = 20
         self.offset = 11
@@ -99,10 +102,8 @@ class computerVision():
         self.contourList = [None]*54
 
         # This section/loop acts on the gathered images to read the colours from the images
-        print(self.contourList.count(None))
         for cameraNum in range(self.noOfCameras):
             self.extractColours(self.maskedImages[cameraNum], cameraNum)
-            print(self.contourList.count(None))
 
         # TODO Assume the centre cubes (ie the orientation of the cube) in this iteration
         self.cubeState[4 ] = "U"
@@ -134,6 +135,7 @@ class computerVision():
         # Get masked images from all cameras, and populate these into list (for later use)
         self.maskedImages = []
         self.rawImages = []
+
         for cameraNum in range(self.noOfCameras):
             # Get image from camera
             rawImage = self.getCvImage(cameraNum)
@@ -152,7 +154,7 @@ class computerVision():
 
 
     def getCvImage(self, cameraNum):
-        rawImage = self.captureImage(cameraNum)
+        rawImage = self.captureImage(cameraNum, True)
 
         return rawImage
 
@@ -161,8 +163,7 @@ class computerVision():
         # - Get image from relevant camera
         # - Convert from BGR to RGB
         # - Apply filters and debug info as required
-
-        frame = self.getCvImage(self.guiDisplayCameraIndex)
+        frame = self.captureImage(self.guiDisplayCameraIndex, False)
 
         # Draw the visual debug information onto the frame
         frame = self.drawGuiDebug(frame)
@@ -201,14 +202,34 @@ class computerVision():
         return image
 
 
-    def captureImage(self, cameraNumber):
+    def captureImage(self, cameraNumber, clearBufferBool):
         # Helper function for retrieving all images from cameras
         tempCamera = self.captureObjects[cameraNumber]
 
-        # Taking at least 1 'dummy' capture is often required to 'normalise' the camera
-        for i in xrange(1):
-            temp, dumpCapture = tempCamera.read()
-            #cv2.imwrite("outputImages/rawcamera{0}{1}.jpg".format(cameraNumber, i), dumpCapture)
+        if clearBufferBool:
+            # NOTE HACK
+            # The buffer of the camera stream often causes an old image to be used, 
+            # which competely ruins the computer vision.
+            # Several dummie images are taken to clear this buffer, hence fixing
+            # incorrect computer vision output which is made based on these old images
+
+            # TODO NOTE Setting the buffer length of the capture object is apparently not
+            # working or is deprecated.
+            # Another 'valid' solution is to use another thread to continuously pull frames
+            # from the camera as fast as possible to keep the buffer empty, to eliminate this
+            # problem. This should use 'captureObject.grab()' as this has less overhead
+            for i in xrange(5):
+                temp, dumpCapture = tempCamera.read()
+                cv2.imwrite("outputImages/rawcamera{0}{1}.jpg".format(cameraNumber, i), dumpCapture)
+        else:
+            # A short (single frame) is needed to normalise some lighting in images:
+            # First image often has streaks
+            # However, this is intended to be used only for the GUI, so only
+            # one dummie image is taken. In this case, emptying the buffer is less
+            # important than minimising the wait for each frame, as this
+            # ultimately affects the output framerate
+            for i in xrange(1):
+                temp, dumpCapture = tempCamera.read()
         null, cameraCapture = tempCamera.read()
 
         return cameraCapture

@@ -29,6 +29,14 @@ class cubr():
         self.solver = cubeSolver()
         self.mc = motorController()
 
+        # Pre-defined list of the solved state: used for verification
+        self.solvedState = ('U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U',
+                            'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R',
+                            'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F',
+                            'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D',
+                            'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L',
+                            'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B')
+
         #TODO not sure where this should originate: for second iteration,
         # probably needs to be derived by CV, and passed on as required.
         self.colours = {0: 'U', 1: 'R', 2: 'F', 3: 'D', 4: 'L', 5: 'B'}
@@ -38,14 +46,32 @@ class cubr():
         start = time.time()
         # TODO Also add exception handling
         cubeState = self.cv.getCubeState()
-        #TODO check if cubeState is already solved:
         read = time.time()
+
+        if (tuple(cubeState) == self.solvedState):
+            print(" TODO Already solved")
+            return
+
         solution = self.solver.solve(cubeState)
+        print("solution:{0}".format(solution))
         #TODO must be valid string solution
+
         self.mc.sendString(solution, waitForAck=True)
         end = time.time()
+
+        print("########################################")
         print("Elapsed time: {0}".format(end-start))
         print("Cube read in: {0}".format(read-start))
+        print("########################################")
+
+        # Verify solution
+        verifyState = self.cv.getCubeState()
+        print("post state: {0}".format(verifyState))
+
+        if (tuple(verifyState) == self.solvedState):
+            print("Cube solved")
+        else:
+            print("Could not verify solution success")
 
 
     def scramble(self):
@@ -67,6 +93,9 @@ class cubr():
         scrambleString = ' '.join(scramble)
 
         self.mc.sendString(scrambleString, waitForAck=True)
+
+        # Update state of cube (for user view) once motor rotations are complete
+        null = self.cv.getCubeState()
 
 
     def getImage(self):
