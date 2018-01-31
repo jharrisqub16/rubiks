@@ -262,7 +262,7 @@ class computerVision():
         self.applyColourConstancyBool = stateBool
 
 
-    def roiSetDrag(self, eventCoordinates):
+    def roiDragSet(self, eventCoordinates):
         # Initialise the drag operation in computer vision:
         # Find the region that the initial click was inside (if any), and keep
         # track of it for continued motion operations

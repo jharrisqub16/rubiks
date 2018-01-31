@@ -84,7 +84,7 @@ class Calibration:
             self.cubr.roiDrag(tempCoords)
 
 
-    def canvasReleaseEventHandler(self):
+    def canvasReleaseEventHandler(self, event):
         if (self.highlightRoiBool.get() is True):
             self.cubr.roiDragEnd()
 

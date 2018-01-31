@@ -124,8 +124,8 @@ class cubr():
     def setColourConstancy(self, stateBool):
         self.cv.setColourConstancy(stateBool)
 
-    def roiSetDrag(self, coords):
-        self.cv.roiSetDrag(coords)
+    def roiDragSet(self, coords):
+        self.cv.roiDragSet(coords)
 
 
     def roiDrag(self, coords):
