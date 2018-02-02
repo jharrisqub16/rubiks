@@ -112,6 +112,7 @@ class guiMain:
 
 if __name__ == "__main__":
     root = tk.Tk()
+    #root.resizable(False, False)
 
     # Form the absolute path of the image so script can be executed from anywhere.
     # Get the base path of this file, then add the assumed path (based on known dir structure)
