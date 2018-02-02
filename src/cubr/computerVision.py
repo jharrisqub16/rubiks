@@ -279,7 +279,7 @@ class computerVision():
 
         cubePosition = self.correlateCubePosition(self.guiDisplayCameraIndex, eventCoordinates[0], eventCoordinates[1])
 
-        if cubePosition < len(self.correlation[self.cameras[self.guiDisplayCameraIndex], ]):
+        if cubePosition is not None and cubePosition < len(self.correlation[self.cameras[self.guiDisplayCameraIndex], ]):
             # If valid (ie in range) region is found, update the correlation of this clicked
             # region to the new coordinate values
             self.dragActiveBool = True
