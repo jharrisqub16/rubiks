@@ -35,6 +35,7 @@ class computerVision():
             # Open correlation config file if it exists
             self.correlation = np.load('cfg/correlation.npy')
         except:
+            # Load 'default' python correlation if config file does not exist
             self.correlation = correlation
 
         # TODO Hack: Backup versions of all configurable objects will be held:
@@ -181,8 +182,7 @@ class computerVision():
         # Optionally draws the various visual debug onto the returned image
 
         if self.applyColourConstancyBool:
-            # TODO
-            print("Constancy")
+            image = self.applyColourConstancyRGB(image)
 
         if self.highlightRoiBool:
             # self.cameras is used to obtain ACTUAL camera number, not the index
@@ -312,6 +312,37 @@ class computerVision():
 
 
 ################################################################################
+## Colour Constancy helpers
+################################################################################
+
+    def applyColourConstancyRGB(self, image):
+        # Convert the passed image to HSV colourspace:
+        # It is assumes that all colour constancy will be performed in HSV
+        hsvImage = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+
+        # Apply colour constancy algorithm in the HSV space
+        equalisedImage = self.applyColourConstancyHSV(hsvImage)
+
+        # Convert image back to RGB for return
+        returnImage = cv2.cvtColor(equalisedImage, cv2.COLOR_HSV2BGR)
+
+        return returnImage
+
+    def applyColourConstancyHSV(self, hsvImage):
+        # Histogram equalisation
+        h, s, v = cv2.split(hsvImage)
+
+        # Equalise the s and v channels
+        s = cv2.equalizeHist(s)
+        #v = cv2.equalizeHist(v)
+
+        # Recombine channels to produce final, equalised image
+        equalisedImage = cv2.merge((h, s, v))
+
+        return equalisedImage
+
+
+################################################################################
 ## Computer vision processing and helper functions
 ################################################################################
 
@@ -330,6 +361,9 @@ class computerVision():
 
 
     def correlateCubePosition(self, cameraNum, contourX, contourY):
+        # Return the cube position that corresponds to a particular camera and
+        # set of coordinates:
+        # Returns None if no corresponding cube position is found
         positionCount = 0
 
         for coordinates in self.correlation[cameraNum,]:
@@ -403,6 +437,7 @@ class computerVision():
 
                 listPosition = self.correlateCubePosition(cameraNum, cX, cY)
                 if (listPosition is not None):
+                    # Contour exists at a valid cube location
                     if (self.contourList[listPosition] is None or cv2.contourArea(self.contourList[listPosition][0]) < area):
                         # Insert this contour into the contour list
 
