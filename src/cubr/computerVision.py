@@ -44,7 +44,7 @@ class computerVision():
         # rather than creating backups (only as required) when config changes have been made to them.
         self.correlationBackup = np.copy(self.correlation)
 
-        self.cubeState = [None]*54
+        self.cubeState = None
         self.contourList = [None]*54
 
         self.maskedImages = []
@@ -193,7 +193,7 @@ class computerVision():
                     cv2.circle(image, coordinates, self.offset, (0, 0, 0) , 2)
 
         if self.highlightContoursBool:
-            if self.cubeState == [None]*len(self.cubeState):
+            if self.cubeState is None:
                 # cubestate has not yet been retrieved
                 print("Forced to initialise cubeState")
                 null = self.getCubeState()
