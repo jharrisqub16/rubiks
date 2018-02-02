@@ -213,14 +213,21 @@ class computerVision():
             # NOTE HACK
             # The buffer of the camera stream often causes an old image to be used, 
             # which competely ruins the computer vision.
-            # Several dummie images are taken to clear this buffer, hence fixing
-            # incorrect computer vision output which is made based on these old images
+            # Several dummy images are taken to clear this buffer, hence fixing
+            # incorrect computer vision output which is made based on old images.
+            #
+            # On the bright side, this generally only requires significantly more time on the
+            # first use of the capture object: During 'normal' usage, these 'excess'
+            # frames are only pulled from the buffer (to empty it). Therefore,
+            # this does not actually take that much more time compared to
+            # taking a single 'fresh' frame.
 
             # TODO NOTE Setting the buffer length of the capture object is apparently not
-            # working or is deprecated.
+            # working or not available for all cameras
             # Another 'valid' solution is to use another thread to continuously pull frames
             # from the camera as fast as possible to keep the buffer empty, to eliminate this
             # problem. This should use 'captureObject.grab()' as this has less overhead
+
             for i in xrange(5):
                 temp, dumpCapture = tempCamera.read()
                 cv2.imwrite("outputImages/rawcamera{0}{1}.jpg".format(cameraNumber, i), dumpCapture)
