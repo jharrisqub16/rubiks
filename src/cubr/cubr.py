@@ -49,7 +49,7 @@ class cubr():
         readTime = time.time()
 
         if (tuple(cubeState) == self.solvedState):
-            print(" TODO Already solved")
+            print("Cube already in solved state.")
             return
 
         solution = self.solver.solve(cubeState)

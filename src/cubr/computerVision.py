@@ -476,13 +476,13 @@ class computerVision():
     def discardCorrelationChanges(self):
         # Reset correlation to the 'pre-changes' version
         self.correlation = np.copy(self.correlationBackup)
-        print("discarding")
+        print("CV: Discarding correlation changes")
 
 
     def saveCorrelation(self):
         # TODO
         # Update both the current and the backup to the 'updated' state:
         # This is to expect/handle further changes being made
-        print("saving")
+        print("CV: Saving correlation changes")
         self.correlationBackup = np.copy(self.correlation)
         np.save('cfg/correlation.npy', self.correlation)
