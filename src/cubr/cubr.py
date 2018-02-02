@@ -43,10 +43,10 @@ class cubr():
 
 
     def solveCube(self):
-        start = time.time()
+        startTime = time.time()
         # TODO Also add exception handling
         cubeState = self.cv.getCubeState()
-        read = time.time()
+        readTime = time.time()
 
         if (tuple(cubeState) == self.solvedState):
             print(" TODO Already solved")
@@ -55,13 +55,16 @@ class cubr():
         solution = self.solver.solve(cubeState)
         print("solution:{0}".format(solution))
         #TODO must be valid string solution
+        solveTime = time.time()
 
         self.mc.sendString(solution, waitForAck=True)
-        end = time.time()
+        endTime = time.time()
 
         print("########################################")
-        print("Elapsed time: {0}".format(end-start))
-        print("Cube read in: {0}".format(read-start))
+        print("Elapsed time: {0}".format(endTime-startTime))
+        print("CV Read time: {0}".format(readTime-startTime))
+        print("Solve time:   {0}".format(solveTime-readTime))
+        print("Motor time:   {0}".format(endTime-solveTime))
         print("########################################")
 
         # Verify solution
