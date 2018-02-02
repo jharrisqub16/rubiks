@@ -107,7 +107,7 @@ class computerVision():
 
         # This section/loop acts on the gathered images to read the colours from the images
         for cameraNum in range(self.noOfCameras):
-            self.extractColours(self.maskedImages[cameraNum], cameraNum)
+            self.extractContours(self.maskedImages[cameraNum], cameraNum)
 
         # TODO Assume the centre cubes (ie the orientation of the cube) in this iteration
         self.cubeState[4 ] = "U"
@@ -269,20 +269,14 @@ class computerVision():
 
         # Find the element in correlation (if any) that matches the clicked
         # coordinates, within the distance of the RoI radius
-        positionCount = 0
-        for coordinates in self.correlation[self.cameras[self.guiDisplayCameraIndex], ]:
-            if (coordinates != 0 and coordinates is not None):
-                if (math.fabs(coordinates[0] - eventCoordinates[0]) < self.offset and
-                        math.fabs(coordinates[1] - eventCoordinates[1]) < self.offset):
-                    # We have found the region that was clicked in: Break from loop
-                    break
-            positionCount += 1
 
-        if positionCount < len(self.correlation[self.cameras[self.guiDisplayCameraIndex], ]):
+        cubePosition = self.correlateCubePosition(self.guiDisplayCameraIndex, eventCoordinates[0], eventCoordinates[1])
+
+        if cubePosition < len(self.correlation[self.cameras[self.guiDisplayCameraIndex], ]):
             # If valid (ie in range) region is found, update the correlation of this clicked
             # region to the new coordinate values
             self.dragActiveBool = True
-            self.dragItemIndex = self.guiDisplayCameraIndex, positionCount
+            self.dragItemIndex = self.guiDisplayCameraIndex, cubePosition
             self.correlation[self.dragItemIndex] = eventCoordinates
         else:
             # Valid RoI could not be found.
@@ -411,7 +405,7 @@ class computerVision():
         self.cubeState[listPos] = colour
 
 
-    def extractColours(self, image, cameraNum):
+    def extractContours(self, image, cameraNum):
         for colourValueCorrelation in self.colourCorrelation:
 
             tempLowerLimit = self.colourCorrelation[colourValueCorrelation][0]
