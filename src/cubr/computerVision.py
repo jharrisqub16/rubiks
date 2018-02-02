@@ -228,7 +228,7 @@ class computerVision():
             # from the camera as fast as possible to keep the buffer empty, to eliminate this
             # problem. This should use 'captureObject.grab()' as this has less overhead
 
-            for i in xrange(5):
+            for i in xrange(4):
                 temp, dumpCapture = tempCamera.read()
                 cv2.imwrite("outputImages/rawcamera{0}{1}.jpg".format(cameraNumber, i), dumpCapture)
         else:
