@@ -53,8 +53,10 @@ class cubr():
             return
 
         solution = self.solver.solve(cubeState)
+        if solution is None:
+            raise Exception("No cube solution could be found")
+
         print("solution:{0}".format(solution))
-        #TODO must be valid string solution
         solveTime = time.time()
 
         self.mc.sendString(solution, waitForAck=True)
