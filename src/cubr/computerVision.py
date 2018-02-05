@@ -351,7 +351,7 @@ class computerVision():
         # Create blank 'white' mask
         cubiesMaskTemp = np.zeros((height, width, channels), np.uint8)
 
-        for coordinates in self.correlation[cameraNum,]:
+        for coordinates in self.correlation[self.cameras[cameraNum]]:
             if (coordinates != 0 and coordinates is not None):
                 cv2.circle(cubiesMaskTemp, coordinates, self.offset, (255,255,255), -1)
 
