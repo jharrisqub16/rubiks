@@ -26,43 +26,64 @@ class guiMain:
 
         # tk.Tk() master
         self.master = master
+        self.master.title("CubeSolver GUI v1")
 
         # Main parent container for this entire window
         self.mainFrame = tk.Frame(self.master)
 
-        self.master.title("CubeSolver GUI v1")
-
         self.calibrationWindowSpawned = False
 
-        # TODO This should probably be initialised to the size of the rpi screen
-        # Perhaps according to the camera resolution?
-        # Also, should the window be adjustable by the user?
-        #self.size_x = 500
-        #self.size_y = 500
-        self.windowSize = 500,500
+        # Hard code default window size
+        self.windowSize = [320,320]
+
+        # Variables to hold the current scaling ratios
+        self.scaleFactor = [1,1]
 
         # Open main image and convert to tk format
-        self.image = Image.open(image)
-        self.image = self.image.resize(self.windowSize, Image.ANTIALIAS)
+        self.rawImage = Image.open(image)
+
+        # Resize the image to the required size and convert to TK format
+        # Since the original image must be preserved, store this in a separate variable
+        self.image = self.rawImage.resize(self.windowSize, Image.ANTIALIAS)
         self.image = ImageTk.PhotoImage(self.image)
 
         # Create main canvas and display image on it
         self.canvas = tk.Canvas(self.mainFrame, width=self.windowSize[0], height=self.windowSize[1])
         self.canvas.bind("<Button 1>", self.onClick)
-        self.canvas.pack()
-        self.canvas.create_image(self.windowSize[0]/2, self.windowSize[1]/2, image=self.image)
+        self.canvas.bind("<Configure>", self.resizeHandler)
+        self.canvas.pack(fill=tk.BOTH, expand=tk.YES)
+        self.canvasImage = self.canvas.create_image(0, 0, image=self.image, anchor='nw')
 
+        # Add generic tag to add children of the canvas ( Used for scaling operations later)
+        self.canvas.addtag_all("all")
+
+        # Spawn UI buttons on the canvas using helper function
         self.spawnButtons(self.canvas)
 
-        self.mainFrame.pack()
+        # Pack the main frame: NB Must set expand option to fill its parent
+        self.mainFrame.pack(fill=tk.BOTH, expand=tk.YES)
 
-
-    def temp(self):
-        print("Testing callback")
 
 
     def onClick(self, event):
         pass
+
+
+    def resizeHandler(self, event):
+        # Calculate the scaling ratio which the new window size gives
+        self.scaleFactor[0] = float(event.width)/self.windowSize[0]
+        self.scaleFactor[1] = float(event.height)/self.windowSize[1]
+
+        # Update windowSize variable
+        self.windowSize[0] = event.width
+        self.windowSize[1] = event.height
+
+        self.image = self.rawImage.resize(self.windowSize, Image.ANTIALIAS)
+        self.image = ImageTk.PhotoImage(self.image)
+        self.canvas.itemconfig(self.canvasImage, image = self.image)
+
+        # Apply scaling factor to all of the canvas widgets
+        self.canvas.scale("all", 0, 0, self.scaleFactor[0], self.scaleFactor[1])
 
 
     def spawnButtons(self, container):
@@ -113,6 +134,9 @@ class guiMain:
 if __name__ == "__main__":
     root = tk.Tk()
     #root.resizable(False, False)
+
+    # Force main window to be square
+    root.aspect(1,1,1,1)
 
     # Form the absolute path of the image so script can be executed from anywhere.
     # Get the base path of this file, then add the assumed path (based on known dir structure)
