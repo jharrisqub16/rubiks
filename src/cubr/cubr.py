@@ -56,17 +56,22 @@ class cubr():
         if solution is None:
             raise Exception("No cube solution could be found")
 
-        print("solution:{0}".format(solution))
         solveTime = time.time()
 
         self.mc.sendString(solution, waitForAck=True)
         endTime = time.time()
+
+        faceTurnLength = self.solver.calculateFaceTurnLength(solution)
+        quarterTurnLength = self.solver.calculateQuarterTurnLength(solution)
 
         print("########################################")
         print("Elapsed time: {0}".format(endTime-startTime))
         print("CV Read time: {0}".format(readTime-startTime))
         print("Solve time:   {0}".format(solveTime-readTime))
         print("Motor time:   {0}".format(endTime-solveTime))
+        print("Solution:     {0}".format(solution))
+        print("Face-turns:   {0}".format(faceTurnLength))
+        print("Quarter-turns:{0}".format(quarterTurnLength))
         print("########################################")
 
         # Verify solution

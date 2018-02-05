@@ -41,3 +41,27 @@ class cubeSolver():
         except ValueError:
             pass
             # TODO Exception handling
+
+
+    def calculateFaceTurnLength(self, solutionString):
+        # Takes space-delimited solution sequence and calculates its cost, based
+        # on the face-turn metric
+        solutionLength = (solutionString.count(' ')) if (solutionString.endswith(' ')) else (solutionString.count(' ') + 1)
+
+        return solutionLength
+
+
+    def calculateQuarterTurnLength(self, solutionString):
+        # Takes space-delimited solution sequence and calculates its cost, based
+        # on the quarter-turn metric
+
+        # Get the base number of moves in the sequence
+        solutionLength = self.calculateFaceTurnLength(solutionString)
+
+        for move in solutionString.split(' '):
+            if move.find('2') > -1:
+                # Increment solution length again for each element in the
+                # solution which is a half turn
+                solutionLength += 1
+
+        return solutionLength
