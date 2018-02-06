@@ -423,7 +423,7 @@ class computerVision():
             contours, hierarchy = cv2.findContours(tempMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
             # Sort contours such that insertion of largest contours will occur last
-            cnts = sorted(contours, key = cv2.contourArea)[:25]
+            cnts = sorted(contours, key = cv2.contourArea)[-25:]
 
             for c in cnts:
                 M = cv2.moments(c)
