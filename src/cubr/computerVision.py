@@ -45,9 +45,11 @@ class computerVision():
         self.correlationBackup = np.copy(self.correlation)
 
         self.cubeState = None
+        self.colourList = [None]*54
         self.contourList = [None]*54
 
         self.maskedImages = []
+        self.hsvImages = []
         self.rawImages = []
 
         # Some CV reference values
@@ -99,45 +101,82 @@ class computerVision():
         #
         #   3) Translate contour/colours list into colour notation
         #       produces cubeState list
-        self.getMaskedImages()
+        self.populateCvImages()
 
         # Ensure cube lists are reset
         self.cubeState = [None]*54
         self.contourList = [None]*54
+        self.colourList = [None]*54
 
         # This section/loop acts on the gathered images to read the colours from the images
         for cameraNum in range(self.noOfCameras):
             self.extractContours(self.maskedImages[cameraNum], cameraNum)
 
-        # TODO Assume the centre cubes (ie the orientation of the cube) in this iteration
-        self.cubeState[4 ] = "U"
-        self.cubeState[13] = "R"
-        self.cubeState[22] = "F"
-        self.cubeState[31] = "D"
-        self.cubeState[40] = "L"
-        self.cubeState[49] = "B"
-
-        self.colourFaceCorrelation = self.getColourFaceCorrelation()
-
-        position = 0
+        index = 0
         for contour in self.contourList:
             if contour is not None:
-                self.listifyCubePosition(position, self.colourFaceCorrelation[contour[2]])
+                hsvColour = contour[2]
+                for colour in self.colourCorrelation:
+                    lowerColour = self.colourCorrelation[colour][0]
+                    upperColour = self.colourCorrelation[colour][1]
+                    # TODO Find colour range that this contour's average colour can be associated with
+                    # TODO make this smarter, with list grouping
+                    if ((hsvColour > lowerColour).all() and
+                        (hsvColour < upperColour).all()):
+                        # TODO testing
+                        self.colourList[index] = colour
+            index += 1
 
-            position += 1
+        # TODO Assume the centre cubes (ie the orientation of the cube) in this iteration
+        self.colourList[4 ] = "W"
+        self.colourList[13] = "B"
+        self.colourList[22] = "R"
+        self.colourList[31] = "Y"
+        self.colourList[40] = "G"
+        self.colourList[49] = "O"
+        self.colourList = [ x if x is not None else 'W' for x in self.colourList]
+
+        print(self.colourList)
+        self.colourFaceCorrelation = self.getColourFaceCorrelation()
+
+        self.cubeState = self.convertColoursToFaceNotation(self.colourList)
+        print(self.cubeState)
+
+        #position = 0
+        #for contour in self.contourList:
+        #    if contour is not None:
+        #        self.listifyCubePosition(position, self.colourFaceCorrelation[contour[2]])
+
+        #    position += 1
 
         # TODO Assume all 'unmatched' cubies are white: White is not explicitly detected
-        self.cubeState = [ x if x is not None else 'U' for x in self.cubeState]
+        #self.cubeState = [ x if x is not None else 'U' for x in self.cubeState]
 
         return self.cubeState
+
+    # TODO TESTING
+    def convertColoursToFaceNotation(self, colourList):
+        temp = [None]*54
+
+        index = 0
+        for colour in colourList:
+            # TODO exclude Nones
+            if colour is not None:
+                temp[index] = self.colourFaceCorrelation[colour]
+
+            index += 1
+
+        return temp
+
 
 ################################################################################
 ## Camera interface functions
 ################################################################################
 
-    def getMaskedImages(self):
+    def populateCvImages(self):
         # Get masked images from all cameras, and populate these into list (for later use)
         self.maskedImages = []
+        self.hsvImages = []
         self.rawImages = []
 
         for cameraNum in range(self.noOfCameras):
@@ -145,12 +184,22 @@ class computerVision():
             rawImage = self.getCvImage(cameraNum)
             self.rawImages.append(rawImage)
 
-            # Get required sizes and create 'porthole' RoI mask
+            # Convert to HSV
+            hsvImage = cv2.cvtColor(rawImage, cv2.COLOR_BGR2HSV)
+
+            # TODO is colour constancy always active?
+            #equalisedImage = self.applyColourConstancyHSV(hsvImage)
+            equalisedImage = hsvImage
+
+            self.hsvImages.append(equalisedImage)
+
+
+            # Apply mask to image, and add into list of images
             imageHeight, imageWidth, imageChannels = rawImage.shape
             portholeMask = self.createPortholeMask(imageHeight, imageWidth, imageChannels, cameraNum)
 
-            # Apply mask to image, and add into list of images
-            self.maskedImages.append(cv2.bitwise_and(rawImage, rawImage, mask = portholeMask))
+            #self.maskedImages.append(cv2.bitwise_and(rawImage, rawImage, mask = portholeMask))
+            self.maskedImages.append(cv2.bitwise_and(equalisedImage, equalisedImage, mask = portholeMask))
 
         # Output debug images
         for cameraNum in range(self.noOfCameras):
@@ -413,41 +462,44 @@ class computerVision():
 
 
     def extractContours(self, image, cameraNum):
+        hIncrement = 10
+
         for colourValueCorrelation in self.colourCorrelation:
 
-            tempLowerLimit = self.colourCorrelation[colourValueCorrelation][0]
-            tempUpperLimit = self.colourCorrelation[colourValueCorrelation][1]
+            for h in range(0, 180, hIncrement):
 
-            tempMask = self.getColourMask(image, tempLowerLimit, tempUpperLimit)
+                tempMask = self.getColourMask(image, (h,10,95), (h+hIncrement,255,255))
 
-            contours, hierarchy = cv2.findContours(tempMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+                contours, hierarchy = cv2.findContours(tempMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
-            # Sort contours such that insertion of largest contours will occur last
-            cnts = sorted(contours, key = cv2.contourArea)[-25:]
+                # Sort contours such that insertion of largest contours will occur last
+                cnts = sorted(contours, key = cv2.contourArea)[-25:]
 
-            for c in cnts:
-                M = cv2.moments(c)
-                area = cv2.contourArea(c)
+                for c in cnts:
+                    M = cv2.moments(c)
+                    area = cv2.contourArea(c)
 
-                if M["m00"] != 0 and area > self.minimumContourArea:
-                    cX = int(M["m10"] / M["m00"])
-                    cY = int(M["m01"] / M["m00"])
-                # TODO why is this else needed?
-                else:
-                    cX, cY = 0, 0
+                    if M["m00"] != 0 and area > self.minimumContourArea:
+                        cX = int(M["m10"] / M["m00"])
+                        cY = int(M["m01"] / M["m00"])
+                    # TODO why is this else needed?
+                    else:
+                        cX, cY = 0, 0
 
-                listPosition = self.correlateCubePosition(cameraNum, cX, cY)
-                if (listPosition is not None):
-                    # Contour exists at a valid cube location
-                    if (self.contourList[listPosition] is None or cv2.contourArea(self.contourList[listPosition][0]) < area):
-                        # Insert this contour into the contour list
+                    listPosition = self.correlateCubePosition(cameraNum, cX, cY)
+                    if (listPosition is not None):
+                        # Contour exists at a valid cube location
+                        if (self.contourList[listPosition] is None or cv2.contourArea(self.contourList[listPosition][0]) < area):
+                            # Insert this contour into the contour list
 
-                        # Contour inserted as 'contour, cameraNum, colourName, drawColourList'
-                        self.contourList[listPosition] = [c, cameraNum, colourValueCorrelation, self.drawColourValues[colourValueCorrelation]]
+                            # Contour inserted as 'contour, cameraNum, colourName, drawColourList'
+                            #self.contourList[listPosition] = [c, cameraNum, colourValueCorrelation, self.drawColourValues[colourValueCorrelation]]
+                            # TODO Contour inserted as 'contour, cameraNum, averageHsvColour, drawColour'
+                            averageHsv = np.rint(cv2.mean(image, tempMask))[:3]
+                            self.contourList[listPosition] = [c, cameraNum, averageHsv, self.drawColourValues[colourValueCorrelation]]
 
 
-    def getColourMask(self, colouredImage, lowerThreshold, upperThreshold):
-        hsvImage = cv2.cvtColor(colouredImage, cv2.COLOR_BGR2HSV)
+    def getColourMask(self, hsvImage, lowerThreshold, upperThreshold):
         thresholdContour = cv2.inRange(hsvImage, lowerThreshold, upperThreshold)
         null, thresholdImage = cv2.threshold(thresholdContour, 127,255,3)
 
