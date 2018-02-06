@@ -70,7 +70,8 @@ class computerVision():
         self.colourCorrelation = {  'Y': (( 26, 70,180), ( 36,255,255)),
                                     'B': ((100, 60,100), (150,255,255)),
                                     'O': (( 10,140,200), ( 24,255,255)),
-                                    'G': (( 37, 80,100), (100,255,255)),
+                                    'G': (( 37, 80,100), ( 93,255,255)),
+                                    'W': (( 93, 30,100), (100,255,255)),
                                     'R': ((  0, 80,100), ( 7,255,255))}
 
         # Defines which camera's image will be output to the GUI:
@@ -488,7 +489,7 @@ class computerVision():
 
             #tempMask = self.getColourMask(image, (h,10,95), (h+hIncrement,255,255))
             #TODO testing: Why is threshold needed?
-            tempMask = cv2.inRange(image, (h,10,95), (h+hIncrement,255,255))
+            tempMask = cv2.inRange(image, (h,30,95), (h+hIncrement,255,255))
 
             contours, hierarchy = cv2.findContours(tempMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
