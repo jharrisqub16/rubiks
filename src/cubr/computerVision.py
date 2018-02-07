@@ -112,7 +112,7 @@ class computerVision():
         for cameraNum in range(self.noOfCameras):
             self.extractContours(self.maskedImages[cameraNum], cameraNum)
 
-        self.extractColoursFromContours(self.contours, self.colourCorrelation)
+        self.colourList = self.extractColoursFromContours(self.contourList, self.colourCorrelation)
 
         # TODO Assume the centre cubes (ie the orientation of the cube) in this iteration
         self.colourList[4 ] = "W"
@@ -121,6 +121,7 @@ class computerVision():
         self.colourList[31] = "Y"
         self.colourList[40] = "G"
         self.colourList[49] = "O"
+        print(self.colourList)
         self.colourList = [ x if x is not None else 'W' for x in self.colourList]
 
         print(self.colourList)
@@ -139,7 +140,7 @@ class computerVision():
     def extractColoursFromContours(self, contourList, colourCorrelation):
         # Convert contour average colour into colour letter representation
         # TODO rework this again to use grouping techniques
-        colourList = []
+        colourList = [None]*len(contourList)
 
         index = 0
         for contour in contourList:
@@ -194,8 +195,8 @@ class computerVision():
             hsvImage = cv2.cvtColor(rawImage, cv2.COLOR_BGR2HSV)
 
             # TODO is colour constancy always active? temporarily disabled
-            #equalisedImage = self.applyColourConstancyHSV(hsvImage)
-            equalisedImage = hsvImage
+            equalisedImage = self.applyColourConstancyHSV(hsvImage)
+            #equalisedImage = hsvImage
 
             self.hsvImages.append(equalisedImage)
 
@@ -254,21 +255,22 @@ class computerVision():
                 null = self.getCubeState()
 
             for contour in self.contourList:
-                contourCameraNum = contour[2]
-                if (contour is not None and contourCameraNum == self.guiDisplayCameraIndex):
-                    contourArray = contour[0]
-                    # Draw contour outline in the average colour of the contour contents
-                    contourHsvColour = contour[3]
-                    #TODO testing: Brighten  the draw colour for visibility
-                    contourHsvColour[3] +=40
+                if contour is not None:
+                    contourCameraNum = contour[2]
+                    if (contour is not None and contourCameraNum == self.guiDisplayCameraIndex):
+                        contourArray = contour[0]
+                        # Draw contour outline in the average colour of the contour contents
+                        contourHsvColour = np.copy(contour[3])
+                        #TODO testing: Brighten  the draw colour for visibility
+                        contourHsvColour[2] +=20
 
-                    # Convert average HSV colour to RGB for drawing
-                    rgbDrawColour = cs.hsv_to_rgb(rgbDrawColour[0]/180, rgbDrawColour[1]/255, rgbDrawColour[2]/255)
+                        # Convert average HSV colour to RGB for drawing
+                        rgbDrawColour = cs.hsv_to_rgb(contourHsvColour[0]/180, contourHsvColour[1]/255, contourHsvColour[2]/255)
+                        rgbDrawColour = rgbDrawColour[::-1]
+                        rgbDrawColour = [i*255 for i in rgbDrawColour]
 
-                    rgbDrawColour = [i*255 for i in rgbDrawColour]
 
-
-                    cv2.drawContours(image, contourArray, -1, (rgbDrawColour), 2)
+                        cv2.drawContours(image, contourArray, -1, (rgbDrawColour), 2)
 
         return image
 
@@ -510,7 +512,7 @@ class computerVision():
                 listPosition = self.correlateCubePosition(cameraNum, cX, cY)
                 if (listPosition is not None):
                     # Contour exists at a valid cube location
-                    if (self.contourList[listPosition] is None or self.contourList[listPosition][1]) < area):
+                    if ((self.contourList[listPosition] is None) or (self.contourList[listPosition][1] < area)):
                         # Insert this contour into the contour list if that element is currently empty, or
                         # has smaller area than the new contour
                         # NOTE Contour inserted as 'contour, area, cameraNum, averageHsvColour'
