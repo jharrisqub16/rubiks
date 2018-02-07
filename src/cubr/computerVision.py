@@ -2,6 +2,8 @@ import cv2
 import math
 import numpy as np
 import colorsys as cs
+import copy
+import itertools
 
 from correlation import *
 
@@ -145,29 +147,89 @@ class computerVision():
         sortingList = []
 
         numGroups = 6
-        groupwidth = len(contourList)/numGroups
+        groupWidth = len(contourList)/numGroups
 
+        # Form more concise list to make this sorting easier
+        # We only care about the average colour, and its cube position
         for index, contour in enumerate(contourList):
             if contour is not None:
-                sortingList.append([contour, index])
-            
+                #sortingList.append([contour, index])
+                sortingList.append([contour[3] index])
+
         # Sort list according to HSV: Increasing HSV values
-        sortingList = sorted(sortingList, key= lambda sortingList: int(sortingList[0][3][0]))
+        sortingList = sorted(sortingList, key= lambda sortingList: int(sortingList[0][0]))
         print(sortingList[0])
 
-        
-        if (index+subListLen <= len(completeList):
-            sublist = completeList[index: (index+groupSize)]
 
-        else
-            # TODO 
-            sublist = [ 
+        bestStdDev = None
+        bestPosition = 0
+        for position in range(groupSize):
+            # Iterate group position through the list
+            totalStdDev = 0
+            for group in (numGroups):
+                # For each positon, iterate through each group
+                tempList = self.getSubList(sortingList, position+(group*groupWidth), groupWidth, True)
+                totalStdDev += np.std(tempList)
 
-            return sublist
-        
-        
+            if bestStdDev is None or (totalStdDev < bestStdDev:
+                bestStdDev = totalStdDev
+                bestPosition = position
+
+        # Form the new sublists according to the optimal grouping
+        colourGroupings =[]
+        averageGroupingColours = []
+        for groupNum in numGroups:
+            colourGroupings.append(getSubList(sortingList, besPosition+(groupNum*groupWidth), groupWidth, False)
+
+            averageGroupingColours.append(np.mean(colourGroupings[groupNum], axis=0).astype(int))
+        print(averageGroupingColours)
+
+        # Map groups to the colour 'templates'
+        permutations = list(itertools.permutations(self.colourCorrelation, groupWidth))
+        bestDiff = None
+        bestPermutationIndex = 0
+        for index, perm in enumerate(permutations):
+            # For each permutation of the colour correlation dict
+            difference = 0
+            for count, avgColour in enumerate(averageGroupingColours):
+                # Sum difference in H values
+                difference += math.abs(self.colourCorrelation[perm][0] - averageGroupingColours[count][0])
+
+                if bestDiff is None or difference < bestDiff:
+                    bestPermutationIndex = index
+
+        print(permutations[bestPermutationIndex])
+        #TODO Form colour list based on the colour relationship above
 
         return colourList
+
+
+    def getSubList(self, completeList, index, groupSize, applyWrapCompensation):
+        # Take a completely new copy to ensure that nothing in the original list gets broken
+        tempList = copy.deepcopy(completeList)
+
+        if (index+subListLen <= len(completeList):
+            sublist = tempList[index: (index+groupSize)]
+
+        else
+            # Create list such that it wraps around: negative values for the
+            # deviation calculation
+            if applyWrapCompensation:
+                # Copy 'positive index elements as is
+                start = tempList[ : (index+groupSize)%groupSize]
+
+                # Copy 'wrapped' index elements, and -180 to simulate wrapping (for calculations)
+                wrapped = tempList[index: ]
+                for element in wrapped:
+                    element[0][0] -= 180
+
+                # Form complete sublist
+                sublist = wrapped + start
+
+            else:
+                sublist = tempList[index: ] + tempList[ : (index+groupSize)%groupSize]
+
+        return sublist
 
 
     def convertColoursToFaceNotation(self, colourList):
