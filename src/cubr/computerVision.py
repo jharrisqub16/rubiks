@@ -121,6 +121,7 @@ class computerVision():
         self.colourList[31] = "Y"
         self.colourList[40] = "G"
         self.colourList[49] = "O"
+
         print(self.colourList)
         self.colourList = [ x if x is not None else 'W' for x in self.colourList]
 
@@ -141,24 +142,30 @@ class computerVision():
         # Convert contour average colour into colour letter representation
         # TODO rework this again to use grouping techniques
         colourList = [None]*len(contourList)
+        sortingList = []
 
-        index = 0
-        for contour in contourList:
+        numGroups = 6
+        groupwidth = len(contourList)/numGroups
+
+        for index, contour in enumerate(contourList):
             if contour is not None:
-                # Average colour contained by this contour
-                hsvColour = contour[3]
-                for colour in colourCorrelation:
-                    lowerColour = colourCorrelation[colour][0]
-                    upperColour = colourCorrelation[colour][1]
+                sortingList.append([contour, index])
+            
+        # Sort list according to HSV: Increasing HSV values
+        sortingList = sorted(sortingList, key= lambda sortingList: int(sortingList[0][3][0]))
+        print(sortingList[0])
 
-                    if ((hsvColour > lowerColour).all() and
-                            (hsvColour < upperColour).all()):
+        
+        if (index+subListLen <= len(completeList):
+            sublist = completeList[index: (index+groupSize)]
 
-                        colourList[index] = colour
-            else:
-                print('Empty Contour')
+        else
+            # TODO 
+            sublist = [ 
 
-            index += 1
+            return sublist
+        
+        
 
         return colourList
 
@@ -491,7 +498,8 @@ class computerVision():
 
             #tempMask = self.getColourMask(image, (h,10,95), (h+hIncrement,255,255))
             #TODO testing: Why is threshold needed?
-            tempMask = cv2.inRange(image, (h,30,95), (h+hIncrement,255,255))
+            #tempMask = cv2.inRange(image, (h,30,95), (h+hIncrement,255,255))
+            tempMask = cv2.inRange(image, (h,0,110), (h+hIncrement,255,255))
 
             contours, hierarchy = cv2.findContours(tempMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
