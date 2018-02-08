@@ -4,28 +4,71 @@ from scipy.cluster.vq import vq, kmeans, whiten, kmeans2
 
 import cv2
 
-features  = np.array([[ 30.0,2.3],
-                   [ 1.5,2.5],
-                   [ 0.8,0.6],
-                   [ 0.4,1.8],
-                   [ 0.1,0.1],
-                   [ 0.2,1.8],
-                   [ 2.0,0.5],
-                   [ 0.3,1.5],
-                   [ 1.0,1.0]])
+from collections import Counter
+features  = np.array([  [30.,100.],
+                        [30.,100. ],
+                        [30.,100. ],
+                        [30.,100. ],
+                        [30.,100. ],
+                        [30.,100. ],
+                        [30.,100. ],
+                        [30.,100. ],
+                        [50.,40.],
+                        [50.,40.],
+                        [50.,40.],
+                        [50.,40.],
+                        [50.,40.],
+                        [50.,40.],
+                        [50.,40.],
+                        [50.,40.],
+                        [50.,100. ],
+                        [50.,100. ],
+                        [50.,100. ],
+                        [50.,100. ],
+                        [50.,100. ],
+                        [50.,100. ],
+                        [50.,100. ],
+                        [50.,100.]])
 #whitened = whiten(features)
 #book = np.array((whitened[0],whitened[2]))
 #codebook, dist = kmeans(whitened,book)
 #print(codebook)
 #print(dist)
+numGroups = 3
 
-res, idx = kmeans2(features,2, 20)
+
+idx = []
+
+res, idx = kmeans2(features, numGroups, iter=100, minit='points')
+#res, idx = kmeans2(features, numGroups, iter=100)
 
 print(res)
-
 print(idx)
 
+counts = Counter(idx)
+print(counts)
+loopCount = 0
+while (1):
+    repeat = False
+    for index in range(numGroups):
+        if counts[index] != 8:
+            repeat = True
 
+    print(counts)
+    print('loop')
+    loopCount += 1
+    if repeat:
+        res, idx = kmeans2(features, numGroups, iter=100, minit='points')
+        counts = Counter(idx)
+
+    else:
+        break
+
+print(loopCount)
+
+
+print(res)
+print(idx)
 ## Define criteria = ( type, max_iter = 10 , epsilon = 1.0 )
 #criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1.0)
 #
