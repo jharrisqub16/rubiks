@@ -69,12 +69,21 @@ class computerVision():
                                     'G': (  0,255,  0),
                                     'R': (  0,  0,255)}
 
-        self.colourCorrelation = {  'Y': (( 26, 70,180), ( 36,255,255)),
-                                    'B': ((100, 60,100), (150,255,255)),
-                                    'O': (( 10,140,200), ( 24,255,255)),
-                                    'G': (( 37, 80,100), ( 93,255,255)),
-                                    'W': (( 93, 30,100), (100,255,255)),
-                                    'R': ((  0, 80,100), ( 7,255,255))}
+
+        self.colourCorrelation = {  'Y': ( 26, 70,180),
+                                    'B': (100, 60,100),
+                                    'O': ( 10,140,200),
+                                    #'G': ( 37, 80,100),
+                                    'G': ( 50, 80,100),
+                                    'W': ( 93, 30,100),
+                                    'R': (  0, 80,100)}
+
+        #self.colourCorrelation = {  'Y': (( 26, 70,180), ( 36,255,255)),
+        #                            'B': ((100, 60,100), (150,255,255)),
+        #                            'O': (( 10,140,200), ( 24,255,255)),
+        #                            'G': (( 37, 80,100), ( 93,255,255)),
+        #                            'W': (( 93, 30,100), (100,255,255)),
+        #                            'R': ((  0, 80,100), ( 7,255,255))}
 
         # Defines which camera's image will be output to the GUI:
         # This is done to confine of the number of cameras, capture objects etc
@@ -147,59 +156,77 @@ class computerVision():
         sortingList = []
 
         numGroups = 6
+
         groupWidth = len(contourList)/numGroups
+        # NOTE Exclude centres for this robot version
+        groupWidth -= 1
 
         # Form more concise list to make this sorting easier
         # We only care about the average colour, and its cube position
         for index, contour in enumerate(contourList):
             if contour is not None:
                 #sortingList.append([contour, index])
-                sortingList.append([contour[3] index])
+                sortingList.append([contour[3], index])
 
         # Sort list according to HSV: Increasing HSV values
         sortingList = sorted(sortingList, key= lambda sortingList: int(sortingList[0][0]))
-        print(sortingList[0])
-
 
         bestStdDev = None
         bestPosition = 0
-        for position in range(groupSize):
+        for position in range(groupWidth):
             # Iterate group position through the list
             totalStdDev = 0
-            for group in (numGroups):
+            for group in range(numGroups):
                 # For each positon, iterate through each group
                 tempList = self.getSubList(sortingList, position+(group*groupWidth), groupWidth, True)
-                totalStdDev += np.std(tempList)
+                #Add up total std dev of H values
+                # TODO S needs to be considered as well
+                totalStdDev += np.std([x[0][0] for x in tempList])
+                #totalStdDev += np.std(tempList)
 
-            if bestStdDev is None or (totalStdDev < bestStdDev:
+            if (bestStdDev is None) or (totalStdDev < bestStdDev):
                 bestStdDev = totalStdDev
                 bestPosition = position
 
-        # Form the new sublists according to the optimal grouping
         colourGroupings =[]
         averageGroupingColours = []
-        for groupNum in numGroups:
-            colourGroupings.append(getSubList(sortingList, besPosition+(groupNum*groupWidth), groupWidth, False)
+        for groupNum in range(numGroups):
+            colourGroupings.append(self.getSubList(sortingList, bestPosition+(groupNum*groupWidth), groupWidth, False))
 
-            averageGroupingColours.append(np.mean(colourGroupings[groupNum], axis=0).astype(int))
+            averageGroupingColours.append(np.mean([x[0] for x in colourGroupings[groupNum]], axis=0).astype(int))
+
+        for groupNum in range(numGroups):
+            print(colourGroupings[groupNum])
         print(averageGroupingColours)
 
         # Map groups to the colour 'templates'
-        permutations = list(itertools.permutations(self.colourCorrelation, groupWidth))
+        permutations = list(itertools.permutations(self.colourCorrelation, len(self.colourCorrelation)))
         bestDiff = None
         bestPermutationIndex = 0
+
         for index, perm in enumerate(permutations):
             # For each permutation of the colour correlation dict
             difference = 0
             for count, avgColour in enumerate(averageGroupingColours):
-                # Sum difference in H values
-                difference += math.abs(self.colourCorrelation[perm][0] - averageGroupingColours[count][0])
+                # Sum difference in H values to find groups closest to template colours
+                key = perm[count]
+                difference += math.fabs(self.colourCorrelation[key][0] - avgColour[0])
 
-                if bestDiff is None or difference < bestDiff:
-                    bestPermutationIndex = index
+            if bestDiff is None or difference < bestDiff:
+                bestDiff = difference
+                bestPermutationIndex = index
 
-        print(permutations[bestPermutationIndex])
-        #TODO Form colour list based on the colour relationship above
+        bestPermutation = permutations[bestPermutationIndex]
+        print(bestPermutation)
+
+        for groupCount, group in enumerate(colourGroupings):
+            for colourCount, colour in enumerate(group):
+                print(colour)
+                # Position of this colour in the cube list
+                key = colour[1]
+                print(key)
+                colourList[key] = bestPermutation[groupCount]
+
 
         return colourList
 
@@ -208,10 +235,10 @@ class computerVision():
         # Take a completely new copy to ensure that nothing in the original list gets broken
         tempList = copy.deepcopy(completeList)
 
-        if (index+subListLen <= len(completeList):
+        if (index+groupSize <= len(completeList)):
             sublist = tempList[index: (index+groupSize)]
 
-        else
+        else:
             # Create list such that it wraps around: negative values for the
             # deviation calculation
             if applyWrapCompensation:
