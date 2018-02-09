@@ -74,8 +74,8 @@ class computerVision():
                                     'B': (100, 60,100),
                                     'O': ( 10,140,200),
                                     #'G': ( 37, 80,100),
-                                    'G': ( 50, 80,100),
-                                    'W': ( 93, 30,100),
+                                    'G': ( 90, 80,100),
+                                    'W': ( 50, 30,100),
                                     'R': (  0, 80,100)}
 
         #self.colourCorrelation = {  'Y': (( 26, 70,180), ( 36,255,255)),
@@ -358,7 +358,7 @@ class computerVision():
                         # Draw contour outline in the average colour of the contour contents
                         contourHsvColour = np.copy(contour[3])
                         #TODO testing: Brighten  the draw colour for visibility
-                        contourHsvColour[2] +=20
+                        contourHsvColour[2] += 10
 
                         # Convert average HSV colour to RGB for drawing
                         rgbDrawColour = cs.hsv_to_rgb(contourHsvColour[0]/180, contourHsvColour[1]/255, contourHsvColour[2]/255)
