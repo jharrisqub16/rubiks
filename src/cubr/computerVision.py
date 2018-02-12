@@ -5,6 +5,8 @@ import colorsys as cs
 import copy
 import itertools
 
+import matplotlib.pyplot as plt
+
 from correlation import *
 
 
@@ -59,7 +61,7 @@ class computerVision():
 
         # Some CV reference values
         self.minimumContourArea = 20
-        self.offset = 11
+        self.offset = 10
         self.altOffset = 20
 
         # Draw values for visual debugging contours
@@ -74,8 +76,8 @@ class computerVision():
                                     'B': (100, 60,100),
                                     'O': ( 10,140,200),
                                     #'G': ( 37, 80,100),
-                                    'G': ( 90, 80,100),
-                                    'W': ( 50, 30,100),
+                                    'G': ( 90,200,100),
+                                    'W': ( 70, 30,100),
                                     'R': (  0, 80,100)}
 
         #self.colourCorrelation = {  'Y': (( 26, 70,180), ( 36,255,255)),
@@ -133,10 +135,8 @@ class computerVision():
         self.colourList[40] = "G"
         self.colourList[49] = "O"
 
-        print(self.colourList)
         self.colourList = [ x if x is not None else 'W' for x in self.colourList]
 
-        print(self.colourList)
         # Figure out/assume the orienation of the cube
         # ie Correlate the colour letter to the face notation
         self.colourFaceCorrelation = self.getColourFaceCorrelation()
@@ -171,6 +171,16 @@ class computerVision():
         # Sort list according to HSV: Increasing HSV values
         sortingList = sorted(sortingList, key= lambda sortingList: int(sortingList[0][0]))
 
+        # TODO temporary hack: Since the white and green ranges are known to overlap, sort these via saturation
+        # This effectively means that the later processing (assuming that distinct hue sets exist) can work as
+        # if green and white are completely separate hue ranges
+        sortingList[24:40] = sorted(sortingList[24:40], key =lambda sortingList: int(sortingList[0][1]))
+
+        #plt.figure(figsize=(14,7))
+        #plt.scatter([x[0][0] for x in sortingList], [x[0][1] for x in sortingList])
+        #plt.title('test')
+        #plt.show()
+
         bestStdDev = None
         bestPosition = 0
         for position in range(groupWidth):
@@ -195,10 +205,6 @@ class computerVision():
 
             averageGroupingColours.append(np.mean([x[0] for x in colourGroupings[groupNum]], axis=0).astype(int))
 
-        for groupNum in range(numGroups):
-            print(colourGroupings[groupNum])
-        print(averageGroupingColours)
-
         # Map groups to the colour 'templates'
         permutations = list(itertools.permutations(self.colourCorrelation, len(self.colourCorrelation)))
         bestDiff = None
@@ -221,10 +227,8 @@ class computerVision():
 
         for groupCount, group in enumerate(colourGroupings):
             for colourCount, colour in enumerate(group):
-                print(colour)
                 # Position of this colour in the cube list
                 key = colour[1]
-                print(key)
                 colourList[key] = bestPermutation[groupCount]
 
 
@@ -612,8 +616,17 @@ class computerVision():
                     if ((self.contourList[listPosition] is None) or (self.contourList[listPosition][1] < area)):
                         # Insert this contour into the contour list if that element is currently empty, or
                         # has smaller area than the new contour
+
+                        # Create individual mask for each validcontour, then
+                        # find the average colour it contains
+                        contourMask = np.zeros(image.shape, np.uint8)
+                        cv2.drawContours(contourMask, c, -1, (255,255,255), thickness=-1)
+                        contourMask = cv2.inRange(contourMask, (1,1,1), (255,255,255))
+
+                        averageHsv = np.rint(cv2.mean(image, contourMask))[:3]
+
+                        # Add entry to contour list
                         # NOTE Contour inserted as 'contour, area, cameraNum, averageHsvColour'
-                        averageHsv = np.rint(cv2.mean(image, tempMask))[:3]
                         self.contourList[listPosition] = [c, area, cameraNum, averageHsv]
 
 
