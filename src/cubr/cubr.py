@@ -64,11 +64,18 @@ class cubr():
         faceTurnLength = self.solver.calculateFaceTurnLength(solution)
         quarterTurnLength = self.solver.calculateQuarterTurnLength(solution)
 
+        # Calculate the relevant time intervals
+        totalTime = endTime-startTime
+        cvReadTime = readTime-startTime
+        algorithmTime = solveTime-readTime
+        motorTime = endTime-solveTime
+
+        # Print some formatted timing output
         print("########################################")
-        print("Elapsed time: {0}".format(endTime-startTime))
-        print("CV Read time: {0}".format(readTime-startTime))
-        print("Solve time:   {0}".format(solveTime-readTime))
-        print("Motor time:   {0}".format(endTime-solveTime))
+        print("Elapsed time: {0}".format(totalTime))
+        print("CV Read time: {0}".format(cvReadTime))
+        print("Solve time:   {0}".format(algorithmTime))
+        print("Motor time:   {0}".format(motorTime))
         print("Solution:     {0}".format(solution))
         print("Face-turns:   {0}".format(faceTurnLength))
         print("Quarter-turns:{0}".format(quarterTurnLength))
