@@ -24,6 +24,11 @@ class Calibration:
         # TODO accomodate scaling and ensure image is full size of canvas (for coordinates)
         self.windowSize = (320, 240)
 
+        # Create the tk variables for widgets to interact with
+        self.highlightRoiBool = tk.BooleanVar()
+        self.highlightContoursBool = tk.BooleanVar()
+        self.applyColourConstancyBool = tk.BooleanVar()
+
         cvImage = self.cubr.getImage()
         img = Image.fromarray(cvImage)
         self.image = ImageTk.PhotoImage(image=img)
@@ -32,11 +37,11 @@ class Calibration:
         self.canvas.bind("<ButtonPress-1>", self.canvasClickEventHandler)
         self.canvas.bind("<ButtonRelease-1>", self.canvasReleaseEventHandler)
         self.canvas.bind("<B1-Motion>", self.canvasMotionEventHandler)
-        self.canvas.pack()
         self.canvasImage = self.canvas.create_image(self.windowSize[0]/2, self.windowSize[1]/2, image=self.image)
+        self.canvas.pack(side=tk.LEFT)
 
-        self.mainFrame.pack()
         self.spawnWidgets()
+        self.mainFrame.pack(side=tk.LEFT)
 
         self.updateFrame()
 
@@ -90,36 +95,39 @@ class Calibration:
 
 
     def spawnWidgets(self):
-        # Pack solve and scramble buttons into a frame (for placement)
-        self.buttonFrame = tk.Frame(self.mainFrame)
+        # Sidebar to contain all other widgets
+        self.sidebarFrame = tk.Frame(self.mainFrame)
 
-        self.cancelButton = tk.Button(self.buttonFrame, text="Cancel", command=self.cancelCloseWindow)
-        self.applyButton = tk.Button(self.buttonFrame, text="Apply", command=self.applyCloseWindow)
-        self.cancelButton.pack(side=tk.LEFT)
-        self.applyButton.pack(side=tk.LEFT)
-        # Place packed frame into a window on the main canvas
-        self.canvas.create_window(self.windowSize[0], self.windowSize[1], anchor='se', window=self.buttonFrame)
+        # Create checkboxes on sidebar
+        self.checkboxFrame = tk.Frame(self.sidebarFrame, borderwidth=2, relief=tk.RAISED)
 
-        self.checkboxFrame = tk.Frame(self.mainFrame)
-
-        self.highlightRoiBool = tk.BooleanVar()
         self.highlightRoiCheckbox = tk.Checkbutton(self.checkboxFrame, text="Highlight regions", command=self.highlightRoiHandler, variable=self.highlightRoiBool)
         self.highlightRoiCheckbox.grid(row=0, column=0, sticky=tk.W)
 
-        self.highlightContoursBool = tk.BooleanVar()
         self.highlightContoursCheckbox = tk.Checkbutton(self.checkboxFrame, text="Highlight contours", command=self.highlightContoursHandler, variable=self.highlightContoursBool)
         self.highlightContoursCheckbox.grid(row=1, column=0, sticky=tk.W)
 
-        self.applyColourConstancyBool = tk.BooleanVar()
-        self.applyColourConstancyCheckbox = tk.Checkbutton(self.checkboxFrame, text="Apply Colour Constancy", command=self.applyColourConstancyHandler, variable=self.applyColourConstancyBool)
+        self.applyColourConstancyCheckbox = tk.Checkbutton(self.checkboxFrame, text="Show Colour Constancy", command=self.applyColourConstancyHandler, variable=self.applyColourConstancyBool)
         self.applyColourConstancyCheckbox.grid(row=2, column=0, sticky=tk.W)
+        # Pack checkboxes into their parent container (to determine their relative positioning)
+        self.checkboxFrame.pack()
 
-        self.canvas.create_window(0, self.windowSize[1], anchor='sw', window=self.checkboxFrame)
+        # Create Apply and Cancel buttons (packed into their own frame for placement)
+        self.buttonFrame = tk.Frame(self.sidebarFrame)
+        # Create button widgets
+        self.cancelButton = tk.Button(self.buttonFrame, text="Cancel", command=self.cancelCloseWindow)
+        self.applyButton = tk.Button(self.buttonFrame, text="Apply", command=self.applyCloseWindow)
+        # Pack buttons into their parent in order
+        self.cancelButton.pack(side=tk.LEFT)
+        self.applyButton.pack(side=tk.LEFT)
+        # Pack the button parent container into the sidebar
+        self.buttonFrame.pack(side=tk.BOTTOM)
 
-        self.nextViewButton = tk.Button(self.mainFrame, text="Next Camera View", command=self.nextCameraView)
-        #self.canvas.create_window(self.windowSize[0]/2, self.windowSize[1], anchor='s', window=self.nextViewButton)
+        self.sidebarFrame.pack(side=tk.LEFT, fill=tk.Y)
+
+        # Make the 'next view' button in the top right corner, on top of the image/canvas
+        self.nextViewButton = tk.Button(self.mainFrame, text="Next View", command=self.nextCameraView)
         self.canvas.create_window(0, 0, anchor='nw', window=self.nextViewButton)
-
 
 
     def cancelCloseWindow(self):
