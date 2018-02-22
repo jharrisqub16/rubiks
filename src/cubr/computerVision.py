@@ -1,5 +1,6 @@
 import cv2
 import math
+import os
 import numpy as np
 import colorsys as cs
 import copy
@@ -20,6 +21,11 @@ class computerVision():
         self.cameras = [0, 1, 2]
         self.noOfCameras = len(self.cameras)
 
+	self.directoryPath = os.path.dirname(os.path.abspath( __file__ ))
+	self.correlationRelPath = '/../cfg/correlation.npy'
+	self.correlationPath = self.directoryPath + self.correlationRelPath
+	print('Coordinate correlation loaded from: {0}'.format(self.correlationPath))
+
         # NB The capture objects are in the same index as self.cameras
         self.captureObjects = []
         for cameraNum in self.cameras:
@@ -38,9 +44,10 @@ class computerVision():
 
         try:
             # Open correlation config file if it exists
-            self.correlation = np.load('cfg/correlation.npy')
+            self.correlation = np.load(self.correlationPath)
         except:
             # Load 'default' python correlation if config file does not exist
+	    print('Loading default correlation configuration')
             self.correlation = correlation
 
         # Backup versions of all configurable objects will be held:
@@ -668,4 +675,4 @@ class computerVision():
         # This is to expect/handle further changes being made
         print("CV: Saving correlation changes")
         self.correlationBackup = np.copy(self.correlation)
-        np.save('cfg/correlation.npy', self.correlation)
+        np.save(self.correlationPath, self.correlation)
