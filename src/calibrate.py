@@ -29,6 +29,19 @@ class Calibration:
         self.highlightContoursBool = tk.BooleanVar()
         self.applyColourConstancyBool = tk.BooleanVar()
 
+        self.colourNames = {    'Y': 'Yellow',
+                                'B': 'Blue',
+                                'O': 'Orange',
+                                'G': 'Green',
+                                'W': 'White',
+                                'R': 'Red'}
+
+        self.targetColoursRgbValues = self.cubr.getColourCorrelationValues()
+
+        self.colourCalibrationActive = False
+        self.colourCalibrationLastSelection = None
+        self.colourCalibrationNewSelection = tk.StringVar()
+
         cvImage = self.cubr.getImage()
         img = Image.fromarray(cvImage)
         self.image = ImageTk.PhotoImage(image=img)
@@ -51,6 +64,7 @@ class Calibration:
         self.cubr.setContourHighlighting(False)
         self.cubr.setColourConstancy(False)
 
+
     def updateFrame(self):
         cvImage = self.cubr.getImage()
 
@@ -71,16 +85,22 @@ class Calibration:
         #   - The image is presented as the full size of the canvas/window
         #   - The image is not scaled
 
-        tempCoords = (event.x, event.y)
-        print(tempCoords)
+        clickCoords = (event.x, event.y)
+        print(clickCoords)
         # TODO no colour calibration is active
 
         if (self.highlightRoiBool.get() is True):
             # Only allow shifting of ROIs when their highlighting is active
-            self.cubr.roiDragSet(tempCoords)
-        elif (False):
-            pass
-            # self.cubr.calibrateColourHandler(activeColourSelection, (event.x, event.y))
+            self.cubr.roiDragSet(clickCoords)
+        elif (self.colourCalibrationActive is True and self.colourCalibrationLastSelection is not None):
+            print('colour calibration: colour: {}'.format(self.colourCalibrationLastSelection))
+
+            self.cubr.calibrateColourHandler(self.colourCalibrationLastSelection, clickCoords)
+
+            # Pull new colours from cv
+            self.targetColoursRgbValues = self.cubr.getColourCorrelationValues()
+            # Apply new colours to buttons
+            self.updateColourCalibrationButtonColours()
 
 
     def canvasMotionEventHandler(self, event):
@@ -112,6 +132,21 @@ class Calibration:
         # Pack checkboxes into their parent container (to determine their relative positioning)
         self.checkboxFrame.pack()
 
+
+        # Create colour calibration buttons
+        self.colourButtonsFrame = tk.Frame(self.sidebarFrame, borderwidth=2, relief = tk.RAISED)
+        self.colourCalibrationButtons = []
+        for index, colour in enumerate(self.targetColoursRgbValues):
+            # Form hex code colour from RGB values
+            tempColour = '#%02x%02x%02x' % (self.targetColoursRgbValues[colour][0], self.targetColoursRgbValues[colour][1], self.targetColoursRgbValues[colour][2])
+            tempButton = tk.Radiobutton(self.colourButtonsFrame, text=self.colourNames[colour], indicatoron=False, bg=tempColour, selectcolor=tempColour, var=self.colourCalibrationNewSelection, value=colour, command=self.colourCalibrationHandler)
+            self.colourCalibrationButtons.append(tempButton)
+
+            self.colourCalibrationButtons[index].pack(anchor='nw', fill=tk.X)
+
+        self.colourButtonsFrame.pack(side=tk.TOP, anchor='w', fill=tk.X)
+
+
         # Create Apply and Cancel buttons (packed into their own frame for placement)
         self.buttonFrame = tk.Frame(self.sidebarFrame)
         # Create button widgets
@@ -128,6 +163,13 @@ class Calibration:
         # Make the 'next view' button in the top right corner, on top of the image/canvas
         self.nextViewButton = tk.Button(self.mainFrame, text="Next View", command=self.nextCameraView)
         self.canvas.create_window(0, 0, anchor='nw', window=self.nextViewButton)
+
+
+    def updateColourCalibrationButtonColours(self):
+        for index, colour in enumerate(self.targetColoursRgbValues):
+            tempColour = '#%02x%02x%02x' % (self.targetColoursRgbValues[colour][0], self.targetColoursRgbValues[colour][1], self.targetColoursRgbValues[colour][2])
+
+            self.colourCalibrationButtons[index].config(bg=tempColour, selectcolor=tempColour)
 
 
     def cancelCloseWindow(self):
@@ -177,9 +219,24 @@ class Calibration:
         # Call API update function
         self.cubr.setContourHighlighting(tempBool)
 
+
     def applyColourConstancyHandler(self):
         tempBool = self.applyColourConstancyBool.get()
         print("Colour Constancy state toggled to {0}.".format(tempBool))
 
         # Call API update function
         self.cubr.setColourConstancy(tempBool)
+
+
+    def colourCalibrationHandler(self):
+        tempNewButtonValue = self.colourCalibrationNewSelection.get()
+
+        if (tempNewButtonValue == self.colourCalibrationLastSelection):
+            self.colourCalibrationActive = False
+            self.colourCalibrationLastSelection = None
+            for button in self.colourCalibrationButtons:
+                # Deactivate all buttons
+                button.deselect()
+        else:
+            self.colourCalibrationActive = True
+            self.colourCalibrationLastSelection = tempNewButtonValue

@@ -157,6 +157,10 @@ class cubr():
         self.cv.calibrateColourHandler(colour, coords)
 
 
+    def getColourCorrelationValues(self):
+        return self.cv.getColourCorrelationValues()
+
+
     def discardStateChanges(self):
         # TODO Not sure how this should be handled
         self.cv.discardCorrelationChanges()

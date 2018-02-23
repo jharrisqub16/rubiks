@@ -21,10 +21,12 @@ class computerVision():
         self.cameras = [0, 1, 2]
         self.noOfCameras = len(self.cameras)
 
+        # Work out the absolute paths to expected configuration files
 	self.directoryPath = os.path.dirname(os.path.abspath( __file__ ))
-	self.correlationRelPath = '/../cfg/correlation.npy'
-	self.correlationPath = self.directoryPath + self.correlationRelPath
-	print('Coordinate correlation loaded from: {0}'.format(self.correlationPath))
+	self.coordinateCorrelationRelPath = '/../cfg/correlation.npy'
+        self.colourCorrelationRelPath = '/../cfg/colours.npy'
+	self.coordinateCorrelationPath = self.directoryPath + self.coordinateCorrelationRelPath
+        self.colourCorrelationPath = self.directoryPath + self.colourCorrelationRelPath
 
         # NB The capture objects are in the same index as self.cameras
         self.captureObjects = []
@@ -40,21 +42,37 @@ class computerVision():
 
             self.captureObjects.append(tempCamera)
 
-        self.colours = {0:'U',1:'R',2:'F',3:'D',4:'L',5:'B'}
-
+        # Load coordinate correlation configuration
         try:
             # Open correlation config file if it exists
-            self.correlation = np.load(self.correlationPath)
+            self.correlation = np.load(self.coordinateCorrelationPath)
+            print('Coordinate correlation loaded from: {0}'.format(self.coordinateCorrelationPath))
         except:
             # Load 'default' python correlation if config file does not exist
-	    print('Loading default correlation configuration')
+	    print('Loading default coordinate configuration')
             self.correlation = correlation
+
+        # Load colour correlation configuration
+        try:
+            # Open correlation config file if it exists
+            self.colourCorrelation = np.load(self.colourCorrelationPath).item()
+            print('Colour correlation loaded from: {0}'.format(self.colourCorrelationPath))
+        except:
+            # Load 'default' python correlation if config file does not exist
+	    print('Loading default colour configuration')
+            self.colourCorrelation = {  'Y': ( 26, 70,180),
+                                        'B': (120, 60,100),
+                                        'O': ( 10,140,200),
+                                        'G': ( 90,200,100),
+                                        'W': (100, 30,100),
+                                        'R': (  0, 80,100)}
 
         # Backup versions of all configurable objects will be held:
         # This allows the 'current' variable to be reverted when changes are being discarded.
         # For now at least, it is easier that these objects are told to simply save or discard changes,
         # rather than creating backups (only as required) when config changes have been made to them.
-        self.correlationBackup = np.copy(self.correlation)
+        self.coordinateCorrelationBackup = np.copy(self.correlation)
+        self.colourCorrelationBackup = self.colourCorrelation.copy()
 
         self.cubeState = None
         self.colourList = [None]*54
@@ -70,29 +88,6 @@ class computerVision():
         self.minimumContourArea = 20
         self.offset = 10
         self.altOffset = 20
-
-        # Draw values for visual debugging contours
-        self.drawColourValues = {   'Y': (  0,255,255),
-                                    'B': (255,  0,  0),
-                                    'O': (  0,160,255),
-                                    'G': (  0,255,  0),
-                                    'R': (  0,  0,255)}
-
-
-        self.colourCorrelation = {  'Y': ( 26, 70,180),
-                                    'B': (100, 60,100),
-                                    'O': ( 10,140,200),
-                                    #'G': ( 37, 80,100),
-                                    'G': ( 90,200,100),
-                                    'W': ( 70, 30,100),
-                                    'R': (  0, 80,100)}
-
-        #self.colourCorrelation = {  'Y': (( 26, 70,180), ( 36,255,255)),
-        #                            'B': ((100, 60,100), (150,255,255)),
-        #                            'O': (( 10,140,200), ( 24,255,255)),
-        #                            'G': (( 37, 80,100), ( 93,255,255)),
-        #                            'W': (( 93, 30,100), (100,255,255)),
-        #                            'R': ((  0, 80,100), ( 7,255,255))}
 
         # Defines which camera's image will be output to the GUI:
         # This is done to confine of the number of cameras, capture objects etc
@@ -373,6 +368,7 @@ class computerVision():
 
                         # Convert average HSV colour to RGB for drawing
                         rgbDrawColour = cs.hsv_to_rgb(contourHsvColour[0]/180, contourHsvColour[1]/255, contourHsvColour[2]/255)
+                        # Reverse RGB for opencv draw function as this operates on BGR basis
                         rgbDrawColour = rgbDrawColour[::-1]
                         rgbDrawColour = [i*255 for i in rgbDrawColour]
 
@@ -480,11 +476,35 @@ class computerVision():
         self.dragItemIndex = 0,0
 
 
-    def calibrateColourHandler(self, colour, coords):
+    def calibrateColourHandler(self, colourInitial, coords):
         # Handler function to change expected colour values based on where the user has clicked on the
         # currently displayed image.
-        # TODO none of this is implemented currently
-        print("Recalibrated to coords {0} on camera{1}".format(self.cameras[self.guiDisplayCameraIndex], coords))
+
+        # TODO is this number actually correct?
+        cameraNum = self.cameras[self.guiDisplayCameraIndex]
+        print("Recalibrated colour {} to coords {} on camera {}".format(colourInitial, coords, cameraNum))
+
+        # Update images to ensure we are referencing the latest state
+        self.populateCvImages()
+
+        # TODO I don't really know why the coordinates want to be reversed here?
+        #colourHsvValue = self.hsvImages[cameraNum][coords]
+        colourHsvValue = self.hsvImages[cameraNum][coords[1], coords[0]]
+        self.colourCorrelation[colourInitial] = colourHsvValue
+
+
+    def getColourCorrelationValues(self):
+        #self.colourCorrelation:
+
+        # Translate HSV correlation into HSV before return
+        rgbConvertedDict = {}
+        for colour in self.colourCorrelation:
+                # Note *1.0 is added to ensure float division. Other options exist but require modification of other sections
+                rgbColour = cs.hsv_to_rgb(self.colourCorrelation[colour][0]/(180*1.0), self.colourCorrelation[colour][1]/(255*1.0), self.colourCorrelation[colour][2]/(255*1.0)) 
+                rgbColour = [i*255 for i in rgbColour]
+                rgbConvertedDict[colour] = rgbColour
+
+        return rgbConvertedDict
 
 
 ################################################################################
@@ -665,14 +685,20 @@ class computerVision():
 
     def discardCorrelationChanges(self):
         # Reset correlation to the 'pre-changes' version
-        self.correlation = np.copy(self.correlationBackup)
-        print("CV: Discarding correlation changes")
+        print("CV: Discarding coordinate correlation changes")
+        self.correlation = np.copy(self.coordinateCorrelationBackup)
 
+        print("CV: Discarding colour correlation changes")
+        self.colourCorrelation = self.colourCorrelationBackup.copy()
 
     def saveCorrelation(self):
         # TODO
         # Update both the current and the backup to the 'updated' state:
         # This is to expect/handle further changes being made
-        print("CV: Saving correlation changes")
-        self.correlationBackup = np.copy(self.correlation)
-        np.save(self.correlationPath, self.correlation)
+        print("CV: Saving coordinate correlation changes")
+        self.coordianteCorrelationBackup = np.copy(self.correlation)
+        np.save(self.coordinateCorrelationPath, self.correlation)
+
+        print("CV: Saving colour correlation changes")
+        self.colourCorrelationBackup = self.colourCorrelation.copy()
+        np.save(self.colourCorrelationPath, self.colourCorrelation)
