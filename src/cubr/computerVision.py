@@ -22,10 +22,10 @@ class computerVision():
         self.noOfCameras = len(self.cameras)
 
         # Work out the absolute paths to expected configuration files
-	self.directoryPath = os.path.dirname(os.path.abspath( __file__ ))
-	self.coordinateCorrelationRelPath = '/../cfg/correlation.npy'
+        self.directoryPath = os.path.dirname(os.path.abspath( __file__ ))
+        self.coordinateCorrelationRelPath = '/../cfg/correlation.npy'
         self.colourCorrelationRelPath = '/../cfg/colours.npy'
-	self.coordinateCorrelationPath = self.directoryPath + self.coordinateCorrelationRelPath
+        self.coordinateCorrelationPath = self.directoryPath + self.coordinateCorrelationRelPath
         self.colourCorrelationPath = self.directoryPath + self.colourCorrelationRelPath
 
         # NB The capture objects are in the same index as self.cameras
@@ -49,7 +49,7 @@ class computerVision():
             print('Coordinate correlation loaded from: {0}'.format(self.coordinateCorrelationPath))
         except:
             # Load 'default' python correlation if config file does not exist
-	    print('Loading default coordinate configuration')
+            print('Loading default coordinate configuration')
             self.correlation = correlation
 
         # Load colour correlation configuration
@@ -59,7 +59,7 @@ class computerVision():
             print('Colour correlation loaded from: {0}'.format(self.colourCorrelationPath))
         except:
             # Load 'default' python correlation if config file does not exist
-	    print('Loading default colour configuration')
+            print('Loading default colour configuration')
             self.colourCorrelation = {  'Y': ( 26, 70,180),
                                         'B': (120, 60,100),
                                         'O': ( 10,140,200),
@@ -143,7 +143,7 @@ class computerVision():
         # ie Correlate the colour letter to the face notation
         self.colourFaceCorrelation = self.getColourFaceCorrelation()
 
-        # Use colour-face correlation to 
+        # Use colour-face correlation to convert colour list into cube state
         self.cubeState = self.convertColoursToFaceNotation(self.colourList)
         print(self.cubeState)
 
@@ -384,7 +384,7 @@ class computerVision():
 
         if clearBufferBool:
             # NOTE WORKAROUND
-            # The buffer of the camera stream often causes an old image to be used, 
+            # The buffer of the camera stream often causes an old image to be used,
             # which competely ruins the computer vision.
             # Several dummy images are taken to clear this buffer, hence fixing
             # incorrect computer vision output which is made based on old images.
@@ -500,7 +500,7 @@ class computerVision():
         rgbConvertedDict = {}
         for colour in self.colourCorrelation:
                 # Note *1.0 is added to ensure float division. Other options exist but require modification of other sections
-                rgbColour = cs.hsv_to_rgb(self.colourCorrelation[colour][0]/(180*1.0), self.colourCorrelation[colour][1]/(255*1.0), self.colourCorrelation[colour][2]/(255*1.0)) 
+                rgbColour = cs.hsv_to_rgb(self.colourCorrelation[colour][0]/(180*1.0), self.colourCorrelation[colour][1]/(255*1.0), self.colourCorrelation[colour][2]/(255*1.0))
                 rgbColour = [i*255 for i in rgbColour]
                 rgbConvertedDict[colour] = rgbColour
 
