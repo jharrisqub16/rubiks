@@ -6,8 +6,6 @@ import colorsys as cs
 import copy
 import itertools
 
-import matplotlib.pyplot as plt
-
 from correlation import *
 
 
@@ -177,11 +175,6 @@ class computerVision():
         # This effectively means that the later processing (assuming that distinct hue sets exist) can work as
         # if green and white are completely separate hue ranges
         sortingList[24:40] = sorted(sortingList[24:40], key =lambda sortingList: int(sortingList[0][1]))
-
-        #plt.figure(figsize=(14,7))
-        #plt.scatter([x[0][0] for x in sortingList], [x[0][1] for x in sortingList])
-        #plt.title('test')
-        #plt.show()
 
         bestStdDev = None
         bestPosition = 0
