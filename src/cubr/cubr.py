@@ -96,8 +96,15 @@ class cubr():
 
         moves = randint(10,30)
 
+        operation = None
+        lastOperation = None
+
         for x in range(0, moves):
             operation = randint(0,5)
+            while (operation == lastOperation):
+                operation = randint(0,5)
+
+            lastOperation = operation
 
             # Perform half turn (2X) if 1
             rotation = randint(0,2)
