@@ -91,8 +91,8 @@ class cubr():
             print("Could not verify solution success")
 
 
-    def scramble(self):
-        scramble = []
+    def scrambleCube(self):
+        scrambleSequence = []
 
         moves = randint(10,30)
 
@@ -100,14 +100,20 @@ class cubr():
             operation = randint(0,5)
 
             # Perform half turn (2X) if 1
-            double = randint(0,1)
+            rotation = randint(0,2)
 
-            if double == 0 :
-                scramble.append(self.colours[operation])
+            if rotation == 0 :
+                # Apply ACW rotation
+                scrambleSequence.append(self.colours[operation] + "'")
+            elif rotation == 1:
+                # Apply half turn (180 degree) rotation
+                scrambleSequence.append(self.colours[operation] + "2")
             else:
-                scramble.append("2"+self.colours[operation])
+                # Normal CW rotation
+                scrambleSequence.append(self.colours[operation])
 
-        scrambleString = ' '.join(scramble)
+        scrambleString = ' '.join(scrambleSequence)
+        print("scramble:{}".format(scrambleString))
 
         self.mc.sendString(scrambleString, waitForAck=True)
 

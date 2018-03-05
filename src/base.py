@@ -120,7 +120,7 @@ class guiMain:
 
 
     def scrambleHandler(self):
-        scrambleThread = threading.Thread(target=self.cubr.scramble, args=())
+        scrambleThread = threading.Thread(target=self.cubr.scrambleCube, args=())
         scrambleThread.start()
         #self.cubr.scramble()
 

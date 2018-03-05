@@ -58,10 +58,7 @@ class cubeSolver():
         # Get the base number of moves in the sequence
         solutionLength = self.calculateFaceTurnLength(solutionString)
 
-        for move in solutionString.split(' '):
-            if move.find('2') > -1:
-                # Increment solution length again for each element in the
-                # solution which is a half turn
-                solutionLength += 1
+        # Add *2 moves
+        solutionLength += solutionString.count("2")
 
         return solutionLength

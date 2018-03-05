@@ -86,13 +86,8 @@ class Calibration:
         #   - The image is not scaled
 
         clickCoords = (event.x, event.y)
-        print(clickCoords)
-        # TODO no colour calibration is active
 
-        if (self.highlightRoiBool.get() is True):
-            # Only allow shifting of ROIs when their highlighting is active
-            self.cubr.roiDragSet(clickCoords)
-        elif (self.colourCalibrationActive is True and self.colourCalibrationLastSelection is not None):
+        if (self.colourCalibrationActive is True and self.colourCalibrationLastSelection is not None):
             print('colour calibration: colour: {}'.format(self.colourCalibrationLastSelection))
 
             self.cubr.calibrateColourHandler(self.colourCalibrationLastSelection, clickCoords)
@@ -101,6 +96,9 @@ class Calibration:
             self.targetColoursRgbValues = self.cubr.getColourCorrelationValues()
             # Apply new colours to buttons
             self.updateColourCalibrationButtonColours()
+        elif (self.highlightRoiBool.get() is True):
+            # Only allow shifting of ROIs when their highlighting is active
+            self.cubr.roiDragSet(clickCoords)
 
 
     def canvasMotionEventHandler(self, event):
