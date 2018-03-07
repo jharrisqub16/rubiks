@@ -12,7 +12,7 @@ class Calibration:
         self.master = master
         self.parentWindow = parent
 
-        self.cubr = self.parentWindow.cubr
+        self.Cuber = self.parentWindow.cuber
 
         self.mainFrame = tk.Frame(self.master)
 
@@ -42,7 +42,7 @@ class Calibration:
         self.colourCalibrationLastSelection = None
         self.colourCalibrationNewSelection = tk.StringVar()
 
-        cvImage = self.cubr.getImage()
+        cvImage = self.cuber.getImage()
         img = Image.fromarray(cvImage)
         self.image = ImageTk.PhotoImage(image=img)
 
@@ -60,13 +60,13 @@ class Calibration:
 
         # Always start calibration window with visual debug disabled:
         # This also prevents the GUI and cv getting out of sync
-        self.cubr.setRoiHighlighting(False)
-        self.cubr.setContourHighlighting(False)
-        self.cubr.setColourConstancy(False)
+        self.cuber.setRoiHighlighting(False)
+        self.cuber.setContourHighlighting(False)
+        self.cuber.setColourConstancy(False)
 
 
     def updateFrame(self):
-        cvImage = self.cubr.getImage()
+        cvImage = self.cuber.getImage()
 
         if cvImage is not None:
             # Convert image to TkInter format
@@ -90,26 +90,26 @@ class Calibration:
         if (self.colourCalibrationActive is True and self.colourCalibrationLastSelection is not None):
             print('colour calibration: colour: {}'.format(self.colourCalibrationLastSelection))
 
-            self.cubr.calibrateColourHandler(self.colourCalibrationLastSelection, clickCoords)
+            self.cuber.calibrateColourHandler(self.colourCalibrationLastSelection, clickCoords)
 
             # Pull new colours from cv
-            self.targetColoursRgbValues = self.cubr.getColourCorrelationValues()
+            self.targetColoursRgbValues = self.cuber.getColourCorrelationValues()
             # Apply new colours to buttons
             self.updateColourCalibrationButtonColours()
         elif (self.highlightRoiBool.get() is True):
             # Only allow shifting of ROIs when their highlighting is active
-            self.cubr.roiDragSet(clickCoords)
+            self.cuber.roiDragSet(clickCoords)
 
 
     def canvasMotionEventHandler(self, event):
         if (self.highlightRoiBool.get() is True):
             tempCoords = (event.x, event.y)
-            self.cubr.roiDrag(tempCoords)
+            self.cuber.roiDrag(tempCoords)
 
 
     def canvasReleaseEventHandler(self, event):
         if (self.highlightRoiBool.get() is True):
-            self.cubr.roiDragEnd()
+            self.cuber.roiDragEnd()
 
 
     def spawnWidgets(self):
@@ -174,7 +174,7 @@ class Calibration:
         # Prompt user, disgregard all changes and destroy window
         if (msg.askokcancel("Confirm", "Changes will be discarded. \n Continue?")):
             # Call to reset discard all changes that were made in the solver:
-            self.cubr.discardStateChanges()
+            self.cuber.discardStateChanges()
             # Destroy the window
             self.teardownWindow()
 
@@ -183,7 +183,7 @@ class Calibration:
         # Store all configuration changes, then destroy configuration window
         # TODO Handle configuration changes
         print("Configuration overwritten")
-        self.cubr.saveState()
+        self.cuber.saveState()
 
         self.teardownWindow()
 
@@ -198,7 +198,7 @@ class Calibration:
 
 
     def nextCameraView(self):
-        self.cubr.goToNextViewingPosition()
+        self.cuber.goToNextViewingPosition()
 
 
     def highlightRoiHandler(self):
@@ -207,7 +207,7 @@ class Calibration:
         print("Roi Highlighting state toggled to {0}.".format(tempBool))
 
         # call API function to update
-        self.cubr.setRoiHighlighting(tempBool)
+        self.cuber.setRoiHighlighting(tempBool)
 
 
     def highlightContoursHandler(self):
@@ -215,7 +215,7 @@ class Calibration:
         print("Contour Highlighting state toggled to {0}.".format(tempBool))
 
         # Call API update function
-        self.cubr.setContourHighlighting(tempBool)
+        self.cuber.setContourHighlighting(tempBool)
 
 
     def applyColourConstancyHandler(self):
@@ -223,7 +223,7 @@ class Calibration:
         print("Colour Constancy state toggled to {0}.".format(tempBool))
 
         # Call API update function
-        self.cubr.setColourConstancy(tempBool)
+        self.cuber.setColourConstancy(tempBool)
 
 
     def colourCalibrationHandler(self):

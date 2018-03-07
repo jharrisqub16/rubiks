@@ -12,17 +12,17 @@ from PIL import ImageTk
 from calibrate import Calibration
 
 
-cmd_subfolder = os.path.realpath(os.path.abspath(os.path.join(os.path.split(inspect.getfile( inspect.currentframe() ))[0],"cubr")))
+cmd_subfolder = os.path.realpath(os.path.abspath(os.path.join(os.path.split(inspect.getfile( inspect.currentframe() ))[0],"cuber")))
 if cmd_subfolder not in sys.path:
     sys.path.insert(0, cmd_subfolder)
 
-from cubr import cubr
+from cuber import Cuber
 
 
 class guiMain:
     def __init__(self, master, image):
-        # Create cubr API object
-        self.cubr = cubr()
+        # Create cuber API object
+        self.cuber = Cuber()
 
         # tk.Tk() master
         self.master = master
@@ -120,15 +120,15 @@ class guiMain:
 
 
     def scrambleHandler(self):
-        scrambleThread = threading.Thread(target=self.cubr.scrambleCube, args=())
+        scrambleThread = threading.Thread(target=self.cuber.scrambleCube, args=())
         scrambleThread.start()
-        #self.cubr.scramble()
+        #self.cuber.scramble()
 
 
     def solveHandler(self):
-        solveThread = threading.Thread(target=self.cubr.solveCube, args=())
+        solveThread = threading.Thread(target=self.cuber.solveCube, args=())
         solveThread.start()
-        #self.cubr.solveCube()
+        #self.cuber.solveCube()
 
 
 if __name__ == "__main__":

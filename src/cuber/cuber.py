@@ -1,5 +1,4 @@
-
-# cubr is the main class for the solver, including subclasses responsible for:
+# Cuber is the main class for the solver, including subclasses responsible for:
 #   -computer vision on Rubik's cube
 #   -solving algorithm for producing solution sequence
 #   -motor control
@@ -21,7 +20,7 @@ from random import randint
 
 import time
 
-class cubr():
+class Cuber():
     def __init__(self):
 
         # TODO handle exceptions of trying to create these objects
