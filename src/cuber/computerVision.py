@@ -148,129 +148,6 @@ class computerVision():
         return self.cubeState
 
 
-# TODO added test functions here temporarily
-    def extractColoursFromContours(self, contourList, colourCorrelation):
-        # Convert contour average colour into colour letter representation
-        # TODO rework this again to use grouping techniques
-        colourList = [None]*len(contourList)
-        sortingList = []
-
-        numGroups = 6
-
-        groupWidth = len(contourList)/numGroups
-        # NOTE Exclude centres for this robot version
-        groupWidth -= 1
-
-        # Form more concise list to make this sorting easier
-        # We only care about the average colour, and its cube position
-        for index, contour in enumerate(contourList):
-            if contour is not None:
-                #sortingList.append([contour, index])
-                sortingList.append([contour[3], index])
-
-        # Sort list according to HSV: Increasing HSV values
-        sortingList = sorted(sortingList, key= lambda sortingList: int(sortingList[0][0]))
-
-        # TODO temporary hack: Since the white and green ranges are known to overlap, sort these via saturation
-        # This effectively means that the later processing (assuming that distinct hue sets exist) can work as
-        # if green and white are completely separate hue ranges
-        sortingList[24:40] = sorted(sortingList[24:40], key =lambda sortingList: int(sortingList[0][1]))
-
-        bestStdDev = None
-        bestPosition = 0
-        for position in range(groupWidth):
-            # Iterate group position through the list
-            totalStdDev = 0
-            for group in range(numGroups):
-                # For each positon, iterate through each group
-                tempList = self.getSubList(sortingList, position+(group*groupWidth), groupWidth, True)
-                #Add up total std dev of H values
-                # TODO S needs to be considered as well
-                totalStdDev += np.std([x[0][0] for x in tempList])
-                #totalStdDev += np.std(tempList)
-
-            if (bestStdDev is None) or (totalStdDev < bestStdDev):
-                bestStdDev = totalStdDev
-                bestPosition = position
-
-        colourGroupings =[]
-        averageGroupingColours = []
-        for groupNum in range(numGroups):
-            colourGroupings.append(self.getSubList(sortingList, bestPosition+(groupNum*groupWidth), groupWidth, False))
-
-            averageGroupingColours.append(np.mean([x[0] for x in colourGroupings[groupNum]], axis=0).astype(int))
-
-        # Map groups to the colour 'templates'
-        permutations = list(itertools.permutations(self.colourCorrelation, len(self.colourCorrelation)))
-        bestDiff = None
-        bestPermutationIndex = 0
-
-        for index, perm in enumerate(permutations):
-            # For each permutation of the colour correlation dict
-            difference = 0
-            for count, avgColour in enumerate(averageGroupingColours):
-                # Sum difference in H values to find groups closest to template colours
-                key = perm[count]
-                difference += math.fabs(self.colourCorrelation[key][0] - avgColour[0])
-
-            if bestDiff is None or difference < bestDiff:
-                bestDiff = difference
-                bestPermutationIndex = index
-
-        bestPermutation = permutations[bestPermutationIndex]
-        print(bestPermutation)
-
-        for groupCount, group in enumerate(colourGroupings):
-            for colourCount, colour in enumerate(group):
-                # Position of this colour in the cube list
-                key = colour[1]
-                colourList[key] = bestPermutation[groupCount]
-
-
-        return colourList
-
-
-    def getSubList(self, completeList, index, groupSize, applyWrapCompensation):
-        # Take a completely new copy to ensure that nothing in the original list gets broken
-        tempList = copy.deepcopy(completeList)
-
-        if (index+groupSize <= len(completeList)):
-            sublist = tempList[index: (index+groupSize)]
-
-        else:
-            # Create list such that it wraps around: negative values for the
-            # deviation calculation
-            if applyWrapCompensation:
-                # Copy 'positive index elements as is
-                start = tempList[ : (index+groupSize)%groupSize]
-
-                # Copy 'wrapped' index elements, and -180 to simulate wrapping (for calculations)
-                wrapped = tempList[index: ]
-                for element in wrapped:
-                    element[0][0] -= 180
-
-                # Form complete sublist
-                sublist = wrapped + start
-
-            else:
-                sublist = tempList[index: ] + tempList[ : (index+groupSize)%groupSize]
-
-        return sublist
-
-
-    def convertColoursToFaceNotation(self, colourList):
-        cubeStateList = [None]*54
-
-        index = 0
-        for colour in colourList:
-            if colour is not None:
-                cubeStateList[index] = self.colourFaceCorrelation[colour]
-
-            index += 1
-
-        return cubeStateList
-
-
 ################################################################################
 ## Camera interface functions
 ################################################################################
@@ -669,6 +546,132 @@ class computerVision():
                     'W':'U'}
 
         return temp
+
+
+    def extractColoursFromContours(self, contourList, colourCorrelation):
+        # Convert contour average colour into colour letter representation
+        colourList = [None]*len(contourList)
+        sortingList = []
+
+        numGroups = 6
+
+        groupWidth = len(contourList)/numGroups
+        # NOTE Exclude centres for this robot version
+        groupWidth -= 1
+
+        # Form more concise list to make this sorting easier
+        # We only care about the average colour, and its cube position
+        for index, contour in enumerate(contourList):
+            if contour is not None:
+                #sortingList.append([contour, index])
+                sortingList.append([contour[3], index])
+
+        # Sort list according to HSV: Increasing HSV values
+        sortingList = sorted(sortingList, key= lambda sortingList: int(sortingList[0][0]))
+
+        # TODO temporary hack: Since the white and green ranges are known to overlap, sort these via saturation
+        # This effectively means that the later processing (assuming that distinct hue sets exist) can work as
+        # if green and white are completely separate hue ranges
+        sortingList[24:40] = sorted(sortingList[24:40], key =lambda sortingList: int(sortingList[0][1]))
+
+        bestStdDev = None
+        bestPosition = 0
+        for position in range(groupWidth):
+            # Iterate group position through the list
+            totalStdDev = 0
+            for group in range(numGroups):
+                # For each positon, iterate through each group
+                tempList = self.getSubList(sortingList, position+(group*groupWidth), groupWidth, True)
+                #Add up total std dev of H values
+                # TODO S needs to be considered as well
+                totalStdDev += np.std([x[0][0] for x in tempList])
+                #totalStdDev += np.std(tempList)
+
+            if (bestStdDev is None) or (totalStdDev < bestStdDev):
+                bestStdDev = totalStdDev
+                bestPosition = position
+
+        colourGroupings =[]
+        averageGroupingColours = []
+        for groupNum in range(numGroups):
+            colourGroupings.append(self.getSubList(sortingList, bestPosition+(groupNum*groupWidth), groupWidth, False))
+
+            averageGroupingColours.append(np.mean([x[0] for x in colourGroupings[groupNum]], axis=0).astype(int))
+
+        # Map groups to the colour 'templates'
+        permutations = list(itertools.permutations(self.colourCorrelation, len(self.colourCorrelation)))
+        bestDiff = None
+        bestPermutationIndex = 0
+
+        for index, perm in enumerate(permutations):
+            # For each permutation of the colour correlation dict
+            difference = 0
+            for count, avgColour in enumerate(averageGroupingColours):
+                # Sum difference in H values to find groups closest to template colours
+                key = perm[count]
+                difference += math.fabs(self.colourCorrelation[key][0] - avgColour[0])
+
+            if bestDiff is None or difference < bestDiff:
+                bestDiff = difference
+                bestPermutationIndex = index
+
+        bestPermutation = permutations[bestPermutationIndex]
+        print(bestPermutation)
+
+        for groupCount, group in enumerate(colourGroupings):
+            for colourCount, colour in enumerate(group):
+                # Position of this colour in the cube list
+                key = colour[1]
+                colourList[key] = bestPermutation[groupCount]
+
+        return colourList
+
+
+    def getSubList(self, completeList, index, groupSize, applyWrapCompensation):
+        # Form sublists from a larger list, using an index and an offset.
+        # NOTE: In some cases, deviation calculations are required on the sublist,
+        # so 'wrapping' is also applied optionally. This subtracts 180 from the Hue value
+        # so, while the list values are not completely correct, they present the proper
+        # relative deviation between the values.
+
+        # Take a completely new copy to ensure that nothing in the original list gets broken
+        tempList = copy.deepcopy(completeList)
+
+        if (index+groupSize <= len(completeList)):
+            sublist = tempList[index: (index+groupSize)]
+
+        else:
+            # Create list such that it wraps around: negative values for the
+            # deviation calculation
+            if applyWrapCompensation:
+                # Copy 'positive index elements as is
+                start = tempList[ : (index+groupSize)%groupSize]
+
+                # Copy 'wrapped' index elements, and -180 to simulate wrapping (for calculations)
+                wrapped = tempList[index: ]
+                for element in wrapped:
+                    element[0][0] -= 180
+
+                # Form complete sublist
+                sublist = wrapped + start
+
+            else:
+                sublist = tempList[index: ] + tempList[ : (index+groupSize)%groupSize]
+
+        return sublist
+
+
+    def convertColoursToFaceNotation(self, colourList):
+        cubeStateList = [None]*54
+
+        index = 0
+        for colour in colourList:
+            if colour is not None:
+                cubeStateList[index] = self.colourFaceCorrelation[colour]
+
+            index += 1
+
+        return cubeStateList
 
 
 ################################################################################
