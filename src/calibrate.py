@@ -12,7 +12,7 @@ class Calibration:
         self.master = master
         self.parentWindow = parent
 
-        self.Cuber = self.parentWindow.cuber
+        self.cuber = self.parentWindow.cuber
 
         self.mainFrame = tk.Frame(self.master)
 
@@ -36,7 +36,7 @@ class Calibration:
                                 'W': 'White',
                                 'R': 'Red'}
 
-        self.targetColoursRgbValues = self.cubr.getColourCorrelationValues()
+        self.targetColoursRgbValues = self.cuber.getColourCorrelationValues()
 
         self.colourCalibrationActive = False
         self.colourCalibrationLastSelection = None
