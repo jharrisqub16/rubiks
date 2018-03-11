@@ -1,14 +1,11 @@
 import serial
 
 class motorController:
-# TODO: in the future, this could be made smarter eg:
-#   - configurable speed/acceleration of the arduino motor controller.
-#   - Ack from the arduino to confirm move completion. This would be used to
-#       allow the GUI to be smarter (update the current state automatically, etc)
 
     def __init__(self):
         # TODO This should probably be configurable from the GUI/settings menu
-        # Creation should fail but not fatally: changing the serial device
+        # Creation should fail but not fatally, allowing the device ID to be
+        # reconfigured and recreation attempted
 
         self.serialPort = "/dev/ttyACM0"
         self.serialBaudRate = 9600
@@ -38,5 +35,4 @@ class motorController:
             # Valid response/ACK returned
             return
         else:
-            # TODO No valid ack: Timeout occured
-            print("NO ACK!")
+            print("Serial timeout occurred")

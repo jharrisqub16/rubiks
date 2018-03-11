@@ -174,9 +174,7 @@ class Cuber():
 
 
     def discardStateChanges(self):
-        # TODO Not sure how this should be handled
         self.cv.discardCorrelationChanges()
 
     def saveState(self):
-        # TODO Not sure how this should be handled
         self.cv.saveCorrelation()

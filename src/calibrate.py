@@ -81,7 +81,7 @@ class Calibration:
 
 
     def canvasClickEventHandler(self, event):
-        # TODO This assumes that:
+        # NOTE This assumes that:
         #   - The image is presented as the full size of the canvas/window
         #   - The image is not scaled
 
@@ -181,7 +181,6 @@ class Calibration:
 
     def applyCloseWindow(self):
         # Store all configuration changes, then destroy configuration window
-        # TODO Handle configuration changes
         print("Configuration overwritten")
         self.cuber.saveState()
 

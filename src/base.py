@@ -103,8 +103,6 @@ class guiMain:
 
 
     def spawnCalibrationWindow(self):
-        # TODO This validation would need to be validated correctly
-        # with regard to future excaption handling
         if self.calibrationWindowSpawned == False:
 
             # Create independent window (toplevel), then create calibration object as its child

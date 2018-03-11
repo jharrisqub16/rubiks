@@ -127,7 +127,7 @@ class computerVision():
 
         self.colourList = self.extractColoursFromContours(self.contourList, self.colourCorrelation)
 
-        # TODO Assume the centre cubes (ie the orientation of the cube) in this iteration
+        # NOTE: Assume the centre cubes (ie the orientation of the cube) in this iteration
         self.colourList[4 ] = "W"
         self.colourList[13] = "B"
         self.colourList[22] = "R"
@@ -166,12 +166,9 @@ class computerVision():
             # Convert to HSV
             hsvImage = cv2.cvtColor(rawImage, cv2.COLOR_BGR2HSV)
 
-            # TODO is colour constancy always active? temporarily disabled
             equalisedImage = self.applyColourConstancyHSV(hsvImage)
-            #equalisedImage = hsvImage
 
             self.hsvImages.append(equalisedImage)
-
 
             # Apply mask to image, and add into list of images
             imageHeight, imageWidth, imageChannels = rawImage.shape
@@ -233,7 +230,8 @@ class computerVision():
                         contourArray = contour[0]
                         # Draw contour outline in the average colour of the contour contents
                         contourHsvColour = np.copy(contour[3])
-                        #TODO testing: Brighten  the draw colour for visibility
+
+                        # Brighten  the draw colour slightly for visibility
                         contourHsvColour[2] += 10
 
                         # Convert average HSV colour to RGB for drawing
@@ -357,7 +355,7 @@ class computerVision():
         # Update images to ensure we are referencing the latest state
         self.populateCvImages()
 
-        # TODO I don't really know why the coordinates want to be reversed here?
+        # TODO why do the coordinates want to be reversed here?
         #colourHsvValue = self.hsvImages[cameraNum][coords]
         colourHsvValue = self.hsvImages[cameraNum][coords[1], coords[0]]
         self.colourCorrelation[colourInitial] = colourHsvValue
@@ -433,7 +431,9 @@ class computerVision():
         positionCount = 0
 
         for coordinates in self.correlation[cameraNum,]:
-        # TODO This is a square, not a circle!
+        # NOTE This is a square, not a circle!
+        # It does not matter though since the portholes are circular, which
+        # limits the contours anyway.
             if (coordinates != 0 and coordinates is not None):
                 if (math.fabs(coordinates[0] - contourX) < self.offset and
                         math.fabs(coordinates[1] - contourY) < self.offset):
@@ -483,12 +483,9 @@ class computerVision():
 
         hIncrement = 10
 
-        # Loop through entire
+        # Loop through entire H spectrum (circle) in increments
         for h in range(0, 180, hIncrement):
 
-            #tempMask = self.getColourMask(image, (h,10,95), (h+hIncrement,255,255))
-            #TODO testing: Why is threshold needed?
-            #tempMask = cv2.inRange(image, (h,30,95), (h+hIncrement,255,255))
             tempMask = cv2.inRange(image, (h,0,110), (h+hIncrement,255,255))
 
             contours, hierarchy = cv2.findContours(tempMask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
@@ -687,7 +684,6 @@ class computerVision():
         self.colourCorrelation = self.colourCorrelationBackup.copy()
 
     def saveCorrelation(self):
-        # TODO
         # Update both the current and the backup to the 'updated' state:
         # This is to expect/handle further changes being made
         print("CV: Saving coordinate correlation changes")
