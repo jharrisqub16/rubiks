@@ -566,13 +566,12 @@ class computerVision():
                 #sortingList.append([contour, index])
                 sortingList.append([contour[3], index])
 
-        # Sort list according to HSV: Increasing HSV values
-        sortingList = sorted(sortingList, key= lambda sortingList: int(sortingList[0][0]))
-
-        # TODO temporary hack: Since the white and green ranges are known to overlap, sort these via saturation
-        # This effectively means that the later processing (assuming that distinct hue sets exist) can work as
-        # if green and white are completely separate hue ranges
-        sortingList[24:40] = sorted(sortingList[24:40], key =lambda sortingList: int(sortingList[0][1]))
+        # Initially sort list according to saturation
+        # NOTE: White is difficult to seprate from green/blue by Hue.
+        # We are going to assume that white group has the lowest Saturation value instead.
+        sortingList = sorted(sortingList, key= lambda sortingList: int(sortingList[0][1]))
+        # Now we sort the rest of the list 'normally' by Hue
+        sortingList[groupWidth:] = sorted(sortingList[groupWidth:], key= lambda sortingList: int(sortingList[0][0]))
 
         bestStdDev = None
         bestPosition = 0
