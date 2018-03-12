@@ -567,15 +567,16 @@ class computerVision():
         # NOTE: White is difficult to seprate from green/blue by Hue.
         # We are going to assume that white group has the lowest Saturation value instead.
         sortingList = sorted(sortingList, key= lambda sortingList: int(sortingList[0][1]))
+        whiteGroup = sortingList[:groupWidth]
         # Now we sort the rest of the list 'normally' by Hue
-        sortingList[groupWidth:] = sorted(sortingList[groupWidth:], key= lambda sortingList: int(sortingList[0][0]))
+        sortingList = sorted(sortingList[groupWidth:], key= lambda sortingList: int(sortingList[0][0]))
 
         bestStdDev = None
         bestPosition = 0
         for position in range(groupWidth):
             # Iterate group position through the list
             totalStdDev = 0
-            for group in range(numGroups):
+            for group in range(numGroups-1):
                 # For each positon, iterate through each group
                 tempList = self.getSubList(sortingList, position+(group*groupWidth), groupWidth, True)
                 #Add up total std dev of H values
@@ -589,10 +590,14 @@ class computerVision():
 
         colourGroupings =[]
         averageGroupingColours = []
-        for groupNum in range(numGroups):
+        for groupNum in range(numGroups-1):
             colourGroupings.append(self.getSubList(sortingList, bestPosition+(groupNum*groupWidth), groupWidth, False))
 
             averageGroupingColours.append(np.mean([x[0] for x in colourGroupings[groupNum]], axis=0).astype(int))
+
+        # Add the white group back into the mix
+        colourGroupings.append(whiteGroup)
+        averageGroupingColours.append(np.mean([x[0] for x in whiteGroup], axis=0).astype(int))
 
         # Map groups to the colour 'templates'
         permutations = list(itertools.permutations(self.colourCorrelation, len(self.colourCorrelation)))
