@@ -93,7 +93,7 @@ class Cuber():
     def scrambleCube(self):
         scrambleSequence = []
 
-        moves = randint(10,30)
+        moves = randint(20,40)
 
         operation = None
         lastOperation = None
