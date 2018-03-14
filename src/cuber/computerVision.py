@@ -274,12 +274,19 @@ class computerVision():
             # frames are only pulled from the buffer (to empty it). Therefore,
             # this does not actually take that much more time compared to
             # taking a single 'fresh' frame.
+            # However, we still do not want to pull more frames from the buffer
+            # than we need to; Just enough to empty the buffer and then take our
+            # 'fresh' image. Grabbing any excess images will add a significant
+            # amount of time as this will involve a camera capture. Hence,
+            # clearing only 'bufferSize' images is desirable: It seems 4 is a
+            # reasonably standard buffer size.
 
             # NOTE Setting the buffer length of the capture object is apparently not
             # working or not available for all cameras
             # Another 'valid' solution is to use another thread to continuously pull frames
             # from the camera as fast as possible to keep the buffer empty, to eliminate this
             # problem. This should use 'captureObject.grab()' as this has less overhead
+            # (does not decode the image).
 
             for i in xrange(4):
                 temp, dumpCapture = tempCamera.read()
