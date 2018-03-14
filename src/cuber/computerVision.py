@@ -595,6 +595,9 @@ class computerVision():
                 bestStdDev = totalStdDev
                 bestPosition = position
 
+        # Store according to the smallest colour groupings:
+        # Each entry in colourGroupings should represent a set of coherent
+        # coloured cubies/positions
         colourGroupings =[]
         averageGroupingColours = []
         for groupNum in range(numGroups-1):
@@ -602,15 +605,17 @@ class computerVision():
 
             averageGroupingColours.append(np.mean([x[0] for x in colourGroupings[groupNum]], axis=0).astype(int))
 
-        # Add the white group back into the mix
+        # Add the white group back into the mix (it was removed previously)
         colourGroupings.append(whiteGroup)
         averageGroupingColours.append(np.mean([x[0] for x in whiteGroup], axis=0).astype(int))
 
-        # Map groups to the colour 'templates'
+        # Find all possible orderings of the expected colours
         permutations = list(itertools.permutations(self.colourCorrelation, len(self.colourCorrelation)))
         bestDiff = None
         bestPermutationIndex = 0
 
+        # Find the ordering(permutation) of colours which matches most closely
+        # to the measured colour groupings
         for index, perm in enumerate(permutations):
             # For each permutation of the colour correlation dict
             difference = 0
@@ -626,6 +631,11 @@ class computerVision():
         bestPermutation = permutations[bestPermutationIndex]
         print(bestPermutation)
 
+        # We now know:
+        #   - How the cubies across the cube are grouped into coherent groupings
+        #   - A most-likely relationship between these groups and the expected colours
+        # Hence, we now expand this relationship to obain the colours of all the cubies
+        # across the cube.
         for groupCount, group in enumerate(colourGroupings):
             for colourCount, colour in enumerate(group):
                 # Position of this colour in the cube list
