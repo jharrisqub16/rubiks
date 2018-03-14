@@ -183,6 +183,9 @@ class computerVision():
 
 
     def getCvImage(self, cameraNum):
+        # Get image using helper function:
+        # It is required to ensure the camera buffer is empty so we can be sure
+        # that we get an image that is actually 'live'
         rawImage = self.captureImage(cameraNum, True)
 
         return rawImage
@@ -192,6 +195,10 @@ class computerVision():
         # - Get image from relevant camera
         # - Convert from BGR to RGB
         # - Apply filters and debug info as required
+
+        # Use helper function to grab image from camera. Since frames are being
+        # streamed to the GUI, we do not need to worry about emptying the
+        # buffer totally: That will sort itself out.
         frame = self.captureImage(self.guiDisplayCameraIndex, False)
 
         # Draw the visual debug information onto the frame
