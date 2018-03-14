@@ -5,6 +5,7 @@ import numpy as np
 import colorsys as cs
 import copy
 import itertools
+from threading import Thread
 
 from correlation import *
 
@@ -78,9 +79,9 @@ class computerVision():
         # NOTE Contour list contains elemnts of [contour, area, cameraNum, averageHsvColour]
         self.contourList = [None]*54
 
-        self.maskedImages = []
-        self.hsvImages = []
-        self.rawImages = []
+        self.maskedImages = [None]*self.noOfCameras
+        self.hsvImages = [None]*self.noOfCameras
+        self.rawImages = [None]*self.noOfCameras
 
         # Some CV reference values
         self.minimumContourArea = 20
@@ -122,8 +123,9 @@ class computerVision():
         self.colourList = [None]*54
 
         # This section/loop acts on the gathered images to read the colours from the images
-        for cameraNum in range(self.noOfCameras):
-            self.extractContours(self.maskedImages[cameraNum], cameraNum)
+        threads = [Thread(target=self.extractContours, args=(self.maskedImages[cameraNum], cameraNum)) for cameraNum in range(self.noOfCameras)]
+        [t.start() for t in threads]
+        [t.join() for t in threads]
 
         self.colourList = self.extractColoursFromContours(self.contourList, self.colourCorrelation)
 
@@ -154,32 +156,35 @@ class computerVision():
 
     def populateCvImages(self):
         # Get masked images from all cameras, and populate these into list (for later use)
-        self.maskedImages = []
-        self.hsvImages = []
-        self.rawImages = []
+        self.maskedImages = [None]*self.noOfCameras
+        self.hsvImages = [None]*self.noOfCameras
+        self.rawImages = [None]*self.noOfCameras
 
-        for cameraNum in range(self.noOfCameras):
-            # Get image from camera
-            rawImage = self.getCvImage(cameraNum)
-            self.rawImages.append(rawImage)
+        # Create a thread to capture the image from each camera
+        threads = [Thread(target=self.populateCvHelper, args=(cameraNum,)) for cameraNum in range(self.noOfCameras)]
+        [t.start() for t in threads]
+        [t.join() for t in threads]
 
-            # Convert to HSV
-            hsvImage = cv2.cvtColor(rawImage, cv2.COLOR_BGR2HSV)
+    def populateCvHelper(self, cameraNum):
 
-            equalisedImage = self.applyColourConstancyHSV(hsvImage)
+        # Get image from camera
+        rawImage = self.getCvImage(cameraNum)
+        self.rawImages[cameraNum] = rawImage
 
-            self.hsvImages.append(equalisedImage)
+        # Convert to HSV
+        hsvImage = cv2.cvtColor(rawImage, cv2.COLOR_BGR2HSV)
 
-            # Apply mask to image, and add into list of images
-            imageHeight, imageWidth, imageChannels = rawImage.shape
-            portholeMask = self.createPortholeMask(imageHeight, imageWidth, imageChannels, cameraNum)
+        # Apply equalisation
+        equalisedImage = self.applyColourConstancyHSV(hsvImage)
 
-            #self.maskedImages.append(cv2.bitwise_and(rawImage, rawImage, mask = portholeMask))
-            self.maskedImages.append(cv2.bitwise_and(equalisedImage, equalisedImage, mask = portholeMask))
+        self.hsvImages[cameraNum] = equalisedImage
 
-        # Output debug images
-        for cameraNum in range(self.noOfCameras):
-            cv2.imwrite("outputImages/mask{0}.jpg".format(cameraNum), self.maskedImages[cameraNum])
+        # Apply mask to image, and add into list of images
+        imageHeight, imageWidth, imageChannels = rawImage.shape
+        portholeMask = self.createPortholeMask(imageHeight, imageWidth, imageChannels, cameraNum)
+
+        #self.maskedImages.append(cv2.bitwise_and(rawImage, rawImage, mask = portholeMask))
+        self.maskedImages[cameraNum] = (cv2.bitwise_and(equalisedImage, equalisedImage, mask = portholeMask))
 
 
     def getCvImage(self, cameraNum):
@@ -278,7 +283,9 @@ class computerVision():
 
             for i in xrange(4):
                 temp, dumpCapture = tempCamera.read()
-                cv2.imwrite("outputImages/rawcamera{0}{1}.jpg".format(cameraNumber, i), dumpCapture)
+
+                # Additional debug: Can be needed to ensure that camera buffer is being properly purged
+                #cv2.imwrite("outputImages/rawcamera{0}{1}.jpg".format(cameraNumber, i), dumpCapture)
         else:
             # A short (single frame) is needed to normalise some lighting in images:
             # First image often has streaks
