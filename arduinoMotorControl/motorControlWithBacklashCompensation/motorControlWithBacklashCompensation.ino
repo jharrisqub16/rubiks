@@ -12,6 +12,9 @@ AccelStepper up (1, 12, 11);
 #define MOTOR_MAX_SPEED 100000
 #define MOTOR_MAX_ACC 100000
 
+#define TURN_QUARTER 200
+#define TURN_HALF 400
+
 const int enable_d = 16;
 const int enable_f = 17;
 const int enable_r = 18;
@@ -20,17 +23,17 @@ const int enable_l = 20;
 const int enable_u = 21;
 
 enum lastMove {
-    TURN_CW = 0,
-    TURN_ACW,
-    TURN_NONE,
+    TURN_DIR_CW = 0,
+    TURN_DIR_ACW,
+    TURN_DIR_NONE,
 };
 
-lastMove uLast = TURN_NONE;
-lastMove fLast = TURN_NONE;
-lastMove lLast = TURN_NONE;
-lastMove rLast = TURN_NONE;
-lastMove dLast = TURN_NONE;
-lastMove bLast = TURN_NONE;
+lastMove uLast = TURN_DIR_NONE;
+lastMove fLast = TURN_DIR_NONE;
+lastMove lLast = TURN_DIR_NONE;
+lastMove rLast = TURN_DIR_NONE;
+lastMove dLast = TURN_DIR_NONE;
+lastMove bLast = TURN_DIR_NONE;
 
 void setup()
 {
@@ -105,25 +108,25 @@ void loop()
     if (side == 'D') {
       digitalWrite (enable_d, LOW);
       if (dir == '\'') {
-        rotation = 200 + ((dLast != TURN_ACW) ? backlashOffset : 0);
+        rotation = TURN_QUARTER + ((dLast != TURN_DIR_ACW) ? backlashOffset : 0);
         down.moveTo(rotation + down.currentPosition());
-        dLast = TURN_ACW;
+        dLast = TURN_DIR_ACW;
         while (down.distanceToGo() != 0) {
           down.run();
         }
       }
       else if (dir == '2') {
-        rotation = 400 + ((dLast != TURN_ACW) ? backlashOffset : 0);
+        rotation = TURN_HALF + ((dLast != TURN_DIR_ACW) ? backlashOffset : 0);
         down.moveTo(rotation + down.currentPosition());
-        dLast = TURN_ACW;
+        dLast = TURN_DIR_ACW;
         while (down.distanceToGo() != 0) {
           down.run();
         }
       }
       else {
-        rotation = 200 + ((dLast != TURN_CW) ? backlashOffset : 0);
+        rotation = TURN_QUARTER + ((dLast != TURN_DIR_CW) ? backlashOffset : 0);
         down.moveTo(down.currentPosition() - rotation);
-        dLast = TURN_CW;
+        dLast = TURN_DIR_CW;
         while (down.distanceToGo() != 0) {
           down.run();
         }
@@ -134,25 +137,25 @@ void loop()
     else if (side == 'F') {
       digitalWrite (enable_f, LOW);
       if (dir == '\'') {
-        rotation = 200 + ((fLast != TURN_ACW) ? backlashOffset : 0);
+        rotation = TURN_QUARTER + ((fLast != TURN_DIR_ACW) ? backlashOffset : 0);
         front.moveTo(rotation + front.currentPosition());
-        fLast = TURN_ACW;
+        fLast = TURN_DIR_ACW;
         while (front.distanceToGo() != 0) {
           front.run();
         }
       }
       else if (dir == '2') {
-        rotation = 400 + ((fLast != TURN_ACW) ? backlashOffset : 0);
+        rotation = TURN_HALF + ((fLast != TURN_DIR_ACW) ? backlashOffset : 0);
         front.moveTo(rotation + front.currentPosition());
-        fLast = TURN_ACW;
+        fLast = TURN_DIR_ACW;
         while (front.distanceToGo() != 0) {
           front.run();
         }
       }
       else {
-        rotation = 200 + ((fLast != TURN_CW) ? backlashOffset : 0);
+        rotation = TURN_QUARTER + ((fLast != TURN_DIR_CW) ? backlashOffset : 0);
         front.moveTo(front.currentPosition() - rotation);
-        fLast = TURN_CW;
+        fLast = TURN_DIR_CW;
         while (front.distanceToGo() != 0) {
           front.run();
         }
@@ -163,25 +166,25 @@ void loop()
     else if (side == 'R') {
       digitalWrite (enable_r, LOW);
       if (dir == '\'') {
-        rotation = 200 + ((rLast != TURN_ACW) ? backlashOffset : 0);
+        rotation = TURN_QUARTER + ((rLast != TURN_DIR_ACW) ? backlashOffset : 0);
         right.moveTo(rotation + right.currentPosition());
-        rLast = TURN_ACW;
+        rLast = TURN_DIR_ACW;
         while (right.distanceToGo() != 0) {
           right.run();
         }
       }
       else if (dir == '2') {
-        rotation = 400 + ((rLast != TURN_ACW) ? backlashOffset : 0);
+        rotation = TURN_HALF + ((rLast != TURN_DIR_ACW) ? backlashOffset : 0);
         right.moveTo(rotation + right.currentPosition());
-        rLast = TURN_ACW;
+        rLast = TURN_DIR_ACW;
         while (right.distanceToGo() != 0) {
           right.run();
         }
       }
       else {
-        rotation = 200 + ((rLast != TURN_CW) ? backlashOffset : 0);
+        rotation = TURN_QUARTER + ((rLast != TURN_DIR_CW) ? backlashOffset : 0);
         right.moveTo(right.currentPosition() - rotation);
-        rLast = TURN_CW;
+        rLast = TURN_DIR_CW;
         while (right.distanceToGo() != 0) {
           right.run();
         }
@@ -192,25 +195,25 @@ void loop()
     else if (side == 'B') {
       digitalWrite (enable_b, LOW);
       if (dir == '\'') {
-        rotation = 200 + ((bLast != TURN_ACW) ? backlashOffset : 0);
+        rotation = TURN_QUARTER + ((bLast != TURN_DIR_ACW) ? backlashOffset : 0);
         back.moveTo(rotation + back.currentPosition());
-        bLast = TURN_ACW;
+        bLast = TURN_DIR_ACW;
         while (back.distanceToGo() != 0) {
           back.run();
         }
       }
       else if (dir == '2') {
-        rotation = 400 + ((bLast != TURN_ACW) ? backlashOffset : 0);
+        rotation = TURN_HALF + ((bLast != TURN_DIR_ACW) ? backlashOffset : 0);
         back.moveTo(rotation + back.currentPosition());
-        bLast = TURN_ACW;
+        bLast = TURN_DIR_ACW;
         while (back.distanceToGo() != 0) {
           back.run();
         }
       }
       else {
-        rotation = 200 + ((bLast != TURN_CW) ? backlashOffset : 0);
+        rotation = TURN_QUARTER + ((bLast != TURN_DIR_CW) ? backlashOffset : 0);
         back.moveTo(back.currentPosition() - rotation);
-        bLast = TURN_CW;
+        bLast = TURN_DIR_CW;
         while (back.distanceToGo() != 0) {
           back.run();
         }
@@ -221,25 +224,25 @@ void loop()
     else if (side == 'L') {
       digitalWrite (enable_l, LOW);
       if (dir == '\'') {
-        rotation = 200 + ((lLast != TURN_ACW) ? backlashOffset : 0);
+        rotation = TURN_QUARTER + ((lLast != TURN_DIR_ACW) ? backlashOffset : 0);
         left.moveTo(rotation + left.currentPosition());
-        lLast = TURN_ACW;
+        lLast = TURN_DIR_ACW;
         while (left.distanceToGo() != 0) {
           left.run();
         }
       }
       else if (dir == '2') {
-        rotation = 400 + ((lLast != TURN_ACW) ? backlashOffset : 0);
+        rotation = TURN_HALF + ((lLast != TURN_DIR_ACW) ? backlashOffset : 0);
         left.moveTo(rotation + left.currentPosition());
-        lLast = TURN_ACW;
+        lLast = TURN_DIR_ACW;
         while (left.distanceToGo() != 0) {
           left.run();
         }
       }
       else {
-        rotation = 200 + ((lLast != TURN_CW) ? backlashOffset : 0);
+        rotation = TURN_QUARTER + ((lLast != TURN_DIR_CW) ? backlashOffset : 0);
         left.moveTo(left.currentPosition() - rotation);
-        lLast = TURN_CW;
+        lLast = TURN_DIR_CW;
         while (left.distanceToGo() != 0) {
           left.run();
         }
@@ -250,25 +253,25 @@ void loop()
     else if (side == 'U') {
       digitalWrite (enable_u, LOW);
       if (dir == '\'') {
-        rotation = 200 + ((uLast != TURN_ACW) ? backlashOffset : 0);
+        rotation = TURN_QUARTER + ((uLast != TURN_DIR_ACW) ? backlashOffset : 0);
         up.moveTo(rotation + up.currentPosition());
-        uLast = TURN_ACW;
+        uLast = TURN_DIR_ACW;
         while (up.distanceToGo() != 0) {
           up.run();
         }
       }
       else if (dir == '2') {
-        rotation = 400 + ((uLast != TURN_ACW) ? backlashOffset : 0);
+        rotation = TURN_HALF + ((uLast != TURN_DIR_ACW) ? backlashOffset : 0);
         up.moveTo(rotation + up.currentPosition());
-        uLast = TURN_ACW;
+        uLast = TURN_DIR_ACW;
         while (up.distanceToGo() != 0) {
           up.run();
         }
       }
       else {
-        rotation = 200 + ((uLast != TURN_CW) ? backlashOffset : 0);
+        rotation = TURN_QUARTER + ((uLast != TURN_DIR_CW) ? backlashOffset : 0);
         up.moveTo(up.currentPosition() - rotation);
-        uLast = TURN_CW;
+        uLast = TURN_DIR_CW;
         while (up.distanceToGo() != 0) {
           up.run();
         }
