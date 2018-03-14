@@ -100,9 +100,9 @@ class Cuber():
         for x in range(0, moves):
             # Generate the face to turn (based on index of colours dict)
             # Also, disallow the same face from being turned consecutively
-            operation = randint(0,len(self.colours))
+            operation = randint(0,len(self.colours)-1)
             while (operation == lastOperation):
-                operation = randint(0,len(self.colours))
+                operation = randint(0,len(self.colours)-1)
 
             # Update the last operation
             lastOperation = operation
