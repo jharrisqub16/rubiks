@@ -615,7 +615,7 @@ class computerVision():
         colourGroupings =[]
         averageGroupingColours = []
         for groupNum in range(numGroups-1):
-            colourGroupings.append(self.getSubList(sortingList, bestPosition+(groupNum*groupWidth), groupWidth, False))
+            colourGroupings.append(self.getSubList(sortingList, bestPosition+(groupNum*groupWidth), groupWidth, True))
 
             averageGroupingColours.append(np.mean([x[0] for x in colourGroupings[groupNum]], axis=0).astype(int))
 
