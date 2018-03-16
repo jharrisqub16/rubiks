@@ -1,0 +1,2290 @@
+Coordinate correlation loaded from: /home/pi/Desktop/rubiks/src/cuber/../cfg/correlation.npy
+Colour correlation loaded from: /home/pi/Desktop/rubiks/src/cuber/../cfg/colours.npy
+scramble:L2 U' L' U L2 F2 L2 U' F2 L F' B L D B F2 L' U R B2 L' U' R2 D' L2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'F', 'L', 'L', 'U', 'R', 'R', 'L', 'R', 'F', 'D', 'B', 'U', 'R', 'B', 'D', 'D', 'L', 'U', 'F', 'U', 'F', 'F', 'R', 'R', 'F', 'R', 'B', 'D', 'F', 'B', 'D', 'L', 'F', 'D', 'F', 'B', 'U', 'B', 'R', 'L', 'U', 'L', 'U', 'D', 'D', 'R', 'U', 'L', 'B', 'B', 'U', 'B', 'D']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'F', 'L', 'L', 'U', 'R', 'R', 'L', 'R', 'F', 'D', 'B', 'U', 'R', 'B', 'D', 'D', 'L', 'U', 'F', 'U', 'F', 'F', 'R', 'R', 'F', 'R', 'B', 'D', 'F', 'B', 'D', 'L', 'F', 'D', 'F', 'B', 'U', 'B', 'R', 'L', 'U', 'L', 'U', 'D', 'D', 'R', 'U', 'L', 'B', 'B', 'U', 'B', 'D']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.02018594742
+CV Read time: 0.411975860596
+Solve time:   0.0670831203461
+Motor time:   1.54112696648
+Solution:     R' F' B2 U D L2 F D B L B R2 L2 U L2 B2 D F2 L2 U L2
+Face-turns:   21
+Quarter-turns:30
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 0
+scramble:D2 L U' B2 R L2 U2 D F B' U' F2 R' F B L2 U R' U' R'
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'U', 'B', 'U', 'U', 'B', 'D', 'D', 'F', 'D', 'U', 'L', 'B', 'R', 'L', 'L', 'D', 'B', 'B', 'F', 'L', 'L', 'F', 'L', 'F', 'R', 'F', 'U', 'B', 'U', 'L', 'D', 'B', 'D', 'D', 'R', 'R', 'R', 'L', 'F', 'L', 'F', 'R', 'U', 'R', 'U', 'F', 'U', 'D', 'B', 'R', 'D', 'R', 'F']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'U', 'B', 'U', 'U', 'B', 'D', 'D', 'F', 'D', 'U', 'L', 'B', 'R', 'L', 'L', 'D', 'B', 'B', 'F', 'L', 'L', 'F', 'L', 'F', 'R', 'F', 'U', 'B', 'U', 'L', 'D', 'B', 'D', 'D', 'R', 'R', 'R', 'L', 'F', 'L', 'F', 'R', 'U', 'R', 'U', 'F', 'U', 'D', 'B', 'R', 'D', 'R', 'F']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.67543387413
+CV Read time: 0.474503040314
+Solve time:   0.561415910721
+Motor time:   1.6395149231
+Solution:     U F R' F2 U D2 L B2 U R' D B L2 U2 R2 U L2 U' R2 U L2 F2
+Face-turns:   22
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 1
+scramble:R2 L2 F' D R2 U2 B2 R2 F D' U2 R2 F2 L' F' U2 F D2 R D2 R' U2 B' R'
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['R', 'R', 'R', 'F', 'U', 'L', 'B', 'U', 'L', 'F', 'D', 'D', 'B', 'R', 'D', 'D', 'U', 'L', 'R', 'L', 'D', 'L', 'F', 'R', 'U', 'R', 'R', 'L', 'U', 'F', 'B', 'D', 'F', 'L', 'B', 'B', 'F', 'R', 'U', 'D', 'L', 'F', 'F', 'U', 'B', 'B', 'D', 'U', 'F', 'B', 'B', 'D', 'L', 'U']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['R', 'R', 'R', 'F', 'U', 'L', 'B', 'U', 'L', 'F', 'D', 'D', 'B', 'R', 'D', 'D', 'U', 'L', 'R', 'L', 'D', 'L', 'F', 'R', 'U', 'R', 'R', 'L', 'U', 'F', 'B', 'D', 'F', 'L', 'B', 'B', 'F', 'R', 'U', 'D', 'L', 'F', 'F', 'U', 'B', 'B', 'D', 'U', 'F', 'B', 'B', 'D', 'L', 'U']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.33719611168
+CV Read time: 0.432675123215
+Solve time:   0.251538991928
+Motor time:   1.65298199654
+Solution:     U R' B2 D R2 F U' R' U' B U L' F2 L2 D2 F2 L2 D2 F2 L2 U F2
+Face-turns:   22
+Quarter-turns:33
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 2
+scramble:D' F2 D' B' D R2 F R L' F2 L' B2 R U' L' R' U2 L B' R' B R D' U2 D B F2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'U', 'B', 'F', 'U', 'D', 'R', 'R', 'D', 'L', 'L', 'D', 'D', 'R', 'L', 'R', 'U', 'R', 'D', 'F', 'F', 'U', 'F', 'R', 'U', 'F', 'B', 'R', 'L', 'U', 'U', 'D', 'F', 'U', 'B', 'D', 'U', 'D', 'F', 'R', 'L', 'B', 'L', 'L', 'F', 'L', 'R', 'L', 'B', 'B', 'B', 'B', 'D', 'F']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'U', 'B', 'F', 'U', 'D', 'R', 'R', 'D', 'L', 'L', 'D', 'D', 'R', 'L', 'R', 'U', 'R', 'D', 'F', 'F', 'U', 'F', 'R', 'U', 'F', 'B', 'R', 'L', 'U', 'U', 'D', 'F', 'U', 'B', 'D', 'U', 'D', 'F', 'R', 'L', 'B', 'L', 'L', 'F', 'L', 'R', 'L', 'B', 'B', 'B', 'B', 'D', 'F']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.1049258709
+CV Read time: 0.413578033447
+Solve time:   0.151165962219
+Motor time:   1.54018187523
+Solution:     U2 F2 B R' F U B' L2 B2 U' B' U' F2 U' R2 D' F2 L2 D' F2 U'
+Face-turns:   21
+Quarter-turns:30
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 3
+scramble:F L' D' B R F B' L B U D2 F R2 L2 U' D' F' U2 L D
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'R', 'D', 'R', 'U', 'U', 'D', 'R', 'L', 'U', 'L', 'B', 'R', 'R', 'F', 'U', 'B', 'B', 'F', 'D', 'F', 'D', 'F', 'B', 'U', 'L', 'F', 'L', 'B', 'R', 'L', 'D', 'U', 'D', 'B', 'U', 'D', 'F', 'R', 'F', 'L', 'F', 'L', 'D', 'B', 'R', 'U', 'L', 'U', 'B', 'L', 'R', 'D', 'B']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'R', 'D', 'R', 'U', 'U', 'D', 'R', 'L', 'U', 'L', 'B', 'R', 'R', 'F', 'U', 'B', 'B', 'F', 'D', 'F', 'D', 'F', 'B', 'U', 'L', 'F', 'L', 'B', 'R', 'L', 'D', 'U', 'D', 'B', 'U', 'D', 'F', 'R', 'F', 'L', 'F', 'L', 'D', 'B', 'R', 'U', 'L', 'U', 'B', 'L', 'R', 'D', 'B']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.57831811905
+CV Read time: 0.463786125183
+Solve time:   0.423272848129
+Motor time:   1.69125914574
+Solution:     U R2 D B' L' F2 L2 D2 F U' F2 L U' B2 R2 B2 U L2 D F2 R2 L2
+Face-turns:   22
+Quarter-turns:34
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 4
+scramble:D2 F U' B F2 B' R' D2 R2 F B2 L D F R B F2 U2 R' F D2 U
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['U', 'F', 'B', 'D', 'U', 'R', 'L', 'R', 'B', 'R', 'F', 'L', 'R', 'R', 'L', 'F', 'R', 'F', 'D', 'B', 'U', 'U', 'F', 'D', 'L', 'B', 'D', 'F', 'D', 'R', 'D', 'D', 'U', 'D', 'F', 'U', 'R', 'L', 'B', 'U', 'L', 'B', 'B', 'F', 'D', 'U', 'U', 'F', 'B', 'B', 'L', 'L', 'L', 'R']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'F', 'B', 'D', 'U', 'R', 'L', 'R', 'B', 'R', 'F', 'L', 'R', 'R', 'L', 'F', 'R', 'F', 'D', 'B', 'U', 'U', 'F', 'D', 'L', 'B', 'D', 'F', 'D', 'R', 'D', 'D', 'U', 'D', 'F', 'U', 'R', 'L', 'B', 'U', 'L', 'B', 'B', 'F', 'D', 'U', 'U', 'F', 'B', 'B', 'L', 'L', 'L', 'R']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.16605997086
+CV Read time: 0.443525075912
+Solve time:   0.121037960052
+Motor time:   1.60149693489
+Solution:     U2 D' R D2 F2 R' L2 U2 D R F' R2 U' D' R2 F2 D' B2 U' R2 F2
+Face-turns:   21
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 5
+scramble:L' R L' F L' D' F' D2 R2 L B2 F2 D2 B' F L B F2 D2 L U' D' B F2 R2 D L2 R U' F'
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'F', 'U', 'B', 'U', 'B', 'D', 'B', 'L', 'U', 'U', 'R', 'R', 'R', 'U', 'R', 'U', 'B', 'R', 'R', 'F', 'B', 'F', 'F', 'D', 'D', 'F', 'L', 'R', 'D', 'L', 'D', 'F', 'R', 'D', 'L', 'L', 'D', 'B', 'L', 'L', 'L', 'U', 'U', 'F', 'B', 'L', 'D', 'R', 'B', 'D', 'U', 'F', 'F']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'F', 'U', 'B', 'U', 'B', 'D', 'B', 'L', 'U', 'U', 'R', 'R', 'R', 'U', 'R', 'U', 'B', 'R', 'R', 'F', 'B', 'F', 'F', 'D', 'D', 'F', 'L', 'R', 'D', 'L', 'D', 'F', 'R', 'D', 'L', 'L', 'D', 'B', 'L', 'L', 'L', 'U', 'U', 'F', 'B', 'L', 'D', 'R', 'B', 'D', 'U', 'F', 'F']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.40133810043
+CV Read time: 0.498158931732
+Solve time:   0.299388170242
+Motor time:   1.60379099846
+Solution:     D2 L D2 L2 U F D2 B' R' B2 L' F2 U R2 D B2 R2 U2 R2 U' D'
+Face-turns:   21
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 6
+scramble:U' F2 D U' F' U2 D' F2 B2 R' U' B U D' U2 L U' F R' D2 B' L
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['F', 'F', 'L', 'U', 'U', 'F', 'U', 'D', 'R', 'B', 'L', 'U', 'B', 'R', 'D', 'B', 'D', 'F', 'R', 'R', 'D', 'U', 'F', 'D', 'B', 'F', 'D', 'R', 'R', 'L', 'U', 'D', 'L', 'F', 'B', 'U', 'R', 'R', 'F', 'L', 'L', 'L', 'L', 'B', 'U', 'B', 'U', 'D', 'F', 'B', 'B', 'L', 'R', 'D']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'F', 'L', 'U', 'U', 'F', 'U', 'D', 'R', 'B', 'L', 'U', 'B', 'R', 'D', 'B', 'D', 'F', 'R', 'R', 'D', 'U', 'F', 'D', 'B', 'F', 'D', 'R', 'R', 'L', 'U', 'D', 'L', 'F', 'B', 'U', 'R', 'R', 'F', 'L', 'L', 'L', 'L', 'B', 'U', 'B', 'U', 'D', 'F', 'B', 'B', 'L', 'R', 'D']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.35894799232
+CV Read time: 0.419420003891
+Solve time:   0.352034091949
+Motor time:   1.58749389648
+Solution:     D2 L F2 B' U2 R2 L' U' R B2 L D' R2 B2 R2 F2 R2 U' D' F2 D'
+Face-turns:   21
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 7
+scramble:F D' R' U' D R B' U L2 R D' B R L' D U2 B R2 F2 B' R F U2 F2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'L', 'R', 'R', 'U', 'D', 'L', 'F', 'F', 'R', 'B', 'U', 'B', 'R', 'B', 'B', 'R', 'F', 'U', 'U', 'D', 'U', 'F', 'L', 'R', 'R', 'D', 'B', 'U', 'L', 'D', 'D', 'D', 'R', 'L', 'L', 'B', 'F', 'F', 'L', 'L', 'B', 'B', 'F', 'D', 'F', 'U', 'U', 'R', 'B', 'D', 'D', 'F', 'U']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'L', 'R', 'R', 'U', 'D', 'L', 'F', 'F', 'R', 'B', 'U', 'B', 'R', 'B', 'B', 'R', 'F', 'U', 'U', 'D', 'U', 'F', 'L', 'R', 'R', 'D', 'B', 'U', 'L', 'D', 'D', 'D', 'R', 'L', 'L', 'B', 'F', 'F', 'L', 'L', 'B', 'B', 'F', 'D', 'F', 'U', 'U', 'R', 'B', 'D', 'D', 'F', 'U']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.12995696068
+CV Read time: 0.453096866608
+Solve time:   0.0787150859833
+Motor time:   1.59814500809
+Solution:     R2 B2 U' D' B' R F2 U B R F B2 R2 U D2 R2 F2 D' L2 B2 L2
+Face-turns:   21
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 8
+scramble:F L F' B2 U2 F B' L2 D2 L' F L2 B U' B D B R2 L' R B
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'B', 'L', 'F', 'U', 'R', 'U', 'U', 'D', 'F', 'U', 'B', 'D', 'R', 'B', 'F', 'L', 'R', 'B', 'L', 'R', 'R', 'F', 'R', 'U', 'U', 'L', 'F', 'B', 'D', 'F', 'D', 'F', 'F', 'F', 'D', 'B', 'D', 'R', 'L', 'L', 'B', 'R', 'R', 'L', 'D', 'D', 'U', 'L', 'B', 'D', 'B', 'U', 'U']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'B', 'L', 'F', 'U', 'R', 'U', 'U', 'D', 'F', 'U', 'B', 'D', 'R', 'B', 'F', 'L', 'R', 'B', 'L', 'R', 'R', 'F', 'R', 'U', 'U', 'L', 'F', 'B', 'D', 'F', 'D', 'F', 'F', 'F', 'D', 'B', 'D', 'R', 'L', 'L', 'B', 'R', 'R', 'L', 'D', 'D', 'U', 'L', 'B', 'D', 'B', 'U', 'U']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.05630588531
+CV Read time: 0.416230916977
+Solve time:   0.0695140361786
+Motor time:   1.57056093216
+Solution:     U2 F2 R U' R' F R L2 D L B' R2 B2 U B2 U R2 F2 R2 U R2
+Face-turns:   21
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 9
+scramble:L' U' D L2 F' L F' D F2 R' F R' L2 D2 B R' F D' F' R2 D B' D2 F'
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['U', 'U', 'B', 'D', 'U', 'B', 'R', 'L', 'B', 'U', 'L', 'D', 'B', 'R', 'R', 'L', 'L', 'L', 'B', 'D', 'L', 'U', 'F', 'R', 'F', 'U', 'F', 'R', 'B', 'U', 'D', 'D', 'F', 'U', 'D', 'D', 'B', 'R', 'D', 'U', 'L', 'L', 'F', 'F', 'D', 'L', 'R', 'R', 'F', 'B', 'F', 'F', 'B', 'R']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['U', 'U', 'B', 'D', 'U', 'B', 'R', 'L', 'B', 'U', 'L', 'D', 'B', 'R', 'R', 'L', 'L', 'L', 'B', 'D', 'L', 'U', 'F', 'R', 'F', 'U', 'F', 'R', 'B', 'U', 'D', 'D', 'F', 'U', 'D', 'D', 'B', 'R', 'D', 'U', 'L', 'L', 'F', 'F', 'D', 'L', 'R', 'R', 'F', 'B', 'F', 'F', 'B', 'R']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.01036286354
+CV Read time: 0.421120882034
+Solve time:   0.0482561588287
+Motor time:   1.54098582268
+Solution:     U R' U D' R' D2 F2 R' B D' L D2 B2 R2 D R2 D' B2 D L2 F2
+Face-turns:   21
+Quarter-turns:30
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 10
+scramble:D2 B2 U L' R2 U' D' B' L' U2 D B D L' U2 R' F' U R' F2 U
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'B', 'R', 'U', 'U', 'D', 'D', 'R', 'R', 'U', 'R', 'D', 'D', 'R', 'L', 'L', 'R', 'B', 'F', 'B', 'B', 'F', 'F', 'L', 'F', 'U', 'B', 'U', 'B', 'D', 'L', 'D', 'F', 'D', 'D', 'L', 'U', 'L', 'R', 'R', 'L', 'U', 'F', 'F', 'R', 'B', 'D', 'F', 'B', 'B', 'U', 'U', 'F', 'L']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'B', 'R', 'U', 'U', 'D', 'D', 'R', 'R', 'U', 'R', 'D', 'D', 'R', 'L', 'L', 'R', 'B', 'F', 'B', 'B', 'F', 'F', 'L', 'F', 'U', 'B', 'U', 'B', 'D', 'L', 'D', 'F', 'D', 'D', 'L', 'U', 'L', 'R', 'R', 'L', 'U', 'F', 'F', 'R', 'B', 'D', 'F', 'B', 'B', 'U', 'U', 'F', 'L']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.06230401993
+CV Read time: 0.400942087173
+Solve time:   0.0913498401642
+Motor time:   1.57001209259
+Solution:     U2 D B' R L2 F R B' R' U' R L2 D' R2 B2 D' R2 B2 L2 D2 F2
+Face-turns:   21
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 11
+scramble:B' U' R' F' L2 U2 R' L D' L2 R2 U2 D2 F' B U' B R' F D' F2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'F', 'B', 'L', 'U', 'B', 'R', 'D', 'R', 'D', 'U', 'L', 'B', 'R', 'U', 'L', 'R', 'U', 'B', 'B', 'F', 'B', 'F', 'L', 'R', 'U', 'D', 'U', 'F', 'F', 'F', 'D', 'U', 'L', 'D', 'F', 'L', 'D', 'D', 'L', 'L', 'R', 'B', 'R', 'B', 'U', 'D', 'U', 'L', 'B', 'F', 'R', 'R', 'D']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'F', 'B', 'L', 'U', 'B', 'R', 'D', 'R', 'D', 'U', 'L', 'B', 'R', 'U', 'L', 'R', 'U', 'B', 'B', 'F', 'B', 'F', 'L', 'R', 'U', 'D', 'U', 'F', 'F', 'F', 'D', 'U', 'L', 'D', 'F', 'L', 'D', 'D', 'L', 'L', 'R', 'B', 'R', 'B', 'U', 'D', 'U', 'L', 'B', 'F', 'R', 'R', 'D']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.39771986008
+CV Read time: 0.429228067398
+Solve time:   0.392763853073
+Motor time:   1.57572793961
+Solution:     U R' U F' U2 R' L U R' U R F' U B2 R2 D2 B2 D2 B2 U L2 D
+Face-turns:   22
+Quarter-turns:30
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 12
+scramble:L U' D' R D F2 D' F B' D2 R B F2 B F2 B' R' U' L F2 D R2 L D' L R' U' R' B D2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'U', 'U', 'U', 'U', 'B', 'R', 'F', 'B', 'L', 'L', 'L', 'U', 'R', 'F', 'U', 'L', 'D', 'F', 'L', 'D', 'B', 'F', 'F', 'B', 'R', 'B', 'R', 'D', 'L', 'U', 'D', 'D', 'F', 'B', 'B', 'F', 'L', 'U', 'R', 'L', 'R', 'L', 'B', 'U', 'F', 'R', 'R', 'D', 'B', 'F', 'R', 'D', 'D']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'U', 'U', 'U', 'U', 'B', 'R', 'F', 'B', 'L', 'L', 'L', 'U', 'R', 'F', 'U', 'L', 'D', 'F', 'L', 'D', 'B', 'F', 'F', 'B', 'R', 'B', 'R', 'D', 'L', 'U', 'D', 'D', 'F', 'B', 'B', 'F', 'L', 'U', 'R', 'L', 'R', 'L', 'B', 'U', 'F', 'R', 'R', 'D', 'B', 'F', 'R', 'D', 'D']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 1.95264196396
+CV Read time: 0.441602945328
+Solve time:   0.0359690189362
+Motor time:   1.47506999969
+Solution:     R D2 R B' D2 B' U' D2 B2 R' U' F2 D B2 R2 U R2 U' R2 U'
+Face-turns:   20
+Quarter-turns:29
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 13
+scramble:L2 F L' B D B F' U' D2 R2 L2 R2 D' B' U' R2 D2 L2 D' F2 L' B2 D R' B L' B F R2 L
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['F', 'L', 'B', 'R', 'U', 'B', 'F', 'F', 'L', 'D', 'D', 'L', 'F', 'R', 'U', 'U', 'D', 'R', 'D', 'U', 'B', 'D', 'F', 'L', 'R', 'L', 'R', 'F', 'U', 'B', 'R', 'D', 'F', 'R', 'U', 'F', 'L', 'F', 'L', 'L', 'L', 'R', 'D', 'B', 'U', 'U', 'D', 'U', 'B', 'B', 'B', 'D', 'R', 'B']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'L', 'B', 'R', 'U', 'B', 'F', 'F', 'L', 'D', 'D', 'L', 'F', 'R', 'U', 'U', 'D', 'R', 'D', 'U', 'B', 'D', 'F', 'L', 'R', 'L', 'R', 'F', 'U', 'B', 'R', 'D', 'F', 'R', 'U', 'F', 'L', 'F', 'L', 'L', 'L', 'R', 'D', 'B', 'U', 'U', 'D', 'U', 'B', 'B', 'B', 'D', 'R', 'B']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.78423309326
+CV Read time: 0.489716053009
+Solve time:   0.682348012924
+Motor time:   1.61216902733
+Solution:     U' R U R2 F B2 U' D' R F' B' R U R2 L2 D2 B2 D' F2 U' R2 D2
+Face-turns:   22
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 14
+scramble:D F2 R2 U B2 D2 B2 R2 U2 L B' U' R' B R2 B2 L' D L2 U L' B2 D U' F2 L2 B' F D
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'R', 'F', 'B', 'U', 'F', 'D', 'D', 'U', 'F', 'L', 'L', 'F', 'R', 'D', 'U', 'D', 'F', 'F', 'L', 'L', 'U', 'F', 'R', 'L', 'D', 'R', 'D', 'F', 'B', 'L', 'D', 'B', 'B', 'U', 'R', 'L', 'U', 'R', 'U', 'L', 'R', 'R', 'B', 'B', 'D', 'B', 'B', 'R', 'B', 'L', 'U', 'F', 'D']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'R', 'F', 'B', 'U', 'F', 'D', 'D', 'U', 'F', 'L', 'L', 'F', 'R', 'D', 'U', 'D', 'F', 'F', 'L', 'L', 'U', 'F', 'R', 'L', 'D', 'R', 'D', 'F', 'B', 'L', 'D', 'B', 'B', 'U', 'R', 'L', 'U', 'R', 'U', 'L', 'R', 'R', 'B', 'B', 'D', 'B', 'B', 'R', 'B', 'L', 'U', 'F', 'D']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.68578100204
+CV Read time: 0.425243854523
+Solve time:   0.629734039307
+Motor time:   1.63080310822
+Solution:     U2 R' F U B D2 F' D' L F' U B' L2 U' L2 U2 B2 D L2 U2 R2 B2
+Face-turns:   22
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 15
+scramble:F2 D2 B2 U' R' D B' D' B2 R2 F' R2 U2 D2 L' F2 R2 D' B D U2 D B2 U' B D2 B U2 F
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'D', 'B', 'D', 'U', 'U', 'F', 'F', 'R', 'D', 'F', 'D', 'R', 'R', 'L', 'F', 'F', 'D', 'L', 'D', 'F', 'U', 'F', 'B', 'L', 'B', 'R', 'B', 'D', 'U', 'U', 'D', 'R', 'U', 'L', 'B', 'F', 'L', 'U', 'F', 'L', 'R', 'R', 'B', 'U', 'L', 'R', 'D', 'B', 'B', 'L', 'R', 'U', 'B']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'D', 'B', 'D', 'U', 'U', 'F', 'F', 'R', 'D', 'F', 'D', 'R', 'R', 'L', 'F', 'F', 'D', 'L', 'D', 'F', 'U', 'F', 'B', 'L', 'B', 'R', 'B', 'D', 'U', 'U', 'D', 'R', 'U', 'L', 'B', 'F', 'L', 'U', 'F', 'L', 'R', 'R', 'B', 'U', 'L', 'R', 'D', 'B', 'B', 'L', 'R', 'U', 'B']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.23126006126
+CV Read time: 0.459016084671
+Solve time:   0.213190078735
+Motor time:   1.55905389786
+Solution:     R' B2 L D2 R2 U' B2 R' L D' F U2 L2 U' F2 D' B2 D R2 D F2
+Face-turns:   21
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 16
+scramble:F' D2 L B' R U2 R2 D' B2 D B2 U2 R2 F U B F2 D' R U2 L F2 R U2 B'
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'L', 'U', 'B', 'U', 'U', 'R', 'L', 'U', 'L', 'B', 'F', 'F', 'R', 'F', 'R', 'D', 'R', 'D', 'D', 'B', 'L', 'F', 'U', 'F', 'U', 'D', 'D', 'R', 'B', 'B', 'D', 'R', 'U', 'U', 'B', 'L', 'D', 'F', 'R', 'L', 'F', 'L', 'R', 'L', 'R', 'B', 'D', 'D', 'B', 'F', 'U', 'L', 'F']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'L', 'U', 'B', 'U', 'U', 'R', 'L', 'U', 'L', 'B', 'F', 'F', 'R', 'F', 'R', 'D', 'R', 'D', 'D', 'B', 'L', 'F', 'U', 'F', 'U', 'D', 'D', 'R', 'B', 'B', 'D', 'R', 'U', 'U', 'B', 'L', 'D', 'F', 'R', 'L', 'F', 'L', 'R', 'L', 'R', 'B', 'D', 'D', 'B', 'F', 'U', 'L', 'F']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.18835186958
+CV Read time: 0.474780797958
+Solve time:   0.109554052353
+Motor time:   1.60401701927
+Solution:     U2 B' D2 R' F B2 L B L2 U L U D2 B2 D F2 R2 D' B2 R2 L2
+Face-turns:   21
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 17
+scramble:L R L' R' U' L' R L2 F D' L2 F' R D2 B' F2 D F2 U2 R2 U2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'D', 'D', 'U', 'U', 'R', 'B', 'U', 'R', 'B', 'B', 'R', 'U', 'R', 'B', 'L', 'D', 'L', 'U', 'F', 'D', 'U', 'F', 'R', 'L', 'L', 'B', 'U', 'F', 'D', 'R', 'D', 'R', 'R', 'B', 'D', 'U', 'L', 'L', 'L', 'L', 'B', 'U', 'F', 'F', 'F', 'F', 'B', 'D', 'B', 'D', 'F', 'L', 'F']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'D', 'D', 'U', 'U', 'R', 'B', 'U', 'R', 'B', 'B', 'R', 'U', 'R', 'B', 'L', 'D', 'L', 'U', 'F', 'D', 'U', 'F', 'R', 'L', 'L', 'B', 'U', 'F', 'D', 'R', 'D', 'R', 'R', 'B', 'D', 'U', 'L', 'L', 'L', 'L', 'B', 'U', 'F', 'F', 'F', 'F', 'B', 'D', 'B', 'D', 'F', 'L', 'F']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.03479599953
+CV Read time: 0.423195838928
+Solve time:   0.0353360176086
+Motor time:   1.57626414299
+Solution:     U L' D2 L D' B R2 F2 D2 B' R D2 F2 D' B2 U' R2 D L2 D' R2
+Face-turns:   21
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 18
+scramble:U B L2 B L B' U' L' B' U2 R' B' D U2 L2 F' D' L2 B D
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'B', 'R', 'D', 'U', 'U', 'R', 'L', 'U', 'R', 'R', 'D', 'F', 'R', 'B', 'F', 'F', 'L', 'U', 'D', 'F', 'L', 'F', 'L', 'U', 'D', 'D', 'F', 'R', 'R', 'L', 'D', 'D', 'L', 'F', 'D', 'B', 'B', 'B', 'U', 'L', 'U', 'B', 'B', 'L', 'B', 'R', 'U', 'U', 'B', 'F', 'F', 'R', 'D']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'B', 'R', 'D', 'U', 'U', 'R', 'L', 'U', 'R', 'R', 'D', 'F', 'R', 'B', 'F', 'F', 'L', 'U', 'D', 'F', 'L', 'F', 'L', 'U', 'D', 'D', 'F', 'R', 'R', 'L', 'D', 'D', 'L', 'F', 'D', 'B', 'B', 'B', 'U', 'L', 'U', 'B', 'B', 'L', 'B', 'R', 'U', 'U', 'B', 'F', 'F', 'R', 'D']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.34221291542
+CV Read time: 0.469972133636
+Solve time:   0.438495874405
+Motor time:   1.43374490738
+Solution:     L' F U L D L D2 B L' B' R U R2 F2 D2 L2 D F2 B2 U'
+Face-turns:   20
+Quarter-turns:27
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 19
+scramble:L U' L U2 L' B R B2 F R B2 U' F R2 D' B L F2 R D L U2 L' R2 L' U' B2
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['L', 'L', 'B', 'L', 'U', 'U', 'U', 'D', 'F', 'R', 'B', 'L', 'B', 'R', 'R', 'F', 'B', 'D', 'R', 'L', 'D', 'R', 'F', 'L', 'F', 'R', 'L', 'L', 'D', 'D', 'R', 'D', 'D', 'U', 'D', 'B', 'D', 'U', 'F', 'U', 'L', 'F', 'R', 'B', 'U', 'U', 'F', 'B', 'U', 'B', 'F', 'R', 'F', 'B']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['L', 'L', 'B', 'L', 'U', 'U', 'U', 'D', 'F', 'R', 'B', 'L', 'B', 'R', 'R', 'F', 'B', 'D', 'R', 'L', 'D', 'R', 'F', 'L', 'F', 'R', 'L', 'L', 'D', 'D', 'R', 'D', 'D', 'U', 'D', 'B', 'D', 'U', 'F', 'U', 'L', 'F', 'R', 'B', 'U', 'U', 'F', 'B', 'U', 'B', 'F', 'R', 'F', 'B']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.1017229557
+CV Read time: 0.435198068619
+Solve time:   0.0896549224854
+Motor time:   1.5768699646
+Solution:     U2 F' D B L U' L' B' L2 F R B2 L2 B2 U D2 L2 F2 D F2 D2
+Face-turns:   21
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 20
+scramble:B L2 B2 R' D' U2 B R L U B2 F2 L' U2 D U B' D' R' B2 U R U2 F2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'D', 'U', 'F', 'U', 'R', 'U', 'U', 'F', 'L', 'B', 'F', 'U', 'R', 'U', 'D', 'L', 'F', 'L', 'R', 'U', 'F', 'F', 'B', 'U', 'B', 'B', 'B', 'D', 'R', 'D', 'D', 'U', 'R', 'B', 'L', 'B', 'R', 'B', 'D', 'L', 'L', 'F', 'L', 'R', 'R', 'R', 'L', 'F', 'B', 'F', 'D', 'L', 'D']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'D', 'U', 'F', 'U', 'R', 'U', 'U', 'F', 'L', 'B', 'F', 'U', 'R', 'U', 'D', 'L', 'F', 'L', 'R', 'U', 'F', 'F', 'B', 'U', 'B', 'B', 'B', 'D', 'R', 'D', 'D', 'U', 'R', 'B', 'L', 'B', 'R', 'B', 'D', 'L', 'L', 'F', 'L', 'R', 'R', 'R', 'L', 'F', 'B', 'F', 'D', 'L', 'D']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.23084688187
+CV Read time: 0.413938045502
+Solve time:   0.243196964264
+Motor time:   1.5737118721
+Solution:     R' B2 D' F' L2 U' D2 B R D2 L U2 R2 U L2 U' R2 U R2 D R2
+Face-turns:   21
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 21
+scramble:U2 R D2 L D2 L2 U2 D' R2 F B2 L' B2 R' D' B' D2 R' B2 D2 B' F' U' F
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'B', 'L', 'U', 'U', 'R', 'B', 'R', 'D', 'L', 'F', 'U', 'L', 'R', 'F', 'F', 'L', 'R', 'L', 'B', 'F', 'D', 'F', 'F', 'U', 'U', 'D', 'B', 'R', 'R', 'D', 'D', 'B', 'F', 'D', 'U', 'R', 'L', 'D', 'L', 'L', 'F', 'U', 'B', 'R', 'B', 'U', 'B', 'U', 'B', 'D', 'F', 'R', 'L']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'B', 'L', 'U', 'U', 'R', 'B', 'R', 'D', 'L', 'F', 'U', 'L', 'R', 'F', 'F', 'L', 'R', 'L', 'B', 'F', 'D', 'F', 'F', 'U', 'U', 'D', 'B', 'R', 'R', 'D', 'D', 'B', 'F', 'D', 'U', 'R', 'L', 'D', 'L', 'L', 'F', 'U', 'B', 'R', 'B', 'U', 'B', 'U', 'B', 'D', 'F', 'R', 'L']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.06003308296
+CV Read time: 0.412580013275
+Solve time:   0.164402008057
+Motor time:   1.48305106163
+Solution:     U' L' B2 U D2 B' U' L U R2 F' B2 U L2 U2 B2 R2 D R2 U
+Face-turns:   20
+Quarter-turns:29
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 22
+scramble:B2 R2 L U' L' R' D' R' L' D' R2 B L F' R' D2 R2 L2 D2 R F U B F' L2 B R U2 R' F
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'B', 'F', 'R', 'U', 'R', 'D', 'F', 'B', 'R', 'F', 'L', 'L', 'R', 'B', 'F', 'L', 'L', 'R', 'U', 'U', 'F', 'F', 'U', 'U', 'B', 'R', 'L', 'D', 'U', 'L', 'D', 'D', 'F', 'U', 'B', 'F', 'D', 'B', 'F', 'L', 'L', 'D', 'B', 'B', 'D', 'U', 'L', 'R', 'B', 'D', 'D', 'R', 'R']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'B', 'F', 'R', 'U', 'R', 'D', 'F', 'B', 'R', 'F', 'L', 'L', 'R', 'B', 'F', 'L', 'L', 'R', 'U', 'U', 'F', 'F', 'U', 'U', 'B', 'R', 'L', 'D', 'U', 'L', 'D', 'D', 'F', 'U', 'B', 'F', 'D', 'B', 'F', 'L', 'L', 'D', 'B', 'B', 'D', 'U', 'L', 'R', 'B', 'D', 'D', 'R', 'R']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.31960296631
+CV Read time: 0.424618959427
+Solve time:   0.32426905632
+Motor time:   1.57071495056
+Solution:     L2 U' L' D2 R' D F B2 L2 U' B U B2 L2 U' R2 F2 L2 U B2 U'
+Face-turns:   21
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 23
+scramble:D2 U2 F B2 D' F2 B2 L2 R D2 F2 U2 B' R2 U' R' B' F2 B F2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'U', 'B', 'U', 'U', 'B', 'L', 'B', 'U', 'R', 'L', 'U', 'R', 'R', 'F', 'L', 'D', 'D', 'F', 'D', 'F', 'U', 'F', 'D', 'R', 'L', 'U', 'B', 'D', 'B', 'B', 'D', 'F', 'F', 'L', 'L', 'F', 'B', 'D', 'L', 'L', 'F', 'U', 'R', 'D', 'R', 'R', 'R', 'R', 'B', 'F', 'B', 'U', 'L']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'U', 'B', 'U', 'U', 'B', 'L', 'B', 'U', 'R', 'L', 'U', 'R', 'R', 'F', 'L', 'D', 'D', 'F', 'D', 'F', 'U', 'F', 'D', 'R', 'L', 'U', 'B', 'D', 'B', 'B', 'D', 'F', 'F', 'L', 'L', 'F', 'B', 'D', 'L', 'L', 'F', 'U', 'R', 'D', 'R', 'R', 'R', 'R', 'B', 'F', 'B', 'U', 'L']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.155408144
+CV Read time: 0.441265106201
+Solve time:   0.0629589557648
+Motor time:   1.65118408203
+Solution:     U' R2 D2 L2 B2 R' F D L D2 F R2 F2 B2 L2 D B2 L2 D L2 U2
+Face-turns:   21
+Quarter-turns:34
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 24
+scramble:R2 B' U' R2 L U' L R2 D F2 B2 U F' L U2 F' R L2 B F U B F'
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['U', 'U', 'B', 'F', 'U', 'U', 'F', 'B', 'L', 'B', 'B', 'R', 'F', 'R', 'D', 'L', 'L', 'R', 'U', 'D', 'U', 'R', 'F', 'D', 'D', 'L', 'D', 'B', 'B', 'F', 'U', 'D', 'F', 'U', 'R', 'F', 'F', 'R', 'R', 'F', 'L', 'B', 'R', 'L', 'L', 'D', 'R', 'L', 'L', 'B', 'U', 'D', 'D', 'B']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['U', 'U', 'B', 'F', 'U', 'U', 'F', 'B', 'L', 'B', 'B', 'R', 'F', 'R', 'D', 'L', 'L', 'R', 'U', 'D', 'U', 'R', 'F', 'D', 'D', 'L', 'D', 'B', 'B', 'F', 'U', 'D', 'F', 'U', 'R', 'F', 'F', 'R', 'R', 'F', 'L', 'B', 'R', 'L', 'L', 'D', 'R', 'L', 'L', 'B', 'U', 'D', 'D', 'B']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 1.97133302689
+CV Read time: 0.436215877533
+Solve time:   0.161427974701
+Motor time:   1.37368917465
+Solution:     U' L D' R' D2 B2 L' U L' F R' U' B2 L2 D L2 D F2 R2
+Face-turns:   19
+Quarter-turns:26
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 25
+scramble:D2 F' D B D2 L2 U' L U2 F L' B' U2 L2 F2 B' R F R' D' L2 D2 R F2 U D2 U' D F2
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['R', 'U', 'D', 'F', 'U', 'R', 'B', 'R', 'B', 'U', 'D', 'L', 'L', 'R', 'L', 'D', 'D', 'R', 'R', 'B', 'L', 'L', 'F', 'U', 'D', 'U', 'F', 'R', 'F', 'L', 'U', 'D', 'B', 'L', 'L', 'F', 'F', 'D', 'U', 'F', 'L', 'D', 'F', 'R', 'B', 'B', 'B', 'U', 'B', 'B', 'R', 'D', 'F', 'U']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['R', 'U', 'D', 'F', 'U', 'R', 'B', 'R', 'B', 'U', 'D', 'L', 'L', 'R', 'L', 'D', 'D', 'R', 'R', 'B', 'L', 'L', 'F', 'U', 'D', 'U', 'F', 'R', 'F', 'L', 'U', 'D', 'B', 'L', 'L', 'F', 'F', 'D', 'U', 'F', 'L', 'D', 'F', 'R', 'B', 'B', 'B', 'U', 'B', 'B', 'R', 'D', 'F', 'U']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.07208204269
+CV Read time: 0.445093870163
+Solve time:   0.11811208725
+Motor time:   1.50887608528
+Solution:     U' L' U' R2 F' R D' L B' D' F' R2 U2 R2 U' R2 U' R2 L2 D F2
+Face-turns:   21
+Quarter-turns:29
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 26
+scramble:F B' R' F R2 U' D2 B2 D' U2 D F2 B2 L' F B2 U2 D U2 L F2 B' D' B L' U' D
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['D', 'L', 'L', 'U', 'U', 'B', 'B', 'B', 'F', 'R', 'D', 'B', 'R', 'R', 'U', 'R', 'F', 'B', 'R', 'R', 'D', 'U', 'F', 'D', 'R', 'U', 'U', 'B', 'F', 'F', 'D', 'D', 'R', 'U', 'F', 'L', 'L', 'L', 'U', 'L', 'L', 'B', 'L', 'L', 'D', 'D', 'B', 'F', 'R', 'B', 'F', 'U', 'D', 'F']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['D', 'L', 'L', 'U', 'U', 'B', 'B', 'B', 'F', 'R', 'D', 'B', 'R', 'R', 'U', 'R', 'F', 'B', 'R', 'R', 'D', 'U', 'F', 'D', 'R', 'U', 'U', 'B', 'F', 'F', 'D', 'D', 'R', 'U', 'F', 'L', 'L', 'L', 'U', 'L', 'L', 'B', 'L', 'L', 'D', 'D', 'B', 'F', 'R', 'B', 'F', 'U', 'D', 'F']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.10267496109
+CV Read time: 0.451676845551
+Solve time:   0.0921120643616
+Motor time:   1.55888605118
+Solution:     U2 D F' D2 L D2 F' L U B' R' U2 R2 U' B2 R2 B2 R2 D' R2 D'
+Face-turns:   21
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 27
+scramble:F' R2 D2 R F' L2 D2 R' L' R B' R2 U2 L R2 U2 D U L F2 U F2 R' U2 D2 F L R' U2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'D', 'F', 'L', 'U', 'R', 'L', 'F', 'D', 'R', 'D', 'R', 'D', 'R', 'L', 'D', 'F', 'D', 'U', 'U', 'B', 'B', 'F', 'F', 'B', 'B', 'F', 'U', 'R', 'L', 'L', 'D', 'R', 'D', 'R', 'L', 'U', 'F', 'F', 'D', 'L', 'U', 'R', 'B', 'L', 'U', 'L', 'B', 'U', 'B', 'B', 'B', 'U', 'F']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'D', 'F', 'L', 'U', 'R', 'L', 'F', 'D', 'R', 'D', 'R', 'D', 'R', 'L', 'D', 'F', 'D', 'U', 'U', 'B', 'B', 'F', 'F', 'B', 'B', 'F', 'U', 'R', 'L', 'L', 'D', 'R', 'D', 'R', 'L', 'U', 'F', 'F', 'D', 'L', 'U', 'R', 'B', 'L', 'U', 'L', 'B', 'U', 'B', 'B', 'B', 'U', 'F']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.19825983047
+CV Read time: 0.442873954773
+Solve time:   0.174551963806
+Motor time:   1.5808339119
+Solution:     D' F R' U F2 D2 F2 B' D' L2 F' U F2 D2 R2 U F2 D2 B2 R2 D'
+Face-turns:   21
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 28
+scramble:R B' U' L F' U2 B' L2 F R U2 F2 L U' D' U' R' U' D' R' B2 U F2 B U' D'
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'L', 'F', 'F', 'U', 'L', 'R', 'F', 'L', 'F', 'B', 'D', 'F', 'R', 'B', 'U', 'B', 'L', 'B', 'L', 'D', 'R', 'F', 'R', 'R', 'U', 'L', 'U', 'L', 'F', 'U', 'D', 'R', 'U', 'D', 'B', 'B', 'U', 'D', 'D', 'L', 'U', 'F', 'B', 'B', 'R', 'D', 'U', 'D', 'B', 'F', 'D', 'R', 'R']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'L', 'F', 'F', 'U', 'L', 'R', 'F', 'L', 'F', 'B', 'D', 'F', 'R', 'B', 'U', 'B', 'L', 'B', 'L', 'D', 'R', 'F', 'R', 'R', 'U', 'L', 'U', 'L', 'F', 'U', 'D', 'R', 'U', 'D', 'B', 'B', 'U', 'D', 'D', 'L', 'U', 'F', 'B', 'B', 'R', 'D', 'U', 'D', 'B', 'F', 'D', 'R', 'R']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.04315400124
+CV Read time: 0.416311979294
+Solve time:   0.136846065521
+Motor time:   1.48999595642
+Solution:     R D' F' B' L' D B' U F B' L' D' R2 F2 L2 D2 R2 L2 B2 U' D'
+Face-turns:   21
+Quarter-turns:28
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 29
+scramble:B D' F U F L U R2 F' R B' R2 B2 F R U' L2 R2 L' F2 R D' F U' L2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'B', 'F', 'D', 'U', 'U', 'B', 'U', 'F', 'L', 'R', 'L', 'B', 'R', 'D', 'U', 'D', 'D', 'D', 'L', 'U', 'F', 'F', 'U', 'B', 'R', 'B', 'L', 'B', 'L', 'B', 'D', 'F', 'R', 'L', 'R', 'R', 'R', 'R', 'F', 'L', 'R', 'B', 'D', 'D', 'D', 'L', 'F', 'L', 'B', 'U', 'F', 'F', 'U']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'B', 'F', 'D', 'U', 'U', 'B', 'U', 'F', 'L', 'R', 'L', 'B', 'R', 'D', 'U', 'D', 'D', 'D', 'L', 'U', 'F', 'F', 'U', 'B', 'R', 'B', 'L', 'B', 'L', 'B', 'D', 'F', 'R', 'L', 'R', 'R', 'R', 'R', 'F', 'L', 'R', 'B', 'D', 'D', 'D', 'L', 'F', 'L', 'B', 'U', 'F', 'F', 'U']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 1.98732995987
+CV Read time: 0.447005033493
+Solve time:   0.0325858592987
+Motor time:   1.50773906708
+Solution:     R' F2 U L U2 F2 B' L' B2 L' B2 U F2 D F2 R2 D L2 U L2
+Face-turns:   20
+Quarter-turns:30
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 30
+scramble:F' B' D2 F' R2 F2 U2 D R2 F' D' U' R2 L2 B' F2 L B R2 B' U' D B' F D R B
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'L', 'D', 'L', 'U', 'L', 'F', 'B', 'L', 'B', 'F', 'F', 'R', 'R', 'D', 'U', 'R', 'D', 'L', 'U', 'U', 'R', 'F', 'D', 'L', 'B', 'F', 'D', 'D', 'R', 'D', 'D', 'B', 'B', 'U', 'B', 'F', 'B', 'U', 'F', 'L', 'F', 'U', 'F', 'B', 'L', 'U', 'R', 'L', 'B', 'U', 'R', 'R', 'R']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'L', 'D', 'L', 'U', 'L', 'F', 'B', 'U', 'B', 'F', 'F', 'R', 'R', 'D', 'U', 'R', 'D', 'L', 'U', 'L', 'R', 'F', 'D', 'L', 'B', 'F', 'D', 'D', 'R', 'D', 'D', 'B', 'B', 'U', 'B', 'F', 'B', 'U', 'F', 'L', 'F', 'U', 'F', 'B', 'L', 'U', 'R', 'L', 'B', 'U', 'R', 'R', 'R']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+FAIL
+iter: 31
+scramble:U2 F2 B R' D2 F U' F2 B U D' U' D' R' L2 D B2 U F' D2 U F' U' D R U2 R D
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'D', 'L', 'B', 'U', 'U', 'U', 'D', 'L', 'D', 'L', 'F', 'D', 'R', 'L', 'B', 'U', 'L', 'L', 'F', 'B', 'F', 'F', 'B', 'D', 'U', 'R', 'F', 'R', 'D', 'L', 'D', 'B', 'U', 'D', 'D', 'F', 'R', 'B', 'F', 'L', 'U', 'R', 'F', 'R', 'U', 'R', 'U', 'B', 'B', 'R', 'F', 'L', 'B']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'D', 'L', 'B', 'U', 'U', 'U', 'D', 'L', 'D', 'L', 'F', 'D', 'R', 'L', 'B', 'U', 'L', 'L', 'F', 'B', 'F', 'F', 'B', 'D', 'U', 'R', 'F', 'R', 'D', 'L', 'D', 'B', 'U', 'D', 'D', 'F', 'R', 'B', 'F', 'L', 'U', 'R', 'F', 'R', 'U', 'R', 'U', 'B', 'B', 'R', 'F', 'L', 'B']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.15314102173
+CV Read time: 0.420463085175
+Solve time:   0.126448869705
+Motor time:   1.60622906685
+Solution:     U B2 R F U2 B' D L B U' F' D2 R2 D2 L2 F2 D F2 B2 D2 L2
+Face-turns:   21
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 32
+scramble:F L R' B2 D B' D' U2 L' R2 F U' D2 U' F R' F2 R' F2 L' D' U2 R2 L2 R2 U2 L
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'D', 'F', 'B', 'U', 'R', 'B', 'R', 'F', 'R', 'D', 'U', 'L', 'R', 'L', 'B', 'B', 'D', 'R', 'F', 'D', 'U', 'F', 'U', 'U', 'U', 'D', 'L', 'B', 'L', 'L', 'D', 'D', 'R', 'B', 'F', 'R', 'L', 'U', 'F', 'L', 'R', 'D', 'D', 'B', 'L', 'F', 'F', 'F', 'B', 'U', 'L', 'R', 'B']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'D', 'F', 'B', 'U', 'R', 'B', 'R', 'F', 'R', 'D', 'U', 'L', 'R', 'L', 'B', 'B', 'D', 'R', 'F', 'D', 'U', 'F', 'U', 'U', 'U', 'D', 'L', 'B', 'L', 'L', 'D', 'D', 'R', 'B', 'F', 'R', 'L', 'U', 'F', 'L', 'R', 'D', 'D', 'B', 'L', 'F', 'F', 'F', 'B', 'U', 'L', 'R', 'B']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.14450192451
+CV Read time: 0.420011043549
+Solve time:   0.119918823242
+Motor time:   1.60457205772
+Solution:     U2 D F L D2 F' D L' U2 F L U2 F2 U2 F2 B2 U' L2 F2 U F2
+Face-turns:   21
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 33
+scramble:B2 D' R' U' F B U2 D' U' F2 U2 D R F' D2 U R U2 L R
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'R', 'U', 'L', 'U', 'D', 'U', 'B', 'L', 'D', 'F', 'B', 'F', 'R', 'U', 'U', 'R', 'B', 'B', 'U', 'B', 'U', 'F', 'L', 'R', 'B', 'L', 'D', 'R', 'F', 'B', 'D', 'F', 'F', 'U', 'R', 'R', 'B', 'R', 'D', 'L', 'R', 'L', 'D', 'F', 'L', 'D', 'F', 'F', 'B', 'L', 'D', 'L', 'D']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'R', 'U', 'L', 'U', 'D', 'U', 'B', 'L', 'D', 'F', 'B', 'F', 'R', 'U', 'U', 'R', 'B', 'B', 'U', 'B', 'U', 'F', 'L', 'R', 'B', 'L', 'D', 'R', 'F', 'B', 'D', 'F', 'F', 'U', 'R', 'R', 'B', 'R', 'D', 'L', 'R', 'L', 'D', 'F', 'L', 'D', 'F', 'F', 'B', 'L', 'D', 'L', 'D']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.45015501976
+CV Read time: 0.458927869797
+Solve time:   0.365877151489
+Motor time:   1.62534999847
+Solution:     U F2 U L2 U' R D2 F' L' D' F B U' F2 B2 L2 D' R2 F2 D' L2 F2
+Face-turns:   22
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 34
+scramble:U' B2 D2 F2 R D' L D' R' D F' L' B R2 D' U2 B' D2 B' D2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'U', 'R', 'D', 'U', 'R', 'F', 'R', 'F', 'D', 'U', 'F', 'D', 'R', 'D', 'L', 'B', 'D', 'U', 'D', 'L', 'F', 'F', 'L', 'F', 'F', 'U', 'L', 'L', 'B', 'B', 'D', 'R', 'B', 'B', 'B', 'D', 'F', 'R', 'U', 'L', 'R', 'U', 'U', 'U', 'D', 'L', 'B', 'B', 'B', 'F', 'R', 'L', 'R']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['L', 'U', 'R', 'D', 'U', 'R', 'F', 'R', 'F', 'D', 'U', 'F', 'D', 'R', 'D', 'L', 'B', 'D', 'U', 'D', 'L', 'F', 'F', 'L', 'F', 'F', 'U', 'L', 'L', 'B', 'B', 'D', 'R', 'B', 'B', 'B', 'D', 'F', 'R', 'U', 'L', 'R', 'U', 'U', 'U', 'D', 'L', 'B', 'B', 'B', 'F', 'R', 'L', 'R']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.0027089119
+CV Read time: 0.425313949585
+Solve time:   0.0694880485535
+Motor time:   1.50790691376
+Solution:     U R F' B2 U L' F B' R' D2 B' U D' F2 D F2 L2 F2 L2 U F2
+Face-turns:   21
+Quarter-turns:29
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 35
+scramble:B' D U2 B2 U2 B' F' D2 U2 F D' L2 R' U2 B2 U F R U B2 D2 B2 F U'
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'B', 'B', 'L', 'U', 'R', 'D', 'U', 'L', 'F', 'B', 'L', 'L', 'R', 'F', 'F', 'R', 'B', 'B', 'F', 'D', 'F', 'F', 'D', 'B', 'B', 'U', 'D', 'U', 'L', 'B', 'D', 'U', 'U', 'D', 'U', 'R', 'U', 'L', 'F', 'L', 'R', 'F', 'D', 'R', 'U', 'L', 'D', 'D', 'B', 'L', 'R', 'R', 'R']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'B', 'B', 'L', 'U', 'R', 'D', 'U', 'L', 'F', 'B', 'L', 'L', 'R', 'F', 'F', 'R', 'B', 'B', 'F', 'D', 'F', 'F', 'D', 'B', 'B', 'U', 'D', 'U', 'L', 'B', 'D', 'U', 'U', 'D', 'U', 'R', 'U', 'L', 'F', 'L', 'R', 'F', 'D', 'R', 'U', 'L', 'D', 'D', 'B', 'L', 'R', 'R', 'R']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.35407304764
+CV Read time: 0.43860411644
+Solve time:   0.3915579319
+Motor time:   1.5239109993
+Solution:     R' U F B D F' R' U2 F' L F L2 D2 R2 U R2 U R2 B2 R2 D'
+Face-turns:   21
+Quarter-turns:29
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 36
+scramble:F' R F2 B2 F U L R' U2 L' F' U D' F2 U L' B' F L2 U' R' B' L U B' U'
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'U', 'R', 'U', 'U', 'D', 'U', 'B', 'L', 'F', 'B', 'U', 'R', 'R', 'B', 'U', 'F', 'L', 'F', 'L', 'D', 'L', 'F', 'F', 'D', 'L', 'R', 'B', 'U', 'B', 'L', 'D', 'D', 'F', 'R', 'U', 'B', 'F', 'L', 'B', 'L', 'F', 'D', 'D', 'L', 'F', 'R', 'D', 'R', 'B', 'U', 'B', 'D', 'R']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'U', 'R', 'U', 'U', 'D', 'U', 'B', 'L', 'F', 'B', 'U', 'R', 'R', 'B', 'U', 'F', 'L', 'F', 'L', 'D', 'L', 'F', 'F', 'D', 'L', 'R', 'B', 'U', 'B', 'L', 'D', 'D', 'F', 'R', 'U', 'B', 'F', 'L', 'B', 'L', 'F', 'D', 'D', 'L', 'F', 'R', 'D', 'R', 'B', 'U', 'B', 'D', 'R']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.08893299103
+CV Read time: 0.44841504097
+Solve time:   0.218415975571
+Motor time:   1.42210197449
+Solution:     R' L U' R' D' B L2 B' R' B' R F2 B2 U' R2 U' L2 F2 U2 D
+Face-turns:   20
+Quarter-turns:27
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 37
+scramble:D2 U2 D2 L' U' B U L' B2 R U2 L D U F D' F2 D2 U' F2 R' B U D' R'
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'B', 'U', 'U', 'U', 'F', 'L', 'R', 'F', 'U', 'R', 'B', 'R', 'R', 'L', 'D', 'F', 'U', 'D', 'B', 'R', 'L', 'F', 'D', 'R', 'D', 'R', 'U', 'L', 'F', 'R', 'D', 'D', 'F', 'F', 'L', 'R', 'F', 'B', 'U', 'L', 'B', 'L', 'U', 'B', 'L', 'D', 'B', 'U', 'B', 'B', 'F', 'L', 'D']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'B', 'U', 'U', 'U', 'F', 'L', 'R', 'F', 'U', 'R', 'B', 'R', 'R', 'L', 'D', 'F', 'U', 'D', 'B', 'R', 'L', 'F', 'D', 'R', 'D', 'R', 'U', 'L', 'F', 'R', 'D', 'D', 'F', 'F', 'L', 'R', 'F', 'B', 'U', 'L', 'B', 'L', 'U', 'B', 'L', 'D', 'B', 'U', 'B', 'B', 'F', 'L', 'D']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.73527407646
+CV Read time: 0.459085941315
+Solve time:   0.66453909874
+Motor time:   1.61164903641
+Solution:     U2 R' F2 L' U2 F B L B U' D' L F2 D B2 D2 L2 U B2 U' F2 D
+Face-turns:   22
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 38
+scramble:L B U2 R2 U F B' R' U2 F R2 U2 R2 F2 L2 F R' B2 L' B R2 U' D' U D' L F2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'U', 'B', 'F', 'U', 'U', 'R', 'L', 'B', 'L', 'F', 'U', 'L', 'R', 'B', 'B', 'U', 'R', 'D', 'F', 'D', 'F', 'F', 'U', 'D', 'D', 'L', 'L', 'L', 'U', 'R', 'D', 'R', 'L', 'D', 'D', 'U', 'R', 'F', 'L', 'L', 'D', 'F', 'D', 'F', 'R', 'B', 'R', 'R', 'B', 'B', 'B', 'B', 'U']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'U', 'B', 'F', 'U', 'U', 'R', 'L', 'B', 'L', 'F', 'U', 'L', 'R', 'B', 'B', 'U', 'R', 'D', 'F', 'D', 'F', 'F', 'U', 'D', 'D', 'L', 'L', 'L', 'U', 'R', 'D', 'R', 'L', 'D', 'D', 'U', 'R', 'F', 'L', 'L', 'D', 'F', 'D', 'F', 'R', 'B', 'R', 'R', 'B', 'B', 'B', 'B', 'U']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.58345103264
+CV Read time: 0.491240024567
+Solve time:   0.458285093307
+Motor time:   1.63392591476
+Solution:     U R U F' D R2 L2 D R2 D' R B R2 U F2 L2 D F2 R2 B2 U' L2
+Face-turns:   22
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 39
+scramble:L' U2 R F2 D F2 D' F' D2 B2 R' F2 U D R L2 B U L U2 F R B U2 D2
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['F', 'L', 'R', 'F', 'U', 'D', 'D', 'U', 'U', 'R', 'L', 'D', 'F', 'R', 'R', 'R', 'L', 'B', 'B', 'R', 'F', 'R', 'F', 'D', 'B', 'D', 'F', 'R', 'B', 'D', 'U', 'D', 'F', 'L', 'D', 'L', 'L', 'U', 'L', 'L', 'L', 'B', 'D', 'B', 'U', 'B', 'U', 'U', 'F', 'B', 'B', 'U', 'R', 'F']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['F', 'L', 'R', 'F', 'U', 'D', 'D', 'U', 'U', 'R', 'L', 'D', 'F', 'R', 'R', 'R', 'L', 'B', 'B', 'R', 'F', 'R', 'F', 'D', 'B', 'D', 'F', 'R', 'B', 'D', 'U', 'D', 'F', 'L', 'D', 'L', 'L', 'U', 'L', 'L', 'L', 'B', 'D', 'B', 'U', 'B', 'U', 'U', 'F', 'B', 'B', 'U', 'R', 'F']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 1.98583292961
+CV Read time: 0.409849882126
+Solve time:   0.0869541168213
+Motor time:   1.48902893066
+Solution:     U2 F' R' D' F' B U2 B L2 F L U' L2 D R2 D2 R2 B2 D F2
+Face-turns:   20
+Quarter-turns:29
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 40
+scramble:U' D F' R' D F D R' U B L2 F' D B2 U' R2 F B L2 F R' U F2 D' B2 L B2 U' F2 L'
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'D', 'L', 'B', 'U', 'L', 'R', 'F', 'D', 'L', 'D', 'B', 'R', 'R', 'U', 'D', 'F', 'L', 'D', 'D', 'F', 'U', 'F', 'U', 'L', 'B', 'B', 'B', 'R', 'R', 'L', 'D', 'L', 'F', 'F', 'F', 'U', 'D', 'F', 'B', 'L', 'B', 'R', 'U', 'U', 'D', 'R', 'B', 'F', 'B', 'L', 'U', 'R', 'U']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'D', 'L', 'B', 'U', 'L', 'R', 'F', 'D', 'L', 'D', 'B', 'R', 'R', 'U', 'D', 'F', 'L', 'D', 'D', 'F', 'U', 'F', 'U', 'L', 'B', 'B', 'B', 'R', 'R', 'L', 'D', 'L', 'F', 'F', 'F', 'U', 'D', 'F', 'B', 'L', 'B', 'R', 'U', 'U', 'D', 'R', 'B', 'F', 'B', 'L', 'U', 'R', 'U']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.21423196793
+CV Read time: 0.437462806702
+Solve time:   0.411274194717
+Motor time:   1.36549496651
+Solution:     B' R B' R B2 D' L' F U' B R U F2 U' L2 B2 R2 B2 U2
+Face-turns:   19
+Quarter-turns:26
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 41
+scramble:R2 D2 U B R' L2 F' D2 B L D' R' D2 L' U L2 B U2 R2 U2 F' U L' U'
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'F', 'R', 'L', 'U', 'L', 'R', 'U', 'F', 'D', 'D', 'D', 'R', 'R', 'D', 'B', 'R', 'U', 'F', 'L', 'L', 'B', 'F', 'D', 'R', 'F', 'L', 'D', 'R', 'U', 'R', 'D', 'B', 'L', 'D', 'R', 'L', 'B', 'U', 'F', 'L', 'U', 'B', 'U', 'F', 'B', 'L', 'U', 'F', 'B', 'U', 'B', 'B', 'D']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'F', 'R', 'L', 'U', 'L', 'R', 'U', 'F', 'D', 'D', 'D', 'R', 'R', 'D', 'B', 'R', 'U', 'F', 'L', 'L', 'B', 'F', 'D', 'R', 'F', 'L', 'D', 'R', 'U', 'R', 'D', 'B', 'L', 'D', 'R', 'L', 'B', 'U', 'F', 'L', 'U', 'B', 'U', 'F', 'B', 'L', 'U', 'F', 'B', 'U', 'B', 'B', 'D']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.66424298286
+CV Read time: 0.436855077744
+Solve time:   0.511945009232
+Motor time:   1.71544289589
+Solution:     U F R2 L2 F' U2 B2 R' F R2 D2 L U2 D' L2 U2 L2 B2 U F2 U R2
+Face-turns:   22
+Quarter-turns:35
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 42
+scramble:U2 F' L2 B' F' L2 R L2 B' R' B2 D' R2 F' B2 F D L' B2 F' R2 L2 F' L' R' U' R2 F L2 B2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'U', 'D', 'F', 'U', 'L', 'D', 'R', 'R', 'D', 'U', 'F', 'B', 'R', 'U', 'B', 'D', 'L', 'R', 'F', 'F', 'F', 'F', 'R', 'R', 'D', 'U', 'F', 'B', 'R', 'B', 'D', 'L', 'B', 'B', 'F', 'B', 'D', 'B', 'R', 'L', 'L', 'L', 'U', 'U', 'L', 'R', 'L', 'F', 'B', 'D', 'U', 'L', 'U']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'U', 'D', 'F', 'U', 'L', 'D', 'R', 'R', 'D', 'U', 'F', 'B', 'R', 'U', 'B', 'D', 'L', 'R', 'F', 'F', 'F', 'F', 'R', 'R', 'D', 'U', 'F', 'B', 'R', 'B', 'D', 'L', 'B', 'B', 'F', 'B', 'D', 'B', 'R', 'L', 'L', 'L', 'U', 'U', 'L', 'R', 'L', 'F', 'B', 'D', 'U', 'L', 'U']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.19253492355
+CV Read time: 0.463090896606
+Solve time:   0.103815078735
+Motor time:   1.62562894821
+Solution:     R2 D' L U2 B U' F D2 R B2 L F2 D2 L2 B2 U D2 R2 L2 F2 D'
+Face-turns:   21
+Quarter-turns:33
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 43
+scramble:U2 F L' B2 L2 U B U' R2 F2 D2 R L U2 F2 B' U F' U2 L2 D U2 F2 L' B' F' D R
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'D', 'L', 'B', 'U', 'R', 'B', 'L', 'R', 'F', 'U', 'F', 'R', 'R', 'U', 'L', 'B', 'B', 'R', 'F', 'U', 'U', 'F', 'D', 'L', 'L', 'D', 'D', 'B', 'F', 'R', 'D', 'R', 'B', 'D', 'R', 'F', 'D', 'U', 'B', 'L', 'L', 'L', 'F', 'B', 'U', 'L', 'R', 'F', 'B', 'U', 'D', 'F', 'U']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'D', 'L', 'B', 'U', 'R', 'B', 'L', 'R', 'F', 'U', 'F', 'R', 'R', 'U', 'L', 'B', 'B', 'R', 'F', 'U', 'U', 'F', 'D', 'L', 'L', 'D', 'D', 'B', 'F', 'R', 'D', 'R', 'B', 'D', 'R', 'F', 'D', 'U', 'B', 'L', 'L', 'L', 'F', 'B', 'U', 'L', 'R', 'F', 'B', 'U', 'D', 'F', 'U']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.40278792381
+CV Read time: 0.417704105377
+Solve time:   0.343218803406
+Motor time:   1.64186501503
+Solution:     D F2 L2 U2 F L' U2 R2 F' B' R' U2 D2 F2 L2 D' L2 U2 B2 L2 D
+Face-turns:   21
+Quarter-turns:34
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 44
+scramble:D' L' R2 B' U2 L' U2 D2 L' F D2 B' L2 F2 B2 D F' L2 B2 R2
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['L', 'D', 'R', 'L', 'U', 'R', 'F', 'R', 'B', 'U', 'U', 'F', 'D', 'R', 'B', 'U', 'F', 'D', 'U', 'B', 'L', 'U', 'F', 'R', 'L', 'F', 'L', 'F', 'U', 'F', 'L', 'D', 'D', 'R', 'U', 'B', 'D', 'F', 'R', 'R', 'L', 'L', 'B', 'D', 'D', 'D', 'B', 'B', 'L', 'B', 'F', 'R', 'B', 'U']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['L', 'D', 'R', 'L', 'U', 'R', 'F', 'R', 'B', 'U', 'U', 'F', 'D', 'R', 'B', 'U', 'F', 'D', 'U', 'B', 'L', 'U', 'F', 'R', 'L', 'F', 'L', 'F', 'U', 'F', 'L', 'D', 'D', 'R', 'U', 'B', 'D', 'F', 'R', 'R', 'L', 'L', 'B', 'D', 'D', 'D', 'B', 'B', 'L', 'B', 'F', 'R', 'B', 'U']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.1738960743
+CV Read time: 0.47180390358
+Solve time:   0.0903420448303
+Motor time:   1.61175012589
+Solution:     U2 B2 L' D' R2 L2 B' L2 U' D B' R2 D R2 D L2 U B2 D2 B2 D2
+Face-turns:   21
+Quarter-turns:33
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 45
+scramble:R' U D' B D' L R' U B' D' U' D L2 F B L2 D' L F2 D U D
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'B', 'U', 'U', 'U', 'L', 'B', 'L', 'U', 'R', 'U', 'L', 'F', 'R', 'B', 'B', 'R', 'L', 'R', 'D', 'F', 'R', 'F', 'R', 'B', 'L', 'D', 'U', 'F', 'L', 'F', 'D', 'D', 'B', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'B', 'R', 'U', 'L', 'F', 'D', 'D', 'L', 'B', 'B', 'F', 'F', 'D']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'B', 'U', 'U', 'U', 'L', 'B', 'L', 'U', 'R', 'U', 'L', 'F', 'R', 'B', 'B', 'R', 'L', 'R', 'D', 'F', 'R', 'F', 'R', 'B', 'L', 'D', 'U', 'F', 'L', 'F', 'D', 'D', 'B', 'D', 'D', 'R', 'R', 'U', 'U', 'L', 'B', 'R', 'U', 'L', 'F', 'D', 'D', 'L', 'B', 'B', 'F', 'F', 'D']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.61482787132
+CV Read time: 0.428472042084
+Solve time:   0.58273601532
+Motor time:   1.60361981392
+Solution:     U F2 U F' B' D B D2 B' L' U' R U R2 D' R2 D2 B2 R2 U F2 B2
+Face-turns:   22
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 46
+scramble:L' R2 F2 D' F' U2 D' F2 U2 L U' R U' D U2 R2 U' D R2 B' U' R2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'R', 'B', 'B', 'U', 'F', 'D', 'D', 'L', 'U', 'D', 'R', 'U', 'R', 'L', 'L', 'L', 'B', 'L', 'B', 'F', 'F', 'F', 'B', 'F', 'F', 'U', 'U', 'U', 'B', 'F', 'D', 'U', 'R', 'D', 'U', 'L', 'R', 'F', 'D', 'L', 'L', 'F', 'R', 'R', 'D', 'U', 'D', 'B', 'B', 'R', 'R', 'L', 'D']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'R', 'B', 'B', 'U', 'F', 'D', 'D', 'L', 'U', 'D', 'R', 'U', 'R', 'L', 'L', 'L', 'B', 'L', 'B', 'F', 'F', 'F', 'B', 'F', 'F', 'U', 'U', 'U', 'B', 'F', 'D', 'U', 'R', 'D', 'U', 'L', 'R', 'F', 'D', 'L', 'L', 'F', 'R', 'R', 'D', 'U', 'D', 'B', 'B', 'R', 'R', 'L', 'D']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.07932591438
+CV Read time: 0.457415819168
+Solve time:   0.0388941764832
+Motor time:   1.58301591873
+Solution:     U2 F U L2 B2 L2 U F2 B' L' D2 R2 B2 L2 F2 D' R2 D' B2 R2
+Face-turns:   20
+Quarter-turns:33
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 47
+scramble:F2 D' L2 F' B U' B' D2 U F' L R B' L B2 R U2 D2 L2 U F2 B D' R'
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'D', 'L', 'B', 'U', 'F', 'U', 'B', 'B', 'R', 'D', 'F', 'R', 'R', 'F', 'U', 'R', 'D', 'L', 'D', 'U', 'R', 'F', 'D', 'R', 'F', 'F', 'D', 'U', 'R', 'B', 'D', 'B', 'D', 'U', 'B', 'B', 'U', 'B', 'F', 'L', 'U', 'F', 'L', 'F', 'U', 'L', 'L', 'R', 'B', 'L', 'R', 'L', 'L']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'D', 'L', 'B', 'U', 'F', 'U', 'B', 'B', 'R', 'D', 'F', 'R', 'R', 'F', 'U', 'R', 'D', 'L', 'D', 'U', 'R', 'F', 'D', 'R', 'F', 'F', 'D', 'U', 'R', 'B', 'D', 'B', 'D', 'U', 'B', 'B', 'U', 'B', 'F', 'L', 'U', 'F', 'L', 'F', 'U', 'L', 'L', 'R', 'B', 'L', 'R', 'L', 'L']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 1.89680099487
+CV Read time: 0.41014289856
+Solve time:   0.0847051143646
+Motor time:   1.40195298195
+Solution:     R L U L D' F L' B' L' U2 F U' B2 D2 F2 U R2 U' L2 D'
+Face-turns:   20
+Quarter-turns:26
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 48
+scramble:B2 U' F' R U' L' R B' D F B2 U2 F U2 B R2 U2 F2 L2 D
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['U', 'L', 'F', 'F', 'U', 'L', 'L', 'D', 'U', 'L', 'U', 'L', 'L', 'R', 'U', 'D', 'B', 'F', 'U', 'B', 'B', 'R', 'F', 'B', 'R', 'F', 'L', 'D', 'L', 'B', 'F', 'D', 'U', 'D', 'D', 'R', 'B', 'R', 'F', 'R', 'L', 'B', 'B', 'D', 'F', 'D', 'D', 'R', 'F', 'B', 'U', 'U', 'R', 'R']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['U', 'L', 'F', 'F', 'U', 'L', 'L', 'D', 'U', 'L', 'U', 'L', 'L', 'R', 'U', 'D', 'B', 'F', 'U', 'B', 'B', 'R', 'F', 'B', 'R', 'F', 'L', 'D', 'L', 'B', 'F', 'D', 'U', 'D', 'D', 'R', 'B', 'R', 'F', 'R', 'L', 'B', 'B', 'D', 'F', 'D', 'D', 'R', 'F', 'B', 'U', 'U', 'R', 'R']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.27975893021
+CV Read time: 0.428092956543
+Solve time:   0.304331064224
+Motor time:   1.54733490944
+Solution:     F B' R D B D' L U' D2 B' R F2 L2 B2 L2 U' D2 B2 L2 U B2
+Face-turns:   21
+Quarter-turns:30
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 49
+scramble:F2 B2 L' D' B' L' D L2 D2 L' B2 L U' D2 L F U L U2 F2 U2 L' B D R2 L'
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'B', 'D', 'U', 'U', 'U', 'R', 'D', 'U', 'F', 'F', 'B', 'U', 'R', 'R', 'U', 'R', 'L', 'D', 'F', 'L', 'L', 'F', 'B', 'B', 'R', 'B', 'R', 'F', 'L', 'F', 'D', 'U', 'R', 'D', 'D', 'B', 'L', 'F', 'B', 'L', 'D', 'U', 'L', 'U', 'R', 'L', 'L', 'B', 'B', 'D', 'F', 'R', 'F']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'B', 'D', 'U', 'U', 'U', 'R', 'D', 'U', 'F', 'F', 'B', 'U', 'R', 'R', 'U', 'R', 'L', 'D', 'F', 'L', 'L', 'F', 'B', 'B', 'R', 'B', 'R', 'F', 'L', 'F', 'D', 'U', 'R', 'D', 'D', 'B', 'L', 'F', 'B', 'L', 'D', 'U', 'L', 'U', 'R', 'L', 'L', 'B', 'B', 'D', 'F', 'R', 'F']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 1.96883893013
+CV Read time: 0.444455862045
+Solve time:   0.0134160518646
+Motor time:   1.51096701622
+Solution:     U2 B2 U F' L U2 F D F' R' U F2 R2 D L2 U2 F2 B2 D F2
+Face-turns:   20
+Quarter-turns:30
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 50
+scramble:U2 B F2 L B D2 U D2 R' F2 R2 B2 U F D B' R F U L D L2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'U', 'U', 'R', 'U', 'R', 'B', 'L', 'R', 'U', 'U', 'L', 'B', 'R', 'D', 'R', 'R', 'B', 'L', 'F', 'B', 'F', 'F', 'D', 'F', 'F', 'D', 'U', 'R', 'B', 'L', 'D', 'D', 'D', 'F', 'L', 'F', 'B', 'D', 'L', 'L', 'U', 'F', 'B', 'R', 'F', 'B', 'R', 'L', 'B', 'U', 'U', 'D', 'L']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'U', 'U', 'R', 'U', 'R', 'B', 'L', 'R', 'U', 'U', 'L', 'B', 'R', 'D', 'R', 'R', 'B', 'L', 'F', 'B', 'F', 'F', 'D', 'F', 'F', 'D', 'U', 'R', 'B', 'L', 'D', 'D', 'D', 'F', 'L', 'F', 'B', 'D', 'L', 'L', 'U', 'F', 'B', 'R', 'F', 'B', 'R', 'L', 'B', 'U', 'U', 'D', 'L']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.45155310631
+CV Read time: 0.531306028366
+Solve time:   0.276468992233
+Motor time:   1.64377808571
+Solution:     D L U2 F2 R2 B2 L F2 U' F' B' U2 D' B2 L2 D' F2 R2 B2 L2 F2
+Face-turns:   21
+Quarter-turns:34
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 51
+scramble:F2 D' R L' D' R' L F' D U' L' D' F R2 U' L2 U2 B2 D B'
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'U', 'D', 'L', 'U', 'U', 'U', 'D', 'U', 'F', 'F', 'L', 'L', 'R', 'D', 'L', 'R', 'U', 'L', 'B', 'L', 'U', 'F', 'D', 'R', 'R', 'D', 'U', 'U', 'F', 'F', 'D', 'B', 'D', 'R', 'F', 'D', 'B', 'B', 'L', 'L', 'B', 'B', 'D', 'B', 'B', 'L', 'F', 'R', 'B', 'F', 'R', 'F', 'R']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['R', 'U', 'D', 'L', 'U', 'U', 'U', 'D', 'U', 'F', 'F', 'L', 'L', 'R', 'D', 'L', 'R', 'U', 'L', 'B', 'L', 'U', 'F', 'D', 'R', 'R', 'D', 'U', 'U', 'F', 'F', 'D', 'B', 'D', 'R', 'F', 'D', 'B', 'B', 'L', 'L', 'B', 'B', 'D', 'B', 'B', 'L', 'F', 'R', 'B', 'F', 'R', 'F', 'R']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.0415790081
+CV Read time: 0.481882095337
+Solve time:   0.0185458660126
+Motor time:   1.54115104675
+Solution:     U F2 L B' U2 D2 L' F2 U2 L D R2 D B2 R2 L2 D' L2 B2 U'
+Face-turns:   20
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 52
+scramble:U2 F2 U B2 R F2 L2 F L' F' U B' R2 D' R' F R B' R B2 L B' L' U' R' F2 R2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'U', 'B', 'D', 'U', 'F', 'R', 'L', 'U', 'L', 'U', 'U', 'L', 'R', 'D', 'D', 'R', 'F', 'F', 'B', 'B', 'R', 'F', 'D', 'U', 'B', 'L', 'F', 'U', 'B', 'R', 'D', 'F', 'B', 'D', 'L', 'D', 'F', 'U', 'F', 'L', 'B', 'R', 'U', 'L', 'R', 'L', 'F', 'B', 'B', 'L', 'D', 'R', 'D']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'U', 'B', 'D', 'U', 'F', 'R', 'L', 'U', 'L', 'U', 'U', 'L', 'R', 'D', 'D', 'R', 'F', 'F', 'B', 'B', 'R', 'F', 'D', 'U', 'B', 'L', 'F', 'U', 'B', 'R', 'D', 'F', 'B', 'D', 'L', 'D', 'F', 'U', 'F', 'L', 'B', 'R', 'U', 'L', 'R', 'L', 'F', 'B', 'B', 'L', 'D', 'R', 'D']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.3706009388
+CV Read time: 0.477503061295
+Solve time:   0.293854951859
+Motor time:   1.59924292564
+Solution:     L' F D R2 L2 F2 B R D F' B U L2 F2 U2 L2 B2 U' B2 R2 B2
+Face-turns:   21
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 53
+scramble:L R' F2 D' B2 L2 F' D2 B' D2 F B D' B2 L' U2 F2 R L B' U' R2 L
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'F', 'L', 'L', 'U', 'U', 'D', 'U', 'B', 'L', 'R', 'U', 'D', 'R', 'D', 'R', 'B', 'F', 'L', 'F', 'D', 'U', 'F', 'F', 'U', 'L', 'D', 'B', 'B', 'B', 'B', 'D', 'D', 'R', 'L', 'U', 'F', 'F', 'F', 'L', 'L', 'B', 'U', 'R', 'R', 'B', 'R', 'R', 'R', 'B', 'U', 'L', 'D', 'F']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'F', 'L', 'L', 'U', 'U', 'D', 'U', 'B', 'L', 'R', 'U', 'D', 'R', 'D', 'R', 'B', 'F', 'L', 'F', 'D', 'U', 'F', 'F', 'U', 'L', 'D', 'B', 'B', 'B', 'B', 'D', 'D', 'R', 'L', 'U', 'F', 'F', 'F', 'L', 'L', 'B', 'U', 'R', 'R', 'B', 'R', 'R', 'R', 'B', 'U', 'L', 'D', 'F']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 1.93231081963
+CV Read time: 0.412155866623
+Solve time:   0.0274579524994
+Motor time:   1.4926970005
+Solution:     B' R2 B' U' L' D L2 F' U' R' L2 F2 U2 F2 U' R2 F2 D' R2 L2
+Face-turns:   20
+Quarter-turns:30
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 54
+scramble:R F D' B' F U D2 F' B' L D' B' F2 D F' R D L U2 B2 D' R D2 R2 L U' L R2 B2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'R', 'B', 'U', 'U', 'L', 'U', 'L', 'F', 'D', 'F', 'D', 'D', 'R', 'U', 'D', 'D', 'F', 'R', 'B', 'L', 'L', 'F', 'F', 'L', 'R', 'B', 'B', 'D', 'R', 'R', 'D', 'B', 'B', 'U', 'D', 'U', 'B', 'F', 'R', 'L', 'D', 'U', 'B', 'U', 'L', 'U', 'F', 'F', 'B', 'F', 'R', 'L', 'R']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'R', 'B', 'U', 'U', 'L', 'U', 'L', 'F', 'D', 'F', 'D', 'D', 'R', 'U', 'D', 'D', 'F', 'R', 'B', 'L', 'L', 'F', 'F', 'L', 'R', 'B', 'B', 'D', 'R', 'R', 'D', 'B', 'B', 'U', 'D', 'U', 'B', 'F', 'R', 'L', 'D', 'U', 'B', 'U', 'L', 'U', 'F', 'F', 'B', 'F', 'R', 'L', 'R']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 1.94731783867
+CV Read time: 0.51735496521
+Solve time:   0.0161299705505
+Motor time:   1.41383290291
+Solution:     F' D' F2 L' B L' U' R B R' L2 U' F2 D' R2 D' L2 D' R2 F2
+Face-turns:   20
+Quarter-turns:27
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 55
+scramble:B' U' B2 R L2 U B' R L2 D' L2 F2 B' U L' B2 F' U' F2 U2 D R2 L'
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['B', 'B', 'D', 'R', 'U', 'B', 'R', 'U', 'U', 'F', 'D', 'F', 'D', 'R', 'D', 'D', 'R', 'F', 'B', 'R', 'L', 'D', 'F', 'L', 'U', 'U', 'R', 'B', 'L', 'F', 'F', 'D', 'B', 'L', 'F', 'R', 'L', 'F', 'D', 'B', 'L', 'F', 'U', 'L', 'R', 'L', 'L', 'D', 'R', 'B', 'U', 'U', 'U', 'B']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['B', 'B', 'D', 'R', 'U', 'B', 'R', 'U', 'U', 'F', 'D', 'F', 'D', 'R', 'D', 'D', 'R', 'F', 'B', 'R', 'L', 'D', 'F', 'L', 'U', 'U', 'R', 'B', 'L', 'F', 'F', 'D', 'B', 'L', 'F', 'R', 'L', 'F', 'D', 'B', 'L', 'F', 'U', 'L', 'R', 'L', 'L', 'D', 'R', 'B', 'U', 'U', 'U', 'B']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.09580588341
+CV Read time: 0.443822860718
+Solve time:   0.0473070144653
+Motor time:   1.60467600822
+Solution:     U F' L2 D' L F2 D F2 B D R F2 D' L2 U2 L2 U L2 F2 D2 B2
+Face-turns:   21
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 56
+scramble:R' L D2 B' F2 B R2 D2 R' B2 R' B F U2 D' F R2 F' B' R2 D2 U2 B R2 U2 R L B D2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'L', 'B', 'B', 'U', 'L', 'D', 'D', 'D', 'R', 'F', 'U', 'L', 'R', 'B', 'B', 'D', 'F', 'L', 'B', 'B', 'L', 'F', 'D', 'F', 'R', 'D', 'R', 'F', 'L', 'U', 'D', 'F', 'B', 'R', 'U', 'U', 'U', 'F', 'U', 'L', 'U', 'L', 'R', 'D', 'R', 'B', 'R', 'R', 'B', 'F', 'L', 'D', 'U']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'L', 'B', 'B', 'U', 'L', 'D', 'D', 'D', 'R', 'F', 'U', 'L', 'R', 'B', 'B', 'D', 'F', 'L', 'B', 'B', 'L', 'F', 'D', 'F', 'R', 'D', 'R', 'F', 'L', 'U', 'D', 'F', 'B', 'R', 'U', 'U', 'U', 'F', 'U', 'L', 'U', 'L', 'R', 'D', 'R', 'B', 'R', 'R', 'B', 'F', 'L', 'D', 'U']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.19263195992
+CV Read time: 0.456721067429
+Solve time:   0.0937049388885
+Motor time:   1.6422059536
+Solution:     U2 F2 R' U' D2 B' L' F' U2 F2 L' U L2 U L2 U2 B2 U2 F2 R2 B2
+Face-turns:   21
+Quarter-turns:34
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 57
+scramble:D2 R2 U' L' D' B U L2 F' U D' U L2 B F R' U' F' L2 B R' U
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'R', 'F', 'B', 'U', 'U', 'B', 'F', 'F', 'U', 'B', 'U', 'D', 'R', 'F', 'B', 'U', 'R', 'R', 'U', 'R', 'B', 'F', 'R', 'F', 'F', 'L', 'D', 'D', 'U', 'B', 'D', 'R', 'D', 'D', 'F', 'B', 'D', 'U', 'L', 'L', 'R', 'L', 'L', 'L', 'L', 'F', 'D', 'L', 'B', 'U', 'D', 'L', 'B']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['R', 'R', 'F', 'B', 'U', 'U', 'B', 'F', 'F', 'U', 'B', 'U', 'D', 'R', 'F', 'B', 'U', 'R', 'R', 'U', 'R', 'B', 'F', 'R', 'F', 'F', 'L', 'D', 'D', 'U', 'B', 'D', 'R', 'D', 'D', 'F', 'B', 'D', 'U', 'L', 'L', 'R', 'L', 'L', 'L', 'L', 'F', 'D', 'L', 'B', 'U', 'D', 'L', 'B']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.20739102364
+CV Read time: 0.472868919373
+Solve time:   0.219022035599
+Motor time:   1.51550006866
+Solution:     F' L' B R D L2 U F D' R F U2 L2 U L2 D' R2 U' F2 R2 U2
+Face-turns:   21
+Quarter-turns:29
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 58
+scramble:D2 B D' F D' B D2 U2 R2 D' U2 B R' F L' F U2 D' L R2 U' B2 R D F'
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'F', 'L', 'B', 'U', 'L', 'U', 'U', 'F', 'R', 'B', 'F', 'U', 'R', 'F', 'B', 'D', 'L', 'R', 'L', 'D', 'F', 'F', 'R', 'B', 'R', 'R', 'U', 'D', 'D', 'R', 'D', 'B', 'U', 'L', 'D', 'B', 'U', 'F', 'D', 'L', 'R', 'R', 'B', 'L', 'U', 'D', 'L', 'U', 'B', 'L', 'F', 'F', 'B']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'F', 'L', 'B', 'U', 'L', 'U', 'U', 'F', 'R', 'B', 'F', 'U', 'R', 'F', 'B', 'D', 'L', 'R', 'L', 'D', 'F', 'F', 'R', 'B', 'R', 'R', 'U', 'D', 'D', 'R', 'D', 'B', 'U', 'L', 'D', 'B', 'U', 'F', 'D', 'L', 'R', 'R', 'B', 'L', 'U', 'D', 'L', 'U', 'B', 'L', 'F', 'F', 'B']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.1022810936
+CV Read time: 0.427047967911
+Solve time:   0.106881141663
+Motor time:   1.56835198402
+Solution:     U2 L2 F R F' B' D F' L2 D' B D F2 U2 R2 D' R2 U' L2 F2 U2
+Face-turns:   21
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 59
+scramble:F' R2 D R2 U R2 U R D U2 R2 D2 R2 U' B2 D' B L' B' D' R' F2 B L' B2 R L' B U
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'D', 'U', 'U', 'U', 'L', 'D', 'F', 'R', 'U', 'B', 'F', 'B', 'R', 'F', 'L', 'U', 'F', 'B', 'D', 'B', 'D', 'F', 'U', 'F', 'R', 'D', 'R', 'B', 'F', 'D', 'D', 'F', 'B', 'F', 'U', 'B', 'R', 'L', 'L', 'L', 'R', 'L', 'B', 'D', 'R', 'L', 'D', 'L', 'B', 'U', 'L', 'R', 'U']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['R', 'D', 'U', 'U', 'U', 'L', 'D', 'F', 'R', 'U', 'B', 'F', 'B', 'R', 'F', 'L', 'U', 'F', 'B', 'D', 'B', 'D', 'F', 'U', 'F', 'R', 'D', 'R', 'B', 'F', 'D', 'D', 'F', 'B', 'F', 'U', 'B', 'R', 'L', 'L', 'L', 'R', 'L', 'B', 'D', 'R', 'L', 'D', 'L', 'B', 'U', 'L', 'R', 'U']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.24007105827
+CV Read time: 0.438528060913
+Solve time:   0.230638980865
+Motor time:   1.57090401649
+Solution:     R' U' D2 B2 R U' B' D' R2 B2 L' D F2 U B2 L2 U R2 U2 R2 D'
+Face-turns:   21
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 60
+scramble:F2 B F D R D' L2 B2 L2 B' U F2 B2 L' R2 B2 D' L' D R2 B2 L2 B F' R
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['L', 'F', 'U', 'B', 'U', 'R', 'R', 'F', 'D', 'F', 'U', 'F', 'R', 'R', 'B', 'D', 'U', 'U', 'B', 'R', 'R', 'D', 'F', 'D', 'U', 'B', 'F', 'L', 'R', 'L', 'D', 'D', 'L', 'L', 'D', 'R', 'U', 'L', 'D', 'U', 'L', 'B', 'B', 'L', 'B', 'R', 'L', 'F', 'U', 'B', 'F', 'B', 'F', 'D']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['L', 'F', 'U', 'B', 'U', 'R', 'R', 'F', 'D', 'F', 'U', 'F', 'R', 'R', 'B', 'D', 'U', 'U', 'B', 'R', 'R', 'D', 'F', 'D', 'U', 'B', 'F', 'L', 'R', 'L', 'D', 'D', 'L', 'L', 'D', 'R', 'U', 'L', 'D', 'U', 'L', 'B', 'B', 'L', 'B', 'R', 'L', 'F', 'U', 'B', 'F', 'B', 'F', 'D']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.1904900074
+CV Read time: 0.44562292099
+Solve time:   0.151407003403
+Motor time:   1.59346008301
+Solution:     U2 L2 U' R' L2 B L' D2 B2 D B' U' L2 U R2 B2 U2 R2 U' D L2
+Face-turns:   21
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 61
+scramble:R D2 R B' D L' R' F' L' B R' D R2 D2 U L2 U2 B2 L F2 D2
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['L', 'U', 'B', 'B', 'U', 'R', 'R', 'R', 'L', 'F', 'U', 'D', 'D', 'R', 'D', 'F', 'L', 'R', 'D', 'B', 'D', 'D', 'F', 'B', 'D', 'R', 'R', 'R', 'F', 'U', 'L', 'D', 'B', 'L', 'F', 'B', 'U', 'U', 'F', 'D', 'L', 'L', 'U', 'F', 'B', 'L', 'L', 'F', 'F', 'B', 'R', 'U', 'U', 'B']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['L', 'U', 'B', 'B', 'U', 'R', 'R', 'R', 'L', 'F', 'U', 'D', 'D', 'R', 'D', 'F', 'L', 'R', 'D', 'B', 'D', 'D', 'F', 'B', 'D', 'R', 'R', 'R', 'F', 'U', 'L', 'D', 'B', 'L', 'F', 'B', 'U', 'U', 'F', 'D', 'L', 'L', 'U', 'F', 'B', 'L', 'L', 'F', 'F', 'B', 'R', 'U', 'U', 'B']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.05992078781
+CV Read time: 0.433283805847
+Solve time:   0.109043121338
+Motor time:   1.51759386063
+Solution:     R F2 R' D' F2 U' B' R D F R' F2 U' L2 U B2 D B2 D' R2 D2
+Face-turns:   21
+Quarter-turns:29
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 62
+scramble:L D F B2 R U' B' D R2 U' B2 F2 B2 U' R2 D2 R2 F' B' U F2 R' F' L' F2 L2 U2 R2 L F2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'D', 'U', 'U', 'U', 'B', 'D', 'B', 'U', 'R', 'R', 'B', 'B', 'R', 'B', 'D', 'D', 'F', 'F', 'U', 'F', 'L', 'F', 'L', 'B', 'F', 'F', 'R', 'R', 'L', 'F', 'D', 'R', 'D', 'F', 'U', 'B', 'R', 'R', 'F', 'L', 'U', 'B', 'L', 'U', 'L', 'L', 'L', 'D', 'B', 'U', 'L', 'D', 'R']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'D', 'U', 'U', 'U', 'B', 'D', 'B', 'U', 'R', 'R', 'B', 'B', 'R', 'B', 'D', 'D', 'F', 'F', 'U', 'F', 'L', 'F', 'L', 'B', 'F', 'F', 'R', 'R', 'L', 'F', 'D', 'R', 'D', 'F', 'U', 'B', 'R', 'R', 'F', 'L', 'U', 'B', 'L', 'U', 'L', 'L', 'L', 'D', 'B', 'U', 'L', 'D', 'R']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.14697790146
+CV Read time: 0.419046878815
+Solve time:   0.124388933182
+Motor time:   1.60354208946
+Solution:     R U F R2 D F2 U L2 B L' B R2 U L2 U2 R2 B2 D B2 D2 L2
+Face-turns:   21
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 63
+scramble:R' D R2 D F' R U2 F B' L F2 L' R' F D2 F' U D R2 U2 R F B' R F2 R
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'B', 'R', 'U', 'U', 'D', 'L', 'B', 'R', 'D', 'B', 'U', 'D', 'R', 'B', 'B', 'R', 'D', 'D', 'L', 'F', 'D', 'F', 'R', 'L', 'F', 'U', 'B', 'L', 'R', 'L', 'D', 'U', 'D', 'D', 'B', 'L', 'F', 'B', 'F', 'L', 'F', 'F', 'U', 'U', 'F', 'R', 'U', 'U', 'B', 'R', 'R', 'L', 'L']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'B', 'R', 'U', 'U', 'D', 'L', 'B', 'R', 'D', 'B', 'U', 'D', 'R', 'B', 'B', 'R', 'D', 'D', 'L', 'F', 'D', 'F', 'R', 'L', 'F', 'U', 'B', 'L', 'R', 'L', 'D', 'U', 'D', 'D', 'B', 'L', 'F', 'B', 'F', 'L', 'F', 'F', 'U', 'U', 'F', 'R', 'U', 'U', 'B', 'R', 'R', 'L', 'L']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.06638717651
+CV Read time: 0.412798166275
+Solve time:   0.195660829544
+Motor time:   1.45792818069
+Solution:     U' F' R D B2 R L F L' D' F U2 R2 U B2 D' F2 D B2 U D
+Face-turns:   21
+Quarter-turns:27
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 64
+scramble:D2 B2 U' B2 U L' B U2 B2 U2 R2 B2 F2 U2 D' B D2 F2 L' B'
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'L', 'R', 'D', 'U', 'F', 'D', 'R', 'R', 'U', 'L', 'U', 'D', 'R', 'U', 'R', 'U', 'B', 'L', 'F', 'B', 'R', 'F', 'F', 'B', 'F', 'D', 'U', 'U', 'B', 'B', 'D', 'L', 'U', 'B', 'D', 'R', 'R', 'F', 'U', 'L', 'B', 'L', 'D', 'L', 'F', 'D', 'D', 'R', 'B', 'B', 'L', 'L', 'F']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'L', 'R', 'D', 'U', 'F', 'D', 'R', 'R', 'U', 'L', 'U', 'D', 'R', 'U', 'R', 'U', 'B', 'L', 'F', 'B', 'R', 'F', 'F', 'B', 'F', 'D', 'U', 'U', 'B', 'B', 'D', 'L', 'U', 'B', 'D', 'R', 'R', 'F', 'U', 'L', 'B', 'L', 'D', 'L', 'F', 'D', 'D', 'R', 'B', 'B', 'L', 'L', 'F']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 1.97983717918
+CV Read time: 0.411077022552
+Solve time:   0.0145721435547
+Motor time:   1.55418801308
+Solution:     F' D F2 D2 B R2 F' R' U2 L' U2 R2 L2 U F2 B2 L2 D' L2 D2
+Face-turns:   20
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 65
+scramble:R' D' F2 R F L' F' U' F2 D U' B' F2 L U2 F' R L' R L' B D B2 D L U2 F' B2 R
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'L', 'U', 'F', 'U', 'U', 'F', 'F', 'L', 'F', 'L', 'L', 'D', 'R', 'R', 'L', 'B', 'F', 'R', 'R', 'D', 'D', 'F', 'F', 'U', 'U', 'B', 'B', 'R', 'D', 'D', 'D', 'U', 'D', 'B', 'R', 'U', 'U', 'D', 'B', 'L', 'R', 'B', 'L', 'R', 'F', 'F', 'L', 'B', 'B', 'L', 'U', 'D', 'R']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'L', 'U', 'F', 'U', 'U', 'F', 'F', 'L', 'F', 'L', 'L', 'D', 'R', 'R', 'L', 'B', 'F', 'R', 'R', 'D', 'D', 'F', 'F', 'U', 'U', 'B', 'B', 'R', 'D', 'D', 'D', 'U', 'D', 'B', 'R', 'U', 'U', 'D', 'B', 'L', 'R', 'B', 'L', 'R', 'F', 'F', 'L', 'B', 'B', 'L', 'U', 'D', 'R']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.12135910988
+CV Read time: 0.411870002747
+Solve time:   0.166432142258
+Motor time:   1.54305696487
+Solution:     F L F2 D L2 D2 L' D' B U2 F' U' D' B2 D B2 L2 U R2 B2 D
+Face-turns:   21
+Quarter-turns:30
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 66
+scramble:D' F' B2 L' D L2 B L F2 U D F2 L' F' L' B2 F2 R' F2 D
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['L', 'L', 'F', 'L', 'U', 'U', 'U', 'D', 'U', 'L', 'B', 'R', 'U', 'R', 'F', 'B', 'F', 'U', 'B', 'R', 'B', 'L', 'F', 'R', 'D', 'R', 'R', 'B', 'B', 'D', 'L', 'D', 'D', 'D', 'F', 'L', 'F', 'U', 'R', 'D', 'L', 'B', 'R', 'D', 'L', 'U', 'F', 'D', 'R', 'B', 'B', 'F', 'U', 'F']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['L', 'L', 'F', 'L', 'U', 'U', 'U', 'D', 'U', 'L', 'B', 'R', 'U', 'R', 'F', 'B', 'F', 'U', 'B', 'R', 'B', 'L', 'F', 'R', 'D', 'R', 'R', 'B', 'B', 'D', 'L', 'D', 'D', 'D', 'F', 'L', 'F', 'U', 'R', 'D', 'L', 'B', 'R', 'D', 'L', 'U', 'F', 'D', 'R', 'B', 'B', 'F', 'U', 'F']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.68932294846
+CV Read time: 0.462308883667
+Solve time:   0.519098043442
+Motor time:   1.70791602135
+Solution:     U2 R2 U2 B2 L2 B' R' U L2 D B' R B2 L2 D' L2 U' R2 D2 F2 D F2
+Face-turns:   22
+Quarter-turns:35
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 67
+scramble:D2 R U B' R2 L' B L2 R' F2 R' F' L2 F' B' R2 L U2 D2 B2 U
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'B', 'L', 'D', 'U', 'R', 'D', 'U', 'L', 'B', 'D', 'D', 'L', 'R', 'D', 'B', 'R', 'F', 'B', 'F', 'U', 'F', 'F', 'D', 'U', 'L', 'R', 'R', 'U', 'D', 'U', 'D', 'U', 'R', 'F', 'U', 'R', 'B', 'L', 'R', 'L', 'L', 'F', 'B', 'F', 'F', 'L', 'U', 'F', 'B', 'B', 'L', 'R', 'D']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'B', 'L', 'D', 'U', 'R', 'D', 'U', 'L', 'B', 'D', 'D', 'L', 'R', 'D', 'B', 'R', 'F', 'B', 'F', 'U', 'F', 'F', 'D', 'U', 'L', 'R', 'R', 'U', 'D', 'U', 'D', 'U', 'R', 'F', 'U', 'R', 'B', 'L', 'R', 'L', 'L', 'F', 'B', 'F', 'F', 'L', 'U', 'F', 'B', 'B', 'L', 'R', 'D']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 1.89257407188
+CV Read time: 0.414585113525
+Solve time:   0.0226809978485
+Motor time:   1.45530796051
+Solution:     R U2 B U' R U' B D R2 B D L2 U R2 D' R2 U2 R2 L2 U'
+Face-turns:   20
+Quarter-turns:28
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 68
+scramble:U' B2 F' D F' B D2 B' D F U2 B' D U R D2 B' F' R L2 U2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'L', 'D', 'B', 'U', 'F', 'L', 'U', 'F', 'U', 'R', 'B', 'B', 'R', 'D', 'R', 'U', 'D', 'U', 'R', 'R', 'R', 'F', 'L', 'B', 'F', 'F', 'U', 'L', 'D', 'D', 'D', 'F', 'U', 'L', 'L', 'L', 'R', 'F', 'U', 'L', 'D', 'R', 'B', 'L', 'R', 'D', 'F', 'F', 'B', 'B', 'B', 'U', 'B']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'L', 'D', 'B', 'U', 'F', 'L', 'U', 'F', 'U', 'R', 'B', 'B', 'R', 'D', 'R', 'U', 'D', 'U', 'R', 'R', 'R', 'F', 'L', 'B', 'F', 'F', 'U', 'L', 'D', 'D', 'D', 'F', 'U', 'L', 'L', 'L', 'R', 'F', 'U', 'L', 'D', 'R', 'B', 'L', 'R', 'D', 'F', 'F', 'B', 'B', 'B', 'U', 'B']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 1.76654291153
+CV Read time: 0.404960870743
+Solve time:   0.0245900154114
+Motor time:   1.33699202538
+Solution:     L' F' U2 R' F B' R L D B' U' R2 D L2 B2 L2 D R2 U
+Face-turns:   19
+Quarter-turns:25
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 69
+scramble:L' D2 F2 R2 B' L F U' R2 D L B' R' U2 R D' L' B F2 L U2 F L
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'R', 'U', 'F', 'U', 'D', 'D', 'U', 'F', 'R', 'F', 'F', 'R', 'R', 'F', 'D', 'B', 'U', 'R', 'L', 'D', 'U', 'F', 'D', 'F', 'F', 'L', 'L', 'R', 'B', 'L', 'D', 'D', 'R', 'B', 'B', 'F', 'L', 'B', 'U', 'L', 'R', 'B', 'D', 'U', 'R', 'B', 'D', 'U', 'B', 'B', 'L', 'L', 'U']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'R', 'U', 'F', 'U', 'D', 'D', 'U', 'F', 'R', 'F', 'F', 'R', 'R', 'F', 'D', 'B', 'U', 'R', 'L', 'D', 'U', 'F', 'D', 'F', 'F', 'L', 'L', 'R', 'B', 'L', 'D', 'D', 'R', 'B', 'B', 'F', 'L', 'B', 'U', 'L', 'R', 'B', 'D', 'U', 'R', 'B', 'D', 'U', 'B', 'B', 'L', 'L', 'U']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.38022494316
+CV Read time: 0.415876865387
+Solve time:   0.362986087799
+Motor time:   1.60136198997
+Solution:     F D F R' D2 L2 B R2 D2 F' R D B2 U2 F2 R2 U' R2 F2 D' F2
+Face-turns:   21
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 70
+scramble:L2 U2 R B' L' U2 B2 L2 U2 R' F2 L' D B2 L' B' U' D U F L F' D B' F
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'B', 'R', 'F', 'U', 'U', 'D', 'B', 'B', 'R', 'R', 'D', 'D', 'R', 'D', 'L', 'F', 'L', 'F', 'U', 'U', 'B', 'F', 'F', 'F', 'F', 'D', 'L', 'U', 'F', 'L', 'D', 'R', 'L', 'D', 'U', 'F', 'L', 'R', 'U', 'L', 'R', 'B', 'D', 'U', 'B', 'L', 'U', 'B', 'B', 'L', 'B', 'R', 'D']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'B', 'R', 'F', 'U', 'U', 'D', 'B', 'B', 'R', 'R', 'D', 'D', 'R', 'D', 'L', 'F', 'L', 'F', 'U', 'U', 'B', 'F', 'F', 'F', 'F', 'D', 'L', 'U', 'F', 'L', 'D', 'R', 'L', 'D', 'U', 'F', 'L', 'R', 'U', 'L', 'R', 'B', 'D', 'U', 'B', 'L', 'U', 'B', 'B', 'L', 'B', 'R', 'D']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 1.91047501564
+CV Read time: 0.416867017746
+Solve time:   0.0106568336487
+Motor time:   1.48295116425
+Solution:     U D L2 B' D' B' U2 D F L D L2 D' F2 R2 F2 U L2 B2 L2
+Face-turns:   20
+Quarter-turns:29
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 71
+scramble:F2 U' B' R2 D' B2 F' B' U2 B' U' L2 B D2 R' B2 L' B' D' U R F2 R U2 L' F' B2 R F2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'L', 'U', 'U', 'U', 'D', 'D', 'L', 'U', 'B', 'L', 'B', 'B', 'R', 'R', 'D', 'B', 'D', 'R', 'U', 'R', 'F', 'F', 'D', 'R', 'F', 'L', 'D', 'R', 'B', 'R', 'D', 'R', 'F', 'F', 'F', 'U', 'B', 'B', 'F', 'L', 'U', 'U', 'U', 'F', 'L', 'B', 'R', 'D', 'B', 'L', 'L', 'D', 'L']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'L', 'U', 'U', 'U', 'D', 'D', 'L', 'U', 'B', 'L', 'B', 'B', 'R', 'R', 'D', 'B', 'D', 'R', 'U', 'R', 'F', 'F', 'D', 'R', 'F', 'L', 'D', 'R', 'B', 'R', 'D', 'R', 'F', 'F', 'F', 'U', 'B', 'B', 'F', 'L', 'U', 'U', 'U', 'F', 'L', 'B', 'R', 'D', 'B', 'L', 'L', 'D', 'L']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 1.94772791862
+CV Read time: 0.46112203598
+Solve time:   0.0250780582428
+Motor time:   1.4615278244
+Solution:     U R' F2 B L F' R2 U D' B' R U2 B2 D R2 U' B2 D' F2 L2
+Face-turns:   20
+Quarter-turns:28
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 72
+scramble:D2 F R2 B2 R B U R' D L' U' F B' D' F' D2 L2 R2 F D' B'
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'F', 'D', 'L', 'U', 'D', 'D', 'U', 'U', 'F', 'L', 'R', 'B', 'R', 'F', 'F', 'R', 'B', 'R', 'R', 'L', 'D', 'F', 'D', 'L', 'R', 'L', 'B', 'B', 'D', 'B', 'D', 'D', 'U', 'R', 'D', 'F', 'B', 'B', 'U', 'L', 'F', 'R', 'U', 'U', 'F', 'U', 'U', 'L', 'B', 'L', 'L', 'F', 'B']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'F', 'D', 'L', 'U', 'D', 'D', 'U', 'U', 'F', 'L', 'R', 'B', 'R', 'F', 'F', 'R', 'B', 'R', 'R', 'L', 'D', 'F', 'D', 'L', 'R', 'L', 'B', 'B', 'D', 'B', 'D', 'D', 'U', 'R', 'D', 'F', 'B', 'B', 'U', 'L', 'F', 'R', 'U', 'U', 'F', 'U', 'U', 'L', 'B', 'L', 'L', 'F', 'B']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.42223787308
+CV Read time: 0.488774061203
+Solve time:   0.360457897186
+Motor time:   1.57300591469
+Solution:     L B D2 F2 D' F' U' F L B2 R' L2 U2 F2 U L2 U R2 U2 R2 D
+Face-turns:   21
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 73
+scramble:F2 D2 U R2 U' F U' B2 D2 R2 L D B' L R B' F' U' L D2 U' L D U2 F L' B2
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['D', 'L', 'F', 'R', 'U', 'D', 'F', 'L', 'L', 'D', 'L', 'U', 'R', 'R', 'R', 'R', 'D', 'B', 'D', 'B', 'B', 'L', 'F', 'U', 'R', 'D', 'B', 'F', 'B', 'U', 'F', 'D', 'R', 'F', 'F', 'L', 'R', 'B', 'L', 'B', 'L', 'F', 'D', 'U', 'U', 'L', 'U', 'B', 'F', 'B', 'U', 'U', 'D', 'R']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['D', 'L', 'F', 'R', 'U', 'D', 'F', 'L', 'L', 'D', 'L', 'U', 'R', 'R', 'R', 'R', 'D', 'B', 'D', 'B', 'B', 'L', 'F', 'U', 'R', 'D', 'B', 'F', 'B', 'U', 'F', 'D', 'R', 'F', 'F', 'L', 'R', 'B', 'L', 'B', 'L', 'F', 'D', 'U', 'U', 'L', 'U', 'B', 'F', 'B', 'U', 'U', 'D', 'R']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.44980502129
+CV Read time: 0.489321947098
+Solve time:   0.329100131989
+Motor time:   1.6313829422
+Solution:     U R' D2 R2 B2 U F' R B' L D' L F2 B2 L2 D' R2 D2 L2 U' F2 U'
+Face-turns:   22
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 74
+scramble:U L' B U' R2 F D2 U D L B2 D F2 D2 L' U' D' R' L2 D
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'F', 'U', 'D', 'L', 'L', 'B', 'D', 'B', 'F', 'D', 'R', 'R', 'U', 'B', 'L', 'D', 'F', 'R', 'L', 'F', 'F', 'B', 'L', 'L', 'U', 'B', 'F', 'F', 'D', 'R', 'F', 'L', 'D', 'B', 'U', 'B', 'R', 'L', 'U', 'D', 'R', 'L', 'R', 'B', 'R', 'D', 'B', 'U', 'F', 'D', 'R']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'F', 'U', 'D', 'L', 'L', 'B', 'D', 'B', 'F', 'D', 'R', 'R', 'U', 'B', 'L', 'D', 'F', 'R', 'L', 'F', 'F', 'B', 'L', 'L', 'U', 'B', 'F', 'F', 'D', 'R', 'F', 'L', 'D', 'B', 'U', 'B', 'R', 'L', 'U', 'D', 'R', 'L', 'R', 'B', 'R', 'D', 'B', 'U', 'F', 'D', 'R']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.20633387566
+CV Read time: 0.436878919601
+Solve time:   0.226232051849
+Motor time:   1.54322290421
+Solution:     F' L' D' F U2 D R F2 R B R L2 U' B2 U' D2 F2 R2 U' R2 B2
+Face-turns:   21
+Quarter-turns:30
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 75
+scramble:B F' D' F U' F2 L' R2 D U2 D2 L2 U F2 R2 B2 U' R' B2 D2 L
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'U', 'F', 'D', 'U', 'L', 'U', 'U', 'R', 'B', 'F', 'D', 'F', 'R', 'B', 'F', 'B', 'F', 'R', 'R', 'D', 'B', 'F', 'U', 'L', 'L', 'U', 'B', 'D', 'L', 'B', 'D', 'L', 'B', 'F', 'L', 'L', 'F', 'F', 'D', 'L', 'U', 'U', 'D', 'U', 'R', 'L', 'D', 'R', 'B', 'R', 'D', 'R', 'R']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'U', 'F', 'D', 'U', 'L', 'U', 'U', 'R', 'B', 'F', 'D', 'F', 'R', 'B', 'F', 'B', 'F', 'R', 'R', 'D', 'B', 'F', 'U', 'L', 'L', 'U', 'B', 'D', 'L', 'B', 'D', 'L', 'B', 'F', 'L', 'L', 'F', 'F', 'D', 'L', 'U', 'U', 'D', 'U', 'R', 'L', 'D', 'R', 'B', 'R', 'D', 'R', 'R']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.09155488014
+CV Read time: 0.437480926514
+Solve time:   0.0870649814606
+Motor time:   1.56700897217
+Solution:     U R' D2 R D2 R D' R F' U2 B' U2 D F2 L2 D2 F2 U R2 D' B2
+Face-turns:   21
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 76
+scramble:F B2 U' D2 B U D2 B' F' B R2 B2 F' L2 R F2 U' D' R' B' L' U'
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'D', 'B', 'U', 'U', 'D', 'F', 'L', 'U', 'R', 'L', 'D', 'F', 'R', 'F', 'D', 'R', 'U', 'R', 'B', 'F', 'R', 'F', 'L', 'U', 'U', 'B', 'B', 'R', 'R', 'L', 'D', 'B', 'D', 'B', 'B', 'F', 'F', 'D', 'B', 'L', 'F', 'F', 'U', 'R', 'L', 'R', 'L', 'D', 'B', 'U', 'L', 'D', 'L']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'D', 'B', 'U', 'U', 'D', 'F', 'L', 'U', 'R', 'L', 'D', 'F', 'R', 'F', 'D', 'R', 'U', 'R', 'B', 'F', 'R', 'F', 'L', 'U', 'U', 'B', 'B', 'R', 'R', 'L', 'D', 'B', 'D', 'B', 'B', 'F', 'F', 'D', 'B', 'L', 'F', 'F', 'U', 'R', 'L', 'R', 'L', 'D', 'B', 'U', 'L', 'D', 'L']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.41450500488
+CV Read time: 0.488938093185
+Solve time:   0.354165077209
+Motor time:   1.57140183449
+Solution:     L' F B2 U' L' F2 U' R F L2 F U B2 D R2 F2 D2 F2 L2 B2 D'
+Face-turns:   21
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 77
+scramble:F' U2 R U D2 F2 U2 L2 D2 L U R2 D' U' D2 B' F R' B' F L2 R U' L2
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['D', 'B', 'D', 'D', 'U', 'B', 'D', 'F', 'U', 'B', 'L', 'R', 'U', 'R', 'R', 'U', 'L', 'L', 'R', 'D', 'R', 'U', 'F', 'R', 'L', 'U', 'F', 'U', 'B', 'R', 'D', 'D', 'D', 'L', 'F', 'B', 'L', 'R', 'B', 'U', 'L', 'L', 'U', 'B', 'F', 'F', 'R', 'F', 'F', 'B', 'F', 'D', 'L', 'B']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['D', 'B', 'D', 'D', 'U', 'B', 'D', 'F', 'U', 'B', 'L', 'R', 'U', 'R', 'R', 'U', 'L', 'L', 'R', 'D', 'R', 'U', 'F', 'R', 'L', 'U', 'F', 'U', 'B', 'R', 'D', 'D', 'D', 'L', 'F', 'B', 'L', 'R', 'B', 'U', 'L', 'L', 'U', 'B', 'F', 'F', 'R', 'F', 'F', 'B', 'F', 'D', 'L', 'B']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.06257820129
+CV Read time: 0.460494041443
+Solve time:   0.0335540771484
+Motor time:   1.5685300827
+Solution:     L2 F' D' R2 L2 B2 R U2 D L D2 L2 U' B2 U L2 U' R2 B2 U2
+Face-turns:   20
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 78
+scramble:R B F' L2 D2 L F' R' D2 B' U2 D R' B2 F L' D' R2 U R' L' D2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'L', 'L', 'L', 'U', 'B', 'D', 'D', 'F', 'L', 'R', 'D', 'U', 'R', 'R', 'D', 'D', 'D', 'R', 'F', 'U', 'U', 'F', 'B', 'F', 'F', 'R', 'U', 'L', 'F', 'D', 'D', 'B', 'R', 'F', 'L', 'U', 'U', 'B', 'D', 'L', 'F', 'B', 'L', 'R', 'F', 'B', 'L', 'U', 'B', 'R', 'B', 'R', 'U']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'L', 'L', 'L', 'U', 'B', 'D', 'D', 'F', 'L', 'R', 'D', 'U', 'R', 'R', 'D', 'D', 'D', 'R', 'F', 'U', 'U', 'F', 'B', 'F', 'F', 'R', 'U', 'L', 'F', 'D', 'D', 'B', 'R', 'F', 'L', 'U', 'U', 'B', 'D', 'L', 'F', 'B', 'L', 'R', 'F', 'B', 'L', 'U', 'B', 'R', 'B', 'R', 'U']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.15630197525
+CV Read time: 0.448328971863
+Solve time:   0.136159896851
+Motor time:   1.57181310654
+Solution:     U2 D2 L' F' U D2 F2 R F' D R' B2 U' R2 U R2 D' B2 R2 B2 U
+Face-turns:   21
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 79
+scramble:R' F2 U' F L' F' B' F B' D U B2 F L' U' R2 B F L D2 F2 L D
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'D', 'D', 'U', 'U', 'L', 'B', 'U', 'R', 'F', 'F', 'L', 'R', 'R', 'F', 'B', 'B', 'R', 'R', 'R', 'U', 'B', 'F', 'F', 'F', 'L', 'L', 'D', 'B', 'U', 'R', 'D', 'R', 'F', 'L', 'D', 'F', 'B', 'U', 'D', 'L', 'D', 'D', 'D', 'L', 'B', 'F', 'L', 'U', 'B', 'L', 'B', 'U', 'R']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'D', 'D', 'U', 'U', 'L', 'B', 'U', 'R', 'F', 'F', 'L', 'R', 'R', 'F', 'B', 'B', 'R', 'R', 'R', 'U', 'B', 'F', 'F', 'F', 'L', 'L', 'D', 'B', 'U', 'R', 'D', 'R', 'F', 'L', 'D', 'F', 'B', 'U', 'D', 'L', 'D', 'D', 'D', 'L', 'B', 'F', 'L', 'U', 'B', 'L', 'B', 'U', 'R']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.1641600132
+CV Read time: 0.494255065918
+Solve time:   0.137588024139
+Motor time:   1.53231692314
+Solution:     R B D R' D B2 D2 L D' B' L U R2 B2 U R2 F2 B2 D' R2 B2
+Face-turns:   21
+Quarter-turns:30
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 80
+scramble:D2 R D2 B2 U2 R2 L' B' F' L2 R L2 U D2 R F U B2 F2 B' L2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'F', 'B', 'F', 'U', 'F', 'L', 'R', 'U', 'B', 'L', 'D', 'L', 'R', 'R', 'U', 'R', 'F', 'F', 'U', 'R', 'B', 'F', 'D', 'B', 'L', 'F', 'U', 'U', 'R', 'D', 'D', 'D', 'D', 'U', 'D', 'F', 'U', 'D', 'F', 'L', 'L', 'B', 'B', 'L', 'L', 'R', 'L', 'B', 'B', 'D', 'R', 'B', 'R']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'F', 'B', 'F', 'U', 'F', 'L', 'R', 'U', 'B', 'L', 'D', 'L', 'R', 'R', 'U', 'R', 'F', 'F', 'U', 'R', 'B', 'F', 'D', 'B', 'L', 'F', 'U', 'U', 'R', 'D', 'D', 'D', 'D', 'U', 'D', 'F', 'U', 'D', 'F', 'L', 'L', 'B', 'B', 'L', 'L', 'R', 'L', 'B', 'B', 'D', 'R', 'B', 'R']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 1.9322822094
+CV Read time: 0.410626173019
+Solve time:   0.0112550258636
+Motor time:   1.51040101051
+Solution:     U R2 U' R' U B L' B' D2 L F2 R2 L2 U' R2 D R2 U2 L2 B2
+Face-turns:   20
+Quarter-turns:30
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 81
+scramble:U2 B' U' L2 F' R2 L F D B' F B L2 D' B2 D2 F L2 R' U R2 B U B' F2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'L', 'U', 'U', 'R', 'R', 'L', 'D', 'R', 'D', 'B', 'D', 'R', 'B', 'U', 'L', 'R', 'F', 'D', 'B', 'R', 'F', 'F', 'L', 'D', 'R', 'F', 'B', 'B', 'R', 'D', 'F', 'B', 'U', 'F', 'F', 'R', 'U', 'U', 'L', 'F', 'L', 'B', 'D', 'D', 'B', 'L', 'L', 'B', 'L', 'D', 'F', 'U']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'L', 'U', 'U', 'R', 'R', 'L', 'D', 'R', 'D', 'B', 'D', 'R', 'B', 'U', 'L', 'R', 'F', 'D', 'B', 'R', 'F', 'F', 'L', 'D', 'R', 'F', 'B', 'B', 'R', 'D', 'F', 'B', 'U', 'F', 'F', 'R', 'U', 'U', 'L', 'F', 'L', 'B', 'D', 'D', 'B', 'L', 'L', 'B', 'L', 'D', 'F', 'U']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.15964317322
+CV Read time: 0.451621055603
+Solve time:   0.108845949173
+Motor time:   1.59917616844
+Solution:     R D R' U D2 F U2 F2 U' B L' F2 L2 D2 R2 L2 D' B2 R2 U' L2
+Face-turns:   21
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 82
+scramble:F D R' D' B U2 B D F R' U' B2 D2 L' D2 U L U2 D' L' D2 U2 D2 F
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'L', 'F', 'D', 'U', 'B', 'U', 'U', 'R', 'D', 'R', 'R', 'D', 'R', 'L', 'F', 'L', 'U', 'B', 'R', 'F', 'U', 'F', 'F', 'R', 'U', 'L', 'B', 'L', 'D', 'U', 'D', 'B', 'B', 'R', 'L', 'D', 'B', 'R', 'R', 'L', 'F', 'L', 'B', 'D', 'U', 'D', 'B', 'F', 'B', 'D', 'F', 'F', 'U']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['L', 'L', 'F', 'D', 'U', 'B', 'U', 'U', 'R', 'D', 'R', 'R', 'D', 'R', 'L', 'F', 'L', 'U', 'B', 'R', 'F', 'U', 'F', 'F', 'R', 'U', 'L', 'B', 'L', 'D', 'U', 'D', 'B', 'B', 'R', 'L', 'D', 'B', 'R', 'R', 'L', 'F', 'L', 'B', 'D', 'U', 'D', 'B', 'F', 'B', 'D', 'F', 'F', 'U']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.07400608063
+CV Read time: 0.49237203598
+Solve time:   0.101767063141
+Motor time:   1.47986698151
+Solution:     U2 R' B L2 U' B' R' U' F L' B U' D' R2 D' L2 U R2 D R2 B2
+Face-turns:   21
+Quarter-turns:28
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 83
+scramble:U2 D L' D F2 B F' D' B2 U F2 D' U2 R L2 D' U' F D2 R2 F' L U D2 F R B2 F2 L R'
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'F', 'U', 'L', 'U', 'R', 'B', 'D', 'B', 'R', 'F', 'F', 'R', 'R', 'U', 'F', 'B', 'D', 'D', 'R', 'U', 'D', 'F', 'U', 'D', 'D', 'L', 'F', 'L', 'D', 'F', 'D', 'R', 'B', 'B', 'L', 'L', 'B', 'R', 'L', 'L', 'B', 'L', 'D', 'R', 'R', 'U', 'U', 'L', 'B', 'F', 'B', 'U', 'U']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'F', 'U', 'L', 'U', 'R', 'B', 'D', 'B', 'R', 'F', 'F', 'R', 'R', 'U', 'F', 'B', 'D', 'D', 'R', 'U', 'D', 'F', 'U', 'D', 'D', 'L', 'F', 'L', 'D', 'F', 'D', 'R', 'B', 'B', 'L', 'L', 'B', 'R', 'L', 'L', 'B', 'L', 'D', 'R', 'R', 'U', 'U', 'L', 'B', 'F', 'B', 'U', 'U']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 1.92376494408
+CV Read time: 0.428247928619
+Solve time:   0.0154910087585
+Motor time:   1.4800260067
+Solution:     R2 U' B' D' L U2 F R' B R' U F2 L2 U2 L2 F2 R2 D F2 U'
+Face-turns:   20
+Quarter-turns:29
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 84
+scramble:B' D' B2 R U' L' F2 D F D' B2 L D2 L2 B U' D2 L D' U' D
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'B', 'R', 'U', 'U', 'B', 'U', 'B', 'U', 'R', 'D', 'F', 'D', 'R', 'U', 'B', 'R', 'R', 'L', 'L', 'F', 'L', 'F', 'R', 'F', 'F', 'R', 'L', 'L', 'D', 'F', 'D', 'U', 'L', 'F', 'B', 'B', 'F', 'B', 'B', 'L', 'D', 'D', 'D', 'U', 'D', 'R', 'L', 'L', 'B', 'U', 'U', 'R', 'F']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'B', 'R', 'U', 'U', 'B', 'U', 'B', 'U', 'R', 'D', 'F', 'D', 'R', 'U', 'B', 'R', 'R', 'L', 'L', 'F', 'L', 'F', 'R', 'F', 'F', 'R', 'L', 'L', 'D', 'F', 'D', 'U', 'L', 'F', 'B', 'B', 'F', 'B', 'B', 'L', 'D', 'D', 'D', 'U', 'D', 'R', 'L', 'L', 'B', 'U', 'U', 'R', 'F']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 3.15203785896
+CV Read time: 0.452534914017
+Solve time:   1.02779507637
+Motor time:   1.67170786858
+Solution:     U' L' D2 B' U F2 D B2 U D2 F L D F2 U' R2 F2 B2 U' B2 D2 R2
+Face-turns:   22
+Quarter-turns:33
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 85
+scramble:B' R2 B2 F2 D L U B2 U' B D2 L' U R U F U' R' U2 D U L B' U'
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'D', 'D', 'L', 'U', 'D', 'D', 'U', 'U', 'F', 'F', 'F', 'U', 'R', 'B', 'B', 'B', 'F', 'R', 'R', 'L', 'U', 'F', 'F', 'B', 'R', 'L', 'L', 'B', 'U', 'B', 'D', 'U', 'B', 'F', 'D', 'R', 'D', 'B', 'L', 'L', 'L', 'U', 'D', 'D', 'L', 'R', 'F', 'L', 'B', 'F', 'R', 'R', 'R']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'D', 'D', 'L', 'U', 'D', 'D', 'U', 'U', 'F', 'F', 'F', 'U', 'R', 'B', 'B', 'B', 'F', 'R', 'R', 'L', 'U', 'F', 'F', 'B', 'R', 'L', 'L', 'B', 'U', 'B', 'D', 'U', 'B', 'F', 'D', 'R', 'D', 'B', 'L', 'L', 'L', 'U', 'D', 'D', 'L', 'R', 'F', 'L', 'B', 'F', 'R', 'R', 'R']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 1.84289193153
+CV Read time: 0.414546966553
+Solve time:   0.00826787948608
+Motor time:   1.42007708549
+Solution:     B2 D L B D2 B' U' F L' F2 R2 U' B2 U R2 D B2 L2 D2
+Face-turns:   19
+Quarter-turns:28
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 86
+scramble:L D L U R' F R2 L' U2 F D' F U B' U2 R' L D U' F2 U' B
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'R', 'D', 'R', 'U', 'R', 'U', 'L', 'U', 'L', 'B', 'R', 'B', 'R', 'U', 'D', 'L', 'R', 'F', 'F', 'B', 'B', 'F', 'L', 'B', 'D', 'L', 'R', 'B', 'B', 'U', 'D', 'D', 'L', 'D', 'D', 'U', 'F', 'L', 'F', 'L', 'U', 'D', 'R', 'U', 'F', 'D', 'R', 'L', 'B', 'U', 'B', 'F', 'F']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'R', 'D', 'R', 'U', 'R', 'U', 'L', 'U', 'L', 'B', 'R', 'B', 'R', 'U', 'D', 'L', 'R', 'F', 'F', 'B', 'B', 'F', 'L', 'B', 'D', 'L', 'R', 'B', 'B', 'U', 'D', 'D', 'L', 'D', 'D', 'U', 'F', 'L', 'F', 'L', 'U', 'D', 'R', 'U', 'F', 'D', 'R', 'L', 'B', 'U', 'B', 'F', 'F']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.5698428154
+CV Read time: 0.444664955139
+Solve time:   0.438364982605
+Motor time:   1.68681287766
+Solution:     U F2 U' F' L2 U' D' F2 L' F2 B L B2 U' B2 L2 B2 L2 D F2 L2 D2
+Face-turns:   22
+Quarter-turns:34
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 87
+scramble:L' F2 L U2 L F D2 F B D R2 B U' B2 U' L' D B L R L B2 R B' U' R B2 D
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'L', 'F', 'L', 'U', 'L', 'R', 'U', 'L', 'U', 'U', 'R', 'F', 'R', 'R', 'B', 'F', 'D', 'D', 'B', 'F', 'F', 'F', 'R', 'B', 'D', 'R', 'U', 'B', 'D', 'D', 'D', 'L', 'F', 'D', 'L', 'U', 'B', 'F', 'U', 'L', 'U', 'L', 'R', 'L', 'U', 'D', 'B', 'B', 'B', 'R', 'B', 'F', 'D']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['R', 'L', 'F', 'L', 'U', 'L', 'R', 'U', 'L', 'U', 'U', 'R', 'F', 'R', 'R', 'B', 'F', 'D', 'D', 'B', 'F', 'F', 'F', 'R', 'B', 'D', 'R', 'U', 'B', 'D', 'D', 'D', 'L', 'F', 'D', 'L', 'U', 'B', 'F', 'U', 'L', 'U', 'L', 'R', 'L', 'U', 'D', 'B', 'B', 'B', 'R', 'B', 'F', 'D']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.04794001579
+CV Read time: 0.451743841171
+Solve time:   0.0782589912415
+Motor time:   1.51793718338
+Solution:     U B' D2 R U' B R F' D R2 F' B2 U R2 U R2 F2 U' R2 D B2
+Face-turns:   21
+Quarter-turns:29
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 88
+scramble:R' F B F B' F2 U2 B2 F B' F2 R2 U2 B' R B2 F R2 D2 L2 R' D2 L'
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'D', 'U', 'B', 'U', 'D', 'F', 'U', 'R', 'D', 'R', 'B', 'R', 'R', 'L', 'R', 'R', 'L', 'L', 'B', 'F', 'B', 'F', 'U', 'U', 'U', 'D', 'B', 'L', 'B', 'F', 'D', 'F', 'F', 'U', 'B', 'R', 'R', 'U', 'D', 'L', 'L', 'L', 'L', 'R', 'L', 'F', 'F', 'D', 'B', 'B', 'D', 'F', 'D']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'D', 'U', 'B', 'U', 'D', 'F', 'U', 'R', 'D', 'R', 'B', 'R', 'R', 'L', 'R', 'R', 'L', 'L', 'B', 'F', 'B', 'F', 'U', 'U', 'U', 'D', 'B', 'L', 'B', 'F', 'D', 'F', 'F', 'U', 'B', 'R', 'R', 'U', 'D', 'L', 'L', 'L', 'L', 'R', 'L', 'F', 'F', 'D', 'B', 'B', 'D', 'F', 'D']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.0407500267
+CV Read time: 0.497925043106
+Solve time:   0.04456782341
+Motor time:   1.49825716019
+Solution:     R2 D' F2 D' F2 R' L' B' L B D' F2 L2 U' F2 B2 L2 D' R2 D2
+Face-turns:   20
+Quarter-turns:30
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 89
+scramble:L2 R2 L B2 L' B D' R F' L' R' B U R2 B2 F' L2 R F' R' F' B' F2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'D', 'D', 'B', 'U', 'R', 'L', 'F', 'F', 'R', 'U', 'B', 'B', 'R', 'L', 'U', 'F', 'F', 'F', 'R', 'D', 'B', 'F', 'U', 'L', 'B', 'L', 'D', 'L', 'F', 'F', 'D', 'D', 'U', 'L', 'R', 'U', 'D', 'D', 'F', 'L', 'R', 'R', 'L', 'B', 'R', 'R', 'L', 'D', 'B', 'U', 'U', 'U', 'B']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'D', 'D', 'B', 'U', 'R', 'L', 'F', 'F', 'R', 'U', 'B', 'B', 'R', 'L', 'U', 'F', 'F', 'F', 'R', 'D', 'B', 'F', 'U', 'L', 'B', 'L', 'D', 'L', 'F', 'F', 'D', 'D', 'U', 'L', 'R', 'U', 'D', 'D', 'F', 'L', 'R', 'R', 'L', 'B', 'R', 'R', 'L', 'D', 'B', 'U', 'U', 'U', 'B']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.29539704323
+CV Read time: 0.430062055588
+Solve time:   0.371423006058
+Motor time:   1.49391198158
+Solution:     F' L' U F U2 D' R D B' L2 F' D' L2 D F2 D' B2 U R2 U' L2
+Face-turns:   21
+Quarter-turns:28
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 90
+scramble:L' F' R2 B2 U' B L2 F D U D2 B2 F2 U2 D2 R' U2 R2 D2 R' B' R2 F2 D B2 U2
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['F', 'R', 'D', 'R', 'U', 'F', 'R', 'D', 'F', 'L', 'U', 'L', 'F', 'R', 'B', 'D', 'R', 'R', 'D', 'R', 'U', 'B', 'F', 'L', 'U', 'U', 'B', 'L', 'L', 'R', 'F', 'D', 'U', 'L', 'U', 'B', 'U', 'B', 'F', 'L', 'L', 'D', 'D', 'D', 'B', 'B', 'F', 'R', 'L', 'B', 'D', 'U', 'B', 'F']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'R', 'D', 'R', 'U', 'F', 'R', 'D', 'F', 'L', 'U', 'L', 'F', 'R', 'B', 'D', 'R', 'R', 'D', 'R', 'U', 'B', 'F', 'L', 'U', 'U', 'B', 'L', 'L', 'R', 'F', 'D', 'U', 'L', 'U', 'B', 'U', 'B', 'F', 'L', 'L', 'D', 'D', 'D', 'B', 'B', 'F', 'R', 'L', 'B', 'D', 'U', 'B', 'F']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.10845780373
+CV Read time: 0.415592908859
+Solve time:   0.116698026657
+Motor time:   1.57616686821
+Solution:     R' U' L2 B D' L B' L' B2 L F D2 L2 D2 F2 U B2 U' F2 R2 F2
+Face-turns:   21
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 91
+scramble:U2 L' B2 U2 B2 U' F' U2 B R2 D2 B D2 B2 R2 L' F2 U' F2 D R' B
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'U', 'R', 'R', 'U', 'B', 'B', 'F', 'U', 'B', 'U', 'F', 'F', 'R', 'D', 'L', 'R', 'L', 'U', 'L', 'R', 'B', 'F', 'R', 'F', 'L', 'B', 'L', 'D', 'D', 'D', 'D', 'B', 'R', 'B', 'D', 'D', 'U', 'L', 'U', 'L', 'L', 'U', 'F', 'U', 'D', 'L', 'R', 'R', 'B', 'F', 'F', 'D', 'F']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['B', 'U', 'R', 'R', 'U', 'B', 'B', 'F', 'U', 'B', 'U', 'F', 'F', 'R', 'D', 'L', 'R', 'L', 'U', 'L', 'R', 'B', 'F', 'R', 'F', 'L', 'B', 'L', 'D', 'D', 'D', 'D', 'B', 'R', 'B', 'D', 'D', 'U', 'L', 'U', 'L', 'L', 'U', 'F', 'U', 'D', 'L', 'R', 'R', 'B', 'F', 'F', 'D', 'F']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.20500993729
+CV Read time: 0.434504032135
+Solve time:   0.166637897491
+Motor time:   1.60386800766
+Solution:     F' U F B' R' L2 U' D2 R2 F2 R U L2 U' R2 L2 U2 F2 D R2 F2
+Face-turns:   21
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 92
+scramble:U2 R' D2 U2 F' D' U' F' D2 F' B2 R' D B' D F2 D2 U' R F2 U D2 R
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'R', 'D', 'B', 'U', 'L', 'R', 'B', 'L', 'F', 'U', 'L', 'F', 'R', 'L', 'U', 'R', 'U', 'F', 'D', 'D', 'F', 'F', 'D', 'D', 'L', 'R', 'R', 'D', 'B', 'F', 'D', 'U', 'U', 'U', 'L', 'F', 'R', 'U', 'R', 'L', 'L', 'B', 'U', 'B', 'B', 'D', 'R', 'B', 'B', 'F', 'F', 'B', 'L']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['D', 'R', 'D', 'B', 'U', 'L', 'R', 'B', 'L', 'F', 'U', 'L', 'F', 'R', 'L', 'U', 'R', 'U', 'F', 'D', 'D', 'F', 'F', 'D', 'D', 'L', 'R', 'R', 'D', 'B', 'F', 'D', 'U', 'U', 'U', 'L', 'F', 'R', 'U', 'R', 'L', 'L', 'B', 'U', 'B', 'B', 'D', 'R', 'B', 'B', 'F', 'F', 'B', 'L']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.09323096275
+CV Read time: 0.446327924728
+Solve time:   0.0629320144653
+Motor time:   1.58397102356
+Solution:     U L' U2 B' R' U' D2 F2 L2 F' R U' B2 U' D2 L2 U2 L2 B2 D L2
+Face-turns:   21
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 93
+scramble:F' U' R' D F' B' D' L2 R2 D2 R2 F' B2 D2 L2 F' U' R' L2 F2 R
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'U', 'U', 'U', 'U', 'R', 'D', 'U', 'D', 'L', 'F', 'R', 'L', 'R', 'U', 'R', 'R', 'B', 'R', 'R', 'F', 'D', 'F', 'B', 'D', 'D', 'U', 'F', 'R', 'F', 'L', 'D', 'B', 'B', 'F', 'L', 'L', 'F', 'B', 'D', 'L', 'B', 'D', 'F', 'R', 'B', 'B', 'U', 'L', 'B', 'L', 'U', 'D', 'L']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'U', 'U', 'U', 'U', 'R', 'D', 'U', 'D', 'L', 'F', 'R', 'L', 'R', 'U', 'R', 'R', 'B', 'R', 'R', 'F', 'D', 'F', 'B', 'D', 'D', 'U', 'F', 'R', 'F', 'L', 'D', 'B', 'B', 'F', 'L', 'L', 'F', 'B', 'D', 'L', 'B', 'D', 'F', 'R', 'B', 'B', 'U', 'L', 'B', 'L', 'U', 'D', 'L']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.14469003677
+CV Read time: 0.505748033524
+Solve time:   0.0819869041443
+Motor time:   1.55695509911
+Solution:     B' U2 D2 L2 D L' B' D2 L2 B L2 D2 F2 B2 D' R2 D' L2 F2 D
+Face-turns:   20
+Quarter-turns:32
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 94
+scramble:U2 F' L F2 U' F2 U' B' R2 L' D L2 R' L2 D F2 U D B2 L F U' D' U' F2 L'
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'B', 'R', 'D', 'U', 'B', 'F', 'U', 'U', 'L', 'L', 'U', 'R', 'R', 'L', 'R', 'R', 'D', 'L', 'F', 'B', 'U', 'F', 'F', 'B', 'D', 'F', 'L', 'B', 'D', 'F', 'D', 'U', 'D', 'D', 'B', 'B', 'F', 'U', 'D', 'L', 'B', 'F', 'L', 'D', 'F', 'R', 'R', 'U', 'B', 'L', 'R', 'R', 'L']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'B', 'R', 'D', 'U', 'B', 'F', 'U', 'U', 'L', 'L', 'U', 'R', 'R', 'L', 'R', 'R', 'D', 'L', 'F', 'B', 'U', 'F', 'F', 'B', 'D', 'F', 'L', 'B', 'D', 'F', 'D', 'U', 'D', 'D', 'B', 'B', 'F', 'U', 'D', 'L', 'B', 'F', 'L', 'D', 'F', 'R', 'R', 'U', 'B', 'L', 'R', 'R', 'L']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.074477911
+CV Read time: 0.455403089523
+Solve time:   0.0567858219147
+Motor time:   1.56228899956
+Solution:     U R2 L' F L' U B2 U' F' U' R F2 L2 D' R2 U' R2 F2 D2 B2 U2
+Face-turns:   21
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 95
+scramble:D2 U' B2 D L' F' R B' F B U' D B' L2 D' R2 U2 F' R' L2 B F'
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['U', 'L', 'B', 'B', 'U', 'F', 'B', 'L', 'B', 'D', 'R', 'D', 'B', 'R', 'D', 'L', 'B', 'D', 'R', 'D', 'R', 'D', 'F', 'L', 'F', 'U', 'U', 'R', 'R', 'B', 'F', 'D', 'D', 'L', 'B', 'F', 'R', 'R', 'U', 'F', 'L', 'R', 'F', 'U', 'D', 'L', 'U', 'F', 'F', 'B', 'L', 'L', 'U', 'U']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['U', 'L', 'B', 'B', 'U', 'F', 'B', 'L', 'B', 'D', 'R', 'D', 'B', 'R', 'D', 'L', 'B', 'D', 'R', 'D', 'R', 'D', 'F', 'L', 'F', 'U', 'U', 'R', 'R', 'B', 'F', 'D', 'D', 'L', 'B', 'F', 'R', 'R', 'U', 'F', 'L', 'R', 'F', 'U', 'D', 'L', 'U', 'F', 'F', 'B', 'L', 'L', 'U', 'U']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 1.86162805557
+CV Read time: 0.444530010223
+Solve time:   0.00824689865112
+Motor time:   1.4088511467
+Solution:     L U B L U F L' U D R L2 D' B2 R2 D R2 D F2 U' L2
+Face-turns:   20
+Quarter-turns:26
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 96
+scramble:R B L B2 U D' U' D' R' U D2 F R F U B2 D' F2 R2 L U2 L2 R
+Serial timeout set to 10
+('R', 'O', 'Y', 'G', 'B', 'W')
+['D', 'F', 'U', 'U', 'U', 'B', 'D', 'R', 'F', 'R', 'D', 'B', 'U', 'R', 'B', 'F', 'R', 'B', 'L', 'U', 'D', 'R', 'F', 'B', 'F', 'D', 'U', 'U', 'L', 'L', 'U', 'D', 'F', 'U', 'D', 'D', 'R', 'L', 'F', 'F', 'L', 'B', 'R', 'F', 'R', 'L', 'L', 'B', 'L', 'B', 'D', 'L', 'R', 'B']
+('R', 'O', 'Y', 'G', 'B', 'W')
+['D', 'F', 'U', 'U', 'U', 'B', 'D', 'R', 'F', 'R', 'D', 'B', 'U', 'R', 'B', 'F', 'R', 'B', 'L', 'U', 'D', 'R', 'F', 'B', 'F', 'D', 'U', 'U', 'L', 'L', 'U', 'D', 'F', 'U', 'D', 'D', 'R', 'L', 'F', 'F', 'L', 'B', 'R', 'F', 'R', 'L', 'L', 'B', 'L', 'B', 'D', 'L', 'R', 'B']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.17147183418
+CV Read time: 0.406574010849
+Solve time:   0.215914964676
+Motor time:   1.54898285866
+Solution:     R2 F' U B' D F2 B R' D' R2 L B2 D L2 D R2 D2 R2 D R2 D
+Face-turns:   21
+Quarter-turns:30
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 97
+scramble:D' F2 D2 R' D' F' D2 F' L2 B R' U' F2 U' F2 B' D' R' U' B R2 D2 U F R2 U2 B' L2 U2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'U', 'D', 'F', 'U', 'U', 'D', 'L', 'L', 'U', 'F', 'L', 'R', 'R', 'L', 'R', 'L', 'F', 'L', 'F', 'F', 'D', 'F', 'D', 'B', 'L', 'D', 'U', 'U', 'B', 'F', 'D', 'D', 'D', 'B', 'R', 'R', 'R', 'F', 'R', 'L', 'B', 'R', 'D', 'L', 'B', 'B', 'U', 'B', 'B', 'U', 'U', 'R', 'F']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['B', 'U', 'D', 'F', 'U', 'U', 'D', 'L', 'L', 'U', 'F', 'L', 'R', 'R', 'L', 'R', 'L', 'F', 'L', 'F', 'F', 'D', 'F', 'D', 'B', 'L', 'D', 'U', 'U', 'B', 'F', 'D', 'D', 'D', 'B', 'R', 'R', 'R', 'F', 'R', 'L', 'B', 'R', 'D', 'L', 'B', 'B', 'U', 'B', 'B', 'U', 'U', 'R', 'F']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 2.30178999901
+CV Read time: 0.415056943893
+Solve time:   0.319125175476
+Motor time:   1.56760787964
+Solution:     F D' F' U2 R2 L B R2 L2 B2 R' U' B2 U B2 D R2 U2 D R2 D
+Face-turns:   21
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 98
+scramble:D2 F2 U' F L U L R2 F2 B' L2 R' D' R' B F R2 D U D2 R2 U' R B2
+Serial timeout set to 10
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'D', 'L', 'U', 'U', 'F', 'U', 'D', 'D', 'F', 'L', 'F', 'U', 'R', 'U', 'L', 'D', 'R', 'L', 'F', 'R', 'F', 'F', 'L', 'U', 'R', 'B', 'B', 'U', 'D', 'B', 'D', 'R', 'R', 'R', 'D', 'D', 'B', 'B', 'L', 'L', 'R', 'U', 'L', 'R', 'U', 'B', 'L', 'F', 'B', 'D', 'B', 'B', 'F']
+('O', 'Y', 'G', 'B', 'R', 'W')
+['F', 'D', 'L', 'U', 'U', 'F', 'U', 'D', 'D', 'F', 'L', 'F', 'U', 'R', 'U', 'L', 'D', 'R', 'L', 'F', 'R', 'F', 'F', 'L', 'U', 'R', 'B', 'B', 'U', 'D', 'B', 'D', 'R', 'R', 'R', 'D', 'D', 'B', 'B', 'L', 'L', 'R', 'U', 'L', 'R', 'U', 'B', 'L', 'F', 'B', 'D', 'B', 'B', 'F']
+Cubie counts
+Counter({'B': 9, 'D': 9, 'F': 9, 'L': 9, 'R': 9, 'U': 9})
+Serial timeout set to 10
+########################################
+Elapsed time: 3.0014538765
+CV Read time: 0.443354845047
+Solve time:   0.98438501358
+Motor time:   1.57371401787
+Solution:     B2 R' D B U' D' R' U' L2 U2 R U R2 B2 L2 B2 U F2 U' L2 F2
+Face-turns:   21
+Quarter-turns:31
+########################################
+('O', 'Y', 'G', 'B', 'R', 'W')
+['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+post state: ['U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'U', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'R', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'F', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'L', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B']
+Cube solved
+iter: 99
+test took 486.512071133
