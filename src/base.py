@@ -119,12 +119,14 @@ class guiMain:
 
     def scrambleHandler(self):
         scrambleThread = threading.Thread(target=self.cuber.scrambleCube, args=())
+        scrambleThread.setDaemon(True)
         scrambleThread.start()
         #self.cuber.scramble()
 
 
     def solveHandler(self):
         solveThread = threading.Thread(target=self.cuber.solveCube, args=())
+        solveThread.setDaemon(True)
         solveThread.start()
         #self.cuber.solveCube()
 
