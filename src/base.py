@@ -5,6 +5,7 @@ import os
 import inspect
 import threading
 import Tkinter as tk
+import tkFont
 import tkMessageBox as msg
 from PIL import Image
 from PIL import ImageTk
@@ -24,6 +25,8 @@ class guiMain:
         # Create cuber API object
         self.cuber = Cuber()
 
+        self.font= tkFont.Font(size=16)
+
         # tk.Tk() master
         self.master = master
         self.master.title("CubeSolver GUI v1")
@@ -34,7 +37,14 @@ class guiMain:
         self.calibrationWindowSpawned = False
 
         # Hard code default window size
+        # NOTE: This is stored separately to the fullscreen status: Going in and
+        # out of fullscreen should still obey the size that the user dragged to.
         self.windowSize = [320,320]
+        self.fullscreenBool = False
+
+        # Set fullscreen attributes and bind escape to toggle it
+        self.master.attributes("-fullscreen", self.fullscreenBool)
+        self.master.bind('<Double-Button-1>', self.toggleFullscreen)
 
         # Variables to hold the current scaling ratios
         self.scaleFactor = [1,1]
@@ -49,10 +59,12 @@ class guiMain:
 
         # Create main canvas and display image on it
         self.canvas = tk.Canvas(self.mainFrame, width=self.windowSize[0], height=self.windowSize[1])
-        self.canvas.bind("<Button 1>", self.onClick)
+        # NOTE: Make the canvas background white to blend with the image (when
+        # the image is not fully scaled)
+        self.canvas.configure(background='white')
         self.canvas.bind("<Configure>", self.resizeHandler)
         self.canvas.pack(fill=tk.BOTH, expand=tk.YES)
-        self.canvasImage = self.canvas.create_image(0, 0, image=self.image, anchor='nw')
+        self.canvasImage = self.canvas.create_image(self.windowSize[0]/2, 0, image=self.image, anchor='n')
 
         # Add generic tag to add children of the canvas ( Used for scaling operations later)
         self.canvas.addtag_all("all")
@@ -64,9 +76,9 @@ class guiMain:
         self.mainFrame.pack(fill=tk.BOTH, expand=tk.YES)
 
 
-
-    def onClick(self, event):
-        pass
+    def toggleFullscreen(self, event):
+        self.fullscreenBool = not self.fullscreenBool
+        self.master.attributes("-fullscreen", self.fullscreenBool)
 
 
     def resizeHandler(self, event):
@@ -78,7 +90,10 @@ class guiMain:
         self.windowSize[0] = event.width
         self.windowSize[1] = event.height
 
-        self.image = self.rawImage.resize(self.windowSize, Image.ANTIALIAS)
+        #self.image = self.rawImage.resize(self.windowSize, Image.ANTIALIAS)
+        # NOTE: We assume that hte height will be the smaller of the 2 dimensions
+        # and scale 1:1 in this dimension
+        self.image = self.rawImage.resize((self.windowSize[1], self.windowSize[1]), Image.ANTIALIAS)
         self.image = ImageTk.PhotoImage(self.image)
         self.canvas.itemconfig(self.canvasImage, image = self.image)
 
@@ -90,15 +105,15 @@ class guiMain:
         # Pack solve and scramble buttons into their own frame (for placement)
         self.buttonFrame = tk.Frame(container)
 
-        self.scrambleButton = tk.Button(self.buttonFrame, text="Scramble", command=self.scrambleHandler)
-        self.solveButton = tk.Button(self.buttonFrame, text="Solve", command=self.solveHandler)
+        self.scrambleButton = tk.Button(self.buttonFrame, font=self.font, text="Scramble", command=self.scrambleHandler)
+        self.solveButton = tk.Button(self.buttonFrame, font=self.font, text="Solve", command=self.solveHandler)
         self.scrambleButton.pack(side=tk.LEFT)
         self.solveButton.pack(side=tk.LEFT)
         # Place packed frame into a window on the main canvas
         self.buttonWindow = self.canvas.create_window(self.windowSize[0], self.windowSize[1], anchor='se', window=self.buttonFrame)
 
         # Place calibration button directly onto main canvas
-        self.calibrateButton = tk.Button(self.canvas, text="Settings menu", command=self.spawnCalibrationWindow)
+        self.calibrateButton = tk.Button(self.canvas, font = self.font, text="Settings menu", command=self.spawnCalibrationWindow)
         self.calibrateButtonWindow = self.canvas.create_window(0, 0, anchor='nw', window=self.calibrateButton)
 
 
