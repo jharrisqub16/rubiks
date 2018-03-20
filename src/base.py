@@ -25,7 +25,7 @@ class guiMain:
         # Create cuber API object
         self.cuber = Cuber()
 
-        self.font= tkFont.Font(size=16)
+        self.font= tkFont.Font(size=20)
 
         # tk.Tk() master
         self.master = master
