@@ -17,7 +17,7 @@ class computerVision():
         # in the list itself.
         # ie. no matter the order of cameras in this list, the cameras are
         # iterated through in element order.
-        self.cameras = [0, 1, 2]
+        self.cameras = [0, 2, 4]
         self.noOfCameras = len(self.cameras)
 
         # Work out the absolute paths to expected configuration files

@@ -4,9 +4,9 @@ import sys
 import os
 import inspect
 import threading
-import Tkinter as tk
-import tkFont
-import tkMessageBox as msg
+import tkinter as tk
+import tkinter.font as TkFont
+import tkinter.messagebox as msg
 from PIL import Image
 from PIL import ImageTk
 
@@ -25,7 +25,7 @@ class guiMain:
         # Create cuber API object
         self.cuber = Cuber()
 
-        self.font= tkFont.Font(size=20)
+        self.font= TkFont.Font(size=20)
 
         # tk.Tk() master
         self.master = master
