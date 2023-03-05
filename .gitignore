@@ -2,3 +2,7 @@ __pycache__/
 *.pyc
 tags
 outputImages
+
+# dependencies
+node_modules
+
