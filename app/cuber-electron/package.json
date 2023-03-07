@@ -3,21 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@electron/remote": "2.0.9",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "5.2.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+  "main": "public/main.js",
+  "homepage": "./",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron": "electron ./electron",
-    "electron-build": "electron-builder"
+    "electron-build": "electron-builder",
+    "electron-serve": "concurrently -k \"cross-env BROWSER=none yarn start\" \"yarn electron:start\"",
+    "electron:build": "yarn build && electron-builder -c.extraMetadata.main=build/main.js",
+    "electron:start": "wait-on tcp:3000 && electron ."
   },
   "eslintConfig": {
     "extends": [
@@ -38,16 +45,23 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^7.6.0",
+    "cross-env": "^7.0.3",
     "electron": "^23.1.2",
-    "electron-builder": "^22.11.7"
+    "electron-builder": "^22.11.7",
+    "prettier": "^2.8.4",
+    "wait-on": "7.0.1"
   },
   "build": {
+    "extends": null,
     "appId": "com.example.myapp",
     "files": [
+      "dist/**/*",
       "build/**/*",
       "node_modules/**/*",
       "!node_modules/electron/**/*",
-      "!node_modules/electron-builder/**/*"
+      "!node_modules/electron-builder/**/*",
+      "package.json"
     ],
     "directories": {
       "buildResources": "assets"
