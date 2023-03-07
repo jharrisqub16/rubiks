@@ -17,7 +17,7 @@ class computerVision():
         # in the list itself.
         # ie. no matter the order of cameras in this list, the cameras are
         # iterated through in element order.
-        self.cameras = [0, 1, 2]
+        self.cameras = [0, 2, 4]
         self.noOfCameras = len(self.cameras)
 
         # Work out the absolute paths to expected configuration files
@@ -288,7 +288,7 @@ class computerVision():
             # problem. This should use 'captureObject.grab()' as this has less overhead
             # (does not decode the image).
 
-            for i in xrange(4):
+            for i in range(3):
                 temp, dumpCapture = tempCamera.read()
 
                 # Additional debug: Can be needed to ensure that camera buffer is being properly purged
@@ -300,7 +300,7 @@ class computerVision():
             # one dummie image is taken. In this case, emptying the buffer is less
             # important than minimising the wait for each frame, as this
             # ultimately affects the output framerate
-            for i in xrange(1):
+            for i in range(0):
                 temp, dumpCapture = tempCamera.read()
         null, cameraCapture = tempCamera.read()
 

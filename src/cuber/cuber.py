@@ -56,7 +56,7 @@ class Cuber():
 
         solveTime = time.time()
 
-        self.mc.sendString(solution, waitForAck=True)
+        self.mc.sendString(solution.encode('utf-8'), waitForAck=True)
         endTime = time.time()
 
         faceTurnLength = self.solver.calculateFaceTurnLength(solution)
@@ -123,7 +123,7 @@ class Cuber():
         scrambleString = ' '.join(scrambleSequence)
         print("scramble:{}".format(scrambleString))
 
-        self.mc.sendString(scrambleString, waitForAck=True)
+        self.mc.sendString(scrambleString.encode('utf-8'), waitForAck=True)
 
         # Update state of cube (for user view) once motor rotations are complete
         null = self.cv.getCubeState()

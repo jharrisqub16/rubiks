@@ -1,8 +1,8 @@
 import sys
 import os
 import threading
-import Tkinter as tk
-import tkMessageBox as msg
+import tkinter as tk
+import tkinter.messagebox as msg
 from PIL import Image
 from PIL import ImageTk
 
