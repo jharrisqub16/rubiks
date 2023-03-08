@@ -1,37 +1,10 @@
-// import React from 'react';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         Rubiks Cube Solver
-//       </header>
-//       <div className="App-container">
-//         <div className="left-menu">
-//           <button className="menu-button">Home</button>
-//           <button className="menu-button">Live View</button>
-//           <button className="menu-button">Scramble Function</button>
-//           <button className="menu-button">Solve Cube</button>
-//         </div>
-//         <div className="App-body">
-//           <main className="App-main">
-//             {/* Add your main content here */}
-//           </main>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default App;
-
 import React from 'react';
 import './App.css';
 import rubiksGif from './ImageComponents/rubiksGif.gif';
+import { useEffect, useRef } from 'react';
+
 
 function App() {
-  // const title = "Rubiks Cube Solver";
 
   const titleLetters = [
     { letter: 'R', color: 'lime' },
@@ -55,11 +28,20 @@ function App() {
     { letter: 'r', color: 'red' },
   ];
 
-  // const colors = ["green", "white", "blue", "orange", "yellow", "red"];
-  // const coloredTitle = title.split('').map((letter, index) => {
-  //   const color = colors[index % colors.length];
-  //   return <span style={{color}}>{letter}</span>
-  // });
+  const videoRef = useRef("camera-feed");
+
+  useEffect(() => {
+    // Get the camera stream and display it in a video element
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
+        const video = videoRef.current;
+        video.srcObject = stream;
+        video.play();
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
 
   return (
     <div className="App">
@@ -95,9 +77,13 @@ function App() {
         </main>
          </div>
        </div>
+       <div className="video-container">
+       <video ref={videoRef} autoPlay muted></video>      
+       </div>
     </div>
   );
 }
 
 export default App;
+
 
