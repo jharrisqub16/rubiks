@@ -29,14 +29,22 @@ function App() {
   ];
 
   const videoRef = useRef("camera-feed");
+  const videoRef2 = useRef("camera-feed2");
+  const videoRef3 = useRef("camera-feed3");
 
   useEffect(() => {
     // Get the camera stream and display it in a video element
     navigator.mediaDevices.getUserMedia({ video: true })
       .then(stream => {
         const video = videoRef.current;
+        const video2 = videoRef2.current;
+        const video3 = videoRef3.current;
         video.srcObject = stream;
+        video2.srcObject = stream;
+        video3.srcObject = stream;
         video.play();
+        video2.play();
+        video3.play();
       })
       .catch(error => {
         console.error(error);
@@ -78,7 +86,11 @@ function App() {
          </div>
        </div>
        <div className="video-container">
-       <video ref={videoRef} autoPlay muted></video>      
+       <video ref={videoRef} autoPlay muted></video> 
+       <video ref={videoRef2} autoPlay muted></video>  
+       <video ref={videoRef3} autoPlay muted></video>  
+ 
+
        </div>
     </div>
   );
