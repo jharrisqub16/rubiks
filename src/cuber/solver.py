@@ -23,12 +23,22 @@ class cubeSolver():
                 print("Incorrect number of colours detected")
                 raise Exception("Expected 9 cubies of each colour")
 
+        print(f"Cube State before join: {self.cubeState}")
         self.cubeString = ''.join(self.cubeState)
+        print(f"Cube String after join: {self.cubeString}")
+        print(f"Now finding solution")
+
         # Find cube solution
+
         try:
-            self.solution = kociemba.solve(self.cubeString)
+            print(f"Cube String: {self.cubeString}")
+            #self.solution = kociemba.solve("FLBFULDFULDRBRUDBBLRBDFDUBRFLFRDUDUUULFBLFLDLDURFBRRRB")
+            self.solution = kociemba.solve(str(self.cubeString))
+            print(f"String Solver: {self.solution}")
+
             return self.solution
-        except ValueError:
+        except ValueError as e:
+            print(e)
             pass
             # TODO Exception handling
 

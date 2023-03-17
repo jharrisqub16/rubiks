@@ -6,9 +6,9 @@ const video2 = document.getElementById('camera2');
 const video3 = document.getElementById('camera3');
 
 // Create a new video capture object with the camera index (0 for the first camera)
-const cap1 = new cv.VideoCapture(0);
+const cap1 = new cv.VideoCapture(4);
 const cap2 = new cv.VideoCapture(2);
-const cap3 = new cv.VideoCapture(3);
+const cap3 = new cv.VideoCapture(4);
 
 // Set the camera resolution
 cap1.set(cv.CAP_PROP_FRAME_WIDTH, 640);

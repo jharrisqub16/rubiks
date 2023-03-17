@@ -4,9 +4,9 @@ import sys
 import os
 import inspect
 import threading
-import Tkinter as tk
-import tkFont
-import tkMessageBox as msg
+import tkinter as tk
+import tkinter.font as tkFont
+import tkinter.messagebox as msg
 from PIL import Image
 from PIL import ImageTk
 
