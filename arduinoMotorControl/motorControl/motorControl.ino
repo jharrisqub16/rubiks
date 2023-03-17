@@ -77,6 +77,20 @@ void loop()
     sendAck = true;
     readin = Serial.read();
 
+    // if (readin == "TEST")
+    // {
+    //     //Move D 
+    //     digitalWrite (enable_d, LOW);
+    //     if (dir == '\'') {
+    //     down.moveTo(203 + down.currentPosition());
+    //     while (down.distanceToGo() != 0) {
+    //       down.run();
+    //     digitalWrite (enable_d, HIGH);
+    //     delay(3000); // wait for 2 seconds
+
+    // }
+    
+
 
     if (readin == 'D' || readin == 'F' || readin == 'R' || readin == 'B' || readin == 'L' || readin == 'U') {
       side = readin;
@@ -84,6 +98,9 @@ void loop()
       if (readin == '\'' || readin == '2') {
         dir = readin;
       }
+    }
+    else if(readin == 'T') {
+      side = T;
     }
 
     if (side == 'D') {
@@ -223,6 +240,82 @@ void loop()
       }
       digitalWrite (enable_u, HIGH);
     }
+
+    //Test Motors on each side
+    else if (side == 'T') {
+
+          //Side D
+          digitalWrite(enable_d, LOW);
+        down.moveTo(203 + down.currentPosition());
+        while (down.distanceToGo() != 0) 
+              {
+                down.run();
+              }
+          digitalWrite (enable_d, HIGH);
+
+          delay(5000); // wait for 5 seconds
+
+
+        //Side F
+          digitalWrite(enable_f, LOW);
+            front.moveTo(203 + front.currentPosition());
+            while (front.distanceToGo() != 0) 
+              {
+                front.run();
+              }
+          digitalWrite (enable_f, HIGH);
+
+          delay(5000); // wait for 5 seconds
+
+
+        //Side R
+          digitalWrite(enable_r, LOW);
+            right.moveTo(203 + right.currentPosition());
+            while (right.distanceToGo() != 0) 
+              {
+                right.run();
+              }
+          digitalWrite (enable_r, HIGH);
+
+          delay(5000); // wait for 5 seconds
+
+
+        //Side B
+          digitalWrite (enable_b, LOW);
+              back.moveTo(203 + back.currentPosition());
+              while (back.distanceToGo() != 0) 
+              {
+                back.run();
+              }
+          digitalWrite (enable_b, HIGH);
+
+          delay(5000); // wait for 5 seconds
+
+
+        //Side L
+          digitalWrite (enable_l, LOW);
+              left.moveTo(203 + left.currentPosition());
+              while (left.distanceToGo() != 0) 
+              {
+                left.run();
+              }
+          digitalWrite (enable_l, HIGH);
+
+          delay(5000); // wait for 5 seconds
+
+
+        //Side U 
+          digitalWrite (enable_u, LOW);
+              up.moveTo(203 + up.currentPosition());
+              while (up.distanceToGo() != 0) 
+              {
+                 up.run();
+              }
+          digitalWrite (enable_u, HIGH);
+
+          delay(5000); // wait for 5 seconds
+    }
+
 
   }
   if (sendAck == true)

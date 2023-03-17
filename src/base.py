@@ -107,8 +107,10 @@ class guiMain:
 
         self.scrambleButton = tk.Button(self.buttonFrame, font=self.font, text="Scramble", command=self.scrambleHandler)
         self.solveButton = tk.Button(self.buttonFrame, font=self.font, text="Solve", command=self.solveHandler)
+        self.testButton = tk.Button(self.buttonFrame, font = self.font, text="Test", command=self.testHandler)
         self.scrambleButton.pack(side=tk.LEFT)
         self.solveButton.pack(side=tk.LEFT)
+        self.testButton.pack(side=tk.LEFT)
         # Place packed frame into a window on the main canvas
         self.buttonWindow = self.canvas.create_window(self.windowSize[0], self.windowSize[1], anchor='se', window=self.buttonFrame)
 
@@ -137,7 +139,11 @@ class guiMain:
         scrambleThread.setDaemon(True)
         scrambleThread.start()
         #self.cuber.scramble()
-
+    
+    def testHandler(self):
+        testThread = threading.Thread(target=self.cuber.test, args=())
+        testThread.setDaemon(True)
+        testThread.start()
 
     def solveHandler(self):
         solveThread = threading.Thread(target=self.cuber.solveCube, args=())

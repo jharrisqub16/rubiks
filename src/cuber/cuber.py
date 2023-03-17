@@ -89,7 +89,10 @@ class Cuber():
         else:
             print("Could not verify solution success")
 
-
+    def test(self):
+        self.mc.sendString("T".encode('utf-8'), waitForAck=True)
+        
+        
     def scrambleCube(self):
         scrambleSequence = []
 
