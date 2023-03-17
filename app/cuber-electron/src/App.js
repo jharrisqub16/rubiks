@@ -1,101 +1,58 @@
-import React from 'react';
-import './App.css';
-import rubiksGif from './ImageComponents/rubiksGif.gif';
-import { useEffect, useRef } from 'react';
-
+import React, { useRef, useEffect} from 'react';
+import * as cv from 'opencv-ts';
 
 function App() {
 
-  const titleLetters = [
-    { letter: 'R', color: 'lime' },
-    { letter: 'u', color: 'white' },
-    { letter: 'b', color: 'turquoise' },
-    { letter: 'i', color: 'orange' },
-    { letter: 'k', color: 'yellow' },
-    { letter: `'`, color: 'red'},
-    { letter: 's', color: 'red' },
-    { letter: `.`, color: '#333' },
-    { letter: 'C', color: 'lime' },
-    { letter: 'u', color: 'white' },
-    { letter: 'b', color: 'turquoise' },
-    { letter: 'e', color: 'orange' },
-    { letter: '.', color: '#333' },
-    { letter: 'S', color: 'lime' },
-    { letter: 'o', color: 'white' },
-    { letter: 'l', color: 'turquoise' },
-    { letter: 'v', color: 'orange' },
-    { letter: 'e', color: 'yellow' },
-    { letter: 'r', color: 'red' },
-  ];
-
-  const videoRef = useRef("camera-feed");
-  const videoRef2 = useRef("camera-feed2");
-  const videoRef3 = useRef("camera-feed3");
-
+  const videoRef = useRef(null);
+  const canvasRef = useRef(null);
+  
   useEffect(() => {
-    // Get the camera stream and display it in a video element
-    navigator.mediaDevices.getUserMedia({ video: true })
-      .then(stream => {
-        const video = videoRef.current;
-        const video2 = videoRef2.current;
-        const video3 = videoRef3.current;
-        video.srcObject = stream;
-        video2.srcObject = stream;
-        video3.srcObject = stream;
-        video.play();
-        video2.play();
-        video3.play();
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }, []);
+    const video = videoRef.current;
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    
+    navigator.mediaDevices.enumerateDevices()
+    .then((devices) => {
+      const cameras = devices.filter((device) => device.kind === 'videoinput');
+      const cameraId = cameras[2].deviceId;
+      
+      return navigator.mediaDevices.getUserMedia({ video: {deviceId: {exact: cameraId } } });
+    })
+    
+    .then((stream) => {
+      video.srcObject = stream;
+      video.play();
+      
+      const processVideo = () => {
+        const { videoWidth, videoHeight } = video;
+        
+        canvas.width = videoWidth;
+        canvas.height = videoHeight;
+        
+        ctx.drawImage(video, 0, 0, videoWidth, videoHeight);
+        
+        const srcMat = cv.imread(canvas);
+        
+        cv.imshow(canvas, srcMat);
+        
+        srcMat.delete();
+        
+        requestAnimationFrame(processVideo);
+};
 
-  return (
-    <div className="App">
-      <header className="App-header">
-              {titleLetters.map((letter, index) => (
-          <span key={index} style={{ color: letter.color }}>{letter.letter}</span>
-        ))}
-      </header>
-      <div className="App-container">
-         <div className="left-menu">
-           <button className="menu-button">Home</button>
-           <button className="menu-button">Live View</button>
-           <button className="menu-button">Scramble Function</button>
-          <button className="menu-button">Solve Cube</button>
-         </div>
-         <div className="App-body">
-           <main className="App-main">
-           <div className="gif-container">
-    <img src={rubiksGif} alt="gif of a rotating rubiks cube" className="centered-gif" />
-  </div>
-           <h1>How to Use the Rubik's Cube Solver</h1>
-  <p>
-    The Rubik's Cube Solver is a powerful tool that can help you solve any scrambled Rubik's Cube in just a few minutes. To use the solver, simply follow these steps:
-  </p>
-  <ol>
-    <li>Enter the colors of your scrambled Rubik's Cube into the input fields on the solver page.</li>
-    <li>Click the "Solve" button to run the solver algorithm.</li>
-    <li>The solver will show you a step-by-step solution for solving your Rubik's Cube.</li>
-  </ol>
-  <p>
-    With the Rubik's Cube Solver, you'll never have to spend hours trying to solve your Rubik's Cube again. Give it a try today and see how easy it is to solve your cube!
-  </p>
-        </main>
-         </div>
-       </div>
-       <div className="video-container">
-       <video ref={videoRef} autoPlay muted></video> 
-       <video ref={videoRef2} autoPlay muted></video>  
-       <video ref={videoRef3} autoPlay muted></video>  
- 
+processVideo();
+})
+.catch((err) => {
+  console.error('Error accessing camera', err);
+});
+}, []);
 
-       </div>
-    </div>
-  );
+return (
+<div className="video-container">
+<video ref={videoRef} />
+//<canvas ref={canvasRef} />
+</div>
+);
 }
 
 export default App;
-
-

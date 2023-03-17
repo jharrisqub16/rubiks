@@ -136,7 +136,7 @@ class Calibration:
         self.colourCalibrationButtons = []
         for index, colour in enumerate(self.targetColoursRgbValues):
             # Form hex code colour from RGB values
-            tempColour = '#%02x%02x%02x' % (self.targetColoursRgbValues[colour][0], self.targetColoursRgbValues[colour][1], self.targetColoursRgbValues[colour][2])
+            tempColour = '#%02x%02x%02x' % (int(self.targetColoursRgbValues[colour][0]), int(self.targetColoursRgbValues[colour][1]), int(self.targetColoursRgbValues[colour][2]))
             tempButton = tk.Radiobutton(self.colourButtonsFrame, text=self.colourNames[colour], indicatoron=False, bg=tempColour, selectcolor=tempColour, var=self.colourCalibrationNewSelection, value=colour, command=self.colourCalibrationHandler)
             self.colourCalibrationButtons.append(tempButton)
 
@@ -165,7 +165,7 @@ class Calibration:
 
     def updateColourCalibrationButtonColours(self):
         for index, colour in enumerate(self.targetColoursRgbValues):
-            tempColour = '#%02x%02x%02x' % (self.targetColoursRgbValues[colour][0], self.targetColoursRgbValues[colour][1], self.targetColoursRgbValues[colour][2])
+            tempColour = '#%02x%02x%02x' % (int(self.targetColoursRgbValues[colour][0]), int(self.targetColoursRgbValues[colour][1]), int(self.targetColoursRgbValues[colour][2]))
 
             self.colourCalibrationButtons[index].config(bg=tempColour, selectcolor=tempColour)
 

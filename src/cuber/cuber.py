@@ -50,6 +50,7 @@ class Cuber():
             print("Cube already in solved state.")
             return
 
+        print(f"CubeState In Cuber: {cubeState}")
         solution = self.solver.solve(cubeState)
         if solution is None:
             raise Exception("No cube solution could be found")

@@ -17,7 +17,8 @@ class computerVision():
         # in the list itself.
         # ie. no matter the order of cameras in this list, the cameras are
         # iterated through in element order.
-        self.cameras = [0, 2, 4]
+        
+        self.cameras = [0, 1, 2]
         self.noOfCameras = len(self.cameras)
 
         # Work out the absolute paths to expected configuration files
@@ -30,7 +31,15 @@ class computerVision():
         # NB The capture objects are in the same index as self.cameras
         self.captureObjects = []
         for cameraNum in self.cameras:
+            
             tempCamera = cv2.VideoCapture(cameraNum)
+            
+            if cameraNum == 2:
+                tempCamera = cv2.VideoCapture(4);
+            elif cameraNum == 1:
+                tempCamera = cv2.VideoCapture(0);
+            elif cameraNum == 0:
+                tempCamera = cv2.VideoCapture(2);
 
             # Set camera resolution to 320x240
             tempCamera.set(3, 320)
@@ -145,7 +154,7 @@ class computerVision():
 
         # Use colour-face correlation to convert colour list into cube state
         self.cubeState = self.convertColoursToFaceNotation(self.colourList)
-        print(self.cubeState)
+        print(f"CubeState: {self.cubeState}")
 
         return self.cubeState
 
@@ -204,6 +213,9 @@ class computerVision():
         # Use helper function to grab image from camera. Since frames are being
         # streamed to the GUI, we do not need to worry about emptying the
         # buffer totally: That will sort itself out.
+        
+        
+        
         frame = self.captureImage(self.guiDisplayCameraIndex, False)
 
         # Draw the visual debug information onto the frame
@@ -343,7 +355,7 @@ class computerVision():
 
         if cubePosition is not None and cubePosition < len(self.correlation[self.cameras[self.guiDisplayCameraIndex], ]):
             # If valid (ie in range) region is found, update the correlation of this clicked
-            # region to the new coordinate values
+            # rblegion to the new coordinate values
             self.dragActiveBool = True
             self.dragItemIndex = self.guiDisplayCameraIndex, cubePosition
             self.correlation[self.dragItemIndex] = eventCoordinates
@@ -432,6 +444,11 @@ class computerVision():
 ################################################################################
 
     def createPortholeMask(self, height, width, channels, cameraNum):
+        if cameraNum < 0 or cameraNum >= len(self.correlation):
+            print("Error: cameraNum is out of range for correlation list")
+            return None 
+        
+        
         # Create blank 'white' mask
         cubiesMaskTemp = np.zeros((height, width, channels), np.uint8)
 
@@ -576,6 +593,7 @@ class computerVision():
         groupWidth = len(contourList)/numGroups
         # NOTE Exclude centres for this robot version
         groupWidth -= 1
+        groupWidth = int(groupWidth)
 
         # Form more concise list to make this sorting easier
         # We only care about the average colour, and its cube position
@@ -636,6 +654,7 @@ class computerVision():
             for count, avgColour in enumerate(averageGroupingColours):
                 # Sum difference in H values to find groups closest to template colours
                 key = perm[count]
+
                 difference += math.fabs(self.colourCorrelation[key][0] - avgColour[0])
 
             if bestDiff is None or difference < bestDiff:
@@ -643,7 +662,6 @@ class computerVision():
                 bestPermutationIndex = index
 
         bestPermutation = permutations[bestPermutationIndex]
-        print(bestPermutation)
 
         # We now know:
         #   - How the cubies across the cube are grouped into coherent groupings
