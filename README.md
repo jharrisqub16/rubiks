@@ -42,7 +42,7 @@ This is a brief overview of some of the main points of the program flow, rather 
 
 e.g `./base.py` or `python2.7 base.py` (or other correct path)
 
-===========================================================================================================================
+
                                   GUI INSTALLATION/STARTUP
 ===========================================================================================================================
 In order to successfully run and execute the new GUI build within electron you must follow these steps.
