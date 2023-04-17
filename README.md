@@ -44,7 +44,7 @@ e.g `./base.py` or `python2.7 base.py` (or other correct path)
 
 
                                   GUI INSTALLATION/STARTUP
-===========================================================================================================================
+
 In order to successfully run and execute the new GUI build within electron you must follow these steps.
 1. Navigate to the app folder 
 ```cd app```
