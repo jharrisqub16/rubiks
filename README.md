@@ -1,6 +1,8 @@
 # Computer Vision based solver for Rubik's Cube Robot
-This is a python based Computer Vision project (with accompanying GUI) to operate Rubik's Cube solving robots.
+This is a python based Computer Vision project to operate Rubik's Cube solving robots.
+Accompanying GUI included running on Electron JS with REACT JS integration.
 
+Initial development in 2018 by David Ball and built upon in 2023 by Jake Harris.
 In association with Queens University Belfast.
 
 ## Operation
@@ -40,6 +42,26 @@ This is a brief overview of some of the main points of the program flow, rather 
 
 e.g `./base.py` or `python2.7 base.py` (or other correct path)
 
+===========================================================================================================================
+                                  GUI INSTALLATION/STARTUP
+===========================================================================================================================
+In order to successfully run and execute the new GUI build within electron you must follow these steps.
+1. Navigate to the app folder 
+```cd app```
+2. Navigate to the cuber-electron folder
+```cd cuber-electron```
+3. Run yarn install
+```yarn install```
+This may take a while depending if it's your first time starting up
+4. Run yarn electron-serve
+```yarn electron-serve```
+This will start up the React app in the Electron JS envioronment and run the new application! 
+
+Note: Due to timing functionality with the buttons is not currently present however script files in the repository show OpenCV integration 
+      and basic Javascript tutorials/functions will allow you to map the current operations in the python based code to this new application.
+Good Luck! 
+
+
 ## Structure
 ```
 +-- arduinoMotorControl     (Source code for separate Arduino motor controller implementation)
@@ -55,6 +77,11 @@ e.g `./base.py` or `python2.7 base.py` (or other correct path)
 |       +-- correlation.py      (Helper to computerVision - Default coordinate correlation settings)
 |       +-- solver.py           (Object for all solving and metric calculation)
 |       +-- motorController.py  (Object for interfacing with motors)
++-- app
+|   +-- cuber-electron
+|       +-- public (Electron associated files)
+|       +-- src    (React App associated files)
+
 ```
 
 ## Known Issues
@@ -67,13 +94,20 @@ e.g `./base.py` or `python2.7 base.py` (or other correct path)
   The issue seems to occur more readily with multiple cameras and at higher resolutions.  This is relatively widely
   discussed on OpenCV forums with a range of potential solutions suggested but to no avail.
 
+- **Camera Indexing Errors** - some featues of the software may be arise faults this is due ot the changes introduced
+  in the updates to the Raspberry Pi Raspbian to Raspberry Pi OS. The latest issue found was problems with the calibration
+  screen in that values for certain angles would get mixed upon saving. Something to investigate if time avails otherwise
+  calibration is required upon every restart.
+
 ## TODOs
 - **Exception handling** - The ways in which errors are handled is not well sanitised. A top-to-bottom exception
   handling scheme would be useful. This could include startup scenarios such as ensuring that the expected number of
   cameras are operational, motor operation can be established etc.
 
-- **GUI scaling** - Scaling of all the GUI windows is not fully supported; this is particularly difficult to achieve for
-  changing aspect ratios and full-screen/minimise operations (which also do not maintain aspect ratio).
 
 - **Rendered cube model** - The 'main' GUI window is simply an image with buttons. It had been thought that this window
   could present a 3D rendered model of the 'live' state of the cube which would be intuitively manipulated by the user.
+
+- **explore react/electron libraries** - the new GUI stored in the cuber-electron folder is a sandbox waiting to be 
+  played with. There are a vast amount of libraries available to which can be used at your disposal, including various
+  Rubik's cube modelling libraries which would help tackle the Rendered Cube Model todo! 
